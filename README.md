@@ -1,16 +1,31 @@
-# My Capstone 1 Imperial
+# Imperial College ML/AI Capstone Project
 
-This repository contains my Imperial College ML/AI Capstone Project work.
+This repository contains my work for the Imperial College London Machine Learning and Artificial Intelligence Capstone Project.
 
-## Contents
+## Repository Structure
 
-- Week 1 query submissions
-- Week 2 query submissions
-- Bayesian Optimisation notebooks
-- Function 1 to Function 8 datasets
-- Reflection notes
-- Experimental results
+### Data
+Contains datasets, function outputs and related files.
 
-## Author
+### Notebooks
+Contains Google Colab notebooks used during the project.
 
-John-Peter Amewu
+### Reflections
+Contains weekly reflections and optimisation strategy notes.
+
+### Week_1 – Week_8
+Contains weekly Bayesian Optimisation submissions, query values, screenshots and supporting notes.
+
+## Project Focus
+
+Black-box optimisation using Bayesian Optimisation techniques including:
+
+- Gaussian Processes
+- Acquisition Functions
+- Exploration and Exploitation
+- Random Search
+- Grid Search
+- Manual Reasoning
+
+Author:
+JPAmewu
