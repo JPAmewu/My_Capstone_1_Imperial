@@ -1,23 +1,18 @@
-# Function 5 Reflection
+# Function 1 Reflection
 
 ## Week 1
 
 ### Technique Used
-
-Manual Reasoning
+Random Search
 
 ### Output Obtained
-
-1088.8535114737463
+-1.560646704467778e-117
 
 ### Observations
-
-This was the strongest result obtained among all functions during Week 1. The manually selected query appears to have identified a highly promising region of the search space.
+Neither F1 nor F2 were able to find any particular strong regions.This techniques may become less useful by the time i had more information. 
 
 ### Lessons Learned
-
-Domain intuition and careful examination of previous outputs can be highly effective when data is limited.
+Random Serach  is only useful in the early stages when i had no information.
 
 ### Week 2 Strategy
-
-Continue exploiting the region around the current best point while exploring nearby alternatives.
+I will apply another techniques for this function, preferable Bayesian Optimisation
