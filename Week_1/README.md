@@ -6,7 +6,7 @@ c)Specifically designed for expensive black-box optimisation
 Learn from previous observation.
 
 WEEK 2 STRATEGY
-Function                    Optimisation Ttechnique
+Function                    Optimisation Technique
 Function 1                  Bayesian Optimisation
 Function 2                  Bayesion Optimisation
 Function 3                  Bayesion Optimisation
