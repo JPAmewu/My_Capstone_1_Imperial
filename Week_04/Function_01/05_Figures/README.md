@@ -1,0 +1,3 @@
+# Week 04 – Function 01 Figures
+
+This folder contains plots and visualisations for Function 01 during Week 04.
