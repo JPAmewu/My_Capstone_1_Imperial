@@ -3,13 +3,11 @@
 > **Capstone Project (2026)**  
 > **Topic:** Bayesian Optimisation for Black-Box Optimisation using Gaussian Processes and Acquisition Functions
 
-![Python](https://img.shields.io/badge/Python-3.x-blue)
-![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange)
-![Google Colab](https://img.shields.io/badge/Google-Colab-yellow)
-![Bayesian Optimisation](https://img.shields.io/badge/Bayesian-Optimisation-green)
-![Gaussian Processes](https://img.shields.io/badge/Gaussian-Processes-purple)
-![Imperial College](https://img.shields.io/badge/Imperial_College-London-blue)
-![Capstone](https://img.shields.io/badge/Capstone-2026-red)
+![Python](https://img.shields.io/badge/Python-3-blue)
+![Google Colab](https://img.shields.io/badge/Google_Colab-F9AB00)
+![Bayesian Optimisation](https://img.shields.io/badge/Bayesian_Optimisation-green)
+![Gaussian Processes](https://img.shields.io/badge/Gaussian_Processes-purple)
+![Imperial ML/AI 2026](https://img.shields.io/badge/Imperial_ML%2FAI-2026-red)
 
 ## Overview
 This repository contains my Machine Learning and Artificial Intelligence Capstone Project completed as part of the Imperial College London Machine Learning & Artificial Intelligence Programme. The project applies Bayesian Optimisation techniques to solve a sequence of black-box optimisation problems. The work demonstrates the complete optimisation workflow, including exploratory data analysis (EDA), Gaussian Process surrogate modelling, acquisition function design, iterative query selection, performance evaluation, and result interpretation using Python.
