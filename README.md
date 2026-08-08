@@ -9,9 +9,9 @@ unknown objective functions. Each round incorporates the previous query
 results, analyses the accumulated observations, fits surrogate models, and
 proposes the next points to evaluate.
 
-> **Project status:** exploratory coursework in progress. Weeks 1–10 contain
+> **Project status:** exploratory coursework in progress. Weeks 1–11 contain
 > the substantive notebook progression. The notebooks currently stored under
-> Weeks 11–13 repeat the Week 10 workflow and should be treated as placeholders
+> Weeks 12–13 repeat the Week 10 workflow and should be treated as placeholders
 > until their data lineage and analysis are updated for the relevant week.
 
 ## Project goals
@@ -58,7 +58,7 @@ Drive.
 | 8 | Runs detailed, repeated EDA and separate GP/UCB modelling for all eight functions, including trends, correlations, and candidate searches. | Executed |
 | 9 | Parses and appends Week 8 results, checks and repairs dataset length mismatches, performs EDA, and generates later queries. | Mostly executed |
 | 10 | Builds the Week 10 dataset from Week 9, performs reusable EDA, fits anisotropic Matérn GP models, and selects Week 11 queries with UCB. | Executed |
-| 11 | Repeats the corrected Week 10 workflow; still references Week 9/10 data and emits Week 11 queries. | Placeholder |
+| 11 | Appends the confirmed Week 10 observations, creates and analyses the Week 11 dataset, fits GP models, and generates Week 12 query points. | Ready to execute |
 | 12 | Repeats the corrected Week 10 workflow; still references Week 9/10 data and emits Week 11 queries. | Placeholder |
 | 13 | Repeats the corrected Week 10 workflow; still references Week 9/10 data and emits Week 11 queries. | Placeholder |
 
