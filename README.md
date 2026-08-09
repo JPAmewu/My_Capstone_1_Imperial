@@ -4,6 +4,11 @@ An Imperial College London Machine Learning and Artificial Intelligence
 capstone project exploring sequential black-box optimisation with Gaussian
 Process (GP) surrogate models and acquisition functions.
 
+## Project documentation
+
+- [Dataset datasheet](DATASET_DATASHEET.md)
+- [Model card](MODEL_CARD.md)
+
 The repository records a week-by-week experimental workflow across eight
 unknown objective functions. Each round incorporates the previous query
 results, analyses the accumulated observations, fits surrogate models, and
@@ -58,7 +63,7 @@ Drive.
 | 8 | Runs detailed, repeated EDA and separate GP/UCB modelling for all eight functions, including trends, correlations, and candidate searches. | Executed |
 | 9 | Parses and appends Week 8 results, checks and repairs dataset length mismatches, performs EDA, and generates later queries. | Mostly executed |
 | 10 | Builds the Week 10 dataset from Week 9, performs reusable EDA, fits anisotropic Matérn GP models, and selects Week 11 queries with UCB. | Executed |
-| 11 | Appends the confirmed Week 10 observations, creates and analyses the Week 11 dataset, fits GP models, and generates Week 12 query points. | Ready to execute |
+| 11 | Appends the confirmed Week 10 observations, creates and analyses the Week 11 dataset, fits GP models, and generates Week 12 query points. | Executed |
 | 12 | Repeats the corrected Week 10 workflow; still references Week 9/10 data and emits Week 11 queries. | Placeholder |
 | 13 | Repeats the corrected Week 10 workflow; still references Week 9/10 data and emits Week 11 queries. | Placeholder |
 
