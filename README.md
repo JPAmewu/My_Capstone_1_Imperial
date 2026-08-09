@@ -9,9 +9,9 @@ unknown objective functions. Each round incorporates the previous query
 results, analyses the accumulated observations, fits surrogate models, and
 proposes the next points to evaluate.
 
-> **Project status:** exploratory coursework in progress. Weeks 1–10 contain
+> **Project status:** exploratory coursework in progress. Weeks 1–11 contain
 > the substantive notebook progression. The notebooks currently stored under
-> Weeks 11–13 repeat the Week 10 workflow and should be treated as placeholders
+> Weeks 12–13 repeat the Week 10 workflow and should be treated as placeholders
 > until their data lineage and analysis are updated for the relevant week.
 
 ## Project goals
@@ -114,9 +114,7 @@ reproduce and maintain.
   the original query history, which is not committed here.
 - Random candidate search becomes inefficient in higher dimensions, even with
   previously evaluated points excluded at submission precision.
-- Weeks 11–13 need distinct notebooks and corrected data lineage.
-- Repeated imports and function-specific notebook cells should be consolidated
-  into reusable, tested functions.
+
 
 ## Recommended next steps
 
