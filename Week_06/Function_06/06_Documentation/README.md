@@ -1,3 +1,3 @@
-# Week 06 – Function 06 Documentation
+# Documentation
 
-This folder contains methodology notes and supporting documentation for Function 06 during Week 06.
+[methodology.md](methodology.md) explains provenance, validation, evidence boundaries, and reproduction.

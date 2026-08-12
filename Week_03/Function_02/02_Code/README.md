@@ -1,3 +1,3 @@
-# Week 03 – Function 02 Code
+# Code
 
-This folder contains the Python code used for Function 02 during Week 03.
+[analyse_week_03_function_02.py](analyse_week_03_function_02.py) is an independently runnable wrapper around the shared verified-evidence interface.

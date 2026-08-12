@@ -1,3 +1,4 @@
-# Week 13 – Function 06 Notebook
+# Notebook
 
-This folder contains the notebook used for Function 06 during Week 13.
+- [Focused Function 06 notebook](Week_13_Function_06.ipynb)
+- [Canonical all-function Week 13 notebook](../../02_Notebook/Week_13_Placeholder.ipynb)

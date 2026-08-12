@@ -1,3 +1,3 @@
-# Week 13 – Function 05 Code
+# Code
 
-This folder contains the Python code used for Function 05 during Week 13.
+[analyse_week_13_function_05.py](analyse_week_13_function_05.py) is an independently runnable wrapper around the shared verified-evidence interface.

@@ -1,3 +1,4 @@
-# Week 05 – Function 07 Notebook
+# Notebook
 
-This folder contains the notebook used for Function 07 during Week 05.
+- [Focused Function 07 notebook](Week_05_Function_07.ipynb)
+- [Canonical all-function Week 5 notebook](../../02_Notebook/Week_5_Capstone.ipynb)

@@ -1,3 +1,3 @@
-# Week 11 – Function 02 Results
+# Results
 
-This folder contains query points, best outputs and result summaries for Function 02 during Week 11.
+Generated `observations.csv` and `summary.json` contain the validated cumulative evidence and explicit evidence-gap report.

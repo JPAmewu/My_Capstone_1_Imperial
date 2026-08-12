@@ -1,3 +1,3 @@
-# Week 08 – Function 02 Documentation
+# Documentation
 
-This folder contains methodology notes and supporting documentation for Function 02 during Week 08.
+[methodology.md](methodology.md) explains provenance, validation, evidence boundaries, and reproduction.

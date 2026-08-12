@@ -1,0 +1,30 @@
+{
+  "week": 2,
+  "function": 4,
+  "dimensions": 4,
+  "starter_observations": 30,
+  "recorded_pairs": 1,
+  "total_verified_observations": 31,
+  "best_query": 28,
+  "best_input": [
+    0.5777656143780968,
+    0.4287717415443063,
+    0.4258258674882194,
+    0.24900741466191134
+  ],
+  "best_output": -4.025542281908162,
+  "latest_verified_query": 31,
+  "latest_verified_input": [
+    0.555555,
+    0.444444,
+    0.222222,
+    0.111111
+  ],
+  "latest_verified_output": -8.727516493155957,
+  "latest_improves_previous_best": false,
+  "minimum_output": -32.625660215962455,
+  "mean_output": -16.964036678443744,
+  "standard_deviation": 7.065739921524775,
+  "evidence_gap": "No gap in the Week 1 return used for this review.",
+  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
+}

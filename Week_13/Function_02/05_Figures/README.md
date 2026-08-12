@@ -1,3 +1,3 @@
-# Week 13 – Function 02 Figures
+# Figures
 
-This folder contains plots and visualisations for Function 02 during Week 13.
+`week_13_function_02_diagnostics.png` is the consolidated Matplotlib response trace and coordinate heatmap.

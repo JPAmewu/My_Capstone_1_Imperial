@@ -1,3 +1,3 @@
-# Week 04 – Function 06 Figures
+# Figures
 
-This folder contains plots and visualisations for Function 06 during Week 04.
+`week_04_function_06_diagnostics.png` is the consolidated Matplotlib response trace and coordinate heatmap.

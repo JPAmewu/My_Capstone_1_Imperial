@@ -1,3 +1,3 @@
-# Week 04 – Function 02 Data
+# Data
 
-This folder contains input, output and processed data for Function 02 during Week 04.
+`provenance.json` points to canonical source evidence. Arrays are not duplicated here; Week 01 starter data and exact recorded pairs are loaded read-only.

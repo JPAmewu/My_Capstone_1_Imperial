@@ -1,0 +1,31 @@
+{
+  "week": 12,
+  "function": 4,
+  "dimensions": 4,
+  "starter_observations": 30,
+  "recorded_pairs": 6,
+  "total_verified_observations": 36,
+  "best_query": 33,
+  "best_input": [
+    0.394519,
+    0.361122,
+    0.256803,
+    0.461856
+  ],
+  "best_output": -1.9810750402526334,
+  "latest_verified_query": 36,
+  "latest_verified_input": [
+    0.889493,
+    0.002958,
+    0.445975,
+    0.774547
+  ],
+  "latest_verified_output": -23.42280313862202,
+  "latest_improves_previous_best": false,
+  "minimum_output": -32.625660215962455,
+  "mean_output": -16.951763667026995,
+  "standard_deviation": 7.622196445446459,
+  "evidence_gap": "The corrupted Week 11 arrays remain quarantined and no verified Week 11 or Week 12 return is present; this review inherits the latest exact evidence.",
+  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
+  "archive_integrity": "Week_11 local arrays quarantined after failing exact-pair provenance and corruption checks."
+}

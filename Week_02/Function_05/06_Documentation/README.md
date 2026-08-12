@@ -1,3 +1,3 @@
-# Week 02 – Function 05 Documentation
+# Documentation
 
-This folder contains methodology notes and supporting documentation for Function 05 during Week 02.
+[methodology.md](methodology.md) explains provenance, validation, evidence boundaries, and reproduction.

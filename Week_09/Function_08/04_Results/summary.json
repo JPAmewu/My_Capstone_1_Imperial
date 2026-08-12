@@ -1,0 +1,38 @@
+{
+  "week": 9,
+  "function": 8,
+  "dimensions": 8,
+  "starter_observations": 40,
+  "recorded_pairs": 5,
+  "total_verified_observations": 45,
+  "best_query": 42,
+  "best_input": [
+    0.16316,
+    0.184786,
+    0.152644,
+    0.083802,
+    0.999322,
+    0.544113,
+    0.184124,
+    0.123846
+  ],
+  "best_output": 9.9399041910574,
+  "latest_verified_query": 45,
+  "latest_verified_input": [
+    0.110992,
+    0.462977,
+    0.255313,
+    0.963757,
+    0.895383,
+    0.716713,
+    0.030436,
+    0.083412
+  ],
+  "latest_verified_output": 9.1386093133071,
+  "latest_improves_previous_best": false,
+  "minimum_output": 5.5921933895401965,
+  "mean_output": 7.99384153049219,
+  "standard_deviation": 1.0337198080500287,
+  "evidence_gap": "Week 8 return is unavailable; four early pairs and the Week 6 pair are recoverable.",
+  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
+}

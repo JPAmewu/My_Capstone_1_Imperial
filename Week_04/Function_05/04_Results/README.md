@@ -1,3 +1,3 @@
-# Week 04 – Function 05 Results
+# Results
 
-This folder contains query points, best outputs and result summaries for Function 05 during Week 04.
+Generated `observations.csv` and `summary.json` contain the validated cumulative evidence and explicit evidence-gap report.

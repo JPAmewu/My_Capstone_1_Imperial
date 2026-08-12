@@ -1,3 +1,3 @@
-# Week 09 – Function 07 Code
+# Code
 
-This folder contains the Python code used for Function 07 during Week 09.
+[analyse_week_09_function_07.py](analyse_week_09_function_07.py) is an independently runnable wrapper around the shared verified-evidence interface.

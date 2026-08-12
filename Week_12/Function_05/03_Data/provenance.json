@@ -1,0 +1,9 @@
+{
+  "canonical_starter": "Week_01/Function_05/03_Data",
+  "recorded_pairs_registry": "Code/weekly_evidence.py",
+  "review_context": "Week_12/02_Notebook",
+  "data_policy": "No source arrays duplicated or rewritten.",
+  "evidence_gap": "The corrupted Week 11 arrays remain quarantined and no verified Week 11 or Week 12 return is present; this review inherits the latest exact evidence.",
+  "excluded_archive": "Week_11/Function_05/03_Data/function_5_*.npy",
+  "exclusion_reason": "Duplicate sentinel values, cross-function outputs, altered coordinates, and unprovenanced rows."
+}

@@ -1,3 +1,3 @@
-# Week 11 – Function 06 Code
+# Code
 
-This folder contains the Python code used for Function 06 during Week 11.
+[analyse_week_11_function_06.py](analyse_week_11_function_06.py) is an independently runnable wrapper around the shared verified-evidence interface.

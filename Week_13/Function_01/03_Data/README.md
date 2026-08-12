@@ -1,3 +1,3 @@
-# Week 13 – Function 01 Data
+# Data
 
-This folder contains input, output and processed data for Function 01 during Week 13.
+`provenance.json` points to canonical source evidence. Arrays are not duplicated here; Week 01 starter data and exact recorded pairs are loaded read-only.

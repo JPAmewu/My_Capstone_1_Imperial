@@ -1,3 +1,3 @@
-# Week 13 – Function 07 Documentation
+# Documentation
 
-This folder contains methodology notes and supporting documentation for Function 07 during Week 13.
+[methodology.md](methodology.md) explains provenance, validation, evidence boundaries, and reproduction.

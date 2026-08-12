@@ -1,3 +1,3 @@
-# Week 13 – Function 08 Results
+# Results
 
-This folder contains query points, best outputs and result summaries for Function 08 during Week 13.
+Generated `observations.csv` and `summary.json` contain the validated cumulative evidence and explicit evidence-gap report.

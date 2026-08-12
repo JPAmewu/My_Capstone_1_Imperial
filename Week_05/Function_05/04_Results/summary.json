@@ -1,0 +1,30 @@
+{
+  "week": 5,
+  "function": 5,
+  "dimensions": 4,
+  "starter_observations": 20,
+  "recorded_pairs": 4,
+  "total_verified_observations": 24,
+  "best_query": 16,
+  "best_input": [
+    0.22418902330288348,
+    0.8464804904862864,
+    0.8794841797090803,
+    0.8785156842249731
+  ],
+  "best_output": 1088.8596181962705,
+  "latest_verified_query": 24,
+  "latest_verified_input": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "latest_verified_output": 163.1225,
+  "latest_improves_previous_best": false,
+  "minimum_output": 0.1129397953712203,
+  "mean_output": 264.5296841149184,
+  "standard_deviation": 373.1477832915842,
+  "evidence_gap": "The four early exact pairs are recoverable, but their original weekly archive provenance is incomplete.",
+  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
+}
