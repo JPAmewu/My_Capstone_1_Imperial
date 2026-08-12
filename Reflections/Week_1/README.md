@@ -1,89 +1,37 @@
-# Week 1 Reflection
+# Week 1 reflection
 
-## Overview
+## Context
 
-The objective was to maximise eight unknown black-box functions using one query per function.
+The first round established a baseline for maximising eight unrelated
+black-box functions with one submitted query per function. Random search, grid
+search, manual reasoning, and Bayesian optimisation were explored as candidate
+strategies.
 
-Different optimisation techniques were explored to understand how each strategy performs under limited information.
+Because each function has a different objective scale, raw values must be
+evaluated within each function rather than ranked or averaged across functions.
 
-## Techniques Used
+## Recorded outcomes
 
-| Function | Technique |
+| Function | Initial strategy | Returned value |
+| --- | --- | ---: |
+| F1 | Random search | `-1.560646704467778e-117` |
+| F2 | Random search | `-0.03182956281754251` |
+| F3 | Grid search | `-0.04090761844901528` |
+| F4 | Grid search | `-8.727516493155957` |
+| F5 | Manual reasoning | `1088.8535114737463` |
+| F6 | Manual reasoning | `-1.1520351120911565` |
+| F7 | Bayesian optimisation | `1.0510148516295004` |
+| F8 | Bayesian optimisation | `9.8157087929671` |
 
-|----------|-----------|
+## Learning
 
-| Function 1 | Random Search |
+- Function-specific history is the appropriate basis for judging improvement.
+- Strong single observations do not establish that one method is globally
+  superior, particularly across objectives with incompatible scales.
+- Later rounds should retain exploration while using surrogate uncertainty to
+  guide expensive evaluations.
+- Query provenance, dimensional validation, and reproducible candidate
+  generation are essential for reliable comparisons.
 
-| Function 2 | Random Search |
-
-| Function 3 | Grid Search |
-
-| Function 4 | Grid Search |
-
-| Function 5 | Manual Reasoning |
-
-| Function 6 | Manual Reasoning |
-
-| Function 7 | Bayesian Optimisation |
-
-| Function 8 | Bayesian Optimisation |
-
-## Results
-
-| Function | Output |
-
-|----------|----------|
-
-| Function 1 | -1.560646704467778e-117 |
-
-| Function 2 | -0.03182956281754251 |
-
-| Function 3 | -0.04090761844901528 |
-
-| Function 4 | -8.727516493155957 |
-
-| Function 5 | 1088.8535114737463 |
-
-| Function 6 | -1.1520351120911565 |
-
-| Function 7 | 1.0510148516295004 |
-
-| Function 8 | 9.8157087929671 |
-
-## Ranking of Functions
-Rank          Function       Output        Technique
-1             F5             1088.8535     Manual Reasoning
-2             F8             9.8157        Bayesian Optimisation
-3             F7             1.0510        Bayesian Optimisation
-4             F2             -0.0318       Random Search
-5             F3             -0.0409       Grid Search
-6             F6             -1.1520       Manaul Reasoning
-7             F4             -8.7275       Grid Search
-8             F1             -1.566e-117   Random Search
-
-## Ranking of Optimisation Techniques
-Rank          Techniques      Functions    Average
-1             Manual          F5,F6        543.8507
-2             Bayesian        F7,F8        5.4334
-3             Random Search   F1,F4        -0.0159
-4             Grid            F3,F4        -4.3842
-
-## Key Observations
-
-- Manual Reasoning performed exceptionally well for Function 5.
-
-- Bayesian Optimisation performed strongly for Functions 7 and 8.
-
-- Random Search produced mixed results.
-
-- Grid Search was less successful on Functions 3 and 4.
-
-## Week 2 Strategy
-
-- Continue exploiting Functions 5, 7 and 8.
-
-- Refine search regions around promising points.
-
-- Explore alternative regions for Functions 1, 3, 4 and 6.
-
-- Use Week 1 results to guide Week 2 query selection.
+See the [corrected Week 1 notebook](../../Week_01/02_Notebook/Week_1_Capstone.ipynb)
+for the complete evidence and plots.

@@ -1,8 +1,8 @@
-Datasheet: BBO Capstone Sequential Optimisation Dataset
+# Datasheet: BBO capstone sequential optimisation dataset
 
-**Version:** 1.0 (ten-round project state)  
-**Creator and maintainer:** JP Amewu  
-**Programme:** Imperial College London Machine Learning and Artificial Intelligence Programme  
+**Version:** 1.1 (verified Week 11 repository state)
+**Creator and maintainer:** JP Amewu
+**Programme:** Imperial College London Machine Learning and Artificial Intelligence Programme
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
 
 ## Motivation
@@ -13,20 +13,22 @@ The dataset supports sequential optimisation, exploratory data analysis, Gaussia
 
 ## Composition
 
-The ten-round project state covers eight independent objective functions with inputs constrained to the unit hypercube `[0, 1]^d`. Function dimensionalities are 2, 2, 3, 4, 4, 5, 6 and 8 respectively.
+The verified project state covers eight independent objective functions with inputs constrained to the unit hypercube `[0, 1]^d`. Function dimensionalities are 2, 2, 3, 4, 4, 5, 6 and 8 respectively.
 
-At the completed Week 11 dataset state, the repository contains 254 paired observations:
+The corrected Week 11 analysis contains 223 verified paired observations. It
+uses the Week 1 starter arrays plus exact returned pairs from Weeks 1–4, 6, and
+9; unavailable rounds are excluded rather than reconstructed without evidence.
 
-| Function | Dimensions | Paired observations | Raw recorded maximum | Latest appended output |
+| Function | Dimensions | Verified observations | Verified maximum | Latest verified output |
 | --- | ---: | ---: | ---: | ---: |
-| 1 | 2 | 20 | 64 | approximately 0 |
-| 2 | 2 | 20 | 64 | 0.0494064 |
-| 3 | 3 | 25 | 64 | -0.0818934 |
-| 4 | 4 | 40 | 64 | -23.4228031 |
-| 5 | 4 | 30 | 1088.8596182 | 430.8031250 |
-| 6 | 5 | 30 | 64 | -1.1717132 |
-| 7 | 6 | 40 | 64 | 1.0098940 |
-| 8 | 8 | 49 | 64 | 9.6998918 |
+| 1 | 2 | 16 | `7.710875e-16` | `-3.089424e-96` |
+| 2 | 2 | 16 | `0.6112052` | `0.04940646` |
+| 3 | 3 | 21 | `-0.03483531` | `-0.08189345` |
+| 4 | 4 | 36 | `-1.981075` | `-23.42280` |
+| 5 | 4 | 26 | `1088.860` | `430.8031` |
+| 6 | 5 | 26 | `-0.7142649` | `-1.171713` |
+| 7 | 6 | 36 | `2.149905` | `1.009840` |
+| 8 | 8 | 46 | `9.939904` | `9.699892` |
 
 Inputs and outputs are stored as NumPy `.npy` arrays. Query submissions are stored as plain-text `.txt` files, normally with six-decimal coordinates separated by hyphens. Jupyter/Colab `.ipynb` notebooks contain collection logic, validation, analysis, modelling and generated query points. Some weekly directories also contain Markdown documentation and placeholders.
 
@@ -37,22 +39,22 @@ There are no human subjects, demographic groups, personal data or labels describ
 - The complete, immutable query-and-response ledger is not consistently available for every early round.
 - Exact collection timestamps and software versions were not recorded for every observation.
 - Weeks 12 and 13 remain placeholders and do not yet represent successive completed datasets.
-- Several functions contain repeated values of exactly `64`. These may be legitimate evaluations, but their repeated occurrence across functions is unusual and should be checked against the original submission history before treating every raw maximum as a verified optimisation result.
+- Returned Week 5, Week 7, and Week 10 pairs are not recoverable from the repository and are excluded from the verified Week 11 analysis.
 - Sampling is sparse relative to the volume of the higher-dimensional search spaces.
 - Earlier notebook versions sometimes reconstructed arrays from uploaded text and could encounter input/output length mismatches. Later validation stops rather than silently truncating data.
 
 ## Collection process
 
-Data was accumulated over ten sequential optimisation rounds during the 2026 capstone project. In each round, one query was proposed for each of the eight functions, submitted to the programme's black-box evaluation platform and paired with the returned scalar output. The confirmed pairs were appended to the next dataset; original source arrays were intended to remain unchanged.
+Data was accumulated through sequential optimisation rounds during the 2026 capstone project. In each round, one query was proposed for each of the eight functions, submitted to the programme's black-box evaluation platform and paired with the returned scalar output. Only pairs supported by repository evidence are included in the corrected analyses.
 
 The strategy evolved across rounds:
 
 1. Early rounds used exploratory analysis, plotting and manual heuristics.
 2. Gaussian Process regression was introduced to estimate objective values and predictive uncertainty.
-3. RBF and later Matérn kernels were used, with target scaling where appropriate.
+3. RBF and later Matérn kernels were used; corrected GP fits use `normalize_y=True` rather than manual target scaling.
 4. Expected Improvement and Upper Confidence Bound (UCB) acquisition functions were explored.
 5. Later rounds increasingly used UCB to balance exploitation of predicted high-value regions with exploration of uncertain regions.
-6. In the tenth-round workflow, each function used an anisotropic Matérn GP, `kappa = 2.0`, a fixed random seed and 100,000 uniformly sampled candidates. Candidates duplicating an existing point after six-decimal rounding were excluded.
+6. The corrected later workflows use anisotropic Matérn GPs, deterministic seeds, bounded candidate generation, and duplicate exclusion after six-decimal rounding. Candidate counts are recorded in each notebook rather than assumed to be identical across weeks.
 
 The process is adaptive, not an independent random sample: later query locations depend on earlier observations and modelling choices. This creates deliberate concentration near apparently promising regions and can leave other regions underexplored.
 
@@ -65,7 +67,7 @@ The following processing has been applied in later notebooks:
 - exact filename matching for each function's input and output arrays;
 - checks for matching input/output counts, expected dimensionality, finite values and `[0, 1]` input bounds;
 - preservation of source datasets while writing derived weekly datasets separately;
-- standardisation of objective values before some GP fits;
+- GP target normalisation with `normalize_y=True` in corrected notebooks;
 - rounding submitted coordinates to six decimal places;
 - exclusion of duplicate candidate points at submission precision.
 
@@ -104,7 +106,7 @@ JP Amewu maintains the dataset. Maintenance should include:
 - preserving immutable copies of each previous week's dataset;
 - recording provenance, submission round, timestamp and code version for every new observation;
 - validating shape, bounds, finiteness and duplicates before publication;
-- resolving the repeated-`64` provenance question;
+- preserving explicit evidence-gap reporting for unavailable returned pairs;
 - replacing Week 12 and Week 13 placeholders only when their genuine successive outputs are available;
 - documenting corrections in Git history and this datasheet;
 - archiving a final version when the capstone concludes.
