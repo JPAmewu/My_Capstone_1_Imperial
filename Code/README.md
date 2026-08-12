@@ -10,13 +10,15 @@ placeholders and were not used as implementation sources.
 | [`data_validation.py`](data_validation.py) | Shape, alignment, bounds, finiteness, candidate, and duplicate validation |
 | [`eda.py`](eda.py) | Function-specific summaries, running best, and tidy observation frames |
 | [`gaussian_process.py`](gaussian_process.py) | Bounded RBF/Matérn kernels, reproducible GP fitting, and uncertainty prediction |
+| [`acquisition_function.py`](acquisition_function.py) | Validated Upper Confidence Bound and Expected Improvement scoring |
 | [`candidate_generation.py`](candidate_generation.py) | Seeded global, local, and hybrid candidate generation |
 | [`query_selection.py`](query_selection.py) | UCB/EI acquisition scoring and rounded non-duplicate selection |
 | [`plotting.py`](plotting.py) | Consolidated Matplotlib function and proposal diagnostics |
 
 The requested labels `data.loading.np`, `gaussian_proccess.py`,
-`candidates_generation.py`, and `querry_selection.py` are represented using the
-standard Python spellings above so the files are importable and searchable.
+`acquisition _funnction.py`, `candidates_generation.py`, and
+`querry_selection.py` are represented using the standard Python spellings above
+so the files are importable and searchable.
 
 ## Design rules
 
