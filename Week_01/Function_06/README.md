@@ -1,23 +1,4 @@
-# Function 6
+# Week 01 — Function 06
 
-## Objective
+Self-contained Manual Reasoning analysis, arranged as [notebook](01_Notebook/Week_01_Function_06.ipynb), [code](02_Code/analyse_function_06.py), [data](03_Data/README.md), [results](04_Results/README.md), [figures](05_Figures/README.md), [documentation](06_Documentation/methodology.md), and [reflection](07_Reflection/README.md).
 
-Maximise the unknown Function 6.
-
-## Week 1 Strategy
-
-Manual Reasoning
-
-## Files
-
-- initial_inputs.npy
-
-- initial_outputs.npy
-
-## Week 1 Result
-
-Output: -1.1520351120911565
-
-## Week 2 Plan
-
-Consider Bayesian Optimisation to identify more promising regions.

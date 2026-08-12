@@ -1,2 +1,4 @@
-# Week 01 – Function 02 Data
-This folder contains input, output and processed data for Function 02 during Week 01.
+# Data
+
+The supplied NumPy input and output arrays are immutable source evidence for Function 02; the workflow validates but never regenerates them.
+

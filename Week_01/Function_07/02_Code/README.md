@@ -1,2 +1,4 @@
-# Week 01 – Function 07 Code
-This folder contains reusable Python code for Function 07 during Week 01.
+# Code
+
+[analyse_function_07.py](analyse_function_07.py) provides independently runnable validation, analysis, plotting, and artifact generation.
+

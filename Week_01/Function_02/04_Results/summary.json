@@ -1,0 +1,22 @@
+{
+  "function": "02",
+  "strategy": "Random Search",
+  "n_observations": 10,
+  "n_dimensions": 2,
+  "best_query": 10,
+  "best_input": [
+    0.7026365569244406,
+    0.9265641975455574
+  ],
+  "best_output": 0.6112052157614438,
+  "minimum_output": -0.06562362443733738,
+  "mean_output": 0.23067376631994235,
+  "standard_deviation": 0.22536450367310826,
+  "submitted_query": [
+    0.37544,
+    0.950714
+  ],
+  "submitted_return": -0.03182956281754251,
+  "submitted_improves_starter_best": false,
+  "submitted_improvement": -0.6430347785789863
+}

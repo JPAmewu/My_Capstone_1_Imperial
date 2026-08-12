@@ -1,23 +1,4 @@
-# Function 5
+# Week 01 — Function 05
 
-## Objective
+Self-contained Manual Reasoning analysis, arranged as [notebook](01_Notebook/Week_01_Function_05.ipynb), [code](02_Code/analyse_function_05.py), [data](03_Data/README.md), [results](04_Results/README.md), [figures](05_Figures/README.md), [documentation](06_Documentation/methodology.md), and [reflection](07_Reflection/README.md).
 
-Maximise the unknown Function 5.
-
-## Week 1 Strategy
-
-Manual Reasoning
-
-## Files
-
-- initial_inputs.npy
-
-- initial_outputs.npy
-
-## Week 1 Result
-
-Output: 1088.8535114737463
-
-## Week 2 Plan
-
-Continue Manual Reasoning and refine search around high-performing regions.

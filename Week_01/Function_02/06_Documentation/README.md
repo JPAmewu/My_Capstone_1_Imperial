@@ -1,3 +1,4 @@
-# Week 01 – Function 02 Documentation
+# Documentation
 
-This folder contains methodology notes and supporting documentation for Function 02 during Week 01.
+[methodology.md](methodology.md) records provenance, validation, interpretation boundaries, and reproduction commands.
+

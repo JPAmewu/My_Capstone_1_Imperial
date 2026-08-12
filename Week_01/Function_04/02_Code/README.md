@@ -1,2 +1,4 @@
-# Week 01 – Function 04 Code
-This folder contains reusable Python code for Function 04 during Week 01.
+# Code
+
+[analyse_function_04.py](analyse_function_04.py) provides independently runnable validation, analysis, plotting, and artifact generation.
+

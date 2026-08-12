@@ -1,23 +1,4 @@
-# Function 4
+# Week 01 — Function 04
 
-## Objective
+Self-contained Grid Search analysis, arranged as [notebook](01_Notebook/Week_01_Function_04.ipynb), [code](02_Code/analyse_function_04.py), [data](03_Data/README.md), [results](04_Results/README.md), [figures](05_Figures/README.md), [documentation](06_Documentation/methodology.md), and [reflection](07_Reflection/README.md).
 
-Maximise the unknown Function 4.
-
-## Week 1 Strategy
-
-Grid Search
-
-## Files
-
-- initial_inputs.npy
-
-- initial_outputs.npy
-
-## Week 1 Result
-
-Output: -8.727516493155957
-
-## Week 2 Plan
-
-Explore alternative strategies such as Manual Reasoning or Bayesian Optimisation.

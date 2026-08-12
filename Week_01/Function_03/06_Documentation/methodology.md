@@ -1,0 +1,25 @@
+# Function 03 methodology
+
+## Purpose
+
+Audit the immutable Function 03 starter observations and record the Grid Search decision independently of notebook cell order.
+
+## Provenance and validation
+
+The supplied `initial_inputs.npy` and `initial_outputs.npy` are source evidence and are not rewritten. Checks require finite numeric arrays, matching row counts, a one-dimensional response, and inputs within the unit hypercube. The submitted query was `[0.444444,0.666666,0.333333]`; its returned objective was `-0.04090761844901528`.
+
+## Method and outputs
+
+The standalone script identifies the maximum observed response, calculates descriptive statistics, compares the submitted return with that incumbent, and generates `observations.csv`, `summary.json`, and one consolidated Matplotlib diagnostic. The notebook imports the same code.
+
+## Interpretation boundary
+
+Results describe Function 03 only and do not establish causality or global optimality.
+
+## Reproduction
+
+```bash
+.venv/bin/python Week_01/Function_03/02_Code/analyse_function_03.py --write-artifacts
+.venv/bin/jupyter nbconvert --to notebook --execute Week_01/Function_03/01_Notebook/Week_01_Function_03.ipynb --inplace
+```
+

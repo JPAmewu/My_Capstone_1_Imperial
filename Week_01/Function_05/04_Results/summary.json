@@ -1,0 +1,26 @@
+{
+  "function": "05",
+  "strategy": "Manual Reasoning",
+  "n_observations": 20,
+  "n_dimensions": 4,
+  "best_query": 16,
+  "best_input": [
+    0.22418902330288348,
+    0.8464804904862864,
+    0.8794841797090803,
+    0.8785156842249731
+  ],
+  "best_output": 1088.8596181962705,
+  "minimum_output": 0.1129397953712203,
+  "mean_output": 151.27187567901282,
+  "standard_deviation": 245.57598070645597,
+  "submitted_query": [
+    0.224189,
+    0.84648,
+    0.879484,
+    0.878515
+  ],
+  "submitted_return": 1088.8535114737463,
+  "submitted_improves_starter_best": false,
+  "submitted_improvement": -0.0061067225242368295
+}

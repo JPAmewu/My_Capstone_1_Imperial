@@ -1,3 +1,4 @@
-# Week 04 – Function 01 Figures
+# Figures
 
-This folder contains plots and visualisations for Function 04 during Week 01.
+`function_04_diagnostics.png` consolidates the objective trace and input-coordinate heatmap using Matplotlib.
+

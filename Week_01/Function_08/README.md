@@ -1,23 +1,4 @@
-# Function 8
+# Week 01 — Function 08
 
-## Objective
+Self-contained Bayesian Optimisation analysis, arranged as [notebook](01_Notebook/Week_01_Function_08.ipynb), [code](02_Code/analyse_function_08.py), [data](03_Data/README.md), [results](04_Results/README.md), [figures](05_Figures/README.md), [documentation](06_Documentation/methodology.md), and [reflection](07_Reflection/README.md).
 
-Maximise the unknown Function 8.
-
-## Week 1 Strategy
-
-Bayesian Optimisation
-
-## Files
-
-- initial_inputs.npy
-
-- initial_outputs.npy
-
-## Week 1 Result
-
-Output: 9.8157087929671
-
-## Week 2 Plan
-
-Continue Bayesian Optimisation and refine the search around high-performing regions.

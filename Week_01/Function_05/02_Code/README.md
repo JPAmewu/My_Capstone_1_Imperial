@@ -1,2 +1,4 @@
-# Week 01 – Function 05 Code
-This folder contains reusable Python code for Function 05 during Week 01.
+# Code
+
+[analyse_function_05.py](analyse_function_05.py) provides independently runnable validation, analysis, plotting, and artifact generation.
+

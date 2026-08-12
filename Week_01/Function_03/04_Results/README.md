@@ -1,3 +1,4 @@
-# Week 01 – Function 03 Results
+# Results
 
-This folder contains query points, best outputs and result summaries for Function 03 during Week 01.
+Generated files: `observations.csv` (validated table) and `summary.json` (statistics, incumbent, and submitted-query comparison).
+

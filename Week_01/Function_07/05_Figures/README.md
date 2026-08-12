@@ -1,2 +1,4 @@
-# Week 01 – Function 07 Figures
-This folder contains plots and visualisations for Function 07 during Week 01.
+# Figures
+
+`function_07_diagnostics.png` consolidates the objective trace and input-coordinate heatmap using Matplotlib.
+

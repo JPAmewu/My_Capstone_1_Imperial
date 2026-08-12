@@ -1,3 +1,4 @@
-# Week 01 – Function 03 Documentation
+# Figures
 
-This folder contains methodology notes and supporting documentation for Function 03 during Week 01.
+`function_03_diagnostics.png` consolidates the objective trace and input-coordinate heatmap using Matplotlib.
+

@@ -1,2 +1,4 @@
-# Week 01 – Function 08 Documentation
-This folder contains methodology notes and supporting documentation for Function 08 during Week 01.
+# Documentation
+
+[methodology.md](methodology.md) records provenance, validation, interpretation boundaries, and reproduction commands.
+

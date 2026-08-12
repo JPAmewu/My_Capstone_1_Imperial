@@ -1,0 +1,24 @@
+{
+  "function": "03",
+  "strategy": "Grid Search",
+  "n_observations": 15,
+  "n_dimensions": 3,
+  "best_query": 4,
+  "best_input": [
+    0.49258141463713434,
+    0.6115931882759961,
+    0.3401763860035727
+  ],
+  "best_output": -0.034835313350078584,
+  "minimum_output": -0.3989255131463011,
+  "mean_output": -0.10716697472812112,
+  "standard_deviation": 0.08421399358525467,
+  "submitted_query": [
+    0.444444,
+    0.666666,
+    0.333333
+  ],
+  "submitted_return": -0.04090761844901528,
+  "submitted_improves_starter_best": false,
+  "submitted_improvement": -0.006072305098936699
+}

@@ -1,0 +1,34 @@
+{
+  "function": "08",
+  "strategy": "Bayesian Optimisation",
+  "n_observations": 40,
+  "n_dimensions": 8,
+  "best_query": 15,
+  "best_input": [
+    0.056447411065611686,
+    0.06595555344270987,
+    0.02292867798954412,
+    0.038786472359111146,
+    0.4039354405187773,
+    0.8010553292222439,
+    0.48830700691299356,
+    0.8930849765397529
+  ],
+  "best_output": 9.598482002566342,
+  "minimum_output": 5.5921933895401965,
+  "mean_output": 7.815274458164078,
+  "standard_deviation": 0.9469034630327874,
+  "submitted_query": [
+    0.273673,
+    0.2604,
+    0.073937,
+    0.078562,
+    0.862321,
+    0.230729,
+    0.10688,
+    0.352588
+  ],
+  "submitted_return": 9.8157087929671,
+  "submitted_improves_starter_best": true,
+  "submitted_improvement": 0.21722679040075832
+}

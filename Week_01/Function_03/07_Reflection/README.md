@@ -1,35 +1,34 @@
 # Week 01 Reflection
 
-**Function 03**
-
 ## Objectives
 
-What I intended to accomplish.
+I intended to validate Function 03's supplied observations and use Grid Search to select a defensible maximisation query.
 
 ## Work completed
 
-A short summary of the work undertaken.
+I preserved and validated the starter arrays, produced descriptive evidence and diagnostics, documented the method, and recorded the submitted query and returned value in a reproducible workflow.
 
 ## Key learning
 
-The concepts and practical skills I learned.
+Objective values must be interpreted within one black-box function. Improvement means exceeding that function's incumbent, not comparing raw magnitudes across different functions.
 
 ## Challenges
 
-Problems, errors, or uncertainties encountered.
+The response surface is unknown and the starter set is sparse in 3 dimensions, so interactions and the global maximum cannot be established reliably.
 
 ## Decisions and reasoning
 
-Important choices and why I made them.
+I used Grid Search, treated the largest supplied response as the incumbent, kept source data immutable, and separated computation from notebook presentation.
 
 ## Results and interpretation
 
-What the results showed and what they mean.
+The submitted query was `[0.444444,0.666666,0.333333]` and returned `-0.04090761844901528`. The generated summary reports its exact difference from the starter incumbent and whether it improved it; the claim is limited to Function 03.
 
 ## Limitations and ethical considerations
 
-Weaknesses, risks, bias, or reliability concerns.
+A small observational sample does not support causal claims. Hidden measurement error or bias could be amplified by optimisation, so provenance, uncertainty, and unsuccessful queries remain visible.
 
 ## Improvements and next steps
 
-What I would change and what I will do next.
+I would collect additional well-spaced evidence, validate a probabilistic surrogate, inspect uncertainty, and apply a documented acquisition rule with boundary and duplicate checks.
+
