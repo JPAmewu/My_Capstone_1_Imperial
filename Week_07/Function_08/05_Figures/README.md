@@ -1,3 +1,3 @@
-# Week 07 – Function 08 Figures
+# Figures
 
-This folder contains plots and visualisations for Function 08 during Week 07.
+`week_07_function_08_diagnostics.png` is the consolidated Matplotlib response trace and coordinate heatmap.

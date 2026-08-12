@@ -1,3 +1,4 @@
-# Week 11 – Function 03 Notebook
+# Notebook
 
-This folder contains the notebook used for Function 03 during Week 11.
+- [Focused Function 03 notebook](Week_11_Function_03.ipynb)
+- [Canonical all-function Week 11 notebook](../../02_Notebook/Week_11_Capstone.ipynb)

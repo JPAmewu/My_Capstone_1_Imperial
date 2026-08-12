@@ -1,3 +1,3 @@
-# Week 11 – Function 03 Figures
+# Figures
 
-This folder contains plots and visualisations for Function 03 during Week 11.
+`week_11_function_03_diagnostics.png` is the consolidated Matplotlib response trace and coordinate heatmap.

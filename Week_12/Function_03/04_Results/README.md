@@ -1,3 +1,3 @@
-# Week 12 – Function 03 Results
+# Results
 
-This folder contains query points, best outputs and result summaries for Function 03 during Week 12.
+Generated `observations.csv` and `summary.json` contain the validated cumulative evidence and explicit evidence-gap report.

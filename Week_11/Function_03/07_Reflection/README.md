@@ -1,35 +1,33 @@
 # Week 11 Reflection
 
-**Function 03**
-
 ## Objectives
 
-What I intended to accomplish.
+I intended to review Function 03 using only evidence verifiable at the Week 11 checkpoint and to preserve a reproducible audit trail.
 
 ## Work completed
 
-A short summary of the work undertaken.
+I validated the cumulative observations, calculated within-function descriptive results, generated a consolidated Matplotlib diagnostic, documented provenance, and separated the analysis module from notebook presentation.
 
 ## Key learning
 
-The concepts and practical skills I learned.
+I learned that optimisation progress is supported only by exact query/return pairs. A proposed query is not an observation until its returned objective is recorded, and raw objective scales cannot be ranked across different black-box functions.
 
 ## Challenges
 
-Problems, errors, or uncertainties encountered.
+At this checkpoint, Weeks 5, 7, 8, and 10 returns are unavailable, and the local Week 11 arrays are quarantined because duplicate sentinel values, cross-function outputs, altered coordinates, and unprovenanced rows fail the integrity audit. This limits trend interpretation and prevents a complete week-by-week performance claim.
 
 ## Decisions and reasoning
 
-Important choices and why I made them.
+I retained the Week 01 arrays as canonical evidence, referenced exact recoverable pairs through a shared registry, treated the largest verified response as the incumbent, and refused to impute missing returns.
 
 ## Results and interpretation
 
-What the results showed and what they mean.
+The generated summary identifies the verified incumbent and latest recoverable response for Function 03. Any improvement flag compares only with earlier observations from this same function.
 
 ## Limitations and ethical considerations
 
-Weaknesses, risks, bias, or reliability concerns.
+The response surface, measurement process, and missingness mechanism are unknown. Selective reporting could overstate performance, so evidence gaps and unsuccessful returns remain explicit.
 
 ## Improvements and next steps
 
-What I would change and what I will do next.
+I would recover the missing original archives, verify each query/return pair against primary records, then fit and validate a probabilistic surrogate before making a new duplicate-checked proposal.

@@ -1,0 +1,32 @@
+{
+  "week": 8,
+  "function": 6,
+  "dimensions": 5,
+  "starter_observations": 20,
+  "recorded_pairs": 3,
+  "total_verified_observations": 23,
+  "best_query": 1,
+  "best_input": [
+    0.7281861047460138,
+    0.1546925696237983,
+    0.7325516687239811,
+    0.6939965090690888,
+    0.056401310518258585
+  ],
+  "best_output": -0.7142649478202404,
+  "latest_verified_query": 23,
+  "latest_verified_input": [
+    0.824244,
+    0.022732,
+    0.960907,
+    0.041715,
+    0.89756
+  ],
+  "latest_verified_output": -2.5293691850310744,
+  "latest_improves_previous_best": false,
+  "minimum_output": -2.5711696316081234,
+  "mean_output": -1.498584506783965,
+  "standard_deviation": 0.49342004729491185,
+  "evidence_gap": "Weeks 3\u20135 and 7 returns are unavailable; the latest exact pair is Week 6.",
+  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
+}

@@ -15,6 +15,8 @@ from Code.eda import observation_summary, observations_frame, running_best
 from Code.gaussian_process import fit_gaussian_process, predict_with_uncertainty
 from Code.plotting import plot_function_diagnostics, plot_proposal_overview
 from Code.query_selection import select_query
+from Code.weekly_evidence import EVIDENCE_GAPS, recorded_pairs
+from Code.weekly_function_review import analyse_weekly_function, load_weekly_evidence, plot_weekly_function
 
 
 class ReusableCodeTests(unittest.TestCase):
@@ -71,6 +73,19 @@ class ReusableCodeTests(unittest.TestCase):
         first = plot_function_diagnostics(self.X, self.y)
         second = plot_proposal_overview(["F1", "F2"], [0.1, 0.2], [0.3, 0.4])
         self.assertGreaterEqual(len(first.axes), 4); self.assertEqual(len(second.axes), 2)
+
+    def test_weekly_evidence_is_reproducible_and_gap_aware(self):
+        self.assertEqual(len(recorded_pairs(2, 1)), 1)
+        self.assertEqual(len(recorded_pairs(11, 1)), 6)
+        self.assertIn("quarantined", EVIDENCE_GAPS[11])
+        X, y, starter_count = load_weekly_evidence(11, 2)
+        self.assertEqual((X.shape, y.shape), ((16, 2), (16,)))
+        self.assertEqual(starter_count, 10)
+        frame, summary = analyse_weekly_function(13, 8)
+        self.assertEqual(summary["total_verified_observations"], len(frame))
+        self.assertIn("archive_integrity", summary)
+        figure = plot_weekly_function(frame, summary)
+        self.assertGreaterEqual(len(figure.axes), 3)
 
 
 if __name__ == "__main__":

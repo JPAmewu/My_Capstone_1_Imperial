@@ -1,0 +1,9 @@
+{
+  "canonical_starter": "Week_01/Function_04/03_Data",
+  "recorded_pairs_registry": "Code/weekly_evidence.py",
+  "review_context": "Week_11/02_Notebook",
+  "data_policy": "No source arrays duplicated or rewritten.",
+  "evidence_gap": "Weeks 5, 7, 8, and 10 returns are unavailable. The local Week 11 arrays contain duplicate sentinel values, cross-function outputs, and altered coordinates, so they are quarantined; Week 9 is the latest exact pair.",
+  "excluded_archive": "Week_11/Function_04/03_Data/function_4_*.npy",
+  "exclusion_reason": "Duplicate sentinel values, cross-function outputs, altered coordinates, and unprovenanced rows."
+}

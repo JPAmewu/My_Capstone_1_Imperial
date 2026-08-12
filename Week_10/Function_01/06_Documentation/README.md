@@ -1,3 +1,3 @@
-# Week 10 – Function 01 Documentation
+# Documentation
 
-This folder contains methodology notes and supporting documentation for Function 01 during Week 10.
+[methodology.md](methodology.md) explains provenance, validation, evidence boundaries, and reproduction.

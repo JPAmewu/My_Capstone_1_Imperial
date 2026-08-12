@@ -1,3 +1,3 @@
-# Week 08 – Function 05 Code
+# Code
 
-This folder contains the Python code used for Function 05 during Week 08.
+[analyse_week_08_function_05.py](analyse_week_08_function_05.py) is an independently runnable wrapper around the shared verified-evidence interface.

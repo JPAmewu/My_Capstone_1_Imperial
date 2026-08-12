@@ -1,3 +1,3 @@
-# Week 02 – Function 07 Results
+# Results
 
-This folder contains query points, best outputs and result summaries for Function 07 during Week 02.
+Generated `observations.csv` and `summary.json` contain the validated cumulative evidence and explicit evidence-gap report.
