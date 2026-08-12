@@ -7,13 +7,14 @@ import numpy as np
 
 matplotlib.use("Agg")
 
+from Code.acquisition_function import expected_improvement, upper_confidence_bound
 from Code.candidate_generation import hybrid_candidates, make_rng, uniform_candidates
 from Code.data_loading import load_numpy_pair, load_starter_data
 from Code.data_validation import duplicate_mask, validate_observations
 from Code.eda import observation_summary, observations_frame, running_best
 from Code.gaussian_process import fit_gaussian_process, predict_with_uncertainty
 from Code.plotting import plot_function_diagnostics, plot_proposal_overview
-from Code.query_selection import expected_improvement, select_query, upper_confidence_bound
+from Code.query_selection import select_query
 
 
 class ReusableCodeTests(unittest.TestCase):
@@ -58,6 +59,13 @@ class ReusableCodeTests(unittest.TestCase):
         self.assertFalse(np.allclose(choice.query, [0.5, 0.5]))
         self.assertEqual(upper_confidence_bound([1], [0.5], kappa=2).tolist(), [2.0])
         self.assertGreaterEqual(expected_improvement([1], [0.5], best=0.5)[0], 0)
+        self.assertEqual(expected_improvement([1], [0], best=0.5).tolist(), [0.0])
+
+    def test_acquisition_validation(self):
+        with self.assertRaises(ValueError):
+            upper_confidence_bound([1, 2], [0.1])
+        with self.assertRaises(ValueError):
+            expected_improvement([1], [-0.1], best=0.5)
 
     def test_plotting_returns_figures(self):
         first = plot_function_diagnostics(self.X, self.y)
