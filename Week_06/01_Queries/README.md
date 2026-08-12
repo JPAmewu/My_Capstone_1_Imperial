@@ -1,6 +1,5 @@
 # Week 06 Queries
 
-This folder contains the weekly query submissions for Week 06.
-
-The query files record the optimisation points submitted during this week
-before the corresponding black-box output values were returned.
+No standalone Week 6 query submission file is preserved here. The exact Week 6
+query/output pairs and modelling context are documented in the
+[Week 6 notebook](../02_Notebook/Week_6_Capstone.ipynb).

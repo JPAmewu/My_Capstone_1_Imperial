@@ -1,6 +1,5 @@
 # Week 07 Queries
 
-This folder contains the weekly query submissions for Week 07.
-
-The query files record the optimisation points submitted during this week
-before the corresponding black-box output values were returned.
+No standalone Week 7 query submission file is preserved here. Reproducible
+proposals and the unavailable-return evidence gap are documented in the
+[Week 7 notebook](../02_Notebook/Week_7_Capstone.ipynb).

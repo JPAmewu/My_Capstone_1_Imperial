@@ -1,6 +1,5 @@
 # Week 05 Queries
 
-This folder contains the weekly query submissions for Week 05.
-
-The query files record the optimisation points submitted during this week
-before the corresponding black-box output values were returned.
+No standalone Week 5 query submission file is preserved here. Reproducible
+proposals and the unavailable-return evidence gap are documented in the
+[Week 5 notebook](../02_Notebook/Week_5_Capstone.ipynb).

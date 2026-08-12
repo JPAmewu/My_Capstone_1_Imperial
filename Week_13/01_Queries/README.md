@@ -1,6 +1,5 @@
-# Week 08 Queries
+# Week 13 queries
 
-This folder contains the weekly query submissions for Week 08.
-
-The query files record the optimisation points submitted during this week
-before the corresponding black-box output values were returned.
+No verified Week 13 query submission is preserved in this folder. The notebook
+under `02_Notebook` is retained only as a historical Week 10-derived placeholder
+and must not be treated as Week 13 evidence.

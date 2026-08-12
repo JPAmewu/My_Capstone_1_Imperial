@@ -1,6 +1,5 @@
 # Week 08 Queries
 
-This folder contains the weekly query submissions for Week 08.
-
-The query files record the optimisation points submitted during this week
-before the corresponding black-box output values were returned.
+No standalone Week 8 query submission file is preserved here. The verified
+observation history and reproducible proposals are documented in the
+[Week 8 notebook](../02_Notebook/Week_8_Capstone.ipynb).

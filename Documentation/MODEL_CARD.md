@@ -1,16 +1,16 @@
 # Model Card: GP-UCB Bayesian Optimisation for the BBO Capstone
 
-**Model name:** BBO Capstone GP-UCB Optimiser  
-**Type:** Sequential Bayesian optimisation with per-function Gaussian Process surrogates  
-**Version:** 1.0 (ten-round/Week 11 data state)  
-**Developer:** JP Amewu  
+**Model name:** BBO Capstone GP-UCB Optimiser
+**Type:** Sequential Bayesian optimisation with per-function Gaussian Process surrogates
+**Version:** 1.1 (corrected Week 11 repository state)
+**Developer:** JP Amewu
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
 
 ## Overview
 
 This approach proposes evaluation points for eight unknown numerical objective functions. It is not one persistent fitted model: a separate Gaussian Process is refitted for each function after every round using all confirmed observations available for that function. An acquisition function then ranks unevaluated candidate points and selects the next query.
 
-The current implementation uses scikit-learn's `GaussianProcessRegressor`, a constant kernel multiplied by an anisotropic Matérn-5/2 kernel, a white-noise component and Upper Confidence Bound (UCB) acquisition. The tenth-round implementation uses `kappa = 2.0`, ten optimiser restarts, deterministic random seeds and 100,000 uniform candidate points per function.
+The corrected Week 11 implementation uses scikit-learn's `GaussianProcessRegressor`, a constant kernel multiplied by an anisotropic Matérn-5/2 kernel, a white-noise component, GP target normalisation, and Upper Confidence Bound (UCB) acquisition. It uses `kappa = 2.0`, three optimiser restarts, deterministic random seeds, and 20,000 bounded candidate points per function.
 
 ## Intended use
 
@@ -33,11 +33,11 @@ The optimisation strategy became progressively more systematic:
 3. **Data reconstruction and validation:** uploaded arrays and returned outputs were reshaped and checked as new rounds were appended.
 4. **Exploration/exploitation analysis:** manual choices were compared with GP recommendations, and dimensionality was recognised as a practical constraint.
 5. **Acquisition-function expansion:** Matérn kernels and Expected Improvement were introduced.
-6. **Robustness improvements:** output scaling, EI/UCB comparison and mixtures of global and local candidates were explored.
+6. **Robustness improvements:** GP target normalisation, EI/UCB comparison, and mixtures of global and local candidates were explored.
 7. **Greater exploitation:** queries increasingly focused on strong observed regions, while malformed or misaligned arrays were investigated.
 8. **Reusable per-function modelling:** repeated EDA and GP/UCB pipelines were applied consistently across all eight functions.
 9. **Lineage repair:** query/output parsing and length mismatches were examined before producing later recommendations.
-10. **Validated GP-UCB workflow:** the confirmed latest observation was appended to each function, the Week 11 dataset was created, and UCB selected the next point from 100,000 bounded candidates while excluding rounded duplicates.
+10. **Validated GP-UCB workflow:** the latest evidence-backed observation was appended to each function, unavailable returns were reported explicitly, and UCB selected the next point from 20,000 bounded candidates while excluding rounded duplicates.
 
 Patterns from prior rounds influenced the balance between exploration and exploitation. Functions with weak or unstable recent outputs retained uncertainty-led exploration. Function 5's large positive values encouraged more exploitation. Higher-dimensional Functions 6–8 required broader uncertainty awareness because their observed points cover only a small fraction of their spaces.
 
@@ -49,16 +49,16 @@ Patterns from prior rounds influenced the balance between exploration and exploi
 
 Function dimensions are:
 
-| Function | Dimensions | Week 11 observations |
+| Function | Dimensions | Verified observations |
 | --- | ---: | ---: |
-| 1 | 2 | 20 |
-| 2 | 2 | 20 |
-| 3 | 3 | 25 |
-| 4 | 4 | 40 |
-| 5 | 4 | 30 |
-| 6 | 5 | 30 |
-| 7 | 6 | 40 |
-| 8 | 8 | 49 |
+| 1 | 2 | 16 |
+| 2 | 2 | 16 |
+| 3 | 3 | 21 |
+| 4 | 4 | 36 |
+| 5 | 4 | 26 |
+| 6 | 5 | 26 |
+| 7 | 6 | 36 |
+| 8 | 8 | 46 |
 
 ## Performance
 
@@ -71,9 +71,9 @@ Because the true objective functions and global optima are unknown, conventional
 - predictive mean, predictive standard deviation and acquisition value at a proposed point;
 - validity checks for bounds, dimensionality, finite values and duplicate submissions.
 
-At the Week 11 dataset state, raw recorded maxima are `64` for Functions 1–4 and 6–8, and `1088.8596182` for Function 5. These values should be interpreted cautiously: repeated exact values of `64` across multiple functions require provenance review and must not be presented as verified global optima. The most recently appended outputs were approximately `0`, `0.0494064`, `-0.0818934`, `-23.4228031`, `430.8031250`, `-1.1717132`, `1.0098940` and `9.6998918` for Functions 1–8 respectively.
+At the corrected Week 11 state, verified best values are approximately `7.710875e-16`, `0.6112052`, `-0.03483531`, `-1.981075`, `1088.860`, `-0.7142649`, `2.149905`, and `9.939904` for Functions 1–8 respectively. These are best observed values, not proven global optima. Returned Week 5, Week 7, and Week 10 pairs are unavailable and excluded.
 
-The tenth-round notebook executed all 27 code cells without error and generated one valid, non-duplicate, correctly dimensioned query for each function. GP optimisation emitted convergence warnings for some kernel parameters reaching specified bounds. These warnings are useful performance diagnostics rather than proof of failure, but they indicate that kernel choices and bounds merit sensitivity testing.
+The corrected Week 11 notebook executed all code cells without error and generated one valid, non-duplicate, correctly dimensioned query for each function. GP optimisation may place some kernel parameters at configured bounds; fitted kernels are retained as diagnostics and should inform later sensitivity testing.
 
 ## Decision process and transparency
 
@@ -107,14 +107,14 @@ Violations can produce overconfident or misleading recommendations. Discontinuit
 
 ## Limitations and failure modes
 
-- **Curse of dimensionality:** 100,000 candidates are sparse in five to eight dimensions.
+- **Curse of dimensionality:** 20,000 candidates are sparse in five to eight dimensions.
 - **Sampling bias:** adaptive queries cluster near previously promising areas, leaving other regions underexplored.
 - **Model misspecification:** one Matérn-family design may not represent every function.
 - **Hyperparameter boundary warnings:** fitted values sometimes reach configured limits.
 - **Sparse data:** observation counts are small relative to continuous search volumes.
 - **Random candidate dependence:** recommendations depend on candidate generation and the chosen seed.
 - **No known optimum:** absolute regret and optimality cannot be calculated.
-- **Data-lineage risk:** early reconstruction steps and repeated `64` values require audit.
+- **Data-lineage risk:** returned Week 5, Week 7, and Week 10 pairs are unavailable.
 - **Limited robustness evaluation:** alternative kernels, acquisition functions and seeds have not been systematically compared under a common protocol.
 
 Potential failures include repeated focus on a local optimum, missing narrow boundary peaks, overexploration of uncertain but unproductive areas or propagating an incorrectly paired observation into later rounds.
@@ -128,7 +128,7 @@ Transparency supports responsible adaptation by allowing reviewers to inspect as
 ## Recommended improvements
 
 1. Preserve an immutable round-by-round ledger with timestamps and provenance.
-2. Audit repeated `64` outputs against original platform responses.
+2. Recover missing returned pairs only from authoritative platform records.
 3. Compare multiple kernels and acquisition functions using repeated seeds.
 4. Replace uniform random candidates with Sobol/Latin hypercube designs or multi-start continuous acquisition optimisation.
 5. Evaluate calibration, sensitivity and cumulative/best-so-far regret when a reference optimum becomes available.

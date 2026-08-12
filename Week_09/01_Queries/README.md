@@ -1,6 +1,5 @@
-# Week 08 Queries
+# Week 09 queries
 
-This folder contains the weekly query submissions for Week 08.
-
-The query files record the optimisation points submitted during this week
-before the corresponding black-box output values were returned.
+No standalone Week 9 query submission file is preserved in this folder. The
+verified query points and provenance used by the analysis are recorded directly
+in the [Week 9 notebook](../02_Notebook/Week_9_Capstone.ipynb).

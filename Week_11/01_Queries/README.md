@@ -1,6 +1,8 @@
-# Week 08 Queries
+# Week 11 queries
 
-This folder contains the weekly query submissions for Week 08.
+This folder preserves the reproducible query points generated for Week 12:
 
-The query files record the optimisation points submitted during this week
-before the corresponding black-box output values were returned.
+- [`week_12_query_points.txt`](week_12_query_points.txt)
+
+Their modelling context, provenance, and duplicate checks are documented in the
+[Week 11 notebook](../02_Notebook/Week_11_Capstone.ipynb).

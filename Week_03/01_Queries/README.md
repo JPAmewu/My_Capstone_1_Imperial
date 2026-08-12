@@ -1,6 +1,5 @@
 # Week 03 Queries
 
-This folder contains the weekly query submissions for Week 03.
-
-The query files record the optimisation points submitted during this week
-before the corresponding black-box output values were returned.
+No standalone Week 3 query submission file is preserved here. Exact returned
+pairs used in the corrected analysis were recovered from the later verified
+record and are documented in the [Week 3 notebook](../02_Notebook/Week_3_Capstone.ipynb).

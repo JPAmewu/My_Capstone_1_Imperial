@@ -1,138 +1,102 @@
-# Bayesian Optimisation for Black-Box Functions
+# Bayesian optimisation for black-box functions
 
 An Imperial College London Machine Learning and Artificial Intelligence
-capstone project exploring sequential black-box optimisation with Gaussian
-Process (GP) surrogate models and acquisition functions.
+capstone project exploring sequential optimisation of eight unknown objective
+functions with Gaussian Process surrogate models and acquisition functions.
 
-## Project documentation
+## Project status
 
-- [Dataset datasheet](DATASET_DATASHEET.md)
-- [Model card](MODEL_CARD.md)
-
-The repository records a week-by-week experimental workflow across eight
-unknown objective functions. Each round incorporates the previous query
-results, analyses the accumulated observations, fits surrogate models, and
-proposes the next points to evaluate.
-
-> **Project status:** exploratory coursework in progress. Weeks 1–11 contain
-> the substantive notebook progression. The notebooks currently stored under
-> Weeks 12–13 repeat the Week 10 workflow and should be treated as placeholders
-> until their data lineage and analysis are updated for the relevant week.
-
-## Project goals
-
-- Optimise expensive black-box functions with as few evaluations as possible.
-- Use Gaussian Processes to represent predictions and uncertainty.
-- Compare manual, exploratory, exploitative, and acquisition-led strategies.
-- Study how performance changes as observations accumulate.
-- Keep a reproducible record of queries, returned outputs, analysis, and
-  reflections.
+Weeks 1–11 contain the substantive experiment history. Their notebooks have
+been corrected, executed locally, and checked for valid data dimensions,
+finite values, bounded candidates, and duplicate proposals. Weeks 12 and 13
+contain historical Week 10-derived notebooks only; they are clearly retained as
+placeholders and are not valid Week 12 or Week 13 evidence.
 
 ## Repository structure
 
-```text
-.
-├── Week_01/ ... Week_13/   Weekly notebooks, queries, and function folders
-│   ├── 01_Queries/         Submitted query records or notes
-│   ├── 02_Notebook/        Main weekly Jupyter notebook
-│   └── Function_01/ ...    Per-function placeholders for data and artefacts
-├── Code/                   Reserved for reusable source code
-├── Documentation/          Reserved for project documentation
-├── Notebooks/              Reserved for consolidated notebooks
-├── Reflections/            Weekly learning reflections
-├── Resources/              Reserved for references and supporting material
-└── README.md                Project overview and notebook index
-```
+| Location | Purpose |
+| --- | --- |
+| [`Code/`](Code/) | Reusable Python scripts and functions shared across weeks |
+| [`Documentation/`](Documentation/) | Datasheet, model card, methodology, project guide, and technical documentation |
+| [`Notebooks/`](Notebooks/) | Final consolidated notebooks, not duplicate weekly notebooks |
+| [`Reflections/`](Reflections/) | Consolidated academic reflections and learning summaries |
+| [`Resources/`](Resources/) | References, links, reading lists, and supporting materials |
+| `Week_01/`–`Week_13/` | Detailed weekly notebooks, queries, data, results, and reflection scaffolding |
 
-Most per-function folders currently contain README placeholders. The numerical
-starter data committed to the repository is under `Week_01`; later notebooks
-primarily expect datasets to be uploaded to Google Colab or mounted from Google
-Drive.
+## Project documentation
 
-## Notebook guide
+- [Dataset datasheet](Documentation/DATASET_DATASHEET.md)
+- [Model card](Documentation/MODEL_CARD.md)
+- [Canonical notebook index](Notebooks/README.md)
+- [Reflection index](Reflections/README.md)
 
-| Week | Notebook focus | Execution state |
+## Canonical weekly notebooks
+
+| Week | Notebook | Evidence status |
 | --- | --- | --- |
-| 1 | Loads the eight starter datasets, inspects shapes and outputs, establishes simple query heuristics, and plots observations. | Mostly executed |
-| 2 | Appends the first returned results and introduces GP regression with an RBF-based kernel, random candidates, and an exploration parameter. | Mostly executed |
-| 3 | Reconstructs uploaded data, repairs dimensions, compares manual reasoning with GP-based query selection, and packages the next submission. | Outputs cleared |
-| 4 | Continues the GP workflow and examines manual choices, exploration versus exploitation, and sensitivity to dimensionality. | Outputs cleared |
-| 5 | Builds the accumulated dataset, parses text results, introduces Matérn kernels and Expected Improvement, and writes query points. | Executed |
-| 6 | Adds data-quality checks, scaling, EI and UCB acquisition functions, and a mixture of global and local candidate generation. | Outputs cleared |
-| 7 | Emphasises exploitation around the strongest region, cleans malformed arrays, performs EDA, and rebuilds per-function summaries. | Executed |
-| 8 | Runs detailed, repeated EDA and separate GP/UCB modelling for all eight functions, including trends, correlations, and candidate searches. | Executed |
-| 9 | Parses and appends Week 8 results, checks and repairs dataset length mismatches, performs EDA, and generates later queries. | Mostly executed |
-| 10 | Builds the Week 10 dataset from Week 9, performs reusable EDA, fits anisotropic Matérn GP models, and selects Week 11 queries with UCB. | Executed |
-| 11 | Appends the confirmed Week 10 observations, creates and analyses the Week 11 dataset, fits GP models, and generates Week 12 query points. | Executed |
-| 12 | Repeats the corrected Week 10 workflow; still references Week 9/10 data and emits Week 11 queries. | Placeholder |
-| 13 | Repeats the corrected Week 10 workflow; still references Week 9/10 data and emits Week 11 queries. | Placeholder |
+| 1 | [Week 1](Week_01/02_Notebook/Week_1_Capstone.ipynb) | Corrected and executed |
+| 2 | [Week 2](Week_02/02_Notebook/Week_2_Capstone.ipynb) | Corrected and executed |
+| 3 | [Week 3](Week_03/02_Notebook/Week_3_Capstone.ipynb) | Corrected and executed |
+| 4 | [Week 4](Week_04/02_Notebook/Week_4_Capstone.ipynb) | Corrected and executed |
+| 5 | [Week 5](Week_05/02_Notebook/Week_5_Capstone.ipynb) | Corrected, reconciled, and executed |
+| 6 | [Week 6](Week_06/02_Notebook/Week_6_Capstone.ipynb) | Corrected and executed |
+| 7 | [Week 7](Week_07/02_Notebook/Week_7_Capstone.ipynb) | Corrected, reconciled, and executed |
+| 8 | [Week 8](Week_08/02_Notebook/Week_8_Capstone.ipynb) | Corrected and executed |
+| 9 | [Week 9](Week_09/02_Notebook/Week_9_Capstone.ipynb) | Corrected and executed |
+| 10 | [Week 10](Week_10/02_Notebook/Week_10_Capstone.ipynb) | Corrected and executed |
+| 11 | [Week 11](Week_11/02_Notebook/Week_11_Capstone.ipynb) | Corrected and executed |
+| 12 | [Week 12 placeholder](Week_12/02_Notebook/Week_12_Placeholder.ipynb) | Historical Week 10-derived placeholder |
+| 13 | [Week 13 placeholder](Week_13/02_Notebook/Week_13_Placeholder.ipynb) | Historical Week 10-derived placeholder |
 
-## Method
+## Optimisation workflow
 
-The notebooks evolve, but the common optimisation loop is:
+The weekly implementation evolves, but the validated workflow is:
 
-1. Load the accumulated input arrays `X` and objective values `y`.
-2. Validate dimensions and inspect the observations.
-3. Scale the target where appropriate.
-4. Fit a Gaussian Process surrogate.
-5. Generate candidate points inside the assumed unit hypercube `[0, 1]^d`.
-6. score candidates with an acquisition function such as Expected Improvement
-   (EI) or Upper Confidence Bound (UCB).
-7. Submit the best candidate, receive its black-box output, and append it to the
-   next dataset.
+1. Load the starter data and append only dimensionally valid query/output pairs
+   with explicit provenance.
+2. Validate shapes, bounds, finite values, and alignment before modelling.
+3. Fit a Gaussian Process with built-in target normalisation.
+4. Generate candidates reproducibly inside the unit hypercube `[0, 1]^d`.
+5. Score candidates with an acquisition function such as Expected Improvement
+   or Upper Confidence Bound.
+6. Reject previously evaluated candidates at submission precision.
+7. Record the proposal, uncertainty, fitted kernel, diagnostics, and evidence
+   gaps for the next round.
 
-The later notebooks use scikit-learn's `GaussianProcessRegressor`, typically
-with RBF or Matérn covariance kernels plus a constant and/or white-noise term.
+The notebooks avoid active Google Drive mounts, `/content` dependencies,
+external writes, environment-dependent `display()` calls, and manual target
+scaling. Matplotlib figures are embedded in the executed Week 1–11 notebooks.
 
 ## Running the notebooks
 
-The notebooks were authored for Google Colab and several contain `/content/...`
-paths, Drive mounts, and Colab-specific imports. To reproduce a notebook:
-
-1. Open it in Google Colab.
-2. Upload the dataset expected by that week, preserving its filename.
-3. Run cells from top to bottom.
-4. Review any cell that deletes, truncates, or overwrites data before executing
-   it.
-
-Core dependencies used across the notebooks are:
+Create a Python environment with:
 
 ```text
 numpy
 pandas
 matplotlib
-seaborn
 scipy
 scikit-learn
 jupyter
 ```
 
-There are currently no standalone Python modules or automated tests in the
-repository. Extracting shared loading, validation, plotting, GP fitting, and
-acquisition logic into a tested package would make future experiments easier to
-reproduce and maintain.
+Run a notebook from the repository root so its root-discovery logic can locate
+the Week 1 starter arrays. Execute cells from top to bottom. The final cell in
+each corrected Week 1–11 notebook contains reproducibility and integrity
+assertions.
 
-## Known limitations
+## Evidence limitations
 
-- The corrected notebooks now stop on input/output mismatches instead of
-  truncating or overwriting source data. Resolving any mismatch still requires
-  the original query history, which is not committed here.
-- Random candidate search becomes inefficient in higher dimensions, even with
-  previously evaluated points excluded at submission precision.
-
-
-## Recommended next steps
-
-1. Preserve raw weekly data as immutable inputs and write derived data elsewhere.
-2. Add exact shape, bounds, duplicate, and finite-value checks before GP fitting.
-3. Extract the repeated workflow into a small Python package with unit tests.
-4. Optimise acquisition functions with multi-start numerical optimisation or a
-   space-filling candidate design instead of only uniform random sampling.
-5. Evaluate GP calibration and acquisition choices with repeatable metrics.
-6. Replace the Week 11–13 placeholder notebooks with their actual weekly work.
+- Returned Week 5 and Week 7 query/output pairs are not preserved in the
+  repository and are excluded rather than reconstructed without evidence.
+- Week 3 and Week 4 pairs used by later analyses were recovered from the exact
+  function-grouped record preserved in the Week 9 workflow.
+- Weeks 12 and 13 remain placeholders pending genuine weekly data and analysis.
+- Objective values from different functions are not directly comparable because
+  the black-box functions use different scales.
 
 ## Author
 
-JP Amewu<br>
-Machine Learning & Artificial Intelligence Programme<br>
+JP Amewu
+Machine Learning & Artificial Intelligence Programme
 Imperial College London, 2026
