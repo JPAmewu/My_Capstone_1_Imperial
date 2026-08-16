@@ -2,7 +2,7 @@
 
 **Model name:** BBO Capstone GP-UCB Optimiser
 **Type:** Sequential Bayesian optimisation with per-function Gaussian Process surrogates
-**Version:** 1.1 (corrected Week 11 repository state)
+**Version:** 1.2 (verified ledger added)
 **Developer:** JP Amewu
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
 
@@ -88,7 +88,9 @@ The process is transparent at the procedural level. The repository records:
 - duplicate exclusion and validation checks;
 - notebook outputs, warnings and selected query strings.
 
-Another researcher can reproduce the latest recommendations if they use the same dataset, notebook, Python dependencies and random seeds. Full reconstruction of every earlier decision additionally requires the immutable round-by-round query ledger, returned outputs, exact software versions and explanations of any manual interventions. Adding those details would materially improve the card; the current structure is sufficient to describe the method, but not to guarantee bit-for-bit reproduction of every historical round.
+The canonical [`Results/query_output_ledger.csv`](../Results/query_output_ledger.csv) now records the 48 exact returned pairs recoverable for Weeks 1–4, 6 and 9, with notebook and commit provenance. Its SHA-256 checksum detects unintended changes to published rows. Missing submission dates and unavailable rounds remain explicit rather than reconstructed.
+
+Another researcher can reproduce the latest recommendations if they use the same dataset, notebook, Python dependencies and random seeds. The verified ledger improves reconstruction of the six recoverable rounds, but unavailable returned pairs, exact submission dates, historical software versions and explanations of some manual interventions still prevent bit-for-bit reproduction of every round.
 
 ## Assumptions
 
@@ -127,7 +129,7 @@ Transparency supports responsible adaptation by allowing reviewers to inspect as
 
 ## Recommended improvements
 
-1. Preserve an immutable round-by-round ledger with timestamps and provenance.
+1. Append future confirmed pairs to the immutable ledger with authoritative timestamps and provenance; never alter an existing published row.
 2. Recover missing returned pairs only from authoritative platform records.
 3. Compare multiple kernels and acquisition functions using repeated seeds.
 4. Replace uniform random candidates with Sobol/Latin hypercube designs or multi-start continuous acquisition optimisation.

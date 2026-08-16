@@ -1,6 +1,6 @@
 # Datasheet: BBO capstone sequential optimisation dataset
 
-**Version:** 1.1 (verified Week 11 repository state)
+**Version:** 1.2 (verified ledger added)
 **Creator and maintainer:** JP Amewu
 **Programme:** Imperial College London Machine Learning and Artificial Intelligence Programme
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
@@ -32,11 +32,13 @@ uses the Week 1 starter arrays plus exact returned pairs from Weeks 1–4, 6, an
 
 Inputs and outputs are stored as NumPy `.npy` arrays. Query submissions are stored as plain-text `.txt` files, normally with six-decimal coordinates separated by hyphens. Jupyter/Colab `.ipynb` notebooks contain collection logic, validation, analysis, modelling and generated query points. Some weekly directories also contain Markdown documentation and placeholders.
 
+The canonical append-only ledger is [`Results/query_output_ledger.csv`](../Results/query_output_ledger.csv). It contains the 48 exact query/output pairs recoverable for all eight functions in Weeks 1–4, 6 and 9. Each row records its dataset version, evidence notebook, source commit and verification status. [`Results/query_output_ledger.sha256`](../Results/query_output_ledger.sha256) provides a content-integrity checksum. Submission dates remain blank because authoritative dates were not recorded and are not inferred.
+
 There are no human subjects, demographic groups, personal data or labels describing people. The outputs are numerical objective values rather than conventional supervised-learning class labels. A fixed train/test split is not recommended because observations are collected sequentially and every confirmed observation is used to update the surrogate.
 
 ### Known gaps and integrity concerns
 
-- The complete, immutable query-and-response ledger is not consistently available for every early round.
+- The immutable ledger covers only the 48 exact pairs supported by repository evidence; returned pairs for Weeks 5, 7, 8 and 10–13 remain unavailable.
 - Exact collection timestamps and software versions were not recorded for every observation.
 - Weeks 12 and 13 remain placeholders and do not yet represent successive completed datasets.
 - Returned Week 5, Week 7, and Week 10 pairs are not recoverable from the repository and are excluded from the verified Week 11 analysis.
@@ -103,6 +105,7 @@ No explicit licence file was found in the repository when this datasheet was pre
 JP Amewu maintains the dataset. Maintenance should include:
 
 - appending only confirmed query-output pairs;
+- treating existing rows in `Results/query_output_ledger.csv` as immutable and verifying its SHA-256 checksum;
 - preserving immutable copies of each previous week's dataset;
 - recording provenance, submission round, timestamp and code version for every new observation;
 - validating shape, bounds, finiteness and duplicates before publication;
