@@ -44,5 +44,5 @@ claims of optimality.
 
 ## Improvements and next steps
 
-Use a Gaussian Process with explicit uncertainty and a reproducible acquisition
+For the next week, which is the second week, I will continue to use a Gaussian Process with explicit uncertainty and a reproducible acquisition
 strategy in Week 2, while retaining duplicate, bounds, and dimensional checks.
