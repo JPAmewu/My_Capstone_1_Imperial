@@ -14,7 +14,7 @@ I learned that optimisation progress is supported only by exact query/return pai
 
 ## Challenges
 
-At this checkpoint, Weeks 5, 7, 8, and 10 returns are unavailable. This limits trend interpretation and prevents a complete week-by-week performance claim.
+At this checkpoint, Confirmed cumulative evidence is available through Week 10. The trajectory is interpreted only from verified evidence.
 
 ## Decisions and reasoning
 

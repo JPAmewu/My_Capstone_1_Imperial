@@ -14,7 +14,7 @@ I learned that optimisation progress is supported only by exact query/return pai
 
 ## Challenges
 
-At this checkpoint, early exact pairs are recoverable but archive provenance is incomplete. This limits trend interpretation and prevents a complete week-by-week performance claim.
+At this checkpoint, Confirmed cumulative evidence is available through Week 5. The trajectory is interpreted only from verified evidence.
 
 ## Decisions and reasoning
 

@@ -3,24 +3,24 @@
   "function": 2,
   "dimensions": 2,
   "starter_observations": 10,
-  "recorded_pairs": 5,
-  "total_verified_observations": 15,
+  "recorded_pairs": 7,
+  "total_verified_observations": 17,
   "best_query": 10,
   "best_input": [
     0.7026365569244406,
     0.9265641975455574
   ],
   "best_output": 0.6112052157614438,
-  "latest_verified_query": 15,
+  "latest_verified_query": 17,
   "latest_verified_input": [
-    0.555332,
-    0.360931
+    0.009675,
+    0.999881
   ],
-  "latest_verified_output": 0.22078072799826579,
+  "latest_verified_output": 0.04871438177077586,
   "latest_improves_previous_best": false,
   "minimum_output": -0.06562362443733738,
-  "mean_output": 0.17372093995711482,
-  "standard_deviation": 0.20679387658083268,
-  "evidence_gap": "Week 5 return is unavailable; the dataset contains four early pairs plus the exact Week 6 pair.",
+  "mean_output": 0.16559176495326183,
+  "standard_deviation": 0.1964587656048975,
+  "evidence_gap": "Confirmed cumulative evidence is available through Week 7.",
   "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
 }

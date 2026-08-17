@@ -1,105 +1,105 @@
 Week,Function,Dimensions,Observation count,Previous best,New observation,New best,Improvement,Fitted GP kernel,Predictive std at selected query,UCB score,Evidence status,Evidence note
-1,F1,2,11,7.710875114502849e-16,-1.560646704467778e-117,7.710875114502849e-16,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-1,F2,2,11,0.6112052157614438,-0.03182956281754251,0.6112052157614438,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-1,F3,3,16,-0.034835313350078584,-0.04090761844901528,-0.034835313350078584,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-1,F4,4,31,-4.025542281908162,-8.727516493155957,-4.025542281908162,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-1,F5,4,21,1088.8596181962705,1088.8535114737463,1088.8596181962705,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-1,F6,5,21,-0.7142649478202404,-1.1520351120911565,-0.7142649478202404,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-1,F7,6,31,1.3649683044991994,1.0510148516295004,1.3649683044991994,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-1,F8,8,41,9.598482002566342,9.8157087929671,9.8157087929671,0.21722679040075832,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-2,F1,2,12,7.710875114502849e-16,1.674933466363685e-36,7.710875114502849e-16,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-2,F2,2,12,0.6112052157614438,0.022666631114895516,0.6112052157614438,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-2,F3,3,17,-0.034835313350078584,-0.08987474979637637,-0.034835313350078584,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-2,F4,4,32,-4.025542281908162,-31.73535839431216,-4.025542281908162,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-2,F5,4,22,1088.8596181962705,1035.6341457754475,1088.8596181962705,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-2,F6,5,22,-0.7142649478202404,-0.8782405650300305,-0.7142649478202404,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-2,F7,6,32,1.3649683044991994,0.308765180253091,1.3649683044991994,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-2,F8,8,42,9.8157087929671,9.9399041910574,9.9399041910574,0.12419539809029878,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-3,F1,2,13,7.710875114502849e-16,-1.0755942664604116e-32,7.710875114502849e-16,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-3,F2,2,13,0.6112052157614438,0.04868370128566149,0.6112052157614438,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-3,F3,3,18,-0.034835313350078584,-0.18323876643005035,-0.034835313350078584,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-3,F4,4,33,-4.025542281908162,-1.9810750402526334,-1.9810750402526334,2.044467241655529,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-3,F5,4,23,1088.8596181962705,1035.6647479285914,1088.8596181962705,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-3,F6,5,23,-0.7142649478202404,-1.339542402620705,-0.7142649478202404,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-3,F7,6,33,1.3649683044991994,2.149905456773691,2.149905456773691,0.7849371522744915,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-3,F8,8,43,9.9399041910574,8.9636037557014,9.9399041910574,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-4,F1,2,14,7.710875114502849e-16,-2.4666412561217706e-107,7.710875114502849e-16,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-4,F2,2,14,0.6112052157614438,0.038774938576018964,0.6112052157614438,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-4,F3,3,19,-0.034835313350078584,-0.08251349582236739,-0.034835313350078584,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-4,F4,4,34,-1.9810750402526334,-9.312811809021998,-1.9810750402526334,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-4,F5,4,24,1088.8596181962705,163.1225,1088.8596181962705,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-4,F6,5,24,-0.7142649478202404,-2.4375082517089726,-0.7142649478202404,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-4,F7,6,34,2.149905456773691,1.2087334449610816,2.149905456773691,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-4,F8,8,44,9.9399041910574,9.2540644925525,9.9399041910574,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-5,F1,2,14,7.710875114502849e-16,,7.710875114502849e-16,,Not recorded,,,Return unavailable,Week 5 return unavailable in the repository evidence.
-5,F2,2,14,0.6112052157614438,,0.6112052157614438,,Not recorded,,,Return unavailable,Week 5 return unavailable in the repository evidence.
-5,F3,3,19,-0.034835313350078584,,-0.034835313350078584,,Not recorded,,,Return unavailable,Week 5 return unavailable in the repository evidence.
-5,F4,4,34,-1.9810750402526334,,-1.9810750402526334,,Not recorded,,,Return unavailable,Week 5 return unavailable in the repository evidence.
-5,F5,4,24,1088.8596181962705,,1088.8596181962705,,Not recorded,,,Return unavailable,Week 5 return unavailable in the repository evidence.
-5,F6,5,24,-0.7142649478202404,,-0.7142649478202404,,Not recorded,,,Return unavailable,Week 5 return unavailable in the repository evidence.
-5,F7,6,34,2.149905456773691,,2.149905456773691,,Not recorded,,,Return unavailable,Week 5 return unavailable in the repository evidence.
-5,F8,8,44,9.9399041910574,,9.9399041910574,,Not recorded,,,Return unavailable,Week 5 return unavailable in the repository evidence.
-6,F1,2,15,7.710875114502849e-16,7.651210225556565e-239,7.710875114502849e-16,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-6,F2,2,15,0.6112052157614438,0.22078072799826579,0.6112052157614438,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-6,F3,3,20,-0.034835313350078584,-0.05739710166867316,-0.034835313350078584,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-6,F4,4,35,-1.9810750402526334,-17.92630659900679,-1.9810750402526334,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-6,F5,4,25,1088.8596181962705,0.9401160531598542,1088.8596181962705,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-6,F6,5,25,-0.7142649478202404,-2.5293691850310744,-0.7142649478202404,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-6,F7,6,35,2.149905456773691,0.19078262729854223,2.149905456773691,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-6,F8,8,45,9.9399041910574,9.1386093133071,9.9399041910574,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-7,F1,2,15,7.710875114502849e-16,,7.710875114502849e-16,,Not recorded,,,Return unavailable,Week 7 return unavailable in the repository evidence.
-7,F2,2,15,0.6112052157614438,,0.6112052157614438,,Not recorded,,,Return unavailable,Week 7 return unavailable in the repository evidence.
-7,F3,3,20,-0.034835313350078584,,-0.034835313350078584,,Not recorded,,,Return unavailable,Week 7 return unavailable in the repository evidence.
-7,F4,4,35,-1.9810750402526334,,-1.9810750402526334,,Not recorded,,,Return unavailable,Week 7 return unavailable in the repository evidence.
-7,F5,4,25,1088.8596181962705,,1088.8596181962705,,Not recorded,,,Return unavailable,Week 7 return unavailable in the repository evidence.
-7,F6,5,25,-0.7142649478202404,,-0.7142649478202404,,Not recorded,,,Return unavailable,Week 7 return unavailable in the repository evidence.
-7,F7,6,35,2.149905456773691,,2.149905456773691,,Not recorded,,,Return unavailable,Week 7 return unavailable in the repository evidence.
-7,F8,8,45,9.9399041910574,,9.9399041910574,,Not recorded,,,Return unavailable,Week 7 return unavailable in the repository evidence.
-8,F1,2,15,7.710875114502849e-16,,7.710875114502849e-16,,Not recorded,,,Return unavailable,Week 8 return unavailable in the repository evidence.
-8,F2,2,15,0.6112052157614438,,0.6112052157614438,,Not recorded,,,Return unavailable,Week 8 return unavailable in the repository evidence.
-8,F3,3,20,-0.034835313350078584,,-0.034835313350078584,,Not recorded,,,Return unavailable,Week 8 return unavailable in the repository evidence.
-8,F4,4,35,-1.9810750402526334,,-1.9810750402526334,,Not recorded,,,Return unavailable,Week 8 return unavailable in the repository evidence.
-8,F5,4,25,1088.8596181962705,,1088.8596181962705,,Not recorded,,,Return unavailable,Week 8 return unavailable in the repository evidence.
-8,F6,5,25,-0.7142649478202404,,-0.7142649478202404,,Not recorded,,,Return unavailable,Week 8 return unavailable in the repository evidence.
-8,F7,6,35,2.149905456773691,,2.149905456773691,,Not recorded,,,Return unavailable,Week 8 return unavailable in the repository evidence.
-8,F8,8,45,9.9399041910574,,9.9399041910574,,Not recorded,,,Return unavailable,Week 8 return unavailable in the repository evidence.
-9,F1,2,16,7.710875114502849e-16,-3.089423814911752e-96,7.710875114502849e-16,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-9,F2,2,16,0.6112052157614438,0.04940646022261656,0.6112052157614438,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-9,F3,3,21,-0.034835313350078584,-0.08189344986566433,-0.034835313350078584,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-9,F4,4,36,-1.9810750402526334,-23.42280313862202,-1.9810750402526334,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-9,F5,4,26,1088.8596181962705,430.8031249775375,1088.8596181962705,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-9,F6,5,26,-0.7142649478202404,-1.1717131510084098,-0.7142649478202404,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-9,F7,6,36,2.149905456773691,1.009840334573839,2.149905456773691,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-9,F8,8,46,9.9399041910574,9.6998918101966,9.9399041910574,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Code/weekly_evidence.py.
-10,F1,2,16,7.710875114502849e-16,,7.710875114502849e-16,,Not recorded,,,Return unavailable,Week 10 return unavailable in the repository evidence.
-10,F2,2,16,0.6112052157614438,,0.6112052157614438,,Not recorded,,,Return unavailable,Week 10 return unavailable in the repository evidence.
-10,F3,3,21,-0.034835313350078584,,-0.034835313350078584,,Not recorded,,,Return unavailable,Week 10 return unavailable in the repository evidence.
-10,F4,4,36,-1.9810750402526334,,-1.9810750402526334,,Not recorded,,,Return unavailable,Week 10 return unavailable in the repository evidence.
-10,F5,4,26,1088.8596181962705,,1088.8596181962705,,Not recorded,,,Return unavailable,Week 10 return unavailable in the repository evidence.
-10,F6,5,26,-0.7142649478202404,,-0.7142649478202404,,Not recorded,,,Return unavailable,Week 10 return unavailable in the repository evidence.
-10,F7,6,36,2.149905456773691,,2.149905456773691,,Not recorded,,,Return unavailable,Week 10 return unavailable in the repository evidence.
-10,F8,8,46,9.9399041910574,,9.9399041910574,,Not recorded,,,Return unavailable,Week 10 return unavailable in the repository evidence.
-11,F1,2,16,7.710875114502849e-16,,7.710875114502849e-16,,Not recorded,,,Return unavailable,Week 11 arrays quarantined after provenance and corruption checks.
-11,F2,2,16,0.6112052157614438,,0.6112052157614438,,Not recorded,,,Return unavailable,Week 11 arrays quarantined after provenance and corruption checks.
-11,F3,3,21,-0.034835313350078584,,-0.034835313350078584,,Not recorded,,,Return unavailable,Week 11 arrays quarantined after provenance and corruption checks.
-11,F4,4,36,-1.9810750402526334,,-1.9810750402526334,,Not recorded,,,Return unavailable,Week 11 arrays quarantined after provenance and corruption checks.
-11,F5,4,26,1088.8596181962705,,1088.8596181962705,,Not recorded,,,Return unavailable,Week 11 arrays quarantined after provenance and corruption checks.
-11,F6,5,26,-0.7142649478202404,,-0.7142649478202404,,Not recorded,,,Return unavailable,Week 11 arrays quarantined after provenance and corruption checks.
-11,F7,6,36,2.149905456773691,,2.149905456773691,,Not recorded,,,Return unavailable,Week 11 arrays quarantined after provenance and corruption checks.
-11,F8,8,46,9.9399041910574,,9.9399041910574,,Not recorded,,,Return unavailable,Week 11 arrays quarantined after provenance and corruption checks.
-12,F1,2,16,7.710875114502849e-16,,7.710875114502849e-16,,Not recorded,,,Return unavailable,No verified Week 12 return is present.
-12,F2,2,16,0.6112052157614438,,0.6112052157614438,,Not recorded,,,Return unavailable,No verified Week 12 return is present.
-12,F3,3,21,-0.034835313350078584,,-0.034835313350078584,,Not recorded,,,Return unavailable,No verified Week 12 return is present.
-12,F4,4,36,-1.9810750402526334,,-1.9810750402526334,,Not recorded,,,Return unavailable,No verified Week 12 return is present.
-12,F5,4,26,1088.8596181962705,,1088.8596181962705,,Not recorded,,,Return unavailable,No verified Week 12 return is present.
-12,F6,5,26,-0.7142649478202404,,-0.7142649478202404,,Not recorded,,,Return unavailable,No verified Week 12 return is present.
-12,F7,6,36,2.149905456773691,,2.149905456773691,,Not recorded,,,Return unavailable,No verified Week 12 return is present.
-12,F8,8,46,9.9399041910574,,9.9399041910574,,Not recorded,,,Return unavailable,No verified Week 12 return is present.
-13,F1,2,16,7.710875114502849e-16,,7.710875114502849e-16,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
-13,F2,2,16,0.6112052157614438,,0.6112052157614438,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
-13,F3,3,21,-0.034835313350078584,,-0.034835313350078584,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
-13,F4,4,36,-1.9810750402526334,,-1.9810750402526334,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
-13,F5,4,26,1088.8596181962705,,1088.8596181962705,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
-13,F6,5,26,-0.7142649478202404,,-0.7142649478202404,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
-13,F7,6,36,2.149905456773691,,2.149905456773691,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
-13,F8,8,46,9.9399041910574,,9.9399041910574,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
+1,F1,2,11,7.710875114502849e-16,-1.560646704467778e-117,7.710875114502849e-16,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+1,F2,2,11,0.6112052157614438,-0.03182956281754251,0.6112052157614438,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+1,F3,3,16,-0.034835313350078584,-0.04090761844901528,-0.034835313350078584,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+1,F4,4,31,-4.025542281908162,-8.727516493155957,-4.025542281908162,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+1,F5,4,21,1088.8596181962705,1088.8535114737463,1088.8596181962705,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+1,F6,5,21,-0.7142649478202404,-1.1520351120911565,-0.7142649478202404,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+1,F7,6,31,1.3649683044991994,1.0510148516295004,1.3649683044991994,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+1,F8,8,41,9.598482002566342,9.8157087929671,9.8157087929671,0.21722679040075832,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+2,F1,2,12,7.710875114502849e-16,1.674933466363685e-36,7.710875114502849e-16,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+2,F2,2,12,0.6112052157614438,0.022666631114895516,0.6112052157614438,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+2,F3,3,17,-0.034835313350078584,-0.08987474979637637,-0.034835313350078584,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+2,F4,4,32,-4.025542281908162,-31.73535839431216,-4.025542281908162,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+2,F5,4,22,1088.8596181962705,1035.6341457754475,1088.8596181962705,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+2,F6,5,22,-0.7142649478202404,-0.8782405650300305,-0.7142649478202404,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+2,F7,6,32,1.3649683044991994,0.308765180253091,1.3649683044991994,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+2,F8,8,42,9.8157087929671,9.9399041910574,9.9399041910574,0.12419539809029878,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+3,F1,2,13,7.710875114502849e-16,-1.0755942664604116e-32,7.710875114502849e-16,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+3,F2,2,13,0.6112052157614438,0.04868370128566149,0.6112052157614438,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+3,F3,3,18,-0.034835313350078584,-0.18323876643005035,-0.034835313350078584,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+3,F4,4,33,-4.025542281908162,-1.9810750402526334,-1.9810750402526334,2.044467241655529,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+3,F5,4,23,1088.8596181962705,1035.6647479285914,1088.8596181962705,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+3,F6,5,23,-0.7142649478202404,-1.339542402620705,-0.7142649478202404,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+3,F7,6,33,1.3649683044991994,2.149905456773691,2.149905456773691,0.7849371522744915,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+3,F8,8,43,9.9399041910574,8.9636037557014,9.9399041910574,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+4,F1,2,14,7.710875114502849e-16,-2.4666412561217706e-107,7.710875114502849e-16,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+4,F2,2,14,0.6112052157614438,0.038774938576018964,0.6112052157614438,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+4,F3,3,19,-0.034835313350078584,-0.08251349582236739,-0.034835313350078584,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+4,F4,4,34,-1.9810750402526334,-9.312811809021998,-1.9810750402526334,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+4,F5,4,24,1088.8596181962705,163.1225,1088.8596181962705,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+4,F6,5,24,-0.7142649478202404,-2.4375082517089726,-0.7142649478202404,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+4,F7,6,34,2.149905456773691,1.2087334449610816,2.149905456773691,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+4,F8,8,44,9.9399041910574,9.2540644925525,9.9399041910574,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+5,F1,2,15,7.710875114502849e-16,7.6512102255565565e-239,7.710875114502849e-16,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+5,F2,2,15,0.6112052157614438,0.22078072799826579,0.6112052157614438,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+5,F3,3,20,-0.034835313350078584,-0.05739710166867316,-0.034835313350078584,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+5,F4,4,35,-1.9810750402526334,-17.92630659900679,-1.9810750402526334,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+5,F5,4,25,1088.8596181962705,0.9401160531598542,1088.8596181962705,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+5,F6,5,25,-0.7142649478202404,-2.5293691850310744,-0.7142649478202404,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+5,F7,6,35,2.149905456773691,0.19078262729854223,2.149905456773691,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+5,F8,8,45,9.9399041910574,9.1386093113071,9.9399041910574,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+6,F1,2,16,7.710875114502849e-16,6.131855211153796e-211,7.710875114502849e-16,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+6,F2,2,16,0.6112052157614438,0.16053152307795218,0.6112052157614438,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+6,F3,3,21,-0.034835313350078584,-0.11700517654347184,-0.034835313350078584,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+6,F4,4,36,-1.9810750402526334,-20.879363209082445,-1.9810750402526334,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+6,F5,4,26,1088.8596181962705,281.9115728306016,1088.8596181962705,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+6,F6,5,26,-0.7142649478202404,-1.3125396070217887,-0.7142649478202404,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+6,F7,6,36,2.149905456773691,1.611967464642638,2.149905456773691,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+6,F8,8,46,9.9399041910574,8.5570343323444,9.9399041910574,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+7,F1,2,17,7.710875114502849e-16,-6.738616132275143e-151,7.710875114502849e-16,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+7,F2,2,17,0.6112052157614438,0.04871438177077586,0.6112052157614438,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+7,F3,3,22,-0.034835313350078584,-0.047183135414436805,-0.034835313350078584,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+7,F4,4,37,-1.9810750402526334,-20.19585364168859,-1.9810750402526334,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+7,F5,4,27,1088.8596181962705,163.1225,1088.8596181962705,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+7,F6,5,27,-0.7142649478202404,-1.2870894592671105,-0.7142649478202404,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+7,F7,6,37,2.149905456773691,0.8994987341856474,2.149905456773691,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+7,F8,8,47,9.9399041910574,8.5636390087854,9.9399041910574,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+8,F1,2,18,7.710875114502849e-16,-1.7723999829558996e-96,7.710875114502849e-16,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+8,F2,2,18,0.6112052157614438,0.07276416200318507,0.6112052157614438,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+8,F3,3,23,-0.034835313350078584,-0.07741316335640898,-0.034835313350078584,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+8,F4,4,38,-1.9810750402526334,-28.736322947747187,-1.9810750402526334,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+8,F5,4,28,1088.8596181962705,1465.5121917504077,1465.5121917504077,376.65257355413723,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+8,F6,5,28,-0.7142649478202404,-1.4794522548883542,-0.7142649478202404,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+8,F7,6,38,2.149905456773691,0.8461801483768777,2.149905456773691,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+8,F8,8,48,9.9399041910574,9.0200908822654,9.9399041910574,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+9,F1,2,19,7.710875114502849e-16,-3.089423814911752e-96,7.710875114502849e-16,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+9,F2,2,19,0.6112052157614438,0.049406406222616564,0.6112052157614438,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+9,F3,3,24,-0.034835313350078584,-0.08189344986506433,-0.034835313350078584,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+9,F4,4,39,-1.9810750402526334,-23.42280313862202,-1.9810750402526334,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+9,F5,4,29,1465.5121917504077,430.8031249775375,1465.5121917504077,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+9,F6,5,29,-0.7142649478202404,-1.1717131510084098,-0.7142649478202404,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+9,F7,6,39,2.149905456773691,1.009894033457839,2.149905456773691,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+9,F8,8,49,9.9399041910574,9.6998918101966,9.9399041910574,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+10,F1,2,20,7.710875114502849e-16,-4.5921413403053304e-89,7.710875114502849e-16,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+10,F2,2,20,0.6112052157614438,0.02678836560203038,0.6112052157614438,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+10,F3,3,25,-0.034835313350078584,-0.0463387992394308,-0.034835313350078584,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+10,F4,4,40,-1.9810750402526334,-15.125730966112929,-1.9810750402526334,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+10,F5,4,30,1465.5121917504077,1424.6366011060773,1465.5121917504077,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+10,F6,5,30,-0.7142649478202404,-1.4490886989479597,-0.7142649478202404,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+10,F7,6,40,2.149905456773691,0.8456374465318568,2.149905456773691,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+10,F8,8,50,9.9399041910574,9.3736675460081,9.9399041910574,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+11,F1,2,21,7.710875114502849e-16,8.159220183163013e-130,7.710875114502849e-16,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+11,F2,2,21,0.6112052157614438,0.06529972619341909,0.6112052157614438,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+11,F3,3,26,-0.034835313350078584,-0.038446126253640946,-0.034835313350078584,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+11,F4,4,41,-1.9810750402526334,-14.992666345077428,-1.9810750402526334,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+11,F5,4,31,1465.5121917504077,210.03831315192616,1465.5121917504077,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+11,F6,5,31,-0.7142649478202404,-1.154424131709899,-0.7142649478202404,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+11,F7,6,41,2.149905456773691,1.478174096441659,2.149905456773691,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+11,F8,8,51,9.9399041910574,9.2760687615836,9.9399041910574,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
+12,F1,2,21,7.710875114502849e-16,,7.710875114502849e-16,,Not recorded,,,Return unavailable,No verified Week 12 return is present.
+12,F2,2,21,0.6112052157614438,,0.6112052157614438,,Not recorded,,,Return unavailable,No verified Week 12 return is present.
+12,F3,3,26,-0.034835313350078584,,-0.034835313350078584,,Not recorded,,,Return unavailable,No verified Week 12 return is present.
+12,F4,4,41,-1.9810750402526334,,-1.9810750402526334,,Not recorded,,,Return unavailable,No verified Week 12 return is present.
+12,F5,4,31,1465.5121917504077,,1465.5121917504077,,Not recorded,,,Return unavailable,No verified Week 12 return is present.
+12,F6,5,31,-0.7142649478202404,,-0.7142649478202404,,Not recorded,,,Return unavailable,No verified Week 12 return is present.
+12,F7,6,41,2.149905456773691,,2.149905456773691,,Not recorded,,,Return unavailable,No verified Week 12 return is present.
+12,F8,8,51,9.9399041910574,,9.9399041910574,,Not recorded,,,Return unavailable,No verified Week 12 return is present.
+13,F1,2,21,7.710875114502849e-16,,7.710875114502849e-16,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
+13,F2,2,21,0.6112052157614438,,0.6112052157614438,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
+13,F3,3,26,-0.034835313350078584,,-0.034835313350078584,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
+13,F4,4,41,-1.9810750402526334,,-1.9810750402526334,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
+13,F5,4,31,1465.5121917504077,,1465.5121917504077,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
+13,F6,5,31,-0.7142649478202404,,-0.7142649478202404,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
+13,F7,6,41,2.149905456773691,,2.149905456773691,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
+13,F8,8,51,9.9399041910574,,9.9399041910574,,Not recorded,,,Return unavailable,No verified Week 13 return is present.

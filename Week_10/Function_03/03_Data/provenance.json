@@ -1,7 +1,7 @@
 {
   "canonical_starter": "Week_01/Function_03/03_Data",
-  "recorded_pairs_registry": "Code/weekly_evidence.py",
+  "recorded_pairs_registry": "Results/query_output_ledger.csv",
   "review_context": "Week_10/02_Notebook",
-  "data_policy": "No source arrays duplicated or rewritten.",
-  "evidence_gap": "Weeks 5, 7, 8, and 10 returns are unavailable; Week 9 is the latest exact pair."
+  "data_policy": "Derived arrays are reconstructed from starter data plus the ledger; source arrays are never rewritten.",
+  "evidence_gap": "Confirmed cumulative evidence is available through Week 10."
 }

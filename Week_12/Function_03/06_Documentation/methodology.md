@@ -23,7 +23,7 @@ The workflow requires finite aligned arrays, 3 input dimensions, and coordinates
 
 ## Evidence boundary
 
-At this review point, the corrupted Week 11 arrays remain quarantined and no verified Week 11 or Week 12 return is present. No value is imputed. Results are descriptive within Function 03; they do not imply causality, global optimality, or cross-function ranking.
+At this review point, No verified Week 12 return is present; confirmed cumulative evidence is available through Week 11. The original Week 11 arrays remain quarantined and are not used. No value is imputed. Results are descriptive within Function 03; they do not imply causality, global optimality, or cross-function ranking.
 
 ## Reproduction
 

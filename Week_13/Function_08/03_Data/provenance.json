@@ -1,9 +1,9 @@
 {
   "canonical_starter": "Week_01/Function_08/03_Data",
-  "recorded_pairs_registry": "Code/weekly_evidence.py",
+  "recorded_pairs_registry": "Results/query_output_ledger.csv",
   "review_context": "Week_13/02_Notebook",
-  "data_policy": "No source arrays duplicated or rewritten.",
-  "evidence_gap": "The corrupted Week 11 arrays remain quarantined and no verified Week 11\u201313 return is present; this review inherits the latest exact evidence.",
+  "data_policy": "Derived arrays are reconstructed from starter data plus the ledger; source arrays are never rewritten.",
+  "evidence_gap": "No verified Week 12 or Week 13 return is present; confirmed cumulative evidence is available through Week 11.",
   "excluded_archive": "Week_11/Function_08/03_Data/function_8_*.npy",
   "exclusion_reason": "Duplicate sentinel values, cross-function outputs, altered coordinates, and unprovenanced rows."
 }

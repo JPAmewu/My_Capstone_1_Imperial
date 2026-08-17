@@ -23,7 +23,7 @@ The workflow requires finite aligned arrays, 6 input dimensions, and coordinates
 
 ## Evidence boundary
 
-At this review point, early exact pairs are recoverable but archive provenance is incomplete. No value is imputed. Results are descriptive within Function 07; they do not imply causality, global optimality, or cross-function ranking.
+At this review point, Confirmed cumulative evidence is available through Week 5. No value is imputed. Results are descriptive within Function 07; they do not imply causality, global optimality, or cross-function ranking.
 
 ## Reproduction
 

@@ -3,29 +3,29 @@
   "function": 5,
   "dimensions": 4,
   "starter_observations": 20,
-  "recorded_pairs": 6,
-  "total_verified_observations": 26,
-  "best_query": 16,
+  "recorded_pairs": 11,
+  "total_verified_observations": 31,
+  "best_query": 28,
   "best_input": [
-    0.22418902330288348,
-    0.8464804904862864,
-    0.8794841797090803,
-    0.8785156842249731
+    0.08123,
+    0.992582,
+    0.156202,
+    0.988421
   ],
-  "best_output": 1088.8596181962705,
-  "latest_verified_query": 26,
+  "best_output": 1465.5121917504077,
+  "latest_verified_query": 31,
   "latest_verified_input": [
-    0.319924,
-    0.675406,
-    0.431628,
-    1.0
+    0.016444,
+    0.027486,
+    0.656999,
+    0.955172
   ],
-  "latest_verified_output": 430.8031249775375,
+  "latest_verified_output": 210.03831315192616,
   "latest_improves_previous_best": false,
   "minimum_output": 0.1129397953712203,
-  "mean_output": 260.7867561457207,
-  "standard_deviation": 363.6621692261549,
-  "evidence_gap": "Weeks 5, 7, 8, and 10 returns are unavailable. The local Week 11 arrays contain duplicate sentinel values, cross-function outputs, and altered coordinates, so they are quarantined; Week 9 is the latest exact pair.",
+  "mean_output": 333.08634963315325,
+  "standard_deviation": 443.40799477685977,
+  "evidence_gap": "Confirmed cumulative evidence is available through Week 11.",
   "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
-  "archive_integrity": "Week_11 local arrays quarantined after failing exact-pair provenance and corruption checks."
+  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger."
 }

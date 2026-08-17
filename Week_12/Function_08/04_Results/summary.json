@@ -3,8 +3,8 @@
   "function": 8,
   "dimensions": 8,
   "starter_observations": 40,
-  "recorded_pairs": 6,
-  "total_verified_observations": 46,
+  "recorded_pairs": 11,
+  "total_verified_observations": 51,
   "best_query": 42,
   "best_input": [
     0.16316,
@@ -17,23 +17,23 @@
     0.123846
   ],
   "best_output": 9.9399041910574,
-  "latest_verified_query": 46,
+  "latest_verified_query": 51,
   "latest_verified_input": [
-    0.321258,
-    0.232284,
-    0.021301,
-    0.0,
-    0.895967,
-    0.249315,
-    0.054463,
-    0.073967
+    0.234325,
+    0.196964,
+    0.387716,
+    0.46245,
+    0.845967,
+    0.154645,
+    0.549698,
+    0.111557
   ],
-  "latest_verified_output": 9.6998918101966,
+  "latest_verified_output": 9.2760687615836,
   "latest_improves_previous_best": false,
   "minimum_output": 5.5921933895401965,
-  "mean_output": 8.030929580050982,
-  "standard_deviation": 1.0522572254292457,
-  "evidence_gap": "The corrupted Week 11 arrays remain quarantined and no verified Week 11 or Week 12 return is present; this review inherits the latest exact evidence.",
+  "mean_output": 8.121828651202591,
+  "standard_deviation": 1.0422845392751205,
+  "evidence_gap": "No verified Week 12 return is present; confirmed cumulative evidence is available through Week 11.",
   "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
-  "archive_integrity": "Week_11 local arrays quarantined after failing exact-pair provenance and corruption checks."
+  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger."
 }

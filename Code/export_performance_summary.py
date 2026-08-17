@@ -1,8 +1,8 @@
 """Export the examiner-facing Week 01–13 optimisation trajectory.
 
-Only exact returns recorded in ``Code.weekly_evidence`` are treated as new
-weekly evidence. Missing returns remain blank; the previously verified best is
-carried forward so the trajectory is visible without reconstructing results.
+Only exact returns in the canonical ledger are treated as weekly evidence.
+Missing returns remain blank and the previously verified best is carried
+forward.
 """
 
 from __future__ import annotations
@@ -15,37 +15,13 @@ import pandas as pd
 
 try:
     from Code.data_validation import validate_observations
-    from Code.weekly_evidence import (
-        DIMENSIONS,
-        EARLY_OUTPUTS,
-        WEEK_6_OUTPUTS,
-        WEEK_9_OUTPUTS,
-    )
+    from Code.weekly_evidence import DIMENSIONS, ledger_rows
 except ModuleNotFoundError:  # Support direct execution from the repository root.
     from data_validation import validate_observations
-    from weekly_evidence import (
-        DIMENSIONS,
-        EARLY_OUTPUTS,
-        WEEK_6_OUTPUTS,
-        WEEK_9_OUTPUTS,
-    )
+    from weekly_evidence import DIMENSIONS, ledger_rows
 
-
-RETURN_BY_WEEK = {
-    1: lambda function: EARLY_OUTPUTS[function][0],
-    2: lambda function: EARLY_OUTPUTS[function][1],
-    3: lambda function: EARLY_OUTPUTS[function][2],
-    4: lambda function: EARLY_OUTPUTS[function][3],
-    6: lambda function: WEEK_6_OUTPUTS[function],
-    9: lambda function: WEEK_9_OUTPUTS[function],
-}
 
 MISSING_EVIDENCE = {
-    5: "Week 5 return unavailable in the repository evidence.",
-    7: "Week 7 return unavailable in the repository evidence.",
-    8: "Week 8 return unavailable in the repository evidence.",
-    10: "Week 10 return unavailable in the repository evidence.",
-    11: "Week 11 arrays quarantined after provenance and corruption checks.",
     12: "No verified Week 12 return is present.",
     13: "No verified Week 13 return is present.",
 }
@@ -79,6 +55,9 @@ def repository_root(start: str | Path | None = None) -> Path:
 def build_performance_summary(root: str | Path | None = None) -> pd.DataFrame:
     """Build one audit row per week and function from verified evidence."""
     base = repository_root(root)
+    returns = {
+        (row["week"], row["function"]): row for row in ledger_rows()
+    }
     rows: list[dict] = []
 
     for function in range(1, 9):
@@ -92,19 +71,19 @@ def build_performance_summary(root: str | Path | None = None) -> pd.DataFrame:
 
         for week in range(1, 14):
             previous_best = float(np.max(verified_outputs))
-            return_loader = RETURN_BY_WEEK.get(week)
+            return_row = returns.get((week, function))
 
-            if return_loader is None:
+            if return_row is None:
                 new_observation = np.nan
                 improvement = np.nan
                 evidence_status = "Return unavailable"
                 evidence_note = MISSING_EVIDENCE[week]
             else:
-                new_observation = float(return_loader(function))
+                new_observation = float(return_row["returned_output"])
                 verified_outputs = np.append(verified_outputs, new_observation)
                 improvement = float(np.max(verified_outputs) - previous_best)
                 evidence_status = "Confirmed return"
-                evidence_note = "Exact query/return pair recorded in Code/weekly_evidence.py."
+                evidence_note = "Exact query/return pair recorded in Results/query_output_ledger.csv."
 
             rows.append(
                 {

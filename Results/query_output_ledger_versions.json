@@ -1,0 +1,16 @@
+[
+  {
+    "dataset_version": "verified-query-output-ledger-v1.0",
+    "status": "superseded_preserved_immutable",
+    "path": "Results/archive/query_output_ledger_v1.0.csv",
+    "sha256": "21b1cf6d738bc7eb3bb44b5cacda2b266be155a3742f559cc67d438a622f8c16",
+    "reason": "Superseded after reconciliation against the original cumulative Downloads archive."
+  },
+  {
+    "dataset_version": "verified-query-output-ledger-v1.1",
+    "status": "canonical",
+    "path": "Results/query_output_ledger.csv",
+    "sha256": "3cabc618a9b9b4a7b069309133a32850384f2f6eaad51c4264a9efb6cc5e874f",
+    "reason": "Recovered from aligned cumulative source snapshots and validated programmatically."
+  }
+]

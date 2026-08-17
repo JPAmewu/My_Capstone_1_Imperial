@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 
 from .data_validation import validate_observations
-from .weekly_evidence import DIMENSIONS, EVIDENCE_GAPS, recorded_pairs
+from .weekly_evidence import DIMENSIONS, EVIDENCE_GAPS, pairs_through_week
 
 
 def repository_root(start: str | Path | None = None) -> Path:
@@ -30,7 +30,7 @@ def load_weekly_evidence(week: int, function: int, root: str | Path | None = Non
     y = np.asarray(np.load(data / "initial_outputs.npy", allow_pickle=False), dtype=float).reshape(-1)
     X, y = validate_observations(X, y, dimensions=DIMENSIONS[function])
     starter_count = len(y)
-    for query, output in recorded_pairs(week, function):
+    for query, output in pairs_through_week(min(week, 11), function):
         X = np.vstack((X, np.asarray(query, dtype=float)))
         y = np.append(y, float(output))
     X, y = validate_observations(X, y, dimensions=DIMENSIONS[function])
@@ -59,7 +59,10 @@ def analyse_weekly_function(week: int, function: int, root: str | Path | None = 
         "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
     }
     if week >= 11:
-        summary["archive_integrity"] = "Week_11 local arrays quarantined after failing exact-pair provenance and corruption checks."
+        summary["archive_integrity"] = (
+            "Original repository Week 11 arrays remain quarantined; analysis "
+            "uses independently recovered pairs from the canonical ledger."
+        )
     return frame, summary
 
 
@@ -89,15 +92,17 @@ def write_review_artifacts(week: int, function: int, root: str | Path | None = N
     (results / "summary.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     provenance = {
         "canonical_starter": f"Week_01/Function_{function:02d}/03_Data",
-        "recorded_pairs_registry": "Code/weekly_evidence.py",
+        "recorded_pairs_registry": "Results/query_output_ledger.csv",
         "review_context": f"Week_{week:02d}/02_Notebook",
-        "data_policy": "No source arrays duplicated or rewritten.",
+        "data_policy": "Derived arrays are reconstructed from starter data plus the ledger; source arrays are never rewritten.",
         "evidence_gap": summary["evidence_gap"],
     }
     if week >= 11:
         provenance["excluded_archive"] = f"Week_11/Function_{function:02d}/03_Data/function_{function}_*.npy"
         provenance["exclusion_reason"] = "Duplicate sentinel values, cross-function outputs, altered coordinates, and unprovenanced rows."
     (data / "provenance.json").write_text(json.dumps(provenance, indent=2) + "\n", encoding="utf-8")
+    np.save(data / "verified_cumulative_inputs.npy", frame[[c for c in frame if c.startswith("x")]].to_numpy())
+    np.save(data / "verified_cumulative_outputs.npy", frame["objective"].to_numpy())
     fig = plot_weekly_function(frame, summary)
     fig.savefig(figures / f"week_{week:02d}_function_{function:02d}_diagnostics.png", dpi=160, bbox_inches="tight")
     plt.close(fig)

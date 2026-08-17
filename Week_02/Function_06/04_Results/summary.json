@@ -3,8 +3,8 @@
   "function": 6,
   "dimensions": 5,
   "starter_observations": 20,
-  "recorded_pairs": 1,
-  "total_verified_observations": 21,
+  "recorded_pairs": 2,
+  "total_verified_observations": 22,
   "best_query": 1,
   "best_input": [
     0.7281861047460138,
@@ -14,19 +14,19 @@
     0.056401310518258585
   ],
   "best_output": -0.7142649478202404,
-  "latest_verified_query": 21,
+  "latest_verified_query": 22,
   "latest_verified_input": [
-    0.728186,
-    0.154693,
-    0.732552,
-    0.693997,
-    0.564013
+    0.433654,
+    0.486678,
+    0.282753,
+    0.972905,
+    0.323321
   ],
-  "latest_verified_output": -1.1520351120911565,
+  "latest_verified_output": -0.8782405650300305,
   "latest_improves_previous_best": false,
   "minimum_output": -2.5711696316081234,
-  "mean_output": -1.4790397098080994,
-  "standard_deviation": 0.4442377768944513,
-  "evidence_gap": "No gap in the Week 1 return used for this review.",
+  "mean_output": -1.4517306577727327,
+  "standard_deviation": 0.4517060391691362,
+  "evidence_gap": "Confirmed cumulative evidence is available through Week 2.",
   "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
 }
