@@ -76,10 +76,10 @@ class ReusableCodeTests(unittest.TestCase):
 
     def test_weekly_evidence_is_reproducible_and_gap_aware(self):
         self.assertEqual(len(recorded_pairs(2, 1)), 1)
-        self.assertEqual(len(recorded_pairs(11, 1)), 6)
-        self.assertIn("quarantined", EVIDENCE_GAPS[11])
+        self.assertEqual(len(recorded_pairs(11, 1)), 10)
+        self.assertIn("Week 11", EVIDENCE_GAPS[11])
         X, y, starter_count = load_weekly_evidence(11, 2)
-        self.assertEqual((X.shape, y.shape), ((16, 2), (16,)))
+        self.assertEqual((X.shape, y.shape), ((21, 2), (21,)))
         self.assertEqual(starter_count, 10)
         frame, summary = analyse_weekly_function(13, 8)
         self.assertEqual(summary["total_verified_observations"], len(frame))

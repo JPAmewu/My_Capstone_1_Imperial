@@ -23,7 +23,7 @@ The workflow requires finite aligned arrays, 3 input dimensions, and coordinates
 
 ## Evidence boundary
 
-At this review point, Weeks 5, 7, 8, and 10 returns are unavailable, and the local Week 11 arrays are quarantined because duplicate sentinel values, cross-function outputs, altered coordinates, and unprovenanced rows fail the integrity audit. No value is imputed. Results are descriptive within Function 03; they do not imply causality, global optimality, or cross-function ranking.
+At this review point, Confirmed cumulative evidence is available through Week 11. The original Week 11 arrays remain quarantined and are not used. No value is imputed. Results are descriptive within Function 03; they do not imply causality, global optimality, or cross-function ranking.
 
 ## Reproduction
 

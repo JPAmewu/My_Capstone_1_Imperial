@@ -23,7 +23,7 @@ The workflow requires finite aligned arrays, 4 input dimensions, and coordinates
 
 ## Evidence boundary
 
-At this review point, the Week 5 return is unavailable. No value is imputed. Results are descriptive within Function 04; they do not imply causality, global optimality, or cross-function ranking.
+At this review point, Confirmed cumulative evidence is available through Week 7. No value is imputed. Results are descriptive within Function 04; they do not imply causality, global optimality, or cross-function ranking.
 
 ## Reproduction
 

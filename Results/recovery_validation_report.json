@@ -1,0 +1,33 @@
+{
+  "dataset_version": "verified-query-output-ledger-v1.1",
+  "requested_weeks": [
+    5,
+    7,
+    8,
+    10,
+    11
+  ],
+  "requested_pair_count": 40,
+  "exactly_one_pair_per_function_per_requested_week": true,
+  "checks": {
+    "expected_dimensions": "passed",
+    "finite_queries_and_outputs": "passed",
+    "unit_hypercube_bounds": "passed",
+    "query_output_row_alignment": "passed",
+    "duplicate_detection": "passed_with_flagged_repeated_evaluation"
+  },
+  "flagged_duplicates": [
+    {
+      "week": 7,
+      "function": 5,
+      "duplicate_of": "week:4"
+    }
+  ],
+  "date_validation": {
+    "status": "source_metadata_only",
+    "basis": "input/output source-file modification date agreement",
+    "limitation": "No authoritative platform submission timestamps were present in the archive."
+  },
+  "quarantined_array_count": 16,
+  "canonical_ledger_sha256": "3cabc618a9b9b4a7b069309133a32850384f2f6eaad51c4264a9efb6cc5e874f"
+}

@@ -3,8 +3,8 @@
   "function": 8,
   "dimensions": 8,
   "starter_observations": 40,
-  "recorded_pairs": 5,
-  "total_verified_observations": 45,
+  "recorded_pairs": 9,
+  "total_verified_observations": 49,
   "best_query": 42,
   "best_input": [
     0.16316,
@@ -17,22 +17,22 @@
     0.123846
   ],
   "best_output": 9.9399041910574,
-  "latest_verified_query": 45,
+  "latest_verified_query": 49,
   "latest_verified_input": [
-    0.110992,
-    0.462977,
-    0.255313,
-    0.963757,
-    0.895383,
-    0.716713,
-    0.030436,
-    0.083412
+    0.321258,
+    0.232284,
+    0.021301,
+    0.0,
+    0.895967,
+    0.249315,
+    0.054463,
+    0.073967
   ],
-  "latest_verified_output": 9.1386093133071,
+  "latest_verified_output": 9.6998918101966,
   "latest_improves_previous_best": false,
   "minimum_output": 5.5921933895401965,
-  "mean_output": 7.99384153049219,
-  "standard_deviation": 1.0337198080500287,
-  "evidence_gap": "Week 8 return is unavailable; four early pairs and the Week 6 pair are recoverable.",
+  "mean_output": 8.072724998035518,
+  "standard_deviation": 1.0339807362264875,
+  "evidence_gap": "Confirmed cumulative evidence is available through Week 9.",
   "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
 }

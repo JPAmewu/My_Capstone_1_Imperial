@@ -2,7 +2,7 @@
 
 **Model name:** BBO Capstone GP-UCB Optimiser
 **Type:** Sequential Bayesian optimisation with per-function Gaussian Process surrogates
-**Version:** 1.2 (verified ledger added)
+**Version:** 1.3 (archive-reconciled ledger)
 **Developer:** JP Amewu
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
 
@@ -51,14 +51,14 @@ Function dimensions are:
 
 | Function | Dimensions | Verified observations |
 | --- | ---: | ---: |
-| 1 | 2 | 16 |
-| 2 | 2 | 16 |
-| 3 | 3 | 21 |
-| 4 | 4 | 36 |
-| 5 | 4 | 26 |
-| 6 | 5 | 26 |
-| 7 | 6 | 36 |
-| 8 | 8 | 46 |
+| 1 | 2 | 21 |
+| 2 | 2 | 21 |
+| 3 | 3 | 26 |
+| 4 | 4 | 41 |
+| 5 | 4 | 31 |
+| 6 | 5 | 31 |
+| 7 | 6 | 41 |
+| 8 | 8 | 51 |
 
 ## Performance
 
@@ -71,7 +71,7 @@ Because the true objective functions and global optima are unknown, conventional
 - predictive mean, predictive standard deviation and acquisition value at a proposed point;
 - validity checks for bounds, dimensionality, finite values and duplicate submissions.
 
-At the corrected Week 11 state, verified best values are approximately `7.710875e-16`, `0.6112052`, `-0.03483531`, `-1.981075`, `1088.860`, `-0.7142649`, `2.149905`, and `9.939904` for Functions 1–8 respectively. These are best observed values, not proven global optima. Returned Week 5, Week 7, and Week 10 pairs are unavailable and excluded.
+At the corrected Week 11 state, verified best values are approximately `7.710875e-16`, `0.6112052`, `-0.03483531`, `-1.981075`, `1465.512`, `-0.7142649`, `2.149905`, and `9.939904` for Functions 1–8 respectively. These are best observed values, not proven global optima.
 
 The corrected Week 11 notebook executed all code cells without error and generated one valid, non-duplicate, correctly dimensioned query for each function. GP optimisation may place some kernel parameters at configured bounds; fitted kernels are retained as diagnostics and should inform later sensitivity testing.
 
@@ -88,9 +88,9 @@ The process is transparent at the procedural level. The repository records:
 - duplicate exclusion and validation checks;
 - notebook outputs, warnings and selected query strings.
 
-The canonical [`Results/query_output_ledger.csv`](../Results/query_output_ledger.csv) now records the 48 exact returned pairs recoverable for Weeks 1–4, 6 and 9, with notebook and commit provenance. Its SHA-256 checksum detects unintended changes to published rows. Missing submission dates and unavailable rounds remain explicit rather than reconstructed.
+The canonical [`Results/query_output_ledger.csv`](../Results/query_output_ledger.csv) records 88 exact returned pairs recovered for Weeks 1–11, with source paths, hashes, date basis, and validation status. Its SHA-256 checksum detects unintended changes. The superseded version 1.0 and the suspicious Week 11 arrays remain preserved as immutable historical evidence.
 
-Another researcher can reproduce the latest recommendations if they use the same dataset, notebook, Python dependencies and random seeds. The verified ledger improves reconstruction of the six recoverable rounds, but unavailable returned pairs, exact submission dates, historical software versions and explanations of some manual interventions still prevent bit-for-bit reproduction of every round.
+Another researcher can reproduce the latest recommendations if they use the same dataset, notebook, Python dependencies and random seeds. The ledger supports deterministic reconstruction through Week 11, but unavailable Week 12–13 returns, authoritative platform submission timestamps, historical software versions and explanations of some manual interventions still prevent bit-for-bit reproduction of every original round.
 
 ## Assumptions
 
@@ -116,7 +116,7 @@ Violations can produce overconfident or misleading recommendations. Discontinuit
 - **Sparse data:** observation counts are small relative to continuous search volumes.
 - **Random candidate dependence:** recommendations depend on candidate generation and the chosen seed.
 - **No known optimum:** absolute regret and optimality cannot be calculated.
-- **Data-lineage risk:** returned Week 5, Week 7, and Week 10 pairs are unavailable.
+- **Data-lineage risk:** recovered dates are source-file metadata rather than authoritative platform timestamps, and the original Week 11 arrays remain quarantined.
 - **Limited robustness evaluation:** alternative kernels, acquisition functions and seeds have not been systematically compared under a common protocol.
 
 Potential failures include repeated focus on a local optimum, missing narrow boundary peaks, overexploration of uncertain but unproductive areas or propagating an incorrectly paired observation into later rounds.

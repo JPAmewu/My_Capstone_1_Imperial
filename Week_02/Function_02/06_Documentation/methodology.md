@@ -23,7 +23,7 @@ The workflow requires finite aligned arrays, 2 input dimensions, and coordinates
 
 ## Evidence boundary
 
-At this review point, the Week 1 return is available. No value is imputed. Results are descriptive within Function 02; they do not imply causality, global optimality, or cross-function ranking.
+At this review point, Confirmed cumulative evidence is available through Week 2. No value is imputed. Results are descriptive within Function 02; they do not imply causality, global optimality, or cross-function ranking.
 
 ## Reproduction
 

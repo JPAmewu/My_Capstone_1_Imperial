@@ -3,8 +3,8 @@
   "function": 6,
   "dimensions": 5,
   "starter_observations": 20,
-  "recorded_pairs": 6,
-  "total_verified_observations": 26,
+  "recorded_pairs": 10,
+  "total_verified_observations": 30,
   "best_query": 1,
   "best_input": [
     0.7281861047460138,
@@ -14,19 +14,19 @@
     0.056401310518258585
   ],
   "best_output": -0.7142649478202404,
-  "latest_verified_query": 26,
+  "latest_verified_query": 30,
   "latest_verified_input": [
-    0.711755,
-    0.17567,
-    0.738396,
-    0.689597,
-    0.562717
+    0.853051,
+    0.152023,
+    0.700695,
+    0.554516,
+    0.611033
   ],
-  "latest_verified_output": -1.1717131510084098,
+  "latest_verified_output": -1.4490886989479597,
   "latest_improves_previous_best": false,
   "minimum_output": -2.5711696316081234,
-  "mean_output": -1.5160079792834336,
-  "standard_deviation": 0.5040406329519856,
-  "evidence_gap": "Weeks 5, 7, 8, and 10 returns are unavailable; Week 9 is the latest exact pair.",
+  "mean_output": -1.4981459160498163,
+  "standard_deviation": 0.4724237832930541,
+  "evidence_gap": "Confirmed cumulative evidence is available through Week 10.",
   "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
 }

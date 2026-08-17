@@ -1,0 +1,26 @@
+{
+  "week": 1,
+  "function": 2,
+  "dimensions": 2,
+  "starter_observations": 10,
+  "recorded_pairs": 1,
+  "total_verified_observations": 11,
+  "best_query": 10,
+  "best_input": [
+    0.7026365569244406,
+    0.9265641975455574
+  ],
+  "best_output": 0.6112052157614438,
+  "latest_verified_query": 11,
+  "latest_verified_input": [
+    0.37454,
+    0.950714
+  ],
+  "latest_verified_output": -0.03182956281754251,
+  "latest_improves_previous_best": false,
+  "minimum_output": -0.06562362443733738,
+  "mean_output": 0.2068098273074437,
+  "standard_deviation": 0.22774292315707284,
+  "evidence_gap": "Confirmed cumulative evidence is available through Week 1.",
+  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
+}

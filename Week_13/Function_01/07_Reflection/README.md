@@ -14,7 +14,7 @@ I learned that optimisation progress is supported only by exact query/return pai
 
 ## Challenges
 
-At this checkpoint, the corrupted Week 11 arrays remain quarantined and no verified Week 11–13 returns are present. This limits trend interpretation and prevents a complete week-by-week performance claim.
+At this checkpoint, No verified Week 12 or Week 13 return is present; confirmed cumulative evidence is available through Week 11. The original Week 11 arrays remain quarantined and are not used. The trajectory is interpreted only from verified evidence.
 
 ## Decisions and reasoning
 

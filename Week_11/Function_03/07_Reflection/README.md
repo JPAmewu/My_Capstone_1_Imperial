@@ -14,7 +14,7 @@ I learned that optimisation progress is supported only by exact query/return pai
 
 ## Challenges
 
-At this checkpoint, Weeks 5, 7, 8, and 10 returns are unavailable, and the local Week 11 arrays are quarantined because duplicate sentinel values, cross-function outputs, altered coordinates, and unprovenanced rows fail the integrity audit. This limits trend interpretation and prevents a complete week-by-week performance claim.
+At this checkpoint, Confirmed cumulative evidence is available through Week 11. The original Week 11 arrays remain quarantined and are not used. The trajectory is interpreted only from verified evidence.
 
 ## Decisions and reasoning
 
