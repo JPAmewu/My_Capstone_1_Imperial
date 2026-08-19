@@ -1,8 +1,8 @@
 # Reusable code
 
 This folder contains stable, notebook-independent Python interfaces shared by
-the corrected Week 1–11 optimisation workflows. Weeks 12–13 are historical
-placeholders and were not used as implementation sources.
+the corrected Week 1–12 optimisation workflows. Week 12 is a live, executed
+canonical-ledger workflow; only Week 13 remains a historical placeholder.
 
 | Module | Purpose |
 | --- | --- |
@@ -14,6 +14,7 @@ placeholders and were not used as implementation sources.
 | [`candidate_generation.py`](candidate_generation.py) | Seeded global, local, and hybrid candidate generation |
 | [`query_selection.py`](query_selection.py) | UCB/EI acquisition scoring and rounded non-duplicate selection |
 | [`plotting.py`](plotting.py) | Consolidated Matplotlib function and proposal diagnostics |
+| [`run_week12_sensitivity.py`](run_week12_sensitivity.py) | Reproducible, non-submission Week 12 sensitivity experiment across UCB, EI, GP bounds, and candidate designs |
 
 The requested labels `data.loading.np`, `gaussian_proccess.py`,
 `acquisition _funnction.py`, `candidates_generation.py`, and
@@ -47,9 +48,17 @@ rng = np.random.default_rng(101)
 points = uniform_candidates(X.shape[1], 5_000, rng=rng)
 model = fit_gaussian_process(X, y)
 mean, std = predict_with_uncertainty(model, points)
-selection = select_query(points, X, mean, std, method="ucb", kappa=2.0)
+selection = select_query(points, X, mean, std, method="ucb", kappa=0.1)
 print(selection.query)
 ```
+
+The submitted Week 12 experiment deliberately uses GP-UCB with `kappa = 0.1`.
+This is an exploitation-led choice: the predictive mean dominates the smaller
+uncertainty bonus. The archived `kappa = 2.0` run gives uncertainty twenty times
+the weight and is retained as an exploratory comparator, not as the submission.
+The separate sensitivity runner evaluates intermediate kappa values, Expected
+Improvement, wider GP bounds, and Sobol candidates for Functions 6–8 without
+altering the submitted proposals or immutable returned-pair ledger.
 
 Run the independent checks from the repository root with:
 

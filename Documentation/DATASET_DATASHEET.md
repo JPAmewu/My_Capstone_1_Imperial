@@ -110,7 +110,7 @@ JP Amewu maintains the dataset. Maintenance should include:
 - recording provenance, submission round, timestamp and code version for every new observation;
 - validating shape, bounds, finiteness and duplicates before publication;
 - preserving explicit evidence-gap reporting for unavailable returned pairs;
-- replacing Week 12 and Week 13 placeholders only when their genuine successive outputs are available;
+- retaining Week 12 as an executed proposal round while clearly marking its returned outputs unavailable, and replacing only the Week 13 placeholder when genuine evidence becomes available;
 - documenting corrections in Git history and this datasheet;
 - archiving a final version when the capstone concludes.
 
