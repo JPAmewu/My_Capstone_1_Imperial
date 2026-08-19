@@ -2,7 +2,7 @@
 
 **Model name:** BBO Capstone GP-UCB Optimiser
 **Type:** Sequential Bayesian optimisation with per-function Gaussian Process surrogates
-**Version:** 1.4 (validated Week 12 proposal workflow)
+**Version:** 1.5 (Week 12 low-kappa proposal comparison)
 **Developer:** JP Amewu
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
 
@@ -10,7 +10,7 @@
 
 This approach proposes evaluation points for eight unknown numerical objective functions. It is not one persistent fitted model: a separate Gaussian Process is refitted for each function after every round using all confirmed observations available for that function. An acquisition function then ranks unevaluated candidate points and selects the next query.
 
-The validated Week 12 implementation uses scikit-learn's `GaussianProcessRegressor`, a constant kernel multiplied by an anisotropic Matérn-5/2 kernel, a white-noise component, GP target normalisation, and Upper Confidence Bound (UCB) acquisition. It uses `kappa = 2.0`, three optimiser restarts, deterministic per-function random seeds, and 20,000 bounded candidate points per function.
+The validated Week 12 implementation uses scikit-learn's `GaussianProcessRegressor`, a constant kernel multiplied by an anisotropic Matérn-5/2 kernel, a white-noise component, GP target normalisation, and Upper Confidence Bound (UCB) acquisition. It uses `kappa = 0.1`, three optimiser restarts, deterministic per-function random seeds, and 20,000 bounded candidate points per function. The previous `kappa = 2.0` proposals are archived for comparison.
 
 ## Intended use
 
@@ -103,7 +103,7 @@ The approach assumes that:
 - the accumulated arrays preserve correct query-output pairing;
 - a uniformly generated candidate set provides adequate coverage;
 - six-decimal rounding is compatible with the evaluation platform;
-- maximising UCB with `kappa = 2.0` provides an acceptable exploration/exploitation balance.
+- maximising UCB with `kappa = 0.1` intentionally favours exploitation; the archived `kappa = 2.0` run provides the more exploratory comparison.
 
 Violations can produce overconfident or misleading recommendations. Discontinuities, narrow peaks, heteroscedastic noise or incorrect pairing may be smoothed over by the surrogate.
 
