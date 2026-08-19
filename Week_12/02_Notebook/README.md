@@ -1,9 +1,10 @@
-# Week 12 notebook status
+# Week 12 notebook
 
-[`Week_12_Placeholder.ipynb`](Week_12_Placeholder.ipynb) is retained for
-historical transparency. It is derived from the Week 10 workflow and does not
-represent a completed Week 12 optimisation run.
+[`Week_12_Capstone.ipynb`](Week_12_Capstone.ipynb) is the executed canonical
+Week 12 analysis. It verifies the immutable ledger checksum, reconstructs the
+post-Week-11 datasets, checks the expected observation counts, fits deterministic
+GP-UCB models, and generates one bounded non-duplicate proposal per function.
 
-The genuine Week 12 proposal coordinates are stored separately in
-[`../01_Queries/week_12_query_points.txt`](../01_Queries/week_12_query_points.txt).
-No verified returned outputs are available for those proposals.
+The proposals are stored in [`../01_Queries/week_12_query_points.txt`](../01_Queries/week_12_query_points.txt)
+and `Results/bbo_query_ledger.csv`. No verified returned outputs are available,
+so the proposals are not appended to the query/output ledger.
