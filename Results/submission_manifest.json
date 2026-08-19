@@ -1,0 +1,46 @@
+{
+  "release_tag": "capstone-final-v1.0.0",
+  "version_resolution": "git rev-list -n 1 capstone-final-v1.0.0",
+  "frozen_on": "2026-08-20",
+  "python": "3.12.13",
+  "libraries": {
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scipy": "1.18.0",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.11.1",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0"
+  },
+  "seeds": {
+    "week12_gp_and_candidates": "4200 + function (4201\u20134208)",
+    "rolling_validation_gp": "7300 + function * 100 + held_out_week",
+    "sensitivity_candidates": "9100 + function (9101\u20139108)",
+    "sensitivity_gp": "9200 + function (9201\u20139208)"
+  },
+  "canonical_post_week11_counts": [
+    21,
+    21,
+    26,
+    41,
+    31,
+    31,
+    41,
+    51
+  ],
+  "checksums_sha256": {
+    "Results/query_output_ledger.csv": "3cabc618a9b9b4a7b069309133a32850384f2f6eaad51c4264a9efb6cc5e874f",
+    "Results/bbo_query_ledger.csv": "dde357f77a16a3d8a448ef7b34dcbe6424a9550ffacda0644e0562c3cae9bd72",
+    "Results/week12_sensitivity_analysis.csv": "29a6101e7f84402a4d2cd107c2903dbe486f0fb210784e1c5654fa4e321c30e0",
+    "Results/gp_rolling_validation_predictions.csv": "d545248d5c5b7e0fc98de42050760947254c34bb57a32feabff770072c4c4b37",
+    "Results/gp_validation_metrics.csv": "602329da48101be677772710e0b2491f0676de63a76f209e80a26419a966135f",
+    "Results/gp_final_hyperparameters.csv": "4a8720709d55f9229f9f35f49fcea0a62b85f634dc96f69ddd4713775d9e8d85",
+    "Week_12/02_Notebook/Week_12_Capstone.ipynb": "30849d25948fb9f7e68c02453cde3de01ea834d608331407eaebb4050216738d",
+    "Notebooks/GP_Evaluation_and_Calibration.ipynb": "8e04ba183ea44f31d313b50d849cb9c30c854f2c727e0af79d20fcb5eaf411f1",
+    "Documentation/EVALUATION.md": "947e2fac5bc67b74620dcc22bd4c839a2cb9748367483f7cd2a78296fc283f4b",
+    "Documentation/MODEL_CARD.md": "142c15ddff1a017e71c3fa57c13d90ece1cbf2a5156ecf5eb8611a8a57089508",
+    "Code/run_week12_sensitivity.py": "df865f75a3c5eb9e07731b8fe4a7011207f788ed622ec8c14b3e7c58630f1ac8",
+    "Code/run_gp_validation.py": "08cea9ae56ed0aaa615b19691dc54575c6790e37c00602a5c4188f5e7c87cab8",
+    "requirements-lock.txt": "75306af59c1ae7a023d7c3d780121891c9af5a8af99c0df4420e8bd86ee47b3c"
+  }
+}

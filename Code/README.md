@@ -15,6 +15,10 @@ canonical-ledger workflow; only Week 13 remains a historical placeholder.
 | [`query_selection.py`](query_selection.py) | UCB/EI acquisition scoring and rounded non-duplicate selection |
 | [`plotting.py`](plotting.py) | Consolidated Matplotlib function and proposal diagnostics |
 | [`run_week12_sensitivity.py`](run_week12_sensitivity.py) | Reproducible, non-submission Week 12 sensitivity experiment across UCB, EI, GP bounds, and candidate designs |
+| [`regenerate_reflections.py`](regenerate_reflections.py) | Rebuilds all 96 evidence-specific function reflections and the twelve-section consolidated weekly reflection |
+| [`run_gp_validation.py`](run_gp_validation.py) | Runs 88 rolling one-step-ahead GP folds, calibration metrics, and fitted-hyperparameter diagnostics |
+| [`generate_evaluation_notebook.py`](generate_evaluation_notebook.py) | Builds the reader-facing, executable GP evaluation notebook |
+| [`freeze_submission.py`](freeze_submission.py) | Records frozen versions, deterministic seed rules, release tag, and artifact checksums |
 
 The requested labels `data.loading.np`, `gaussian_proccess.py`,
 `acquisition _funnction.py`, `candidates_generation.py`, and

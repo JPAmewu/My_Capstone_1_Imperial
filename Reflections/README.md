@@ -1,121 +1,312 @@
-# Academic reflections
+# Consolidated academic reflections: Weeks 1–12
 
-This single document consolidates the available learning reflection and links
-to the detailed weekly evidence. Technical analysis, data, plots, and query
-provenance remain in the canonical weekly notebooks.
+This document consolidates the function-level reflections by week. Each table
+uses cumulative evidence available at that checkpoint and compares results only
+within the same black-box function. A proposal is never counted as an observed
+result until its authoritative objective value is recorded.
 
-## Week 1 reflection
+The learning sequence is: manual/random baselines, Gaussian Process surrogates,
+acquisition functions, exploration/exploitation control, data-lineage failure
+and recovery, an immutable ledger, and a low-kappa sensitivity experiment.
 
-### Context
+## Week 1
 
-The first round established a baseline for maximising eight unrelated
-black-box functions with one submitted query per function. Random search, grid
-search, manual reasoning, and Bayesian optimisation were explored as candidate
-strategies.
+### Strategy and evidence position
 
-Because each function has a different objective scale, raw values must be
-evaluated within each function rather than ranked or averaged across functions.
+The week used baseline manual, random, grid, and Bayesian strategies. The latest verified observations produced new
+within-function incumbents for: **F8**. Initial methods established coverage, but sparse samples made manual and random choices difficult to justify.
 
-### Recorded outcomes
+| Function | Verified observations | Latest return | Incumbent | New best? |
+| --- | ---: | ---: | ---: | :---: |
+| F1 | 11 | `-1.560647e-117` | `7.710875e-16` | No |
+| F2 | 11 | `-0.03182956` | `0.6112052` | No |
+| F3 | 16 | `-0.04090762` | `-0.03483531` | No |
+| F4 | 31 | `-8.727516` | `-4.025542` | No |
+| F5 | 21 | `1088.854` | `1088.86` | No |
+| F6 | 21 | `-1.152035` | `-0.7142649` | No |
+| F7 | 31 | `1.051015` | `1.364968` | No |
+| F8 | 41 | `9.815709` | `9.815709` | Yes |
 
-| Function | Initial strategy | Returned value |
-| --- | --- | ---: |
-| F1 | Random search | `-1.560646704467778e-117` |
-| F2 | Random search | `-0.03182956281754251` |
-| F3 | Grid search | `-0.04090761844901528` |
-| F4 | Grid search | `-8.727516493155957` |
-| F5 | Manual reasoning | `1088.8535114737463` |
-| F6 | Manual reasoning | `-1.1520351120911565` |
-| F7 | Bayesian optimisation | `1.0510148516295004` |
-| F8 | Bayesian optimisation | `9.8157087929671` |
+### Reflection and next step
 
-### Learning
+The main lesson is to judge each strategy through verified within-function
+improvement, not raw cross-function values or model predictions alone. The next
+step was to replace uninformed search with a reproducible surrogate and acquisition function. Evidence gaps remain explicit, and proposals are
+kept separate from observations until authoritative returns arrive.
 
-- Function-specific history is the appropriate basis for judging improvement.
-- Strong single observations do not establish that one method is globally
-  superior, particularly across objectives with incompatible scales.
-- Later rounds should retain exploration while using surrogate uncertainty to
-  guide expensive evaluations.
-- Query provenance, dimensional validation, and reproducible candidate
-  generation are essential for reliable comparisons.
+## Week 2
 
-See the [corrected Week 1 notebook](../Week_01/02_Notebook/Week_1_Capstone.ipynb)
-for the complete evidence and plots.
+### Strategy and evidence position
 
-## Reflection record for Weeks 2–8
+The week used GP-UCB for F1–F4 and F6–F8, with manual local search for F5. The latest verified observations produced new
+within-function incumbents for: **F8**. Introducing a surrogate made uncertainty explicit and exposed the need for reproducible, function-specific random streams.
 
-Separate academic reflections were not recorded for Weeks 2–8. The validated
-analysis and decisions are preserved in the corresponding notebooks:
+| Function | Verified observations | Latest return | Incumbent | New best? |
+| --- | ---: | ---: | ---: | :---: |
+| F1 | 12 | `1.674933e-36` | `7.710875e-16` | No |
+| F2 | 12 | `0.02266663` | `0.6112052` | No |
+| F3 | 17 | `-0.08987475` | `-0.03483531` | No |
+| F4 | 32 | `-31.73536` | `-4.025542` | No |
+| F5 | 22 | `1035.634` | `1088.86` | No |
+| F6 | 22 | `-0.8782406` | `-0.7142649` | No |
+| F7 | 32 | `0.3087652` | `1.364968` | No |
+| F8 | 42 | `9.939904` | `9.939904` | Yes |
 
-| Week | Supporting analysis |
-| --- | --- |
-| 2 | [Week 2 notebook](../Week_02/02_Notebook/Week_2_Capstone.ipynb) |
-| 3 | [Week 3 notebook](../Week_03/02_Notebook/Week_3_Capstone.ipynb) |
-| 4 | [Week 4 notebook](../Week_04/02_Notebook/Week_4_Capstone.ipynb) |
-| 5 | [Week 5 notebook](../Week_05/02_Notebook/Week_5_Capstone.ipynb) |
-| 6 | [Week 6 notebook](../Week_06/02_Notebook/Week_6_Capstone.ipynb) |
-| 7 | [Week 7 notebook](../Week_07/02_Notebook/Week_7_Capstone.ipynb) |
-| 8 | [Week 8 notebook](../Week_08/02_Notebook/Week_8_Capstone.ipynb) |
+### Reflection and next step
 
-No personal reflection is inferred from notebook outputs. Missing reflections
-are identified explicitly instead of being filled with invented commentary.
+The main lesson is to judge each strategy through verified within-function
+improvement, not raw cross-function values or model predictions alone. The next
+step was to compare returned performance with the incumbent before refining the acquisition rule. Evidence gaps remain explicit, and proposals are
+kept separate from observations until authoritative returns arrive.
 
-## Week 12 final reflection
+## Week 3
 
-### How have patterns in your past queries influenced your latest choices?
+### Strategy and evidence position
 
-My strategy developed from early manual, random, and grid-based searches into
-Gaussian Process surrogates, then Expected Improvement and UCB. Past returns
-showed that a visually plausible point or a strong previous value does not
-guarantee improvement. I therefore used every verified observation, validated
-the post-Week-11 counts, rejected duplicates, and selected `kappa = 0.1` to make
-the Week 12 proposal deliberately exploitation-led. This favours high predicted
-means while retaining a small uncertainty allowance. The choice is a testable
-decision, not a claim that exploitation is always superior.
+The week used reproducible GP-UCB for F1–F4 and F6–F8, with local exploration for F5. The latest verified observations produced new
+within-function incumbents for: **F4, F7**. Repeated UCB use showed that a plausible model recommendation still needs a returned value before it counts as progress.
 
-### Have you identified any clusters or recurring promising regions?
+| Function | Verified observations | Latest return | Incumbent | New best? |
+| --- | ---: | ---: | ---: | :---: |
+| F1 | 13 | `-1.075594e-32` | `7.710875e-16` | No |
+| F2 | 13 | `0.0486837` | `0.6112052` | No |
+| F3 | 18 | `-0.1832388` | `-0.03483531` | No |
+| F4 | 33 | `-1.981075` | `-1.981075` | Yes |
+| F5 | 23 | `1035.665` | `1088.86` | No |
+| F6 | 23 | `-1.339542` | `-0.7142649` | No |
+| F7 | 33 | `2.149905` | `2.149905` | Yes |
+| F8 | 43 | `8.963604` | `9.939904` | No |
 
-There are function-specific recurring regions, but they vary in credibility.
-F2 repeatedly favours a first coordinate near 0.69–0.70; F4's recommendation is
-unchanged across acquisition settings and GP bounds; F5 repeatedly favours a
-high-output boundary region. F6–F8 are harder to interpret because 31–51 samples
-remain sparse in five to eight dimensions. Two-dimensional projections may look
-clustered while points remain far apart elsewhere. I therefore describe these
-as surrogate-supported regions, not discovered optima.
+### Reflection and next step
 
-### Which strategies or parameter choices have proven less effective, and how are you adjusting?
+The main lesson is to judge each strategy through verified within-function
+improvement, not raw cross-function values or model predictions alone. The next
+step was to retain uncertainty diagnostics and verify every appended query/return pair. Evidence gaps remain explicit, and proposals are
+kept separate from observations until authoritative returns arrive.
 
-Manual selection and uniform random candidate search became less defensible as
-dimension increased. A fixed acquisition setting also hides how strongly a
-recommendation depends on uncertainty weighting. The sensitivity appendix keeps
-the submitted experiment unchanged but compares UCB at kappa values `0.1`,
-`0.5`, `1.0`, and `2.0`, Expected Improvement, and wider GP bounds. It also
-replaces 20,000 uniform candidates with 32,768 Sobol points for F6–F8. F4 is
-unchanged between `kappa = 0.1` and `kappa = 2.0`; F7 contrasts sharply in the
-original common-candidate run: low
-kappa chooses higher mean and lower uncertainty, while high kappa accepts lower
-mean for greater uncertainty.
+## Week 4
 
-### In what ways do your refinements parallel clustering algorithms?
+### Strategy and evidence position
 
-Clustering separates repeatable structure from noise by testing whether groups
-persist under different assumptions. My refinements do something similar:
-verified query-return pairs define the evidence; the GP smooths local patterns;
-the acquisition function decides whether to remain near a promising region or
-probe an uncertain one; and sensitivity checks test whether a recommendation
-persists when modelling choices change. Stable F4/F5 recommendations resemble
-robust clusters. The shifting F1–F3 and F8 recommendations resemble assignments
-that are sensitive to scale, distance, or model specification.
+The week used GP-UCB for modelled functions and bounded local exploration for F5. The latest verified observations produced new
+within-function incumbents for: **none**. Repairing the evidence chain mattered as much as fitting the model; unverified rows could otherwise move the apparent incumbent.
 
-### If your query results were plotted, what trends or groupings might appear?
+| Function | Verified observations | Latest return | Incumbent | New best? |
+| --- | ---: | ---: | ---: | :---: |
+| F1 | 14 | `-2.466641e-107` | `7.710875e-16` | No |
+| F2 | 14 | `0.03877494` | `0.6112052` | No |
+| F3 | 19 | `-0.0825135` | `-0.03483531` | No |
+| F4 | 34 | `-9.312812` | `-1.981075` | No |
+| F5 | 24 | `163.1225` | `1088.86` | No |
+| F6 | 24 | `-2.437508` | `-0.7142649` | No |
+| F7 | 34 | `1.208733` | `2.149905` | No |
+| F8 | 44 | `9.254064` | `9.939904` | No |
 
-Plots would show adaptive concentration around some incumbents, boundary-seeking
-behaviour, and isolated exploratory jumps at larger kappa. They would also expose
-the data-lineage interruption: the recovered Week 11 return belongs in the
-immutable ledger, whereas Week 12 proposals must remain visually and logically
-separate until returns arrive. My next iteration would overlay returned values,
-predicted mean, uncertainty, and acquisition setting, then judge strategies by
-realised within-function improvement. The main learning is methodological:
-manual exploration evolved into probabilistic optimisation, a lineage failure
-forced recovery and immutable provenance, and the low-kappa experiment is now
-evaluated through sensitivity rather than rewritten after the fact.
+### Reflection and next step
+
+The main lesson is to judge each strategy through verified within-function
+improvement, not raw cross-function values or model predictions alone. The next
+step was to use only reconciled evidence and compare UCB with an improvement-based acquisition. Evidence gaps remain explicit, and proposals are
+kept separate from observations until authoritative returns arrive.
+
+## Week 5
+
+### Strategy and evidence position
+
+The week used GP-UCB for F1–F4 and F6–F8, with Expected Improvement for F5. The latest verified observations produced new
+within-function incumbents for: **none**. Comparing UCB with Expected Improvement clarified that acquisition rules express different attitudes to improvement and uncertainty.
+
+| Function | Verified observations | Latest return | Incumbent | New best? |
+| --- | ---: | ---: | ---: | :---: |
+| F1 | 15 | `7.65121e-239` | `7.710875e-16` | No |
+| F2 | 15 | `0.2207807` | `0.6112052` | No |
+| F3 | 20 | `-0.0573971` | `-0.03483531` | No |
+| F4 | 35 | `-17.92631` | `-1.981075` | No |
+| F5 | 25 | `0.9401161` | `1088.86` | No |
+| F6 | 25 | `-2.529369` | `-0.7142649` | No |
+| F7 | 35 | `0.1907826` | `2.149905` | No |
+| F8 | 45 | `9.138609` | `9.939904` | No |
+
+### Reflection and next step
+
+The main lesson is to judge each strategy through verified within-function
+improvement, not raw cross-function values or model predictions alone. The next
+step was to test a global/local candidate mixture rather than relying on one search geometry. Evidence gaps remain explicit, and proposals are
+kept separate from observations until authoritative returns arrive.
+
+## Week 6
+
+### Strategy and evidence position
+
+The week used hybrid global/local candidates, UCB for F1–F4/F6–F7, and EI for F5/F8. The latest verified observations produced new
+within-function incumbents for: **none**. Hybrid candidates linked global coverage with local refinement and reduced dependence on a single uniform random search.
+
+| Function | Verified observations | Latest return | Incumbent | New best? |
+| --- | ---: | ---: | ---: | :---: |
+| F1 | 16 | `6.131855e-211` | `7.710875e-16` | No |
+| F2 | 16 | `0.1605315` | `0.6112052` | No |
+| F3 | 21 | `-0.1170052` | `-0.03483531` | No |
+| F4 | 36 | `-20.87936` | `-1.981075` | No |
+| F5 | 26 | `281.9116` | `1088.86` | No |
+| F6 | 26 | `-1.31254` | `-0.7142649` | No |
+| F7 | 36 | `1.611967` | `2.149905` | No |
+| F8 | 46 | `8.557034` | `9.939904` | No |
+
+### Reflection and next step
+
+The main lesson is to judge each strategy through verified within-function
+improvement, not raw cross-function values or model predictions alone. The next
+step was to evaluate whether deliberate exploitation improves on the verified incumbent. Evidence gaps remain explicit, and proposals are
+kept separate from observations until authoritative returns arrive.
+
+## Week 7
+
+### Strategy and evidence position
+
+The week used an exploitation-focused round with local search around verified incumbents. The latest verified observations produced new
+within-function incumbents for: **none**. Stronger exploitation did not reliably improve incumbents, demonstrating the risk of repeatedly searching one attractive basin.
+
+| Function | Verified observations | Latest return | Incumbent | New best? |
+| --- | ---: | ---: | ---: | :---: |
+| F1 | 17 | `-6.738616e-151` | `7.710875e-16` | No |
+| F2 | 17 | `0.04871438` | `0.6112052` | No |
+| F3 | 22 | `-0.04718314` | `-0.03483531` | No |
+| F4 | 37 | `-20.19585` | `-1.981075` | No |
+| F5 | 27 | `163.1225` | `1088.86` | No |
+| F6 | 27 | `-1.287089` | `-0.7142649` | No |
+| F7 | 37 | `0.8994987` | `2.149905` | No |
+| F8 | 47 | `8.563639` | `9.939904` | No |
+
+### Reflection and next step
+
+The main lesson is to judge each strategy through verified within-function
+improvement, not raw cross-function values or model predictions alone. The next
+step was to restore broader exploration where local concentration has not produced improvement. Evidence gaps remain explicit, and proposals are
+kept separate from observations until authoritative returns arrive.
+
+## Week 8
+
+### Strategy and evidence position
+
+The week used a consistent reusable GP-UCB workflow across all eight functions. The latest verified observations produced new
+within-function incumbents for: **F5**. A shared pipeline reduced cell-order leakage and made cross-function implementation consistent without comparing incompatible objective scales.
+
+| Function | Verified observations | Latest return | Incumbent | New best? |
+| --- | ---: | ---: | ---: | :---: |
+| F1 | 18 | `-1.7724e-96` | `7.710875e-16` | No |
+| F2 | 18 | `0.07276416` | `0.6112052` | No |
+| F3 | 23 | `-0.07741316` | `-0.03483531` | No |
+| F4 | 38 | `-28.73632` | `-1.981075` | No |
+| F5 | 28 | `1465.512` | `1465.512` | Yes |
+| F6 | 28 | `-1.479452` | `-0.7142649` | No |
+| F7 | 38 | `0.8461801` | `2.149905` | No |
+| F8 | 48 | `9.020091` | `9.939904` | No |
+
+### Reflection and next step
+
+The main lesson is to judge each strategy through verified within-function
+improvement, not raw cross-function values or model predictions alone. The next
+step was to use Expected Improvement on reconciled evidence and preserve per-function diagnostics. Evidence gaps remain explicit, and proposals are
+kept separate from observations until authoritative returns arrive.
+
+## Week 9
+
+### Strategy and evidence position
+
+The week used 80% local / 20% global Expected Improvement after evidence recovery. The latest verified observations produced new
+within-function incumbents for: **none**. Recovered rounds demonstrated that data lineage can change the modelling state; evidence must be reconciled before optimisation.
+
+| Function | Verified observations | Latest return | Incumbent | New best? |
+| --- | ---: | ---: | ---: | :---: |
+| F1 | 19 | `-3.089424e-96` | `7.710875e-16` | No |
+| F2 | 19 | `0.04940641` | `0.6112052` | No |
+| F3 | 24 | `-0.08189345` | `-0.03483531` | No |
+| F4 | 39 | `-23.4228` | `-1.981075` | No |
+| F5 | 29 | `430.8031` | `1465.512` | No |
+| F6 | 29 | `-1.171713` | `-0.7142649` | No |
+| F7 | 39 | `1.009894` | `2.149905` | No |
+| F8 | 49 | `9.699892` | `9.939904` | No |
+
+### Reflection and next step
+
+The main lesson is to judge each strategy through verified within-function
+improvement, not raw cross-function values or model predictions alone. The next
+step was to return to GP-UCB with transparent normalisation and duplicate checks. Evidence gaps remain explicit, and proposals are
+kept separate from observations until authoritative returns arrive.
+
+## Week 10
+
+### Strategy and evidence position
+
+The week used normalised Gaussian Processes with reproducible GP-UCB. The latest verified observations produced new
+within-function incumbents for: **none**. One transparent target-normalisation path made GP diagnostics easier to interpret and reproduce.
+
+| Function | Verified observations | Latest return | Incumbent | New best? |
+| --- | ---: | ---: | ---: | :---: |
+| F1 | 20 | `-4.592141e-89` | `7.710875e-16` | No |
+| F2 | 20 | `0.02678837` | `0.6112052` | No |
+| F3 | 25 | `-0.0463388` | `-0.03483531` | No |
+| F4 | 40 | `-15.12573` | `-1.981075` | No |
+| F5 | 30 | `1424.637` | `1465.512` | No |
+| F6 | 30 | `-1.449089` | `-0.7142649` | No |
+| F7 | 40 | `0.8456374` | `2.149905` | No |
+| F8 | 50 | `9.373668` | `9.939904` | No |
+
+### Reflection and next step
+
+The main lesson is to judge each strategy through verified within-function
+improvement, not raw cross-function values or model predictions alone. The next
+step was to quarantine unverified arrays and reconstruct the modelling state from canonical evidence. Evidence gaps remain explicit, and proposals are
+kept separate from observations until authoritative returns arrive.
+
+## Week 11
+
+### Strategy and evidence position
+
+The week used corruption-aware GP-UCB using only canonical-ledger evidence. The latest verified observations produced new
+within-function incumbents for: **none**. Quarantining suspicious arrays prevented corrupted or unprovenanced rows from becoming model evidence.
+
+| Function | Verified observations | Latest return | Incumbent | New best? |
+| --- | ---: | ---: | ---: | :---: |
+| F1 | 21 | `8.15922e-130` | `7.710875e-16` | No |
+| F2 | 21 | `0.06529973` | `0.6112052` | No |
+| F3 | 26 | `-0.03844613` | `-0.03483531` | No |
+| F4 | 41 | `-14.99267` | `-1.981075` | No |
+| F5 | 31 | `210.0383` | `1465.512` | No |
+| F6 | 31 | `-1.154424` | `-0.7142649` | No |
+| F7 | 41 | `1.478174` | `2.149905` | No |
+| F8 | 51 | `9.276069` | `9.939904` | No |
+
+### Reflection and next step
+
+The main lesson is to judge each strategy through verified within-function
+improvement, not raw cross-function values or model predictions alone. The next
+step was to generate Week 12 proposals only after ledger checksum and count validation. Evidence gaps remain explicit, and proposals are
+kept separate from observations until authoritative returns arrive.
+
+## Week 12
+
+### Strategy and evidence position
+
+The week used validated GP-UCB with kappa 0.1 and a separate sensitivity appendix. The latest verified observations produced new
+within-function incumbents for: **none**. The immutable ledger separated observations from proposals, while low-kappa sensitivity made the exploration/exploitation choice explicit.
+
+The submitted proposals use `kappa = 0.1`, deliberately favouring predicted mean over uncertainty. The non-submission appendix compares kappa values `0.1`, `0.5`, `1.0`, and `2.0`, Expected Improvement, wider GP bounds, and Sobol candidates for F6–F8. F4 remains stable; F7's original common-candidate comparison clearly separates low-kappa exploitation from high-kappa uncertainty seeking.
+
+| Function | Verified observations | Latest return | Incumbent | New best? |
+| --- | ---: | ---: | ---: | :---: |
+| F1 | 21 | `8.15922e-130` | `7.710875e-16` | No |
+| F2 | 21 | `0.06529973` | `0.6112052` | No |
+| F3 | 26 | `-0.03844613` | `-0.03483531` | No |
+| F4 | 41 | `-14.99267` | `-1.981075` | No |
+| F5 | 31 | `210.0383` | `1465.512` | No |
+| F6 | 31 | `-1.154424` | `-0.7142649` | No |
+| F7 | 41 | `1.478174` | `2.149905` | No |
+| F8 | 51 | `9.276069` | `9.939904` | No |
+
+### Reflection and next step
+
+The main lesson is to judge each strategy through verified within-function
+improvement, not raw cross-function values or model predictions alone. The next
+step was to wait for authoritative returns, then evaluate realised improvement without retrospectively changing the submission. Evidence gaps remain explicit, and proposals are
+kept separate from observations until authoritative returns arrive.

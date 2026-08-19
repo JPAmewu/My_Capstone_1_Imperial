@@ -2,7 +2,7 @@
 
 **Model name:** BBO Capstone GP-UCB Optimiser
 **Type:** Sequential Bayesian optimisation with per-function Gaussian Process surrogates
-**Version:** 1.6 (Week 12 sensitivity appendix)
+**Version:** 1.7 (rolling validation, calibration, and frozen release)
 **Developer:** JP Amewu
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
 
@@ -75,6 +75,15 @@ At the corrected Week 11 state, verified best values are approximately `7.710875
 
 The canonical Week 12 notebook executed all code cells without error, verified the ledger checksum and observation counts, and generated one valid, non-duplicate, correctly dimensioned proposal for each function. A separate sensitivity appendix compares UCB at `kappa = 0.1, 0.5, 1.0, 2.0`, Expected Improvement, standard and wider GP bounds, and Sobol candidate sets for Functions 6–8. It does not modify the submitted experiment. F4's submitted recommendation is unchanged between `kappa = 0.1` and `2.0`, indicating local agreement between mean and uncertainty ranking. F7 changes substantially: the low-kappa point has higher predicted mean and lower uncertainty, whereas the high-kappa point accepts a lower mean for substantially greater uncertainty. These proposals are not observations until authoritative returns are received.
 
+Rolling one-step-ahead validation adds 88 chronological held-out predictions
+(eleven per function). Seven functions improve on a historical-mean RMSE
+baseline; F2 does not. Nominal 95% interval coverage is only 72.7%, 72.7%, and
+63.6% for F5, F6, and F7, respectively, so uncertainty is not uniformly
+calibrated. All eight final GP fits place at least one length scale or noise
+estimate at a configured bound. The full separation between optimisation
+performance, surrogate calibration, and recommendation robustness is reported
+in the [evaluation chapter](EVALUATION.md).
+
 ## Decision process and transparency
 
 The process is transparent at the procedural level. The repository records:
@@ -95,6 +104,11 @@ the [`Week 12 sensitivity appendix`](WEEK_12_SENSITIVITY_APPENDIX.md), with its
 machine-readable results kept separate from both ledgers.
 
 Another researcher can reproduce the latest recommendations if they use the same dataset, notebook, Python dependencies and random seeds. The ledger supports deterministic reconstruction through Week 11, but unavailable Week 12–13 returns, authoritative platform submission timestamps, historical software versions and explanations of some manual interventions still prevent bit-for-bit reproduction of every original round.
+
+The final computational stack is pinned in `requirements-lock.txt`; seeds,
+canonical counts, release tag, and SHA-256 checksums are recorded in
+`Results/submission_manifest.json`. The annotated tag `capstone-final-v1.0.0`
+identifies the frozen repository version.
 
 ## Assumptions
 
