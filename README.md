@@ -28,7 +28,9 @@ Week 13 remains a historical placeholder, not evidence of a completed round.
 
 - [Dataset datasheet](Documentation/DATASET_DATASHEET.md)
 - [Model card](Documentation/MODEL_CARD.md)
+- [Evaluation chapter](Documentation/EVALUATION.md)
 - [Week 12 sensitivity appendix](Documentation/WEEK_12_SENSITIVITY_APPENDIX.md)
+- [Final reproducibility and version freeze](Documentation/REPRODUCIBILITY.md)
 - [Canonical notebook index](Notebooks/README.md)
 - [Reflection index](Reflections/README.md)
 

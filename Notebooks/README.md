@@ -1,10 +1,13 @@
 # Consolidated notebooks
 
-This folder is reserved for final, project-wide notebooks that consolidate
-results across multiple weeks. It must not contain copies of weekly notebooks.
+This folder contains project-wide notebooks that consolidate results across
+multiple weeks without duplicating the authoritative weekly notebooks.
 
-No consolidated final notebook has been approved yet. The authoritative
-weekly analyses remain in each week's `02_Notebook` folder:
+## Cross-week evaluation
+
+- [Historical GP validation and uncertainty calibration](GP_Evaluation_and_Calibration.ipynb) — 88 rolling one-step-ahead folds, interval calibration, and final fitted-hyperparameter diagnostics.
+
+The authoritative weekly analyses remain in each week's `02_Notebook` folder:
 
 | Week | Canonical notebook | Status |
 | --- | --- | --- |
