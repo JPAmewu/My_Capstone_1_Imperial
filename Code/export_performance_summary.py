@@ -58,6 +58,14 @@ def build_performance_summary(root: str | Path | None = None) -> pd.DataFrame:
     returns = {
         (row["week"], row["function"]): row for row in ledger_rows()
     }
+    proposal_path = base / "Results" / "bbo_query_ledger.csv"
+    proposals = {}
+    if proposal_path.is_file():
+        proposal_frame = pd.read_csv(proposal_path)
+        proposals = {
+            (int(row.week), int(row.function)): row
+            for row in proposal_frame.itertuples(index=False)
+        }
     rows: list[dict] = []
 
     for function in range(1, 9):
@@ -72,6 +80,7 @@ def build_performance_summary(root: str | Path | None = None) -> pd.DataFrame:
         for week in range(1, 14):
             previous_best = float(np.max(verified_outputs))
             return_row = returns.get((week, function))
+            proposal_row = proposals.get((week, function))
 
             if return_row is None:
                 new_observation = np.nan
@@ -85,6 +94,15 @@ def build_performance_summary(root: str | Path | None = None) -> pd.DataFrame:
                 evidence_status = "Confirmed return"
                 evidence_note = "Exact query/return pair recorded in Results/query_output_ledger.csv."
 
+            fitted_kernel = "Not recorded"
+            predictive_std = np.nan
+            ucb_score = np.nan
+            if proposal_row is not None:
+                fitted_kernel = proposal_row.kernel
+                predictive_std = float(proposal_row.predictive_std)
+                ucb_score = float(proposal_row.ucb_score)
+                evidence_note += " A validated proposal is recorded in Results/bbo_query_ledger.csv."
+
             rows.append(
                 {
                     "Week": week,
@@ -95,9 +113,9 @@ def build_performance_summary(root: str | Path | None = None) -> pd.DataFrame:
                     "New observation": new_observation,
                     "New best": float(np.max(verified_outputs)),
                     "Improvement": improvement,
-                    "Fitted GP kernel": "Not recorded",
-                    "Predictive std at selected query": np.nan,
-                    "UCB score": np.nan,
+                    "Fitted GP kernel": fitted_kernel,
+                    "Predictive std at selected query": predictive_std,
+                    "UCB score": ucb_score,
                     "Evidence status": evidence_status,
                     "Evidence note": evidence_note,
                 }

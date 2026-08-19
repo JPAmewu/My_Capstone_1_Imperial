@@ -2,7 +2,7 @@
 
 **Model name:** BBO Capstone GP-UCB Optimiser
 **Type:** Sequential Bayesian optimisation with per-function Gaussian Process surrogates
-**Version:** 1.3 (archive-reconciled ledger)
+**Version:** 1.4 (validated Week 12 proposal workflow)
 **Developer:** JP Amewu
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
 
@@ -10,7 +10,7 @@
 
 This approach proposes evaluation points for eight unknown numerical objective functions. It is not one persistent fitted model: a separate Gaussian Process is refitted for each function after every round using all confirmed observations available for that function. An acquisition function then ranks unevaluated candidate points and selects the next query.
 
-The corrected Week 11 implementation uses scikit-learn's `GaussianProcessRegressor`, a constant kernel multiplied by an anisotropic Matérn-5/2 kernel, a white-noise component, GP target normalisation, and Upper Confidence Bound (UCB) acquisition. It uses `kappa = 2.0`, three optimiser restarts, deterministic random seeds, and 20,000 bounded candidate points per function.
+The validated Week 12 implementation uses scikit-learn's `GaussianProcessRegressor`, a constant kernel multiplied by an anisotropic Matérn-5/2 kernel, a white-noise component, GP target normalisation, and Upper Confidence Bound (UCB) acquisition. It uses `kappa = 2.0`, three optimiser restarts, deterministic per-function random seeds, and 20,000 bounded candidate points per function.
 
 ## Intended use
 
@@ -73,7 +73,7 @@ Because the true objective functions and global optima are unknown, conventional
 
 At the corrected Week 11 state, verified best values are approximately `7.710875e-16`, `0.6112052`, `-0.03483531`, `-1.981075`, `1465.512`, `-0.7142649`, `2.149905`, and `9.939904` for Functions 1–8 respectively. These are best observed values, not proven global optima.
 
-The corrected Week 11 notebook executed all code cells without error and generated one valid, non-duplicate, correctly dimensioned query for each function. GP optimisation may place some kernel parameters at configured bounds; fitted kernels are retained as diagnostics and should inform later sensitivity testing.
+The canonical Week 12 notebook executed all code cells without error, verified the ledger checksum and observation counts, and generated one valid, non-duplicate, correctly dimensioned proposal for each function. GP optimisation may place some kernel parameters at configured bounds; fitted kernels are retained as diagnostics and should inform later sensitivity testing. These proposals are not observations until authoritative returns are received.
 
 ## Decision process and transparency
 
@@ -88,7 +88,7 @@ The process is transparent at the procedural level. The repository records:
 - duplicate exclusion and validation checks;
 - notebook outputs, warnings and selected query strings.
 
-The canonical [`Results/query_output_ledger.csv`](../Results/query_output_ledger.csv) records 88 exact returned pairs recovered for Weeks 1–11, with source paths, hashes, date basis, and validation status. Its SHA-256 checksum detects unintended changes. The superseded version 1.0 and the suspicious Week 11 arrays remain preserved as immutable historical evidence.
+The canonical [`Results/query_output_ledger.csv`](../Results/query_output_ledger.csv) records 88 exact returned pairs recovered for Weeks 1–11, with source paths, hashes, date basis, and validation status. Its SHA-256 checksum detects unintended changes. The separate [`Results/bbo_query_ledger.csv`](../Results/bbo_query_ledger.csv) records Week 12 proposals and model diagnostics without representing them as returned observations. The superseded version 1.0 and the suspicious Week 11 arrays remain preserved as immutable historical evidence.
 
 Another researcher can reproduce the latest recommendations if they use the same dataset, notebook, Python dependencies and random seeds. The ledger supports deterministic reconstruction through Week 11, but unavailable Week 12–13 returns, authoritative platform submission timestamps, historical software versions and explanations of some manual interventions still prevent bit-for-bit reproduction of every original round.
 
