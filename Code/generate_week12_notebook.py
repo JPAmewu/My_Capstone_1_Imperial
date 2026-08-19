@@ -89,7 +89,53 @@ def build_notebook() -> None:
             "validation = pd.DataFrame(validation_rows)\n"
             "validation"
         ),
-        nbf.v4.new_markdown_cell("## Results\n\n### 2. Fit GP-UCB models and select new queries"),
+        nbf.v4.new_markdown_cell(
+            "### 2. Export validated figures by function\n\n"
+            "Each displayed panel is also written as an individual PNG under "
+            "`Week_12/Function_XX/05_Figures`. Orange points are canonical ledger "
+            "returns; starter observations are blue."
+        ),
+        nbf.v4.new_code_cell(
+            "import matplotlib.pyplot as plt\n"
+            "from IPython.display import display\n\n"
+            "figure_manifest = []\n"
+            "for function, (X, y) in datasets.items():\n"
+            "    starter_count = len(y) - 11\n"
+            "    query_index = np.arange(1, len(y) + 1)\n"
+            "    best_so_far = np.maximum.accumulate(y)\n"
+            "    figure_dir = ROOT / 'Week_12' / f'Function_{function:02d}' / '05_Figures'\n"
+            "    figure_dir.mkdir(parents=True, exist_ok=True)\n\n"
+            "    fig, ax = plt.subplots(figsize=(8, 4.5))\n"
+            "    ax.plot(query_index, y, marker='o', linewidth=1.3, label='objective')\n"
+            "    ax.scatter(query_index[starter_count:], y[starter_count:], color='darkorange', "
+            "label='canonical return', zorder=3)\n"
+            "    ax.set(title=f'Week 12 Function {function:02d} — objective trace', "
+            "xlabel='Verified observation', ylabel='Objective')\n"
+            "    ax.legend(); fig.tight_layout()\n"
+            "    path = figure_dir / f'week_12_function_{function:02d}_objective_trace.png'\n"
+            "    fig.savefig(path, dpi=160, bbox_inches='tight'); display(fig); plt.close(fig)\n"
+            "    figure_manifest.append({'function': function, 'figure': 'objective_trace', 'path': str(path.relative_to(ROOT))})\n\n"
+            "    fig, ax = plt.subplots(figsize=(8, 4.5))\n"
+            "    ax.step(query_index, best_so_far, where='post', color='crimson', linewidth=1.8)\n"
+            "    ax.set(title=f'Week 12 Function {function:02d} — verified best so far', "
+            "xlabel='Verified observation', ylabel='Best objective')\n"
+            "    fig.tight_layout()\n"
+            "    path = figure_dir / f'week_12_function_{function:02d}_best_so_far.png'\n"
+            "    fig.savefig(path, dpi=160, bbox_inches='tight'); display(fig); plt.close(fig)\n"
+            "    figure_manifest.append({'function': function, 'figure': 'best_so_far', 'path': str(path.relative_to(ROOT))})\n\n"
+            "    fig, ax = plt.subplots(figsize=(9, max(3.5, 0.55 * X.shape[1])))\n"
+            "    image = ax.imshow(X.T, aspect='auto', cmap='viridis', vmin=0, vmax=1)\n"
+            "    ax.set(title=f'Week 12 Function {function:02d} — input coordinates', "
+            "xlabel='Verified observation', ylabel='Dimension')\n"
+            "    ax.set_yticks(range(X.shape[1]), [f'x{i + 1}' for i in range(X.shape[1])])\n"
+            "    fig.colorbar(image, ax=ax, label='Coordinate value'); fig.tight_layout()\n"
+            "    path = figure_dir / f'week_12_function_{function:02d}_input_heatmap.png'\n"
+            "    fig.savefig(path, dpi=160, bbox_inches='tight'); display(fig); plt.close(fig)\n"
+            "    figure_manifest.append({'function': function, 'figure': 'input_heatmap', 'path': str(path.relative_to(ROOT))})\n\n"
+            "figure_manifest = pd.DataFrame(figure_manifest)\n"
+            "figure_manifest"
+        ),
+        nbf.v4.new_markdown_cell("## Results\n\n### 3. Fit GP-UCB models and select new queries"),
         nbf.v4.new_code_cell(
             "proposal_rows = []\n"
             "for function, (X, y) in datasets.items():\n"
@@ -112,7 +158,7 @@ def build_notebook() -> None:
             "proposals = pd.DataFrame(proposal_rows)\n"
             "proposals[['function', 'observation_count', 'submission_query', 'predictive_std', 'ucb_score']]"
         ),
-        nbf.v4.new_markdown_cell("### 3. Save the proposal ledger and submission file"),
+        nbf.v4.new_markdown_cell("### 4. Save the proposal ledger and submission file"),
         nbf.v4.new_code_cell(
             "proposal_path = ROOT / 'Results' / 'bbo_query_ledger.csv'\n"
             "proposals.to_csv(proposal_path, index=False)\n"
