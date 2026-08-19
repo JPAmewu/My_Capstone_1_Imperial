@@ -28,6 +28,7 @@ Week 13 remains a historical placeholder, not evidence of a completed round.
 
 - [Dataset datasheet](Documentation/DATASET_DATASHEET.md)
 - [Model card](Documentation/MODEL_CARD.md)
+- [Week 12 sensitivity appendix](Documentation/WEEK_12_SENSITIVITY_APPENDIX.md)
 - [Canonical notebook index](Notebooks/README.md)
 - [Reflection index](Reflections/README.md)
 
@@ -45,7 +46,7 @@ Week 13 remains a historical placeholder, not evidence of a completed round.
 | 8 | [Week 8](Week_08/02_Notebook/Week_8_Capstone.ipynb) | Corrected and executed |
 | 9 | [Week 9](Week_09/02_Notebook/Week_9_Capstone.ipynb) | Corrected and executed |
 | 10 | [Week 10](Week_10/02_Notebook/Week_10_Capstone.ipynb) | Corrected and executed |
-| 11 | [Week 11](Week_11/02_Notebook/Week_11_Capstone.ipynb) | Executed corruption-aware review; Week 11 return unavailable |
+| 11 | [Week 11](Week_11/02_Notebook/Week_11_Capstone.ipynb) | Executed corruption-aware review; returned pairs recovered and verified in the canonical ledger |
 | 12 | [Week 12](Week_12/02_Notebook/Week_12_Capstone.ipynb) | Executed canonical-ledger validation; [new GP-UCB proposals](Week_12/01_Queries/week_12_query_points.txt); returned outputs unavailable |
 | 13 | [Week 13 placeholder](Week_13/02_Notebook/Week_13_Placeholder.ipynb) | No verified proposal file or returned outputs |
 
@@ -93,8 +94,9 @@ assertions.
 - Snapshot file modification dates are retained as provenance metadata, but are
   not represented as authoritative platform submission timestamps.
 - Week 12 has validated GP-UCB proposals generated from the post-Week-11
-  canonical state, but no returned outputs. Week 12 and Week 13 therefore carry
+  canonical state, but no returned outputs. Week 12 therefore carries
   the verified Week 11 evidence forward without inventing evaluations.
+- Week 13 is an explicit placeholder and contains no verified proposal or return.
 - Objective values from different functions are not directly comparable because
   the black-box functions use different scales.
 

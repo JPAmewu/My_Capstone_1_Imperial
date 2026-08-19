@@ -10,11 +10,11 @@ I validated the cumulative observations, calculated within-function descriptive 
 
 ## Key learning
 
-I learned that optimisation progress is supported only by exact query/return pairs. A proposed query is not an observation until its returned objective is recorded, and raw objective scales cannot be ranked across different black-box functions.
+The incumbent is effectively zero at query 3, while the Week 11 return is far smaller. This taught me that values compressed near zero can make apparent numerical changes misleading; acquisition sensitivity matters more than raw decimal comparison. A proposed query remains a hypothesis until its returned objective is recorded.
 
 ## Challenges
 
-At this checkpoint, No verified Week 12 return is present; confirmed cumulative evidence is available through Week 11. The original Week 11 arrays remain quarantined and are not used. The trajectory is interpreted only from verified evidence.
+At this checkpoint, no verified Week 12 return is present; confirmed cumulative evidence is available through Week 11. The original Week 11 arrays remain quarantined and are not used. The trajectory is interpreted only from verified evidence.
 
 ## Decisions and reasoning
 
@@ -22,7 +22,7 @@ I retained the Week 01 arrays as canonical evidence, referenced exact recoverabl
 
 ## Results and interpretation
 
-The generated summary identifies the verified incumbent and latest recoverable response for Function 01. Any improvement flag compares only with earlier observations from this same function.
+The sensitivity run produced nine distinct candidates. Higher kappa moved away from the low-uncertainty, high-mean region, and wider GP bounds also changed the recommendation. I would treat F1 as model-sensitive and require a returned value before favouring one setting.
 
 ## Limitations and ethical considerations
 
@@ -30,4 +30,4 @@ The response surface, measurement process, and missingness mechanism are unknown
 
 ## Improvements and next steps
 
-I would recover the missing original archives, verify each query/return pair against primary records, then fit and validate a probabilistic surrogate before making a new duplicate-checked proposal.
+I would preserve the immutable ledger, obtain the authoritative Week 12 return, and evaluate realised improvement before changing the submitted experiment. Future diagnostics should compare repeated seeds and alternative kernels without treating sensitivity-only points as observations.
