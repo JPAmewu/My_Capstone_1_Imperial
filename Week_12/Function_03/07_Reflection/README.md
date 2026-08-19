@@ -1,33 +1,45 @@
-# Week 12 Reflection
+# Week 12 Function 03 reflection
 
-## Objectives
+## Objective
 
-I intended to review Function 03 using only evidence verifiable at the Week 12 checkpoint and to preserve a reproducible audit trail.
+Review Function 03 at the Week 12 checkpoint and decide what the
+verified evidence implies for the next optimisation step.
 
-## Work completed
+## Strategy and work completed
 
-I validated the cumulative observations, calculated within-function descriptive results, generated a consolidated Matplotlib diagnostic, documented provenance, and separated the analysis module from notebook presentation.
+I used GP-UCB with kappa 0.1 within the Week 12 workflow. I validated
+all 26 cumulative observations, kept the
+analysis within this function's 3-dimensional space, and
+checked the response trace, running incumbent, bounds, and provenance.
 
-## Key learning
+## Evidence and result
 
-The latest value (-0.03845) is close to, but does not improve, the incumbent (-0.03484). The history suggests a promising neighbourhood rather than proof of an optimum. A proposed query remains a hypothesis until its returned objective is recorded.
+The latest canonical-ledger return `-0.03844613` did not exceed the incumbent `-0.03483531`. The verified incumbent occurs at query 4 with
+input `[0.49258141463713434,0.6115931882759961,0.3401763860035727]`. Progress is
+defined only against earlier Function 03 values; objective magnitudes
+are not ranked across functions.
 
-## Challenges
+## Critical reflection
 
-At this checkpoint, no verified Week 12 return is present; confirmed cumulative evidence is available through Week 11. The original Week 11 arrays remain quarantined and are not used. The trajectory is interpreted only from verified evidence.
+The immutable ledger separated observations from proposals, while low-kappa sensitivity made the exploration/exploitation choice explicit. For Function 03, the result shows that a
+model-guided or plausible query is not evidence of improvement until its exact
+return is recorded. The absence of improvement argues against overconfidence in the selected region, not against the acquisition method on the basis of one trial.
 
-## Decisions and reasoning
 
-I retained the Week 01 arrays as canonical evidence, referenced exact recoverable pairs through a shared registry, treated the largest verified response as the incumbent, and refused to impute missing returns.
+## Sensitivity and interpretation
 
-## Results and interpretation
+Seven distinct candidates and a strong wider-bound shift make the recommendation hyperparameter-sensitive.
 
-Standard-bound settings concentrate near a high-coordinate region, whereas wider GP bounds redirect recommendations sharply and yield seven distinct candidates overall. F3 is therefore highly hyperparameter-sensitive; I would compare calibration or repeated fits before interpreting the apparent cluster.
+## Data quality, limitations, and ethics
 
-## Limitations and ethical considerations
+No verified Week 12 return is present; confirmed cumulative evidence is available through Week 11. The Week 12 point is a proposal, not an observation. The original Week 11 arrays remain quarantined; reconstruction uses the immutable ledger. The response surface and global optimum remain unknown, the
+sample is adaptive rather than representative, and sparse coverage becomes more
+serious as dimension increases. I therefore avoid causal claims, imputation,
+cross-function score comparisons, and retrospective selection of a method after
+seeing its result.
 
-The response surface, measurement process, and missingness mechanism are unknown. Selective reporting could overstate performance, so evidence gaps and unsuccessful returns remain explicit.
+## Next step
 
-## Improvements and next steps
-
-I would preserve the immutable ledger, obtain the authoritative Week 12 return, and evaluate realised improvement before changing the submitted experiment. Future diagnostics should compare repeated seeds and alternative kernels without treating sensitivity-only points as observations.
+For the next checkpoint I would wait for authoritative returns, then evaluate realised improvement without retrospectively changing the submission. I would append a point only
+after its authoritative return is available and preserve the prior rows as an
+immutable audit trail.

@@ -1,33 +1,45 @@
-# Week 12 Reflection
+# Week 12 Function 06 reflection
 
-## Objectives
+## Objective
 
-I intended to review Function 06 using only evidence verifiable at the Week 12 checkpoint and to preserve a reproducible audit trail.
+Review Function 06 at the Week 12 checkpoint and decide what the
+verified evidence implies for the next optimisation step.
 
-## Work completed
+## Strategy and work completed
 
-I validated the cumulative observations, calculated within-function descriptive results, generated a consolidated Matplotlib diagnostic, documented provenance, and separated the analysis module from notebook presentation.
+I used GP-UCB with kappa 0.1 within the Week 12 workflow. I validated
+all 31 cumulative observations, kept the
+analysis within this function's 5-dimensional space, and
+checked the response trace, running incumbent, bounds, and provenance.
 
-## Key learning
+## Evidence and result
 
-The incumbent remains the first recorded query (-0.7143), and the latest return (-1.1544) did not improve it. In five dimensions, sparse observations make visual clusters less persuasive. A proposed query remains a hypothesis until its returned objective is recorded.
+The latest canonical-ledger return `-1.154424` did not exceed the incumbent `-0.7142649`. The verified incumbent occurs at query 1 with
+input `[0.7281861047460138,0.1546925696237983,0.7325516687239811,0.6939965090690888,0.056401310518258585]`. Progress is
+defined only against earlier Function 06 values; objective magnitudes
+are not ranked across functions.
 
-## Challenges
+## Critical reflection
 
-At this checkpoint, no verified Week 12 return is present; confirmed cumulative evidence is available through Week 11. The original Week 11 arrays remain quarantined and are not used. The trajectory is interpreted only from verified evidence.
+The immutable ledger separated observations from proposals, while low-kappa sensitivity made the exploration/exploitation choice explicit. For Function 06, the result shows that a
+model-guided or plausible query is not evidence of improvement until its exact
+return is recorded. The absence of improvement argues against overconfidence in the selected region, not against the acquisition method on the basis of one trial.
 
-## Decisions and reasoning
 
-I retained the Week 01 arrays as canonical evidence, referenced exact recoverable pairs through a shared registry, treated the largest verified response as the incumbent, and refused to impute missing returns.
+## Sensitivity and interpretation
 
-## Results and interpretation
+Sobol coverage produces three candidates as kappa rises, giving a controlled exploration path in five dimensions.
 
-Sobol coverage replaces 20,000 uniform draws in the appendix. Low kappa and EI agree, while increasing kappa produces two progressively different alternatives; this is a useful controlled exploration path. The three recommendations remain unchanged under wider bounds, suggesting candidate/acquisition choice matters more here than those bound limits.
+## Data quality, limitations, and ethics
 
-## Limitations and ethical considerations
+No verified Week 12 return is present; confirmed cumulative evidence is available through Week 11. The Week 12 point is a proposal, not an observation. The original Week 11 arrays remain quarantined; reconstruction uses the immutable ledger. The response surface and global optimum remain unknown, the
+sample is adaptive rather than representative, and sparse coverage becomes more
+serious as dimension increases. I therefore avoid causal claims, imputation,
+cross-function score comparisons, and retrospective selection of a method after
+seeing its result.
 
-The response surface, measurement process, and missingness mechanism are unknown. Selective reporting could overstate performance, so evidence gaps and unsuccessful returns remain explicit.
+## Next step
 
-## Improvements and next steps
-
-I would preserve the immutable ledger, obtain the authoritative Week 12 return, and evaluate realised improvement before changing the submitted experiment. Future diagnostics should compare repeated seeds and alternative kernels without treating sensitivity-only points as observations.
+For the next checkpoint I would wait for authoritative returns, then evaluate realised improvement without retrospectively changing the submission. I would append a point only
+after its authoritative return is available and preserve the prior rows as an
+immutable audit trail.

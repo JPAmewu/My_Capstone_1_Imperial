@@ -1,33 +1,41 @@
-# Week 11 Reflection
+# Week 11 Function 05 reflection
 
-## Objectives
+## Objective
 
-I intended to review Function 05 using only evidence verifiable at the Week 11 checkpoint and to preserve a reproducible audit trail.
+Review Function 05 at the Week 11 checkpoint and decide what the
+verified evidence implies for the next optimisation step.
 
-## Work completed
+## Strategy and work completed
 
-I validated the cumulative observations, calculated within-function descriptive results, generated a consolidated Matplotlib diagnostic, documented provenance, and separated the analysis module from notebook presentation.
+I used GP-UCB within the Week 11 workflow. I validated
+all 31 cumulative observations, kept the
+analysis within this function's 4-dimensional space, and
+checked the response trace, running incumbent, bounds, and provenance.
 
-## Key learning
+## Evidence and result
 
-I learned that optimisation progress is supported only by exact query/return pairs. A proposed query is not an observation until its returned objective is recorded, and raw objective scales cannot be ranked across different black-box functions.
+The latest verified return `210.0383` did not exceed the incumbent `1465.512`. The verified incumbent occurs at query 28 with
+input `[0.08123,0.992582,0.156202,0.988421]`. Progress is
+defined only against earlier Function 05 values; objective magnitudes
+are not ranked across functions.
 
-## Challenges
+## Critical reflection
 
-At this checkpoint, Confirmed cumulative evidence is available through Week 11. The original Week 11 arrays remain quarantined and are not used. The trajectory is interpreted only from verified evidence.
+Quarantining suspicious arrays prevented corrupted or unprovenanced rows from becoming model evidence. For Function 05, the result shows that a
+model-guided or plausible query is not evidence of improvement until its exact
+return is recorded. The absence of improvement argues against overconfidence in the selected region, not against the acquisition method on the basis of one trial.
 
-## Decisions and reasoning
 
-I retained the Week 01 arrays as canonical evidence, referenced exact recoverable pairs through a shared registry, treated the largest verified response as the incumbent, and refused to impute missing returns.
+## Data quality, limitations, and ethics
 
-## Results and interpretation
+Confirmed cumulative evidence is available through Week 11. The original Week 11 arrays remain quarantined; reconstruction uses the immutable ledger. The response surface and global optimum remain unknown, the
+sample is adaptive rather than representative, and sparse coverage becomes more
+serious as dimension increases. I therefore avoid causal claims, imputation,
+cross-function score comparisons, and retrospective selection of a method after
+seeing its result.
 
-The generated summary identifies the verified incumbent and latest recoverable response for Function 05. Any improvement flag compares only with earlier observations from this same function.
+## Next step
 
-## Limitations and ethical considerations
-
-The response surface, measurement process, and missingness mechanism are unknown. Selective reporting could overstate performance, so evidence gaps and unsuccessful returns remain explicit.
-
-## Improvements and next steps
-
-I would recover the missing original archives, verify each query/return pair against primary records, then fit and validate a probabilistic surrogate before making a new duplicate-checked proposal.
+For the next checkpoint I would generate Week 12 proposals only after ledger checksum and count validation. I would append a point only
+after its authoritative return is available and preserve the prior rows as an
+immutable audit trail.
