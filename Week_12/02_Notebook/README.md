@@ -4,6 +4,8 @@
 Week 12 analysis. It verifies the immutable ledger checksum, reconstructs the
 post-Week-11 datasets, checks the expected observation counts, fits deterministic
 GP-UCB models, and generates one bounded non-duplicate proposal per function.
+The current executed run uses `kappa = 0.1`; the earlier `kappa = 2.0` proposal
+ledger is retained under `Results/archive` for comparison.
 
 The proposals are stored in [`../01_Queries/week_12_query_points.txt`](../01_Queries/week_12_query_points.txt)
 and `Results/bbo_query_ledger.csv`. No verified returned outputs are available,
