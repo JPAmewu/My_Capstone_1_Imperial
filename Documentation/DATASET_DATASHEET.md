@@ -1,6 +1,6 @@
 # Datasheet: BBO capstone sequential optimisation dataset
 
-**Version:** 1.6 (function schemas, illustrative applications and frozen release)
+**Version:** 1.7 (portal bounds, size audit, and frozen release)
 **Creator and maintainer:** JP Amewu
 **Programme:** Imperial College London Machine Learning and Artificial Intelligence Programme
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
@@ -20,7 +20,8 @@ The dataset supports sequential optimisation, exploratory data analysis, Gaussia
 | Functions | Eight independent numerical black-box functions, labelled F1–F8 |
 | Analytical form | Unknown; the true functions and global optima are not available |
 | Optimisation objective | Maximise the scalar output independently for each function |
-| Input domain | Unit hypercube `[0, 1]^d` |
+| Observed-data domain | Unit hypercube `[0, 1]^d`; source observations may include the endpoint `1.0` |
+| Submission domain | `[0.000000, 0.999999]^d` after six-decimal rounding, matching the portal constraint |
 | Fundamental observed unit | One query/return pair for one function and round |
 | Query | One `d`-dimensional input vector submitted to a function |
 | Return | One scalar objective produced for that exact query |
@@ -91,7 +92,7 @@ The analytical forms and real-world origins of the eight functions are unknown. 
 | Field group | Fields | Meaning |
 | --- | --- | --- |
 | Identity and shape | `week`, `function`, `dimensions`, `observation_count` | Proposal round and cumulative training-data shape |
-| Query | `query`, `submission_query` | Numeric vector and six-decimal submission form |
+| Query | `query`, `submission_query` | Numeric vector and strict six-decimal, hyphen-separated submission form |
 | GP prediction | `predicted_mean`, `predictive_std`, `kernel` | Surrogate diagnostics at the candidate |
 | Acquisition | `ucb_score`, `kappa`, `candidate_count` | UCB setting and finite candidate-search details |
 | Reproducibility | `random_seed`, `duplicate_at_6dp` | Seed and submission-precision collision check |
@@ -101,7 +102,8 @@ The analytical forms and real-world origins of the eight functions are unknown. 
 
 | Property | Value | Interpretation or rule |
 | --- | --- | --- |
-| Input type | Floating-point numeric | Every coordinate must be finite and within `[0, 1]` |
+| Observed-input type | Floating-point numeric | Every historical coordinate must be finite and within `[0, 1]` |
+| New submission input | Floating-point numeric | Every proposed coordinate must be within `[0.000000, 0.999999]` after rounding |
 | Input shape | `(n, d)` | `n` aligned observations and `d` function-specific dimensions |
 | Output type | Floating-point scalar | One objective value per input row |
 | Accepted raw output shapes | `(n,)` or `(n, 1)` | Validation standardises outputs to a one-dimensional vector |
@@ -134,7 +136,7 @@ The descriptions below summarise observed response and modelling behaviour in th
 | 7 | Six-dimensional positive objective with a recurring promising region; low kappa favours higher predicted mean while high kappa moves towards greater uncertainty. | 6 | 41 | `2.149905` | `1.478174` |
 | 8 | Eight-dimensional positive objective with sparse high-dimensional coverage; recommendations depend on acquisition weight and GP-bound specification. | 8 | 51 | `9.939904` | `9.276069` |
 
-Inputs and outputs are stored as NumPy `.npy` arrays. Query submissions are stored as plain-text `.txt` files, normally with six-decimal coordinates separated by hyphens. Jupyter/Colab `.ipynb` notebooks contain collection logic, validation, analysis, modelling and generated query points. Some weekly directories also contain Markdown documentation and placeholders.
+Inputs and outputs are stored as NumPy `.npy` arrays. Query submissions are stored as plain-text `.txt` files with exactly six decimal places per coordinate, hyphen separators, and values in `[0.000000, 0.999999]`. Jupyter/Colab `.ipynb` notebooks contain collection logic, validation, analysis, modelling and generated query points. Some weekly directories also contain Markdown documentation and placeholders.
 
 The canonical append-only ledger is [`Results/query_output_ledger.csv`](../Results/query_output_ledger.csv). Version 1.1 contains 88 exact query/output pairs for all eight functions in Weeks 1–11. Each row records source paths and hashes, validation status, and the source-file date. [`Results/query_output_ledger.sha256`](../Results/query_output_ledger.sha256) provides a content-integrity checksum. The superseded version 1.0 remains immutable under `Results/archive/`. Dates are filesystem metadata and are not claimed as authoritative platform submission timestamps.
 

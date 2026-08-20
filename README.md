@@ -4,6 +4,10 @@ An Imperial College London Machine Learning and Artificial Intelligence
 capstone project exploring sequential optimisation of eight unknown objective
 functions with Gaussian Process surrogate models and acquisition functions.
 
+## Nontechnical summary
+
+This project asks how Bayesian optimisation can search eight expensive, unknown functions efficiently. It begins with exploratory and manual query choices, then develops reproducible Gaussian Process models that balance promising predictions against uncertainty. A recovered, checksum-backed ledger preserves the verified history through Week 11 and prevents unreturned proposals from being treated as observations. Rolling validation tests prediction accuracy and uncertainty calibration, while sensitivity analysis shows how acquisition settings alter recommendations. The final Week 12 queries deliberately favour exploitation using UCB with kappa 0.1, but no global optimum or Week 12 improvement is claimed. The repository includes executed notebooks, figures, reflections, frozen dependencies and reproducibility checks.
+
 ## Project status
 
 Weeks 1–11 contain a recovered and validated experiment history. The canonical
@@ -31,6 +35,9 @@ Week 13 remains a historical placeholder, not evidence of a completed round.
 - [Evaluation chapter](Documentation/EVALUATION.md)
 - [Week 12 sensitivity appendix](Documentation/WEEK_12_SENSITIVITY_APPENDIX.md)
 - [Final reproducibility and version freeze](Documentation/REPRODUCIBILITY.md)
+- [Four final findings](FINAL_FINDINGS.md)
+- [Dataset-size audit](Documentation/DATA_SIZE_AUDIT.md)
+- [Final consolidated visual results](Notebooks/Final_Visual_Results.ipynb)
 - [Canonical notebook index](Notebooks/README.md)
 - [Reflection index](Reflections/README.md)
 
@@ -60,11 +67,12 @@ The weekly implementation evolves, but the validated workflow is:
    with explicit provenance.
 2. Validate shapes, bounds, finite values, and alignment before modelling.
 3. Fit a Gaussian Process with built-in target normalisation.
-4. Generate candidates reproducibly inside the unit hypercube `[0, 1]^d`.
+4. Generate submission candidates reproducibly inside `[0.000000, 0.999999]^d`.
 5. Score candidates with an acquisition function such as Expected Improvement
    or Upper Confidence Bound.
 6. Reject previously evaluated candidates at submission precision.
-7. Record the proposal, uncertainty, fitted kernel, diagnostics, and evidence
+7. Validate the exact six-decimal, hyphen-separated portal format.
+8. Record the proposal, uncertainty, fitted kernel, diagnostics, and evidence
    gaps for the next round.
 
 The corrected Week 1–11 notebooks avoid active Google Drive mounts, `/content` dependencies,

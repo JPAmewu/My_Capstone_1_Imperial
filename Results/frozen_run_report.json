@@ -1,0 +1,142 @@
+{
+  "status": "pass",
+  "python": "3.12.14 (main, Aug 12 2026, 13:57:54) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "total_seconds": 18.927,
+  "steps_completed": 13,
+  "steps_expected": 13,
+  "steps": [
+    {
+      "command": [
+        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "Code/audit_dataset_sizes.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.973
+    },
+    {
+      "command": [
+        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "-m",
+        "Code.portal_format",
+        "--file",
+        "Week_12/01_Queries/week_12_query_points.txt"
+      ],
+      "returncode": 0,
+      "seconds": 0.433
+    },
+    {
+      "command": [
+        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "Code/run_gp_validation.py"
+      ],
+      "returncode": 0,
+      "seconds": 2.504
+    },
+    {
+      "command": [
+        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "Code/run_week12_sensitivity.py"
+      ],
+      "returncode": 0,
+      "seconds": 2.074
+    },
+    {
+      "command": [
+        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "Code/generate_week12_notebook.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.095
+    },
+    {
+      "command": [
+        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "Code/generate_evaluation_notebook.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.081
+    },
+    {
+      "command": [
+        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "Code/generate_final_visual_results.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.081
+    },
+    {
+      "command": [
+        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "-m",
+        "jupyter",
+        "nbconvert",
+        "--execute",
+        "--to",
+        "notebook",
+        "--inplace",
+        "Week_12/02_Notebook/Week_12_Capstone.ipynb"
+      ],
+      "returncode": 0,
+      "seconds": 5.116
+    },
+    {
+      "command": [
+        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "-m",
+        "jupyter",
+        "nbconvert",
+        "--execute",
+        "--to",
+        "notebook",
+        "--inplace",
+        "Notebooks/GP_Evaluation_and_Calibration.ipynb"
+      ],
+      "returncode": 0,
+      "seconds": 3.499
+    },
+    {
+      "command": [
+        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "-m",
+        "jupyter",
+        "nbconvert",
+        "--execute",
+        "--to",
+        "notebook",
+        "--inplace",
+        "Notebooks/Final_Visual_Results.ipynb"
+      ],
+      "returncode": 0,
+      "seconds": 1.376
+    },
+    {
+      "command": [
+        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "Code/audit_dataset_sizes.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.982
+    },
+    {
+      "command": [
+        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "Code/freeze_submission.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.766
+    },
+    {
+      "command": [
+        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "Code/tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "seconds": 0.947
+    }
+  ]
+}
