@@ -1,6 +1,6 @@
 {
-  "release_tag": "capstone-final-v1.0.1",
-  "version_resolution": "git rev-list -n 1 capstone-final-v1.0.1",
+  "release_tag": "capstone-final-v1.0.2",
+  "version_resolution": "git rev-list -n 1 capstone-final-v1.0.2",
   "frozen_on": "2026-08-20",
   "python": "3.12.13",
   "libraries": {
@@ -38,8 +38,8 @@
     "Week_12/02_Notebook/Week_12_Capstone.ipynb": "30849d25948fb9f7e68c02453cde3de01ea834d608331407eaebb4050216738d",
     "Notebooks/GP_Evaluation_and_Calibration.ipynb": "8e04ba183ea44f31d313b50d849cb9c30c854f2c727e0af79d20fcb5eaf411f1",
     "Documentation/EVALUATION.md": "947e2fac5bc67b74620dcc22bd4c839a2cb9748367483f7cd2a78296fc283f4b",
-    "Documentation/DATASET_DATASHEET.md": "83aafe6a52b8ec1cf8886fcce786b0243d930b21de4896bdb9af9dfe4e4d9fca",
-    "Documentation/MODEL_CARD.md": "ce51448fad27d3e3a601f45051ba7bfb01ee196510ee8f964e605839e3a0b622",
+    "Documentation/DATASET_DATASHEET.md": "15a26bd1cb682e25c80c3066e625bd7a119374ec72548f81cf0d30898fcefd49",
+    "Documentation/MODEL_CARD.md": "8795c15f1b27d49b1b6e6bacb2e9b9ff21e6414e819efb954b1fbe749486e1fd",
     "Code/run_week12_sensitivity.py": "df865f75a3c5eb9e07731b8fe4a7011207f788ed622ec8c14b3e7c58630f1ac8",
     "Code/run_gp_validation.py": "08cea9ae56ed0aaa615b19691dc54575c6790e37c00602a5c4188f5e7c87cab8",
     "requirements-lock.txt": "75306af59c1ae7a023d7c3d780121891c9af5a8af99c0df4420e8bd86ee47b3c"
