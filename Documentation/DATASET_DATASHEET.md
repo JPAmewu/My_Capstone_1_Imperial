@@ -15,24 +15,22 @@ The dataset supports sequential optimisation, exploratory data analysis, Gaussia
 
 ### Unit of analysis and relationships
 
-The project contains eight independent numerical black-box functions, labelled
-F1–F8. A function is defined only by its input dimensionality and returned scalar
-objective; its analytical formula and true optimum are unknown. Valid input
-coordinates lie in the unit hypercube `[0, 1]^d`, and the task is maximisation.
-
-The fundamental observed unit is one **query/return pair**:
-
-- a query is one `d`-dimensional input vector submitted to a single function;
-- a return is the scalar objective produced for that exact query;
-- the natural key is `(week, function)` for recovered weekly returns;
-- later queries depend on earlier returns, so rows are sequential and adaptive;
-- a proposal without an authoritative return is not an observation.
-
-Starter arrays provide the initial observations for each function. The immutable
-returned-pair ledger adds one verified pair per function for Weeks 1–11. Together
-they reconstruct the post-Week-11 cumulative arrays. The separate Week 12
-proposal ledger contains model recommendations only and is never treated as if
-it contained returned outputs.
+| Description item | Recorded definition |
+| --- | --- |
+| Functions | Eight independent numerical black-box functions, labelled F1–F8 |
+| Analytical form | Unknown; the true functions and global optima are not available |
+| Optimisation objective | Maximise the scalar output independently for each function |
+| Input domain | Unit hypercube `[0, 1]^d` |
+| Fundamental observed unit | One query/return pair for one function and round |
+| Query | One `d`-dimensional input vector submitted to a function |
+| Return | One scalar objective produced for that exact query |
+| Recovered weekly key | `(week, function)` |
+| Sampling design | Sequential and adaptive: later queries depend on earlier returns |
+| Starter evidence | Initial aligned input/output arrays for each function |
+| Historical evidence | One verified returned pair per function for Weeks 1–11 |
+| Reconstructed state | Starter pairs plus immutable-ledger pairs through Week 11 |
+| Week 12 evidence | Eight model proposals with diagnostics; returned outputs unavailable |
+| Observation rule | A proposal is not an observation until its authoritative return is recorded |
 
 ### Principal data assets
 
@@ -47,9 +45,14 @@ it contained returned outputs.
 | [`Results/gp_final_hyperparameters.csv`](../Results/gp_final_hyperparameters.csv) | 8 rows; one final fit per function | Derived constants, length scales, noise estimates, warnings, and bound hits |
 | [`Results/week12_sensitivity_analysis.csv`](../Results/week12_sensitivity_analysis.csv) | 80 rows; function × bound profile × strategy | Non-submission recommendation-robustness experiment |
 
-The validation, performance, hyperparameter, and sensitivity files are derived
-analytical artifacts. They can be regenerated from the starter arrays,
-canonical ledger, and frozen code; they are not additional black-box returns.
+| Asset class | Evidence status | Permitted interpretation |
+| --- | --- | --- |
+| Starter input/output arrays | Observed evidence | Initial aligned query/return pairs |
+| Canonical returned-pair ledger | Observed evidence | Verified historical returns that may update cumulative arrays |
+| Week 12 proposal ledger | Proposal evidence | Recommendations and model diagnostics only; must not update observed outputs |
+| Performance summaries | Derived analysis | Best-so-far and improvement calculations from observed evidence |
+| GP validation and hyperparameter files | Derived analysis | Surrogate diagnostics; not additional black-box observations |
+| Sensitivity analysis | Derived, non-submission experiment | Recommendation robustness under alternative settings |
 
 ### Canonical returned-pair ledger fields
 
@@ -81,15 +84,19 @@ canonical ledger, and frozen code; they are not additional black-box returns.
 
 ### Shapes, counts, and data types
 
-Inputs are floating-point arrays with shape `(n, d)`; outputs are floating-point
-vectors with shape `(n,)` or `(n, 1)` before validation standardises them. The
-function dimensions are `2, 2, 3, 4, 4, 5, 6, 8`. Canonical post-Week-11 counts
-are `21, 21, 26, 41, 31, 31, 41, 51`, totalling 263 aligned observations: 175
-starter pairs plus 88 recovered weekly pairs.
-
-Objective scales differ materially by function. Raw outputs must therefore be
-interpreted within a function; cross-function averaging or ranking of objective
-magnitudes is not meaningful.
+| Property | Value | Interpretation or rule |
+| --- | --- | --- |
+| Input type | Floating-point numeric | Every coordinate must be finite and within `[0, 1]` |
+| Input shape | `(n, d)` | `n` aligned observations and `d` function-specific dimensions |
+| Output type | Floating-point scalar | One objective value per input row |
+| Accepted raw output shapes | `(n,)` or `(n, 1)` | Validation standardises outputs to a one-dimensional vector |
+| Function dimensions F1–F8 | `2, 2, 3, 4, 4, 5, 6, 8` | Dimension order is fixed by function identifier |
+| Starter observations | 175 | Canonical Week 1 input/output pairs across all functions |
+| Recovered weekly observations | 88 | Eight verified pairs per week for Weeks 1–11 |
+| Total observations after Week 11 | 263 | 175 starter pairs plus 88 recovered pairs |
+| Counts by function F1–F8 | `21, 21, 26, 41, 31, 31, 41, 51` | Required canonical reconstruction counts |
+| Week 12 proposals | 8 | One proposal per function; zero verified Week 12 returns |
+| Objective scale | Function-specific | Raw outputs may be compared within a function, not ranked or averaged across functions |
 
 ## Composition
 
