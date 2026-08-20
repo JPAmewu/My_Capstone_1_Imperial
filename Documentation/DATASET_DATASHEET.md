@@ -1,6 +1,6 @@
 # Datasheet: BBO capstone sequential optimisation dataset
 
-**Version:** 1.4 (explicit data description and frozen release)
+**Version:** 1.5 (function-level descriptions and frozen release)
 **Creator and maintainer:** JP Amewu
 **Programme:** Imperial College London Machine Learning and Artificial Intelligence Programme
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
@@ -106,16 +106,18 @@ The corrected Week 11 analysis contains 263 verified paired observations. It
 uses the Week 1 starter arrays plus one exact returned pair per function for
 each of Weeks 1–11, recovered from aligned cumulative archive snapshots.
 
-| Function | Dimensions | Verified observations | Verified maximum | Latest verified output |
-| --- | ---: | ---: | ---: | ---: |
-| 1 | 2 | 21 | `7.710875e-16` | `8.159220e-130` |
-| 2 | 2 | 21 | `0.6112052` | `0.06529973` |
-| 3 | 3 | 26 | `-0.03483531` | `-0.03844613` |
-| 4 | 4 | 41 | `-1.981075` | `-14.99267` |
-| 5 | 4 | 31 | `1465.512` | `210.0383` |
-| 6 | 5 | 31 | `-0.7142649` | `-1.154424` |
-| 7 | 6 | 41 | `2.149905` | `1.478174` |
-| 8 | 8 | 51 | `9.939904` | `9.276069` |
+The descriptions below summarise observed response and modelling behaviour in the project evidence. They are empirical descriptions, not claims about the unknown analytical forms of the black-box functions.
+
+| Function | Description | Dimensions | Verified observations | Verified maximum | Latest verified output |
+| --- | --- | ---: | ---: | ---: | ---: |
+| 1 | Two-dimensional, near-zero-scale objective; observed responses are highly compressed and the recommendation is sensitive to acquisition weight and GP bounds. | 2 | 21 | `7.710875e-16` | `8.159220e-130` |
+| 2 | Two-dimensional objective with a recurring first-coordinate region near 0.69–0.70; the second coordinate is less stable, suggesting ridge-like behaviour. | 2 | 21 | `0.6112052` | `0.06529973` |
+| 3 | Three-dimensional, predominantly negative objective; the best observed region is narrow and recommendations are sensitive to GP hyperparameter bounds. | 3 | 26 | `-0.03483531` | `-0.03844613` |
+| 4 | Four-dimensional, negative-valued objective; the preferred local region is unusually stable across kappa, Expected Improvement and GP-bound settings. | 4 | 41 | `-1.981075` | `-14.99267` |
+| 5 | Four-dimensional, positive large-scale objective with a strong boundary-associated incumbent; the recommendation is locally robust across sensitivity settings. | 4 | 31 | `1465.512` | `210.0383` |
+| 6 | Five-dimensional, negative-valued objective with sparse coverage; increasing exploration weight moves the recommendation through several distinct candidates. | 5 | 31 | `-0.7142649` | `-1.154424` |
+| 7 | Six-dimensional positive objective with a recurring promising region; low kappa favours higher predicted mean while high kappa moves towards greater uncertainty. | 6 | 41 | `2.149905` | `1.478174` |
+| 8 | Eight-dimensional positive objective with sparse high-dimensional coverage; recommendations depend on acquisition weight and GP-bound specification. | 8 | 51 | `9.939904` | `9.276069` |
 
 Inputs and outputs are stored as NumPy `.npy` arrays. Query submissions are stored as plain-text `.txt` files, normally with six-decimal coordinates separated by hyphens. Jupyter/Colab `.ipynb` notebooks contain collection logic, validation, analysis, modelling and generated query points. Some weekly directories also contain Markdown documentation and placeholders.
 
