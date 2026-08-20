@@ -1,6 +1,6 @@
 # Datasheet: BBO capstone sequential optimisation dataset
 
-**Version:** 1.3 (archive-reconciled ledger)
+**Version:** 1.4 (explicit data description and frozen release)
 **Creator and maintainer:** JP Amewu
 **Programme:** Imperial College London Machine Learning and Artificial Intelligence Programme
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
@@ -10,6 +10,86 @@
 This dataset was created to support a capstone investigation of Bayesian optimisation for expensive, unknown black-box objective functions. The practical task is to maximise eight functions while using as few objective-function evaluations as possible. Each observation therefore has two linked components: a submitted query point and the scalar value returned by the corresponding black box.
 
 The dataset supports sequential optimisation, exploratory data analysis, Gaussian Process (GP) surrogate modelling, acquisition-function comparison and critical reflection on exploration, exploitation, transparency and reproducibility. It was created by JP Amewu as programme coursework. No external commercial funding is known or claimed.
+
+## Data description
+
+### Unit of analysis and relationships
+
+The project contains eight independent numerical black-box functions, labelled
+F1–F8. A function is defined only by its input dimensionality and returned scalar
+objective; its analytical formula and true optimum are unknown. Valid input
+coordinates lie in the unit hypercube `[0, 1]^d`, and the task is maximisation.
+
+The fundamental observed unit is one **query/return pair**:
+
+- a query is one `d`-dimensional input vector submitted to a single function;
+- a return is the scalar objective produced for that exact query;
+- the natural key is `(week, function)` for recovered weekly returns;
+- later queries depend on earlier returns, so rows are sequential and adaptive;
+- a proposal without an authoritative return is not an observation.
+
+Starter arrays provide the initial observations for each function. The immutable
+returned-pair ledger adds one verified pair per function for Weeks 1–11. Together
+they reconstruct the post-Week-11 cumulative arrays. The separate Week 12
+proposal ledger contains model recommendations only and is never treated as if
+it contained returned outputs.
+
+### Principal data assets
+
+| Asset | Grain and size | Description |
+| --- | --- | --- |
+| `Week_01/Function_XX/03_Data/initial_inputs.npy` | One row per starter query; 2–8 coordinate columns | Canonical initial input vectors for one function |
+| `Week_01/Function_XX/03_Data/initial_outputs.npy` | One scalar per starter query | Objective returns aligned row-for-row with starter inputs |
+| [`Results/query_output_ledger.csv`](../Results/query_output_ledger.csv) | 88 rows; one `(week, function)` pair for Weeks 1–11 | Append-only recovered queries and returned outputs |
+| [`Results/bbo_query_ledger.csv`](../Results/bbo_query_ledger.csv) | 8 rows; one Week 12 proposal per function | Query recommendations and GP diagnostics; no returned objectives |
+| [`Results/performance_summary_weeks_01_to_13.csv`](../Results/performance_summary_weeks_01_to_13.csv) | One row per week and function | Derived best-so-far and evidence-status trajectory |
+| [`Results/gp_rolling_validation_predictions.csv`](../Results/gp_rolling_validation_predictions.csv) | 88 rows; one chronological held-out prediction per recovered pair | Derived GP accuracy, uncertainty, calibration, and fitted-fold diagnostics |
+| [`Results/gp_final_hyperparameters.csv`](../Results/gp_final_hyperparameters.csv) | 8 rows; one final fit per function | Derived constants, length scales, noise estimates, warnings, and bound hits |
+| [`Results/week12_sensitivity_analysis.csv`](../Results/week12_sensitivity_analysis.csv) | 80 rows; function × bound profile × strategy | Non-submission recommendation-robustness experiment |
+
+The validation, performance, hyperparameter, and sensitivity files are derived
+analytical artifacts. They can be regenerated from the starter arrays,
+canonical ledger, and frozen code; they are not additional black-box returns.
+
+### Canonical returned-pair ledger fields
+
+| Field | Type | Meaning |
+| --- | --- | --- |
+| `week` | integer | Sequential return round, 1–11 |
+| `function` | integer | Function identifier, 1–8 |
+| `query` | encoded numeric vector | Exact submitted coordinates in dimension order |
+| `returned_output` | float | Scalar objective paired with the query |
+| `dataset_version` | string | Version label assigned during recovery |
+| `submission_date` | date-like string | Source-file date, not guaranteed platform submission time |
+| `date_basis` | categorical string | Explains how the date was obtained |
+| `notebook`, `commit_sha` | strings | Notebook and repository provenance where available |
+| `evidence_status` | categorical string | Validation state of the recovered pair |
+| `source_registry`, `source_input`, `source_output` | paths/identifiers | Evidence used to reconstruct and verify the row |
+| `source_input_sha256`, `source_output_sha256` | hexadecimal strings | Byte-integrity hashes for source arrays |
+| `duplicate_of` | nullable identifier | Reference if a row duplicates earlier evidence |
+
+### Week 12 proposal fields
+
+| Field group | Fields | Meaning |
+| --- | --- | --- |
+| Identity and shape | `week`, `function`, `dimensions`, `observation_count` | Proposal round and cumulative training-data shape |
+| Query | `query`, `submission_query` | Numeric vector and six-decimal submission form |
+| GP prediction | `predicted_mean`, `predictive_std`, `kernel` | Surrogate diagnostics at the candidate |
+| Acquisition | `ucb_score`, `kappa`, `candidate_count` | UCB setting and finite candidate-search details |
+| Reproducibility | `random_seed`, `duplicate_at_6dp` | Seed and submission-precision collision check |
+| Evidence boundary | `status` | Marks the row as a proposal rather than an observation |
+
+### Shapes, counts, and data types
+
+Inputs are floating-point arrays with shape `(n, d)`; outputs are floating-point
+vectors with shape `(n,)` or `(n, 1)` before validation standardises them. The
+function dimensions are `2, 2, 3, 4, 4, 5, 6, 8`. Canonical post-Week-11 counts
+are `21, 21, 26, 41, 31, 31, 41, 51`, totalling 263 aligned observations: 175
+starter pairs plus 88 recovered weekly pairs.
+
+Objective scales differ materially by function. Raw outputs must therefore be
+interpreted within a function; cross-function averaging or ranking of objective
+magnitudes is not meaningful.
 
 ## Composition
 
@@ -40,7 +120,7 @@ There are no human subjects, demographic groups, personal data or labels describ
 
 - The immutable ledger covers the 88 exact pairs supported by the archive for Weeks 1–11; returns for Weeks 12–13 remain unavailable.
 - Exact collection timestamps and software versions were not recorded for every observation.
-- Weeks 12 and 13 remain placeholders and do not yet represent successive completed datasets.
+- Week 12 is an executed proposal round with no verified returned outputs; only Week 13 remains a placeholder.
 - The original Week 11 repository arrays failed provenance reconciliation and remain hash-recorded, quarantined historical evidence; reconstructed arrays are generated only from starter data plus the ledger.
 - Sampling is sparse relative to the volume of the higher-dimensional search spaces.
 - Earlier notebook versions sometimes reconstructed arrays from uploaded text and could encounter input/output length mismatches. Later validation stops rather than silently truncating data.
