@@ -1,6 +1,6 @@
 # Datasheet: BBO capstone sequential optimisation dataset
 
-**Version:** 1.5 (function-level descriptions and frozen release)
+**Version:** 1.6 (function schemas, illustrative applications and frozen release)
 **Creator and maintainer:** JP Amewu
 **Programme:** Imperial College London Machine Learning and Artificial Intelligence Programme
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
@@ -31,6 +31,21 @@ The dataset supports sequential optimisation, exploratory data analysis, Gaussia
 | Reconstructed state | Starter pairs plus immutable-ledger pairs through Week 11 |
 | Week 12 evidence | Eight model proposals with diagnostics; returned outputs unavailable |
 | Observation rule | A proposal is not an observation until its authoritative return is recorded |
+
+### Function schemas and illustrative applications
+
+The analytical forms and real-world origins of the eight functions are unknown. The examples below are therefore explanatory analogies: they show how optimisation problems with the same input dimensionality and scalar-output structure could arise in practice. They must not be interpreted as verified descriptions of the hidden functions.
+
+| Function | Input | Output | Optimisation goal | Description of sample application |
+| --- | --- | --- | --- | --- |
+| Function 1 | 2D array (`n × 2`) | 1D array (`n`, one scalar per row) | Maximise | Detect likely contamination sources in a two-dimensional area, such as a radiation field, where only proximity produces a non-zero reading. Bayesian optimisation can tune detection locations or parameters to identify both strong and weak sources efficiently. |
+| Function 2 | 2D array (`n × 2`) | 1D array (`n`, one scalar per row) | Maximise | Optimise a mystery machine-learning model that accepts two parameters and returns a noisy log-likelihood score. Bayesian optimisation balances exploration and exploitation to reduce the risk of becoming trapped at one of several local optima. |
+| Function 3 | 3D array (`n × 3`) | 1D array (`n`, one scalar per row) | Maximise | Test combinations of three compounds in a drug-discovery experiment. If the measured quantity is adverse reactions, it can be transformed—for example, by negation—so maximising the recorded objective corresponds to minimising side effects. This is an illustrative interpretation; the repository stores only the transformed scalar response. |
+| Function 4 | 4D array (`n × 4`) | 1D array (`n`, one scalar per row) | Maximise | Tune four hyperparameters of a fast surrogate used to approximate costly, biweekly warehouse product-placement calculations. A dynamic landscape with multiple local optima requires careful tuning and validation to identify reliable near-optimal settings. |
+| Function 5 | 4D array (`n × 4`) | 1D array (`n`, one scalar per row) | Maximise | Optimise four chemical-process inputs to maximise factory yield. For a broadly unimodal response, systematic exploration can locate the combination near the single dominant peak while limiting expensive trials. |
+| Function 6 | 5D array (`n × 5`) | 1D array (`n`, one scalar per row) | Maximise | Optimise a cake recipe using five ingredient quantities, such as flour, sugar, eggs, butter and milk. An expert score can combine flavour, consistency, calories, waste and cost as negative penalties; maximisation then seeks a total score as close to zero as possible. |
+| Function 7 | 6D array (`n × 6`) | 1D array (`n`, one scalar per row) | Maximise | Tune six machine-learning hyperparameters, such as learning rate, regularisation strength and network depth, to maximise a performance score such as accuracy or F1. Prior literature can help define sensible bounds, while Bayesian optimisation searches the unknown response surface. |
+| Function 8 | 8D array (`n × 8`) | 1D array (`n`, one scalar per row) | Maximise | Tune an eight-parameter system—for example, learning rate, batch size, layer count, dropout, regularisation, encoded activation, encoded optimiser and initial-weight range—to maximise performance, efficiency or validation accuracy. Because global search becomes difficult in eight dimensions, identifying strong local maxima is a practical objective. |
 
 ### Principal data assets
 
