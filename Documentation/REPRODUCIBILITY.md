@@ -3,11 +3,11 @@
 ## Canonical release
 
 The final submission version is identified by the annotated Git tag
-`capstone-final-v1.0.2`. Resolve the exact commit with:
+`capstone-final-v1.0.3`. Resolve the exact commit with:
 
 ```bash
-git rev-list -n 1 capstone-final-v1.0.2
-git show --stat capstone-final-v1.0.2
+git rev-list -n 1 capstone-final-v1.0.3
+git show --stat capstone-final-v1.0.3
 ```
 
 The tag, rather than a mutable branch name, is the authoritative repository

@@ -107,7 +107,7 @@ Another researcher can reproduce the latest recommendations if they use the same
 
 The final computational stack is pinned in `requirements-lock.txt`; seeds,
 canonical counts, release tag, and SHA-256 checksums are recorded in
-`Results/submission_manifest.json`. The annotated tag `capstone-final-v1.0.2`
+`Results/submission_manifest.json`. The annotated tag `capstone-final-v1.0.3`
 identifies the frozen repository version.
 
 ## Assumptions
