@@ -1,8 +1,8 @@
 {
-  "release_tag": "capstone-final-v1.0.4",
-  "version_resolution": "git rev-list -n 1 capstone-final-v1.0.4",
+  "release_tag": "capstone-final-v1.0.5",
+  "version_resolution": "git rev-list -n 1 capstone-final-v1.0.5",
   "frozen_on": "2026-08-20",
-  "python": "3.12.13",
+  "python": "3.12.14",
   "libraries": {
     "numpy": "2.5.2",
     "pandas": "3.0.5",
@@ -30,18 +30,25 @@
   ],
   "checksums_sha256": {
     "Results/query_output_ledger.csv": "3cabc618a9b9b4a7b069309133a32850384f2f6eaad51c4264a9efb6cc5e874f",
-    "Results/bbo_query_ledger.csv": "dde357f77a16a3d8a448ef7b34dcbe6424a9550ffacda0644e0562c3cae9bd72",
-    "Results/week12_sensitivity_analysis.csv": "29a6101e7f84402a4d2cd107c2903dbe486f0fb210784e1c5654fa4e321c30e0",
+    "Results/bbo_query_ledger.csv": "2718592cd0f0437f19b84f7b02ff4322ba369c45443a7a62f1078409d29fa13e",
+    "Results/week12_sensitivity_analysis.csv": "4536cfc6bff75ecdc1ec4a56dc80b47efc9fc362d76b02fc9f938fbe54265f73",
     "Results/gp_rolling_validation_predictions.csv": "d545248d5c5b7e0fc98de42050760947254c34bb57a32feabff770072c4c4b37",
     "Results/gp_validation_metrics.csv": "602329da48101be677772710e0b2491f0676de63a76f209e80a26419a966135f",
     "Results/gp_final_hyperparameters.csv": "4a8720709d55f9229f9f35f49fcea0a62b85f634dc96f69ddd4713775d9e8d85",
-    "Week_12/02_Notebook/Week_12_Capstone.ipynb": "30849d25948fb9f7e68c02453cde3de01ea834d608331407eaebb4050216738d",
-    "Notebooks/GP_Evaluation_and_Calibration.ipynb": "8e04ba183ea44f31d313b50d849cb9c30c854f2c727e0af79d20fcb5eaf411f1",
+    "Week_12/02_Notebook/Week_12_Capstone.ipynb": "efe95e7bb0936f11227eba03bc29b0794c3549f1270f246ec05d2c606881daa1",
+    "Notebooks/GP_Evaluation_and_Calibration.ipynb": "9e401e920691ead7bbb606d5a71aa5d882ca22e19d3319d6d487b1b2d1f24614",
+    "Notebooks/Final_Visual_Results.ipynb": "a1acaae2ae43454826d025fee941dfa2e5ea6d06e4578bce17f23ec659093bb1",
+    "Figures/final_consolidated_results.png": "bf9fd7fc53e95b9000fe4c01f027122f6f2304e05cc08e807873f2699aec431d",
+    "FINAL_FINDINGS.md": "47fefb27c822791ff8309f06fe19571b9a328a6e546eee8256f0f3d0209fa2f3",
     "Documentation/EVALUATION.md": "947e2fac5bc67b74620dcc22bd4c839a2cb9748367483f7cd2a78296fc283f4b",
-    "Documentation/DATASET_DATASHEET.md": "7cb71cb2fc4b3bcbef61e7d381f6e5b865b97d966375b81c165f2e17c6a1a46b",
-    "Documentation/MODEL_CARD.md": "89b7e3022000ba3ca09d166f0d40c830355d2e8396a7296e45aec7b73fb8989a",
-    "Code/run_week12_sensitivity.py": "df865f75a3c5eb9e07731b8fe4a7011207f788ed622ec8c14b3e7c58630f1ac8",
+    "Documentation/DATASET_DATASHEET.md": "43770d6b935150753876cc5a8fc82c2ed26ae6dfcf01a12aabf121d054d2e9f0",
+    "Documentation/MODEL_CARD.md": "768a3955f24be15c71ac8812867791aa254c1524ac8b7e8b03fa1b1f6b7b17bb",
+    "Code/run_week12_sensitivity.py": "2e538568900116fa65e220627a4f6475460ee488852a9d71132febbd07037982",
     "Code/run_gp_validation.py": "08cea9ae56ed0aaa615b19691dc54575c6790e37c00602a5c4188f5e7c87cab8",
-    "requirements-lock.txt": "75306af59c1ae7a023d7c3d780121891c9af5a8af99c0df4420e8bd86ee47b3c"
+    "Code/portal_format.py": "7f168e0f88d3f076407aa2fc068b78c689956f6dc5a39806ed6eaf6a38b961b1",
+    "Code/audit_dataset_sizes.py": "9ce357b6eaf689e621975316b8ce53232e893318d12c8748da6e2c8926d36394",
+    "Results/dataset_size_audit.csv": "82b587c0642a19560ed6c9a05c670ba8ae31f2fc2814a51a8ccfa4478225e040",
+    "Documentation/DATA_SIZE_AUDIT.md": "1b7b2c36543d28ce4df1e0d4166952096d03503d89dd93fd18c79285d05556d3",
+    "requirements-lock.txt": "73f8cc3ca4fb7e63e4e24471e3771e5f52a9534c28c914f780ba21fbf894fa2a"
   }
 }

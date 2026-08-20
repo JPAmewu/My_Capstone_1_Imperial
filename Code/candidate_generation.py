@@ -5,6 +5,7 @@ from __future__ import annotations
 import numpy as np
 
 from .data_validation import validate_candidates
+from .portal_format import SUBMISSION_LOWER_BOUND, SUBMISSION_UPPER_BOUND
 
 
 def make_rng(seed: int | None = None) -> np.random.Generator:
@@ -17,8 +18,8 @@ def uniform_candidates(
     count: int,
     *,
     rng: np.random.Generator,
-    lower_bound: float = 0.0,
-    upper_bound: float = 1.0,
+    lower_bound: float = SUBMISSION_LOWER_BOUND,
+    upper_bound: float = SUBMISSION_UPPER_BOUND,
 ) -> np.ndarray:
     """Generate reproducible uniform candidates inside a bounded hypercube."""
     if dimensions < 1 or count < 1 or lower_bound >= upper_bound:
@@ -32,8 +33,8 @@ def local_candidates(
     *,
     rng: np.random.Generator,
     scale: float = 0.08,
-    lower_bound: float = 0.0,
-    upper_bound: float = 1.0,
+    lower_bound: float = SUBMISSION_LOWER_BOUND,
+    upper_bound: float = SUBMISSION_UPPER_BOUND,
 ) -> np.ndarray:
     """Generate clipped Gaussian candidates near a known strong point."""
     origin = np.asarray(centre, dtype=float).reshape(-1)

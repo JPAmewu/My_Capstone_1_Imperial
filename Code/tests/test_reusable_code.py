@@ -15,6 +15,7 @@ from Code.eda import observation_summary, observations_frame, running_best
 from Code.gaussian_process import fit_gaussian_process, predict_with_uncertainty
 from Code.plotting import plot_function_diagnostics, plot_proposal_overview
 from Code.query_selection import select_query
+from Code.portal_format import format_portal_query, validate_portal_query, validate_query_file
 from Code.weekly_evidence import EVIDENCE_GAPS, recorded_pairs
 from Code.weekly_function_review import analyse_weekly_function, load_weekly_evidence, plot_weekly_function
 
@@ -52,6 +53,34 @@ class ReusableCodeTests(unittest.TestCase):
         np.testing.assert_allclose(first, second)
         points, sources = hybrid_candidates(self.X[1], rng=make_rng(7), global_count=4, local_count=3)
         self.assertEqual(points.shape, (7, 2)); self.assertEqual(sources.tolist().count("local"), 3)
+        self.assertGreaterEqual(float(points.min()), 0.0)
+        self.assertLessEqual(float(points.max()), 0.999999)
+
+    def test_strict_portal_format(self):
+        text = format_portal_query([0, 0.1234564, 0.999999], dimensions=3)
+        self.assertEqual(text, "0.000000-0.123456-0.999999")
+        np.testing.assert_allclose(
+            validate_portal_query(text, dimensions=3),
+            [0.0, 0.123456, 0.999999],
+        )
+        for invalid in (
+            "0-0.500000",
+            "0.000000,0.500000",
+            "0.000000-1.000000",
+            " 0.000000-0.500000",
+            "0.000000-0.50000",
+        ):
+            with self.subTest(invalid=invalid), self.assertRaises(ValueError):
+                validate_portal_query(invalid, dimensions=2)
+        with self.assertRaises(ValueError):
+            format_portal_query([1.0], dimensions=1)
+
+    def test_week12_query_file_is_portal_valid(self):
+        count = validate_query_file(
+            Path("Week_12/01_Queries/week_12_query_points.txt"),
+            {1: 2, 2: 2, 3: 3, 4: 4, 5: 4, 6: 5, 7: 6, 8: 8},
+        )
+        self.assertEqual(count, 8)
 
     def test_gp_prediction_and_query_selection(self):
         model = fit_gaussian_process(self.X, self.y, optimizer_restarts=0)

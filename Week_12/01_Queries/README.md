@@ -6,6 +6,11 @@ The current proposal set uses `kappa = 0.1` to emphasise exploitation.
 
 - [`week_12_query_points.txt`](week_12_query_points.txt)
 
+Every coordinate uses exactly six decimal places, values are restricted to
+`[0.000000, 0.999999]`, and coordinates are separated by hyphens. Validate the
+file from the repository root with `python -m Code.portal_format --file
+Week_12/01_Queries/week_12_query_points.txt`.
+
 The generating code and duplicate checks are in the
 [Week 12 notebook](../02_Notebook/Week_12_Capstone.ipynb). These are
 proposal coordinates only: no verified Week 12 returned outputs are preserved,

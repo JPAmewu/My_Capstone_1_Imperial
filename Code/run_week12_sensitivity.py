@@ -19,6 +19,7 @@ from Code.candidate_generation import make_rng, uniform_candidates
 from Code.data_loading import append_observations, load_starter_data
 from Code.gaussian_process import predict_with_uncertainty
 from Code.query_selection import select_query
+from Code.portal_format import SUBMISSION_LOWER_BOUND, SUBMISSION_UPPER_BOUND, format_portal_query
 from Code.weekly_evidence import DIMENSIONS, pairs_through_week
 
 
@@ -60,7 +61,12 @@ def candidate_set(function: int) -> tuple[np.ndarray, str, int]:
     seed = 9100 + function
     if function >= 6:
         exponent = 15
-        candidates = qmc.Sobol(dimensions, scramble=True, seed=seed).random_base2(exponent)
+        unit_candidates = qmc.Sobol(dimensions, scramble=True, seed=seed).random_base2(exponent)
+        candidates = qmc.scale(
+            unit_candidates,
+            SUBMISSION_LOWER_BOUND,
+            SUBMISSION_UPPER_BOUND,
+        )
         return candidates, "sobol", 2**exponent
     count = 20_000
     candidates = uniform_candidates(dimensions, count, rng=make_rng(seed))
@@ -118,7 +124,9 @@ def run(root: Path) -> pd.DataFrame:
                         "kappa": np.nan if kappa is None else kappa,
                         "xi": 0.01 if method == "ei" else np.nan,
                         "query": json.dumps(selected.query.tolist(), separators=(",", ":")),
-                        "submission_query": "-".join(f"{value:.6f}" for value in selected.query),
+                        "submission_query": format_portal_query(
+                            selected.query, dimensions=X.shape[1]
+                        ),
                         "predicted_mean": selected.predicted_mean,
                         "predictive_std": selected.predicted_std,
                         "acquisition_score": selected.acquisition,

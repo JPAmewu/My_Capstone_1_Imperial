@@ -15,7 +15,7 @@ import pandas
 import scipy
 import sklearn
 
-RELEASE_TAG = "capstone-final-v1.0.4"
+RELEASE_TAG = "capstone-final-v1.0.5"
 FROZEN_ON = "2026-08-20"
 FILES = (
     "Results/query_output_ledger.csv",
@@ -26,11 +26,18 @@ FILES = (
     "Results/gp_final_hyperparameters.csv",
     "Week_12/02_Notebook/Week_12_Capstone.ipynb",
     "Notebooks/GP_Evaluation_and_Calibration.ipynb",
+    "Notebooks/Final_Visual_Results.ipynb",
+    "Figures/final_consolidated_results.png",
+    "FINAL_FINDINGS.md",
     "Documentation/EVALUATION.md",
     "Documentation/DATASET_DATASHEET.md",
     "Documentation/MODEL_CARD.md",
     "Code/run_week12_sensitivity.py",
     "Code/run_gp_validation.py",
+    "Code/portal_format.py",
+    "Code/audit_dataset_sizes.py",
+    "Results/dataset_size_audit.csv",
+    "Documentation/DATA_SIZE_AUDIT.md",
     "requirements-lock.txt",
 )
 

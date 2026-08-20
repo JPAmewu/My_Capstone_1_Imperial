@@ -15,7 +15,7 @@ def main() -> None:
         "language": "python",
         "name": "python3",
     }
-    notebook["metadata"]["language_info"] = {"name": "python", "version": "3.12.13"}
+    notebook["metadata"]["language_info"] = {"name": "python", "version": "3.12.14"}
     notebook["cells"] = [
         nbf.v4.new_markdown_cell(
             """# Historical GP validation and uncertainty calibration

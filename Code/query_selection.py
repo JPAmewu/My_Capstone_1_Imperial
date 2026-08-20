@@ -8,6 +8,7 @@ import numpy as np
 
 from .acquisition_function import expected_improvement, upper_confidence_bound
 from .data_validation import duplicate_mask, validate_candidates
+from .portal_format import SUBMISSION_LOWER_BOUND, SUBMISSION_UPPER_BOUND
 
 
 @dataclass(frozen=True)
@@ -35,7 +36,12 @@ def select_query(
 ) -> QuerySelection:
     """Select the best rounded candidate after excluding observed duplicates."""
     X = np.asarray(observed, dtype=float)
-    points = validate_candidates(candidates, dimensions=X.shape[1])
+    points = validate_candidates(
+        candidates,
+        dimensions=X.shape[1],
+        lower_bound=SUBMISSION_LOWER_BOUND,
+        upper_bound=SUBMISSION_UPPER_BOUND,
+    )
     mu, sigma = np.asarray(mean, float).reshape(-1), np.asarray(std, float).reshape(-1)
     if len(points) != len(mu) or mu.shape != sigma.shape:
         raise ValueError("candidate predictions must align with candidate rows")

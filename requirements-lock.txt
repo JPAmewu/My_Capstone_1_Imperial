@@ -1,5 +1,5 @@
 # Frozen direct scientific and notebook dependencies for the final submission.
-# Python interpreter: CPython 3.12.13 (see .python-version).
+# Python interpreter: CPython 3.12.14 (see .python-version).
 annotated-types==0.8.0
 Jinja2==3.1.6
 MarkupSafe==3.0.3

@@ -6,6 +6,7 @@ multiple weeks without duplicating the authoritative weekly notebooks.
 ## Cross-week evaluation
 
 - [Historical GP validation and uncertainty calibration](GP_Evaluation_and_Calibration.ipynb) — 88 rolling one-step-ahead folds, interval calibration, and final fitted-hyperparameter diagnostics.
+- [Final consolidated visual results](Final_Visual_Results.ipynb) — reader-facing four-panel synthesis of optimisation performance, surrogate skill/calibration, recommendation robustness, and evidence status.
 
 The authoritative weekly analyses remain in each week's `02_Notebook` folder:
 

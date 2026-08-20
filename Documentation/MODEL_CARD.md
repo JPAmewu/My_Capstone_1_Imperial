@@ -2,7 +2,7 @@
 
 **Model name:** BBO Capstone GP-UCB Optimiser
 **Type:** Sequential Bayesian optimisation with per-function Gaussian Process surrogates
-**Version:** 1.7 (rolling validation, calibration, and frozen release)
+**Version:** 1.8 (strict submission validation and frozen release)
 **Developer:** JP Amewu
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
 
@@ -45,7 +45,7 @@ Patterns from prior rounds influenced the balance between exploration and exploi
 
 **Input:** For Function `j`, an array `X_j` of previous points in `[0, 1]^{d_j}` and a paired vector `y_j` of observed scalar outputs.
 
-**Output:** One new point for each function, rounded to six decimal places and formatted as a hyphen-separated submission string.
+**Output:** One new point for each function in `[0.000000, 0.999999]^d`, rounded to exactly six decimal places and formatted as a hyphen-separated submission string.
 
 Function dimensions are:
 
@@ -69,7 +69,7 @@ Because the true objective functions and global optima are unknown, conventional
 - progression of best-so-far across rounds;
 - number of objective evaluations;
 - predictive mean, predictive standard deviation and acquisition value at a proposed point;
-- validity checks for bounds, dimensionality, finite values and duplicate submissions.
+- validity checks for submission bounds `[0.000000, 0.999999]`, dimensionality, finite values, exact portal syntax and duplicate submissions.
 
 At the corrected Week 11 state, verified best values are approximately `7.710875e-16`, `0.6112052`, `-0.03483531`, `-1.981075`, `1465.512`, `-0.7142649`, `2.149905`, and `9.939904` for Functions 1–8 respectively. These are best observed values, not proven global optima.
 
@@ -107,7 +107,7 @@ Another researcher can reproduce the latest recommendations if they use the same
 
 The final computational stack is pinned in `requirements-lock.txt`; seeds,
 canonical counts, release tag, and SHA-256 checksums are recorded in
-`Results/submission_manifest.json`. The annotated tag `capstone-final-v1.0.4`
+`Results/submission_manifest.json`. The annotated tag `capstone-final-v1.0.5`
 identifies the frozen repository version.
 
 ## Assumptions
@@ -117,7 +117,7 @@ The approach assumes that:
 - each objective is stationary during the project;
 - nearby inputs tend to have related outputs, making a Matérn GP useful;
 - observations are exact or contain only modest noise;
-- all valid inputs lie within `[0, 1]^d`;
+- historical inputs lie within `[0, 1]^d`, while every new portal submission lies within `[0.000000, 0.999999]^d`;
 - the accumulated arrays preserve correct query-output pairing;
 - a uniformly generated candidate set provides adequate coverage;
 - six-decimal rounding is compatible with the evaluation platform;
