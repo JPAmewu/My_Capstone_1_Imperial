@@ -1,8 +1,8 @@
 # Reusable code
 
 This folder contains stable, notebook-independent Python interfaces shared by
-the corrected Week 1–12 optimisation workflows. Week 12 is a live, executed
-canonical-ledger workflow; only Week 13 remains a historical placeholder.
+the corrected Week 1–13 optimisation workflows. All thirteen consolidated
+weekly notebooks are executed and use the same eleven-stage function review.
 
 | Module | Purpose |
 | --- | --- |
@@ -17,6 +17,8 @@ canonical-ledger workflow; only Week 13 remains a historical placeholder.
 | [`plotting.py`](plotting.py) | Consolidated Matplotlib function and proposal diagnostics |
 | [`run_week12_sensitivity.py`](run_week12_sensitivity.py) | Reproducible, non-submission Week 12 sensitivity experiment across UCB, EI, GP bounds, and candidate designs |
 | [`regenerate_reflections.py`](regenerate_reflections.py) | Rebuilds all 96 evidence-specific function reflections and the twelve-section consolidated weekly reflection |
+| [`regenerate_function_notebooks.py`](regenerate_function_notebooks.py) | Builds and executes the 104 systematic week/function notebooks with the canonical table of contents |
+| [`regenerate_consolidated_notebooks.py`](regenerate_consolidated_notebooks.py) | Assembles and executes the 13 consolidated weekly notebooks from the function analyses |
 | [`run_gp_validation.py`](run_gp_validation.py) | Runs 88 rolling one-step-ahead GP folds, calibration metrics, and fitted-hyperparameter diagnostics |
 | [`generate_evaluation_notebook.py`](generate_evaluation_notebook.py) | Builds the reader-facing, executable GP evaluation notebook |
 | [`generate_final_visual_results.py`](generate_final_visual_results.py) | Builds the final consolidated four-panel visual-results notebook |

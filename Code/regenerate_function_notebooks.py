@@ -11,7 +11,7 @@ from nbclient import NotebookClient
 
 DIMENSIONS = {1: 2, 2: 2, 3: 3, 4: 4, 5: 4, 6: 5, 7: 6, 8: 8}
 STEPS = (
-    "Create the week's dataset by appending previous output results",
+    "Create week's_dataset by appending the previous output results",
     "Extract the function",
     "Check shapes and missing values",
     "Calculate summary statistics",
@@ -23,6 +23,12 @@ STEPS = (
     "Fit a Gaussian Process surrogate",
     "Apply UCB to generate the next query point",
 )
+
+
+def table_of_contents() -> nbformat.NotebookNode:
+    """Return the canonical eleven-stage notebook contents list."""
+    items = "\n".join(f"{number}. {title}" for number, title in enumerate(STEPS, 1))
+    return nbformat.v4.new_markdown_cell(f"## Table of contents\n\n{items}")
 
 
 def markdown_step(number: int) -> nbformat.NotebookNode:
@@ -53,6 +59,7 @@ def build_notebook(root: Path, week: int, function: int) -> nbformat.NotebookNod
             "at the end is an unevaluated candidate, not a returned observation.\n\n"
             f"**Evidence used:** {lineage}."
         ),
+        table_of_contents(),
         nbformat.v4.new_code_cell(
             "from pathlib import Path\n"
             "import sys, warnings\n"
