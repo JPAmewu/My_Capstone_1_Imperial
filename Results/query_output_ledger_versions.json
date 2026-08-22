@@ -8,9 +8,16 @@
   },
   {
     "dataset_version": "verified-query-output-ledger-v1.1",
-    "status": "canonical",
-    "path": "Results/query_output_ledger.csv",
+    "status": "superseded_preserved_immutable",
+    "path": "Results/archive/query_output_ledger_v1.1.csv",
     "sha256": "3cabc618a9b9b4a7b069309133a32850384f2f6eaad51c4264a9efb6cc5e874f",
     "reason": "Recovered from aligned cumulative source snapshots and validated programmatically."
+  },
+  {
+    "dataset_version": "verified-query-output-ledger-v1.2",
+    "status": "canonical",
+    "path": "Results/query_output_ledger.csv",
+    "sha256": "303ff186313ea6885c0cf706f2c6c642ae0876cb489cbd950f0faa7e19154c7d",
+    "reason": "Appended eight Week 12 pairs after cumulative-prefix and query-record reconciliation."
   }
 ]

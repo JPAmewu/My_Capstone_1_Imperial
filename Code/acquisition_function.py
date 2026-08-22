@@ -55,3 +55,22 @@ def expected_improvement(
     z = improvement / sigma[positive]
     scores[positive] = improvement * norm.cdf(z) + sigma[positive] * norm.pdf(z)
     return scores
+
+
+def probability_improvement(
+    mean: object,
+    std: object,
+    *,
+    best: float,
+    xi: float = 0.01,
+) -> np.ndarray:
+    """Return Probability of Improvement scores for maximisation."""
+    mu, sigma = _validated_predictions(mean, std)
+    if not np.isfinite(best):
+        raise ValueError("best must be finite")
+    if not np.isfinite(xi) or xi < 0:
+        raise ValueError("xi must be finite and non-negative")
+    positive = sigma > 0
+    scores = np.zeros_like(mu)
+    scores[positive] = norm.cdf((mu[positive] - float(best) - xi) / sigma[positive])
+    return scores

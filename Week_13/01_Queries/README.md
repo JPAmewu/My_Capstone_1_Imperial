@@ -1,5 +1,10 @@
-# Week 13 queries
+# Week 13 optimisation strategy — 12th query submission
 
-No verified Week 13 query submission is preserved in this folder. The notebook
-under `02_Notebook` is retained only as a historical Week 10-derived placeholder
-and must not be treated as Week 13 evidence.
+This folder contains the eight reproducible Week 13 proposals generated after
+validating and appending the Week 12 returned observations:
+
+- [`week_13_query_points.txt`](week_13_query_points.txt)
+
+The fitted models, UCB/EI/PI comparison, parameters and duplicate checks are in
+the [executed strategy notebook](../02_Notebook/Week_13_Optimisation_Strategy.ipynb).
+These coordinates remain proposals until eight aligned platform outputs return.

@@ -7,7 +7,7 @@ import numpy as np
 
 matplotlib.use("Agg")
 
-from Code.acquisition_function import expected_improvement, upper_confidence_bound
+from Code.acquisition_function import expected_improvement, probability_improvement, upper_confidence_bound
 from Code.candidate_generation import hybrid_candidates, make_rng, uniform_candidates
 from Code.data_loading import load_numpy_pair, load_starter_data
 from Code.data_validation import duplicate_mask, validate_observations
@@ -62,6 +62,7 @@ class ReusableCodeTests(unittest.TestCase):
         self.assertEqual(upper_confidence_bound([1], [0.5], kappa=2).tolist(), [2.0])
         self.assertGreaterEqual(expected_improvement([1], [0.5], best=0.5)[0], 0)
         self.assertEqual(expected_improvement([1], [0], best=0.5).tolist(), [0.0])
+        self.assertGreater(probability_improvement([1], [0.5], best=0.5)[0], 0.5)
 
     def test_acquisition_validation(self):
         with self.assertRaises(ValueError):
@@ -82,6 +83,7 @@ class ReusableCodeTests(unittest.TestCase):
         self.assertEqual((X.shape, y.shape), ((21, 2), (21,)))
         self.assertEqual(starter_count, 10)
         frame, summary = analyse_weekly_function(13, 8)
+        self.assertEqual(summary["recorded_pairs"], 12)
         self.assertEqual(summary["total_verified_observations"], len(frame))
         self.assertIn("archive_integrity", summary)
         figure = plot_weekly_function(frame, summary)

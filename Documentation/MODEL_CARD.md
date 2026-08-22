@@ -2,7 +2,7 @@
 
 **Model name:** BBO Capstone GP-UCB Optimiser
 **Type:** Sequential Bayesian optimisation with per-function Gaussian Process surrogates
-**Version:** 1.3 (archive-reconciled ledger)
+**Version:** 1.4 (Week 12 evidence appended)
 **Developer:** JP Amewu
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
 
@@ -51,14 +51,14 @@ Function dimensions are:
 
 | Function | Dimensions | Verified observations |
 | --- | ---: | ---: |
-| 1 | 2 | 21 |
-| 2 | 2 | 21 |
-| 3 | 3 | 26 |
-| 4 | 4 | 41 |
-| 5 | 4 | 31 |
-| 6 | 5 | 31 |
-| 7 | 6 | 41 |
-| 8 | 8 | 51 |
+| 1 | 2 | 22 |
+| 2 | 2 | 22 |
+| 3 | 3 | 27 |
+| 4 | 4 | 42 |
+| 5 | 4 | 32 |
+| 6 | 5 | 32 |
+| 7 | 6 | 42 |
+| 8 | 8 | 52 |
 
 ## Performance
 
@@ -71,9 +71,9 @@ Because the true objective functions and global optima are unknown, conventional
 - predictive mean, predictive standard deviation and acquisition value at a proposed point;
 - validity checks for bounds, dimensionality, finite values and duplicate submissions.
 
-At the corrected Week 11 state, verified best values are approximately `7.710875e-16`, `0.6112052`, `-0.03483531`, `-1.981075`, `1465.512`, `-0.7142649`, `2.149905`, and `9.939904` for Functions 1–8 respectively. These are best observed values, not proven global optima.
+At the corrected Week 12 state, verified best values are approximately `7.710875e-16`, `0.6112052`, `-0.02262932`, `0.3699753`, `3546.632`, `-0.5378218`, `2.266802`, and `9.939904` for Functions 1–8 respectively. These are best observed values, not proven global optima.
 
-The corrected Week 11 notebook executed all code cells without error and generated one valid, non-duplicate, correctly dimensioned query for each function. GP optimisation may place some kernel parameters at configured bounds; fitted kernels are retained as diagnostics and should inform later sensitivity testing.
+The Week 13 strategy notebook executed all code cells without error and generated one valid, non-duplicate, correctly dimensioned query for each function after comparing UCB, EI and PI. GP optimisation may place some kernel parameters at configured bounds; fitted kernels are retained as diagnostics and should inform later sensitivity testing.
 
 ## Decision process and transparency
 
@@ -88,9 +88,9 @@ The process is transparent at the procedural level. The repository records:
 - duplicate exclusion and validation checks;
 - notebook outputs, warnings and selected query strings.
 
-The canonical [`Results/query_output_ledger.csv`](../Results/query_output_ledger.csv) records 88 exact returned pairs recovered for Weeks 1–11, with source paths, hashes, date basis, and validation status. Its SHA-256 checksum detects unintended changes. The superseded version 1.0 and the suspicious Week 11 arrays remain preserved as immutable historical evidence.
+The canonical [`Results/query_output_ledger.csv`](../Results/query_output_ledger.csv) records 96 exact returned pairs recovered for Weeks 1–12, with source paths, hashes, date basis, and validation status. Its SHA-256 checksum detects unintended changes. Superseded ledger versions and the suspicious Week 11 arrays remain preserved as immutable historical evidence.
 
-Another researcher can reproduce the latest recommendations if they use the same dataset, notebook, Python dependencies and random seeds. The ledger supports deterministic reconstruction through Week 11, but unavailable Week 12–13 returns, authoritative platform submission timestamps, historical software versions and explanations of some manual interventions still prevent bit-for-bit reproduction of every original round.
+Another researcher can reproduce the latest recommendations if they use the same dataset, notebook, Python dependencies and random seeds. The ledger supports deterministic reconstruction through Week 12, but unavailable Week 13 returns, authoritative platform submission timestamps, historical software versions and explanations of some manual interventions still prevent bit-for-bit reproduction of every original round.
 
 ## Assumptions
 

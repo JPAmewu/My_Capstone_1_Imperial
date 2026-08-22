@@ -6,7 +6,7 @@ from dataclasses import dataclass
 
 import numpy as np
 
-from .acquisition_function import expected_improvement, upper_confidence_bound
+from .acquisition_function import expected_improvement, probability_improvement, upper_confidence_bound
 from .data_validation import duplicate_mask, validate_candidates
 
 
@@ -45,8 +45,12 @@ def select_query(
         if best is None:
             raise ValueError("best is required for expected improvement")
         scores = expected_improvement(mu, sigma, best=best, xi=xi)
+    elif method == "pi":
+        if best is None:
+            raise ValueError("best is required for probability of improvement")
+        scores = probability_improvement(mu, sigma, best=best, xi=xi)
     else:
-        raise ValueError("method must be 'ucb' or 'ei'")
+        raise ValueError("method must be 'ucb', 'ei', or 'pi'")
     scores = np.asarray(scores, float)
     scores[duplicate_mask(points, X, decimals=decimals)] = -np.inf
     if not np.isfinite(scores).any():

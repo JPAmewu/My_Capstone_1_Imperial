@@ -1,6 +1,6 @@
 # Datasheet: BBO capstone sequential optimisation dataset
 
-**Version:** 1.3 (archive-reconciled ledger)
+**Version:** 1.4 (Week 12 evidence appended)
 **Creator and maintainer:** JP Amewu
 **Programme:** Imperial College London Machine Learning and Artificial Intelligence Programme
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
@@ -15,32 +15,32 @@ The dataset supports sequential optimisation, exploratory data analysis, Gaussia
 
 The verified project state covers eight independent objective functions with inputs constrained to the unit hypercube `[0, 1]^d`. Function dimensionalities are 2, 2, 3, 4, 4, 5, 6 and 8 respectively.
 
-The corrected Week 11 analysis contains 263 verified paired observations. It
+The corrected Week 12 analysis contains 271 verified paired observations. It
 uses the Week 1 starter arrays plus one exact returned pair per function for
-each of Weeks 1–11, recovered from aligned cumulative archive snapshots.
+each of Weeks 1–12, recovered from aligned cumulative archive snapshots.
 
 | Function | Dimensions | Verified observations | Verified maximum | Latest verified output |
 | --- | ---: | ---: | ---: | ---: |
-| 1 | 2 | 21 | `7.710875e-16` | `8.159220e-130` |
-| 2 | 2 | 21 | `0.6112052` | `0.06529973` |
-| 3 | 3 | 26 | `-0.03483531` | `-0.03844613` |
-| 4 | 4 | 41 | `-1.981075` | `-14.99267` |
-| 5 | 4 | 31 | `1465.512` | `210.0383` |
-| 6 | 5 | 31 | `-0.7142649` | `-1.154424` |
-| 7 | 6 | 41 | `2.149905` | `1.478174` |
-| 8 | 8 | 51 | `9.939904` | `9.276069` |
+| 1 | 2 | 22 | `7.710875e-16` | `-1.623962e-106` |
+| 2 | 2 | 22 | `0.6112052` | `0.6073819` |
+| 3 | 3 | 27 | `-0.02262932` | `-0.02262932` |
+| 4 | 4 | 42 | `0.3699753` | `0.3699753` |
+| 5 | 4 | 32 | `3546.632` | `3546.632` |
+| 6 | 5 | 32 | `-0.5378218` | `-0.5378218` |
+| 7 | 6 | 42 | `2.266802` | `2.266802` |
+| 8 | 8 | 52 | `9.939904` | `9.926835` |
 
 Inputs and outputs are stored as NumPy `.npy` arrays. Query submissions are stored as plain-text `.txt` files, normally with six-decimal coordinates separated by hyphens. Jupyter/Colab `.ipynb` notebooks contain collection logic, validation, analysis, modelling and generated query points. Some weekly directories also contain Markdown documentation and placeholders.
 
-The canonical append-only ledger is [`Results/query_output_ledger.csv`](../Results/query_output_ledger.csv). Version 1.1 contains 88 exact query/output pairs for all eight functions in Weeks 1–11. Each row records source paths and hashes, validation status, and the source-file date. [`Results/query_output_ledger.sha256`](../Results/query_output_ledger.sha256) provides a content-integrity checksum. The superseded version 1.0 remains immutable under `Results/archive/`. Dates are filesystem metadata and are not claimed as authoritative platform submission timestamps.
+The canonical append-only ledger is [`Results/query_output_ledger.csv`](../Results/query_output_ledger.csv). Version 1.2 contains 96 exact query/output pairs for all eight functions in Weeks 1–12. Each row records source paths and hashes, validation status, and the source-file date. [`Results/query_output_ledger.sha256`](../Results/query_output_ledger.sha256) provides a content-integrity checksum. Superseded versions 1.0 and 1.1 remain immutable under `Results/archive/`. Dates are filesystem metadata and are not claimed as authoritative platform submission timestamps.
 
 There are no human subjects, demographic groups, personal data or labels describing people. The outputs are numerical objective values rather than conventional supervised-learning class labels. A fixed train/test split is not recommended because observations are collected sequentially and every confirmed observation is used to update the surrogate.
 
 ### Known gaps and integrity concerns
 
-- The immutable ledger covers the 88 exact pairs supported by the archive for Weeks 1–11; returns for Weeks 12–13 remain unavailable.
+- The immutable ledger covers the 96 exact pairs supported by the archive for Weeks 1–12; Week 13 returns remain unavailable.
 - Exact collection timestamps and software versions were not recorded for every observation.
-- Weeks 12 and 13 remain placeholders and do not yet represent successive completed datasets.
+- Week 13 contains proposals only and is not yet a completed evaluation round.
 - The original Week 11 repository arrays failed provenance reconciliation and remain hash-recorded, quarantined historical evidence; reconstructed arrays are generated only from starter data plus the ledger.
 - Sampling is sparse relative to the volume of the higher-dimensional search spaces.
 - Earlier notebook versions sometimes reconstructed arrays from uploaded text and could encounter input/output length mismatches. Later validation stops rather than silently truncating data.
@@ -110,7 +110,7 @@ JP Amewu maintains the dataset. Maintenance should include:
 - recording provenance, submission round, timestamp and code version for every new observation;
 - validating shape, bounds, finiteness and duplicates before publication;
 - preserving explicit evidence-gap reporting for unavailable returned pairs;
-- replacing Week 12 and Week 13 placeholders only when their genuine successive outputs are available;
+- appending Week 13 outputs only after exact reconciliation with its submitted queries;
 - documenting corrections in Git history and this datasheet;
 - archiving a final version when the capstone concludes.
 
