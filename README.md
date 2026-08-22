@@ -59,7 +59,7 @@ GP-UCB proposals while preserving the evidence boundary: no authoritative Week
 | 10 | [Week 10](Week_10/02_Notebook/Week_10_Capstone.ipynb) | Corrected and executed |
 | 11 | [Week 11](Week_11/02_Notebook/Week_11_Capstone.ipynb) | Executed corruption-aware review; returned pairs recovered and verified in the canonical ledger |
 | 12 | [Week 12](Week_12/02_Notebook/Week_12_Capstone.ipynb) | Executed canonical-ledger validation; [new GP-UCB proposals](Week_12/01_Queries/week_12_query_points.txt); returned outputs unavailable |
-| 13 | [Week 13](Week_13/02_Notebook/Week_13_Capstone.ipynb) | Validated and executed; full EDA and [GP-UCB proposals](Week_13/01_Queries/week_13_query_points.txt); returned outputs unavailable |
+| 13 | [Week 13](Week_13/02_Notebook/Week_13_Capstone.ipynb) | Validated and executed; full EDA and [GP-UCB values](Results/week_13_gp_ucb_proposals.csv); [query points](Week_13/01_Queries/week_13_query_points.txt); returned outputs unavailable |
 
 ## Optimisation workflow
 
