@@ -10,14 +10,15 @@ This project asks how Bayesian optimisation can search eight expensive, unknown 
 
 ## Project status
 
-Weeks 1–11 contain a recovered and validated experiment history. The canonical
-Week 12 notebook reconstructs the post-Week-11 arrays from the immutable ledger,
-verifies counts of `21, 21, 26, 41, 31, 31, 41, 51`, and generates eight
-deterministic GP-UCB proposals. The proposals are recorded separately from the
-returned-pair ledger because no corresponding Week 12 outputs are available.
-The canonical Week 13 notebook now provides validated full EDA and deterministic
-GP-UCB proposals while preserving the evidence boundary: no authoritative Week
-12 or Week 13 returned outputs are available, so proposals are not observations.
+Weeks 1–12 now contain a recovered, reconciled, and validated experiment
+history. Canonical ledger v1.2 appends eight verified Week 12 query/output pairs
+after cumulative-prefix and query-record reconciliation, extending the
+per-function observation counts to `22, 22, 27, 42, 32, 32, 42, 52`. The
+executed Week 13 optimisation-strategy notebook uses this updated evidence,
+performs full EDA, compares UCB, Expected Improvement, and Probability of
+Improvement, and generates one bounded, non-duplicate proposal for each
+function. These Week 13 coordinates remain proposals rather than observations
+until eight aligned platform outputs are returned and validated.
 
 ## Repository structure
 
