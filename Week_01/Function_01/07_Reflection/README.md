@@ -1,48 +1,41 @@
-# Week 01 Reflection
+# Week 01 Function 01 reflection
 
-**Function 01**
+## Objective
 
-## Objectives
+Review Function 01 at the Week 1 checkpoint and decide what the
+verified evidence implies for the next optimisation step.
 
-Establish a baseline for the unknown two-dimensional function and identify a
-promising point using the available starter observations.
+## Strategy and work completed
 
-## Work completed
+I used random search within the Week 1 workflow. I validated
+all 11 cumulative observations, kept the
+analysis within this function's 2-dimensional space, and
+checked the response trace, running incumbent, bounds, and provenance.
 
-I validated the ten input/output pairs, used random search as the Week 1
-strategy, identified the best observed point, and reviewed objective and
-running-best plots.
+## Evidence and result
 
-## Key learning
+The latest verified return `-1.560647e-117` did not exceed the incumbent `7.710875e-16`. The verified incumbent occurs at query 3 with
+input `[0.7310236309563586,0.7329998764152272]`. Progress is
+defined only against earlier Function 01 values; objective magnitudes
+are not ranked across functions.
 
-Random search is useful for initial coverage when little is known, but it does
-not use accumulated evidence or uncertainty to select the next point.
+## Critical reflection
 
-## Challenges
+Initial methods established coverage, but sparse samples made manual and random choices difficult to justify. For Function 01, the result shows that a
+model-guided or plausible query is not evidence of improvement until its exact
+return is recorded. The absence of improvement argues against overconfidence in the selected region, not against the acquisition method on the basis of one trial.
 
-The outputs are extremely close to zero across much of the observed space, so
-the small numerical differences are difficult to interpret as a strong region.
 
-## Decisions and reasoning
+## Data quality, limitations, and ethics
 
-I treated query 3 as the best observed point because maximisation requires the
-largest recorded output. I did not compare its raw value with other functions,
-because their objective scales are unrelated.
+Confirmed cumulative evidence is available through Week 1. The response surface and global optimum remain unknown, the
+sample is adaptive rather than representative, and sparse coverage becomes more
+serious as dimension increases. I therefore avoid causal claims, imputation,
+cross-function score comparisons, and retrospective selection of a method after
+seeing its result.
 
-## Results and interpretation
+## Next step
 
-The best starter point was approximately `[0.731024, 0.733000]`, with output
-`7.710875e-16`. The subsequently submitted random-search point returned
-`-1.560646704467778e-117`, so it did not improve the starter best.
-
-## Limitations and ethical considerations
-
-Ten observations cannot establish the global optimum or reliable surface
-shape. The result is sensitive to sparse sampling and floating-point scale.
-Responsible reporting requires preserving provenance and avoiding exaggerated
-claims of optimality.
-
-## Improvements and next steps
-
-Use a Gaussian Process with explicit uncertainty and a reproducible acquisition
-strategy in Week 2, while retaining duplicate, bounds, and dimensional checks.
+For the next checkpoint I would replace uninformed search with a reproducible surrogate and acquisition function. I would append a point only
+after its authoritative return is available and preserve the prior rows as an
+immutable audit trail.

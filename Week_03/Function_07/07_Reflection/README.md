@@ -1,33 +1,41 @@
-# Week 03 Reflection
+# Week 03 Function 07 reflection
 
-## Objectives
+## Objective
 
-I intended to review Function 07 using only evidence verifiable at the Week 03 checkpoint and to preserve a reproducible audit trail.
+Review Function 07 at the Week 3 checkpoint and decide what the
+verified evidence implies for the next optimisation step.
 
-## Work completed
+## Strategy and work completed
 
-I validated the cumulative observations, calculated within-function descriptive results, generated a consolidated Matplotlib diagnostic, documented provenance, and separated the analysis module from notebook presentation.
+I used GP-UCB within the Week 3 workflow. I validated
+all 33 cumulative observations, kept the
+analysis within this function's 6-dimensional space, and
+checked the response trace, running incumbent, bounds, and provenance.
 
-## Key learning
+## Evidence and result
 
-I learned that optimisation progress is supported only by exact query/return pairs. A proposed query is not an observation until its returned objective is recorded, and raw objective scales cannot be ranked across different black-box functions.
+The latest verified return `2.149905` established a new within-function best. The verified incumbent occurs at query 33 with
+input `[0.143585,0.302559,0.571101,0.194533,0.395561,0.815792]`. Progress is
+defined only against earlier Function 07 values; objective magnitudes
+are not ranked across functions.
 
-## Challenges
+## Critical reflection
 
-At this checkpoint, Confirmed cumulative evidence is available through Week 3. The trajectory is interpreted only from verified evidence.
+Repeated UCB use showed that a plausible model recommendation still needs a returned value before it counts as progress. For Function 07, the result shows that a
+model-guided or plausible query is not evidence of improvement until its exact
+return is recorded. The improvement supports the selected region, but one success does not prove the strategy or a global optimum.
 
-## Decisions and reasoning
 
-I retained the Week 01 arrays as canonical evidence, referenced exact recoverable pairs through a shared registry, treated the largest verified response as the incumbent, and refused to impute missing returns.
+## Data quality, limitations, and ethics
 
-## Results and interpretation
+Confirmed cumulative evidence is available through Week 3. The response surface and global optimum remain unknown, the
+sample is adaptive rather than representative, and sparse coverage becomes more
+serious as dimension increases. I therefore avoid causal claims, imputation,
+cross-function score comparisons, and retrospective selection of a method after
+seeing its result.
 
-The generated summary identifies the verified incumbent and latest recoverable response for Function 07. Any improvement flag compares only with earlier observations from this same function.
+## Next step
 
-## Limitations and ethical considerations
-
-The response surface, measurement process, and missingness mechanism are unknown. Selective reporting could overstate performance, so evidence gaps and unsuccessful returns remain explicit.
-
-## Improvements and next steps
-
-I would recover the missing original archives, verify each query/return pair against primary records, then fit and validate a probabilistic surrogate before making a new duplicate-checked proposal.
+For the next checkpoint I would retain uncertainty diagnostics and verify every appended query/return pair. I would append a point only
+after its authoritative return is available and preserve the prior rows as an
+immutable audit trail.

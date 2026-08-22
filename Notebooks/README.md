@@ -1,10 +1,14 @@
 # Consolidated notebooks
 
-This folder is reserved for final, project-wide notebooks that consolidate
-results across multiple weeks. It must not contain copies of weekly notebooks.
+This folder contains project-wide notebooks that consolidate results across
+multiple weeks without duplicating the authoritative weekly notebooks.
 
-No consolidated final notebook has been approved yet. The authoritative
-weekly analyses remain in each week's `02_Notebook` folder:
+## Cross-week evaluation
+
+- [Historical GP validation and uncertainty calibration](GP_Evaluation_and_Calibration.ipynb) — 88 rolling one-step-ahead folds, interval calibration, and final fitted-hyperparameter diagnostics.
+- [Final consolidated visual results](Final_Visual_Results.ipynb) — reader-facing four-panel synthesis of optimisation performance, surrogate skill/calibration, recommendation robustness, and evidence status.
+
+The authoritative weekly analyses remain in each week's `02_Notebook` folder:
 
 | Week | Canonical notebook | Status |
 | --- | --- | --- |
@@ -19,5 +23,5 @@ weekly analyses remain in each week's `02_Notebook` folder:
 | 9 | [Week 9](../Week_09/02_Notebook/Week_9_Capstone.ipynb) | Corrected and executed |
 | 10 | [Week 10](../Week_10/02_Notebook/Week_10_Capstone.ipynb) | Corrected and executed |
 | 11 | [Week 11](../Week_11/02_Notebook/Week_11_Capstone.ipynb) | Corrected and executed |
-| 12 | [Week 12 placeholder](../Week_12/02_Notebook/Week_12_Placeholder.ipynb) | Historical Week 10-derived placeholder |
+| 12 | [Week 12](../Week_12/02_Notebook/Week_12_Capstone.ipynb) | Validated and executed; full EDA and GP-UCB proposals |
 | 13 | [Week 13 placeholder](../Week_13/02_Notebook/Week_13_Placeholder.ipynb) | Historical Week 10-derived placeholder |

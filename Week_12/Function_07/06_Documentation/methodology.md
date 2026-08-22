@@ -23,7 +23,14 @@ The workflow requires finite aligned arrays, 6 input dimensions, and coordinates
 
 ## Evidence boundary
 
-At this review point, Confirmed cumulative evidence is available through Week 12. The original Week 11 arrays remain quarantined and are not used. No value is imputed. Results are descriptive within Function 07; they do not imply causality, global optimality, or cross-function ranking.
+The submitted Week 12 proposal uses GP-UCB with `kappa = 0.1`, an explicit
+exploitation-led decision because the uncertainty bonus is small relative to the
+predictive mean. The archived `kappa = 2.0` proposal gives uncertainty twenty
+times as much weight. A separate, non-submission appendix compares intermediate
+kappa values, Expected Improvement, and wider GP bounds; it does not alter the
+canonical proposal or returned-pair ledger.
+
+At this review point, no verified Week 12 return is present; confirmed cumulative evidence is available through Week 11. The original Week 11 arrays remain quarantined and are not used. No value is imputed. Results are descriptive within Function 07; they do not imply causality, global optimality, or cross-function ranking.
 
 ## Reproduction
 

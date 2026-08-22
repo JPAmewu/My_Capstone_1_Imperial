@@ -87,19 +87,19 @@ Week,Function,Dimensions,Observation count,Previous best,New observation,New bes
 11,F6,5,31,-0.7142649478202404,-1.154424131709899,-0.7142649478202404,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
 11,F7,6,41,2.149905456773691,1.478174096441659,2.149905456773691,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
 11,F8,8,51,9.9399041910574,9.2760687615836,9.9399041910574,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
-12,F1,2,22,7.710875114502849e-16,-1.623961943367607e-106,7.710875114502849e-16,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
-12,F2,2,22,0.6112052157614438,0.6073819387620356,0.6112052157614438,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
-12,F3,3,27,-0.034835313350078584,-0.022629319369005918,-0.022629319369005918,0.012205993981072666,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
-12,F4,4,42,-1.9810750402526334,0.36997528143061276,0.36997528143061276,2.351050321683246,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
-12,F5,4,32,1465.5121917504077,3546.6319692489096,3546.6319692489096,2081.119777498502,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
-12,F6,5,32,-0.7142649478202404,-0.5378218203873342,-0.5378218203873342,0.17644312743290624,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
-12,F7,6,42,2.149905456773691,2.26680177151999,2.26680177151999,0.11689631474629936,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
-12,F8,8,52,9.9399041910574,9.9268353584061,9.9399041910574,0.0,Not recorded,,,Confirmed return,Exact query/return pair recorded in Results/query_output_ledger.csv.
-13,F1,2,22,7.710875114502849e-16,,7.710875114502849e-16,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
-13,F2,2,22,0.6112052157614438,,0.6112052157614438,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
-13,F3,3,27,-0.022629319369005918,,-0.022629319369005918,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
-13,F4,4,42,0.36997528143061276,,0.36997528143061276,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
-13,F5,4,32,3546.6319692489096,,3546.6319692489096,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
-13,F6,5,32,-0.5378218203873342,,-0.5378218203873342,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
-13,F7,6,42,2.26680177151999,,2.26680177151999,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
-13,F8,8,52,9.9399041910574,,9.9399041910574,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
+12,F1,2,21,7.710875114502849e-16,,7.710875114502849e-16,,"1.22**2 * Matern(length_scale=[2, 0.0498], nu=2.5) + WhiteKernel(noise_level=1e-10)",0.0002843561665511,0.0003438817626855,Return unavailable,No verified Week 12 return is present. A validated proposal is recorded in Results/bbo_query_ledger.csv.
+12,F2,2,21,0.6112052157614438,,0.6112052157614438,,"0.995**2 * Matern(length_scale=[0.0444, 2], nu=2.5) + WhiteKernel(noise_level=0.01)",0.0481976372021009,0.6280327553865477,Return unavailable,No verified Week 12 return is present. A validated proposal is recorded in Results/bbo_query_ledger.csv.
+12,F3,3,26,-0.034835313350078584,,-0.034835313350078584,,"1.39**2 * Matern(length_scale=[0.496, 2, 0.139], nu=2.5) + WhiteKernel(noise_level=0.00197)",0.0413270510178757,-0.0191006435874635,Return unavailable,No verified Week 12 return is present. A validated proposal is recorded in Results/bbo_query_ledger.csv.
+12,F4,4,41,-1.9810750402526334,,-1.9810750402526334,,"4.38**2 * Matern(length_scale=[1.96, 1.9, 2, 2], nu=2.5) + WhiteKernel(noise_level=0.00134)",0.5448673091288657,-1.2980779267895102,Return unavailable,No verified Week 12 return is present. A validated proposal is recorded in Results/bbo_query_ledger.csv.
+12,F5,4,31,1465.5121917504077,,1465.5121917504077,,"1.46**2 * Matern(length_scale=[2, 0.557, 0.756, 0.416], nu=2.5) + WhiteKernel(noise_level=1e-10)",165.0759470629272,1847.6468566992091,Return unavailable,No verified Week 12 return is present. A validated proposal is recorded in Results/bbo_query_ledger.csv.
+12,F6,5,31,-0.7142649478202404,,-0.7142649478202404,,"2.17**2 * Matern(length_scale=[1.15, 0.81, 1.12, 1.9, 2], nu=2.5) + WhiteKernel(noise_level=0.00122)",0.1396623321941217,-0.4641147826293155,Return unavailable,No verified Week 12 return is present. A validated proposal is recorded in Results/bbo_query_ledger.csv.
+12,F7,6,41,2.149905456773691,,2.149905456773691,,"0.91**2 * Matern(length_scale=[0.644, 0.468, 1.29, 0.391, 0.292, 0.722], nu=2.5) + WhiteKernel(noise_level=1e-10)",0.1131916849796774,2.1117649347893352,Return unavailable,No verified Week 12 return is present. A validated proposal is recorded in Results/bbo_query_ledger.csv.
+12,F8,8,51,9.9399041910574,,9.9399041910574,,"0.995**2 * Matern(length_scale=[1.24, 2, 1.01, 2, 2, 2, 1.28, 2], nu=2.5) + WhiteKernel(noise_level=1e-10)",0.1239341110953643,9.962201557484423,Return unavailable,No verified Week 12 return is present. A validated proposal is recorded in Results/bbo_query_ledger.csv.
+13,F1,2,21,7.710875114502849e-16,,7.710875114502849e-16,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
+13,F2,2,21,0.6112052157614438,,0.6112052157614438,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
+13,F3,3,26,-0.034835313350078584,,-0.034835313350078584,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
+13,F4,4,41,-1.9810750402526334,,-1.9810750402526334,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
+13,F5,4,31,1465.5121917504077,,1465.5121917504077,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
+13,F6,5,31,-0.7142649478202404,,-0.7142649478202404,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
+13,F7,6,41,2.149905456773691,,2.149905456773691,,Not recorded,,,Return unavailable,No verified Week 13 return is present.
+13,F8,8,51,9.9399041910574,,9.9399041910574,,Not recorded,,,Return unavailable,No verified Week 13 return is present.

@@ -2,7 +2,7 @@
 
 **Model name:** BBO Capstone GP-UCB Optimiser
 **Type:** Sequential Bayesian optimisation with per-function Gaussian Process surrogates
-**Version:** 1.4 (Week 12 evidence appended)
+**Version:** 1.8 (strict submission validation and frozen release)
 **Developer:** JP Amewu
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
 
@@ -10,7 +10,7 @@
 
 This approach proposes evaluation points for eight unknown numerical objective functions. It is not one persistent fitted model: a separate Gaussian Process is refitted for each function after every round using all confirmed observations available for that function. An acquisition function then ranks unevaluated candidate points and selects the next query.
 
-The corrected Week 11 implementation uses scikit-learn's `GaussianProcessRegressor`, a constant kernel multiplied by an anisotropic Matérn-5/2 kernel, a white-noise component, GP target normalisation, and Upper Confidence Bound (UCB) acquisition. It uses `kappa = 2.0`, three optimiser restarts, deterministic random seeds, and 20,000 bounded candidate points per function.
+The validated Week 12 implementation uses scikit-learn's `GaussianProcessRegressor`, a constant kernel multiplied by an anisotropic Matérn-5/2 kernel, a white-noise component, GP target normalisation, and Upper Confidence Bound (UCB) acquisition. It uses `kappa = 0.1`, three optimiser restarts, deterministic per-function random seeds, and 20,000 bounded candidate points per function. The previous `kappa = 2.0` proposals are archived for comparison.
 
 ## Intended use
 
@@ -45,7 +45,7 @@ Patterns from prior rounds influenced the balance between exploration and exploi
 
 **Input:** For Function `j`, an array `X_j` of previous points in `[0, 1]^{d_j}` and a paired vector `y_j` of observed scalar outputs.
 
-**Output:** One new point for each function, rounded to six decimal places and formatted as a hyphen-separated submission string.
+**Output:** One new point for each function in `[0.000000, 0.999999]^d`, rounded to exactly six decimal places and formatted as a hyphen-separated submission string.
 
 Function dimensions are:
 
@@ -69,11 +69,21 @@ Because the true objective functions and global optima are unknown, conventional
 - progression of best-so-far across rounds;
 - number of objective evaluations;
 - predictive mean, predictive standard deviation and acquisition value at a proposed point;
-- validity checks for bounds, dimensionality, finite values and duplicate submissions.
+- validity checks for submission bounds `[0.000000, 0.999999]`, dimensionality, finite values, exact portal syntax and duplicate submissions.
 
 At the corrected Week 12 state, verified best values are approximately `7.710875e-16`, `0.6112052`, `-0.02262932`, `0.3699753`, `3546.632`, `-0.5378218`, `2.266802`, and `9.939904` for Functions 1–8 respectively. These are best observed values, not proven global optima.
 
 The Week 13 strategy notebook executed all code cells without error and generated one valid, non-duplicate, correctly dimensioned query for each function after comparing UCB, EI and PI. GP optimisation may place some kernel parameters at configured bounds; fitted kernels are retained as diagnostics and should inform later sensitivity testing.
+The canonical Week 12 notebook executed all code cells without error, verified the ledger checksum and observation counts, and generated one valid, non-duplicate, correctly dimensioned proposal for each function. A separate sensitivity appendix compares UCB at `kappa = 0.1, 0.5, 1.0, 2.0`, Expected Improvement, standard and wider GP bounds, and Sobol candidate sets for Functions 6–8. It does not modify the submitted experiment. F4's submitted recommendation is unchanged between `kappa = 0.1` and `2.0`, indicating local agreement between mean and uncertainty ranking. F7 changes substantially: the low-kappa point has higher predicted mean and lower uncertainty, whereas the high-kappa point accepts a lower mean for substantially greater uncertainty. These proposals are not observations until authoritative returns are received.
+
+Rolling one-step-ahead validation adds 88 chronological held-out predictions
+(eleven per function). Seven functions improve on a historical-mean RMSE
+baseline; F2 does not. Nominal 95% interval coverage is only 72.7%, 72.7%, and
+63.6% for F5, F6, and F7, respectively, so uncertainty is not uniformly
+calibrated. All eight final GP fits place at least one length scale or noise
+estimate at a configured bound. The full separation between optimisation
+performance, surrogate calibration, and recommendation robustness is reported
+in the [evaluation chapter](EVALUATION.md).
 
 ## Decision process and transparency
 
@@ -92,6 +102,11 @@ The canonical [`Results/query_output_ledger.csv`](../Results/query_output_ledger
 
 Another researcher can reproduce the latest recommendations if they use the same dataset, notebook, Python dependencies and random seeds. The ledger supports deterministic reconstruction through Week 12, but unavailable Week 13 returns, authoritative platform submission timestamps, historical software versions and explanations of some manual interventions still prevent bit-for-bit reproduction of every original round.
 
+The final computational stack is pinned in `requirements-lock.txt`; seeds,
+canonical counts, release tag, and SHA-256 checksums are recorded in
+`Results/submission_manifest.json`. The annotated tag `capstone-final-v1.0.5`
+identifies the frozen repository version.
+
 ## Assumptions
 
 The approach assumes that:
@@ -99,11 +114,11 @@ The approach assumes that:
 - each objective is stationary during the project;
 - nearby inputs tend to have related outputs, making a Matérn GP useful;
 - observations are exact or contain only modest noise;
-- all valid inputs lie within `[0, 1]^d`;
+- historical inputs lie within `[0, 1]^d`, while every new portal submission lies within `[0.000000, 0.999999]^d`;
 - the accumulated arrays preserve correct query-output pairing;
 - a uniformly generated candidate set provides adequate coverage;
 - six-decimal rounding is compatible with the evaluation platform;
-- maximising UCB with `kappa = 2.0` provides an acceptable exploration/exploitation balance.
+- maximising UCB with `kappa = 0.1` intentionally favours exploitation; the archived `kappa = 2.0` run provides the more exploratory comparison.
 
 Violations can produce overconfident or misleading recommendations. Discontinuities, narrow peaks, heteroscedastic noise or incorrect pairing may be smoothed over by the surrogate.
 
@@ -117,7 +132,7 @@ Violations can produce overconfident or misleading recommendations. Discontinuit
 - **Random candidate dependence:** recommendations depend on candidate generation and the chosen seed.
 - **No known optimum:** absolute regret and optimality cannot be calculated.
 - **Data-lineage risk:** recovered dates are source-file metadata rather than authoritative platform timestamps, and the original Week 11 arrays remain quarantined.
-- **Limited robustness evaluation:** alternative kernels, acquisition functions and seeds have not been systematically compared under a common protocol.
+- **Sensitivity is diagnostic, not outcome evidence:** alternative acquisition settings and GP bounds have now been compared under one deterministic protocol, but none can be ranked by realised performance until authoritative returns exist.
 
 Potential failures include repeated focus on a local optimum, missing narrow boundary peaks, overexploration of uncertain but unproductive areas or propagating an incorrectly paired observation into later rounds.
 
@@ -131,8 +146,8 @@ Transparency supports responsible adaptation by allowing reviewers to inspect as
 
 1. Append future confirmed pairs to the immutable ledger with authoritative timestamps and provenance; never alter an existing published row.
 2. Recover missing returned pairs only from authoritative platform records.
-3. Compare multiple kernels and acquisition functions using repeated seeds.
-4. Replace uniform random candidates with Sobol/Latin hypercube designs or multi-start continuous acquisition optimisation.
+3. Extend the sensitivity appendix to multiple kernels and repeated seeds.
+4. Retain Sobol or Latin-hypercube designs for high-dimensional candidate coverage and compare them with multi-start continuous acquisition optimisation.
 5. Evaluate calibration, sensitivity and cumulative/best-so-far regret when a reference optimum becomes available.
 6. Track fitted kernels, acquisition scores and reasons for manual overrides.
 7. Add automated lineage and array-validation tests.
