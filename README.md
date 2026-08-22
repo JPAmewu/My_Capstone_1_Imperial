@@ -77,7 +77,7 @@ The weekly implementation evolves, but the validated workflow is:
 8. Record the proposal, uncertainty, fitted kernel, diagnostics, and evidence
    gaps for the next round.
 
-The corrected Week 1–11 notebooks avoid active Google Drive mounts, `/content` dependencies,
+The corrected notebooks avoid active Google Drive mounts, `/content` dependencies,
 external writes, environment-dependent `display()` calls, and manual target
 scaling. Matplotlib figures are embedded in the executed Week 1–11 notebooks.
 
@@ -96,12 +96,12 @@ jupyter
 
 Run a notebook from the repository root so its root-discovery logic can locate
 the Week 1 starter arrays. Execute cells from top to bottom. The final cell in
-each corrected Week 1–11 notebook contains reproducibility and integrity
+each corrected notebook contains reproducibility and integrity
 assertions.
 
 ## Evidence limitations
 
-- Exact query/output pairs for Weeks 1–11 were recovered from the original
+- Exact query/output pairs for Weeks 1–12 were recovered from the original
   cumulative snapshots in the local capstone archive and recorded with hashes.
 - Snapshot file modification dates are retained as provenance metadata, but are
   not represented as authoritative platform submission timestamps.

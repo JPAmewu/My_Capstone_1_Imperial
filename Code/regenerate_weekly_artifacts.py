@@ -27,8 +27,10 @@ def refresh_narrative(path: Path, prefix: str, replacement: str) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--repository", type=Path, default=Path.cwd())
+    parser.add_argument("--weeks", type=int, nargs="*")
     args = parser.parse_args()
-    for week in range(1, 14):
+    weeks = args.weeks or list(range(1, 14))
+    for week in weeks:
         for function in range(1, 9):
             write_review_artifacts(week, function, args.repository.resolve())
             target = args.repository.resolve() / f"Week_{week:02d}" / f"Function_{function:02d}"

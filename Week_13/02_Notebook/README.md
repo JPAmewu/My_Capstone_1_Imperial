@@ -1,10 +1,1 @@
-# Week 13 notebook status
-
-[`Week_13_Capstone.ipynb`](Week_13_Capstone.ipynb) is the canonical Week 13
-notebook. It is validated and executed, includes full EDA for all eight
-functions, and records the exact deterministic GP-UCB proposal values.
-
-No authoritative Week 12 or Week 13 returned outputs are available. The
-notebook therefore uses verified evidence through Week 11 and keeps proposals
-separate from observations. `Week_13_Placeholder.ipynb` remains only as an
-audit-history artifact and is not canonical.
+Week_13_Optimisation_Strategy.ipynb is the executed, reproducible optimisation strategy for the Week 13 query submission. It uses the validated historical dataset together with the returned Week 12 observations, which were appended to form the Week 13 dataset. The notebook evaluates the updated evidence, fits the Gaussian Process surrogate, compares the acquisition strategies, and generates one bounded, non-duplicate Week 13 proposal for each function. The resulting proposals are stored in ../01_Queries/week_13_query_points.txt. Week 13 returned outputs are not yet available.
