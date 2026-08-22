@@ -12,15 +12,11 @@ DIMENSIONS = {1: 2, 2: 2, 3: 3, 4: 4, 5: 4, 6: 5, 7: 6, 8: 8}
 
 EVIDENCE_GAPS = {
     week: f"Confirmed cumulative evidence is available through Week {week}."
-    for week in range(1, 12)
+    for week in range(1, 13)
 }
-EVIDENCE_GAPS[12] = (
-    "No verified Week 12 return is present; confirmed cumulative evidence "
-    "is available through Week 11."
-)
 EVIDENCE_GAPS[13] = (
-    "No verified Week 12 or Week 13 return is present; confirmed cumulative "
-    "evidence is available through Week 11."
+    "No verified Week 13 return is present; confirmed cumulative evidence "
+    "is available through Week 12."
 )
 
 
@@ -64,4 +60,4 @@ def recorded_pairs(review_week: int, function: int):
     """Return evidence available at the start of a weekly review."""
     if review_week not in range(2, 14):
         raise ValueError("review_week must be 2..13")
-    return pairs_through_week(min(review_week - 1, 11), function)
+    return pairs_through_week(min(review_week - 1, 12), function)

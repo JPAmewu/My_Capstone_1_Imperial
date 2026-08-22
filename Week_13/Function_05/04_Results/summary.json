@@ -3,29 +3,29 @@
   "function": 5,
   "dimensions": 4,
   "starter_observations": 20,
-  "recorded_pairs": 11,
-  "total_verified_observations": 31,
-  "best_query": 28,
+  "recorded_pairs": 12,
+  "total_verified_observations": 32,
+  "best_query": 32,
   "best_input": [
-    0.08123,
-    0.992582,
-    0.156202,
-    0.988421
+    0.09922,
+    0.956523,
+    0.978678,
+    0.993262
   ],
-  "best_output": 1465.5121917504077,
-  "latest_verified_query": 31,
+  "best_output": 3546.6319692489096,
+  "latest_verified_query": 32,
   "latest_verified_input": [
-    0.016444,
-    0.027486,
-    0.656999,
-    0.955172
+    0.09922,
+    0.956523,
+    0.978678,
+    0.993262
   ],
-  "latest_verified_output": 210.03831315192616,
-  "latest_improves_previous_best": false,
+  "latest_verified_output": 3546.6319692489096,
+  "latest_improves_previous_best": true,
   "minimum_output": 0.1129397953712203,
-  "mean_output": 333.08634963315325,
-  "standard_deviation": 443.40799477685977,
-  "evidence_gap": "No verified Week 12 or Week 13 return is present; confirmed cumulative evidence is available through Week 11.",
+  "mean_output": 433.50965024614567,
+  "standard_deviation": 709.2930180898549,
+  "evidence_gap": "No verified Week 13 return is present; confirmed cumulative evidence is available through Week 12.",
   "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
   "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger."
 }

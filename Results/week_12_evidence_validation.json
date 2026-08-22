@@ -1,0 +1,21 @@
+{
+  "dataset_version": "verified-query-output-ledger-v1.2",
+  "source_rounds": 12,
+  "historical_prefix_pairs_checked": 88,
+  "historical_prefix_mismatches": 0,
+  "week_12_pairs_appended": 8,
+  "query_record_reconciliation": {
+    "status": "corrected",
+    "finding": "The pre-reconciliation tracked Week 12 file repeated the Week 11 queries and matched none of the supplied Week 12 queries.",
+    "archived_path": "Week_12/01_Queries/archive/pre_reconciliation_week_12_query_points.txt"
+  },
+  "checks": {
+    "dimensions": "passed",
+    "bounds": "passed",
+    "finite_values": "passed",
+    "row_alignment": "passed"
+  },
+  "source_file_date": "2026-08-19",
+  "date_basis": "source-file modification date; not authoritative platform submission timestamp",
+  "canonical_ledger_sha256": "303ff186313ea6885c0cf706f2c6c642ae0876cb489cbd950f0faa7e19154c7d"
+}

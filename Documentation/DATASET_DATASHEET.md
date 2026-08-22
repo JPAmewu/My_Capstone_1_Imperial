@@ -119,10 +119,20 @@ The analytical forms and real-world origins of the eight functions are unknown. 
 
 The verified project state covers eight independent objective functions with inputs constrained to the unit hypercube `[0, 1]^d`. Function dimensionalities are 2, 2, 3, 4, 4, 5, 6 and 8 respectively.
 
-The corrected Week 11 analysis contains 263 verified paired observations. It
+The corrected Week 12 analysis contains 271 verified paired observations. It
 uses the Week 1 starter arrays plus one exact returned pair per function for
-each of Weeks 1–11, recovered from aligned cumulative archive snapshots.
+each of Weeks 1–12, recovered from aligned cumulative archive snapshots.
 
+| Function | Dimensions | Verified observations | Verified maximum | Latest verified output |
+| --- | ---: | ---: | ---: | ---: |
+| 1 | 2 | 22 | `7.710875e-16` | `-1.623962e-106` |
+| 2 | 2 | 22 | `0.6112052` | `0.6073819` |
+| 3 | 3 | 27 | `-0.02262932` | `-0.02262932` |
+| 4 | 4 | 42 | `0.3699753` | `0.3699753` |
+| 5 | 4 | 32 | `3546.632` | `3546.632` |
+| 6 | 5 | 32 | `-0.5378218` | `-0.5378218` |
+| 7 | 6 | 42 | `2.266802` | `2.266802` |
+| 8 | 8 | 52 | `9.939904` | `9.926835` |
 The descriptions below summarise observed response and modelling behaviour in the project evidence. They are empirical descriptions, not claims about the unknown analytical forms of the black-box functions.
 
 | Function | Description | Dimensions | Verified observations | Verified maximum | Latest verified output |
@@ -138,15 +148,15 @@ The descriptions below summarise observed response and modelling behaviour in th
 
 Inputs and outputs are stored as NumPy `.npy` arrays. Query submissions are stored as plain-text `.txt` files with exactly six decimal places per coordinate, hyphen separators, and values in `[0.000000, 0.999999]`. Jupyter/Colab `.ipynb` notebooks contain collection logic, validation, analysis, modelling and generated query points. Some weekly directories also contain Markdown documentation and placeholders.
 
-The canonical append-only ledger is [`Results/query_output_ledger.csv`](../Results/query_output_ledger.csv). Version 1.1 contains 88 exact query/output pairs for all eight functions in Weeks 1–11. Each row records source paths and hashes, validation status, and the source-file date. [`Results/query_output_ledger.sha256`](../Results/query_output_ledger.sha256) provides a content-integrity checksum. The superseded version 1.0 remains immutable under `Results/archive/`. Dates are filesystem metadata and are not claimed as authoritative platform submission timestamps.
+The canonical append-only ledger is [`Results/query_output_ledger.csv`](../Results/query_output_ledger.csv). Version 1.2 contains 96 exact query/output pairs for all eight functions in Weeks 1–12. Each row records source paths and hashes, validation status, and the source-file date. [`Results/query_output_ledger.sha256`](../Results/query_output_ledger.sha256) provides a content-integrity checksum. Superseded versions 1.0 and 1.1 remain immutable under `Results/archive/`. Dates are filesystem metadata and are not claimed as authoritative platform submission timestamps.
 
 There are no human subjects, demographic groups, personal data or labels describing people. The outputs are numerical objective values rather than conventional supervised-learning class labels. A fixed train/test split is not recommended because observations are collected sequentially and every confirmed observation is used to update the surrogate.
 
 ### Known gaps and integrity concerns
 
-- The immutable ledger covers the 88 exact pairs supported by the archive for Weeks 1–11; returns for Weeks 12–13 remain unavailable.
+- The immutable ledger covers the 96 exact pairs supported by the archive for Weeks 1–12; Week 13 returns remain unavailable.
 - Exact collection timestamps and software versions were not recorded for every observation.
-- Week 12 is an executed proposal round with no verified returned outputs; only Week 13 remains a placeholder.
+- Week 13 contains proposals only and is not yet a completed evaluation round.
 - The original Week 11 repository arrays failed provenance reconciliation and remain hash-recorded, quarantined historical evidence; reconstructed arrays are generated only from starter data plus the ledger.
 - Sampling is sparse relative to the volume of the higher-dimensional search spaces.
 - Earlier notebook versions sometimes reconstructed arrays from uploaded text and could encounter input/output length mismatches. Later validation stops rather than silently truncating data.
@@ -216,6 +226,7 @@ JP Amewu maintains the dataset. Maintenance should include:
 - recording provenance, submission round, timestamp and code version for every new observation;
 - validating shape, bounds, finiteness and duplicates before publication;
 - preserving explicit evidence-gap reporting for unavailable returned pairs;
+- appending Week 13 outputs only after exact reconciliation with its submitted queries;
 - retaining Week 12 as an executed proposal round while clearly marking its returned outputs unavailable, and replacing only the Week 13 placeholder when genuine evidence becomes available;
 - documenting corrections in Git history and this datasheet;
 - archiving a final version when the capstone concludes.
