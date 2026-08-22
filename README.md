@@ -15,7 +15,9 @@ Week 12 notebook reconstructs the post-Week-11 arrays from the immutable ledger,
 verifies counts of `21, 21, 26, 41, 31, 31, 41, 51`, and generates eight
 deterministic GP-UCB proposals. The proposals are recorded separately from the
 returned-pair ledger because no corresponding Week 12 outputs are available.
-Week 13 remains a historical placeholder, not evidence of a completed round.
+The canonical Week 13 notebook now provides validated full EDA and deterministic
+GP-UCB proposals while preserving the evidence boundary: no authoritative Week
+12 or Week 13 returned outputs are available, so proposals are not observations.
 
 ## Repository structure
 
@@ -57,7 +59,7 @@ Week 13 remains a historical placeholder, not evidence of a completed round.
 | 10 | [Week 10](Week_10/02_Notebook/Week_10_Capstone.ipynb) | Corrected and executed |
 | 11 | [Week 11](Week_11/02_Notebook/Week_11_Capstone.ipynb) | Executed corruption-aware review; returned pairs recovered and verified in the canonical ledger |
 | 12 | [Week 12](Week_12/02_Notebook/Week_12_Capstone.ipynb) | Executed canonical-ledger validation; [new GP-UCB proposals](Week_12/01_Queries/week_12_query_points.txt); returned outputs unavailable |
-| 13 | [Week 13 placeholder](Week_13/02_Notebook/Week_13_Placeholder.ipynb) | No verified proposal file or returned outputs |
+| 13 | [Week 13](Week_13/02_Notebook/Week_13_Capstone.ipynb) | Validated and executed; full EDA and [GP-UCB proposals](Week_13/01_Queries/week_13_query_points.txt); returned outputs unavailable |
 
 ## Optimisation workflow
 
@@ -106,7 +108,9 @@ assertions.
 - Week 12 has validated GP-UCB proposals generated from the post-Week-11
   canonical state, but no returned outputs. Week 12 therefore carries
   the verified Week 11 evidence forward without inventing evaluations.
-- Week 13 is an explicit placeholder and contains no verified proposal or return.
+- Week 13 contains validated EDA and deterministic GP-UCB proposals generated
+  from the canonical verified evidence through Week 11. No authoritative Week
+  12 or Week 13 returned outputs are available.
 - Objective values from different functions are not directly comparable because
   the black-box functions use different scales.
 
