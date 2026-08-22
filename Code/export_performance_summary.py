@@ -22,7 +22,6 @@ except ModuleNotFoundError:  # Support direct execution from the repository root
 
 
 MISSING_EVIDENCE = {
-    12: "No verified Week 12 return is present.",
     13: "No verified Week 13 return is present.",
 }
 

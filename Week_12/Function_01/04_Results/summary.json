@@ -3,25 +3,25 @@
   "function": 1,
   "dimensions": 2,
   "starter_observations": 10,
-  "recorded_pairs": 11,
-  "total_verified_observations": 21,
+  "recorded_pairs": 12,
+  "total_verified_observations": 22,
   "best_query": 3,
   "best_input": [
     0.7310236309563586,
     0.7329998764152272
   ],
   "best_output": 7.710875114502849e-16,
-  "latest_verified_query": 21,
+  "latest_verified_query": 22,
   "latest_verified_input": [
-    0.353293,
-    0.956697
+    0.997915,
+    0.748997
   ],
-  "latest_verified_output": 8.159220183163013e-130,
+  "latest_verified_output": -1.623961943367607e-106,
   "latest_improves_previous_best": false,
   "minimum_output": -0.0036060626443634764,
-  "mean_output": -0.00017171726877917643,
-  "standard_deviation": 0.0007679429718018541,
-  "evidence_gap": "No verified Week 12 return is present; confirmed cumulative evidence is available through Week 11.",
+  "mean_output": -0.00016391193838012296,
+  "standard_deviation": 0.0007511388649340191,
+  "evidence_gap": "Confirmed cumulative evidence is available through Week 12.",
   "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
   "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger."
 }

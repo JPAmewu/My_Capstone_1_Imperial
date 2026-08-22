@@ -30,7 +30,7 @@ def load_weekly_evidence(week: int, function: int, root: str | Path | None = Non
     y = np.asarray(np.load(data / "initial_outputs.npy", allow_pickle=False), dtype=float).reshape(-1)
     X, y = validate_observations(X, y, dimensions=DIMENSIONS[function])
     starter_count = len(y)
-    for query, output in pairs_through_week(min(week, 11), function):
+    for query, output in pairs_through_week(min(week, 12), function):
         X = np.vstack((X, np.asarray(query, dtype=float)))
         y = np.append(y, float(output))
     X, y = validate_observations(X, y, dimensions=DIMENSIONS[function])

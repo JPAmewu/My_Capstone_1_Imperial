@@ -16,10 +16,13 @@ def verify_ledger(path: Path, checksum: Path) -> None:
     with path.open(newline="", encoding="utf-8") as source:
         rows = list(csv.DictReader(source))
     keys = {(row["week"], row["function"]) for row in rows}
-    if len(rows) != 88 or len(keys) != 88:
-        raise ValueError("Canonical ledger must contain 88 unique Week 1–11/function pairs")
-    if {row["dataset_version"] for row in rows} != {"verified-query-output-ledger-v1.1"}:
-        raise ValueError("Unexpected canonical ledger version")
+    if len(rows) != 96 or len(keys) != 96:
+        raise ValueError("Canonical ledger must contain 96 unique Week 1–12/function pairs")
+    versions = {row["dataset_version"] for row in rows}
+    if versions != {"verified-query-output-ledger-v1.1", "verified-query-output-ledger-v1.2"}:
+        raise ValueError(f"Unexpected row-version set: {versions}")
+    if sum(row["dataset_version"] == "verified-query-output-ledger-v1.2" for row in rows) != 8:
+        raise ValueError("Exactly eight appended Week 12 rows must carry ledger version v1.2")
     digest = hashlib.sha256(path.read_bytes()).hexdigest()
     expected = checksum.read_text(encoding="utf-8").split()[0]
     if digest != expected:
