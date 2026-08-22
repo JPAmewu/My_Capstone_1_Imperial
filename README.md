@@ -17,8 +17,9 @@ per-function observation counts to `22, 22, 27, 42, 32, 32, 42, 52`. The
 executed Week 13 optimisation-strategy notebook uses this updated evidence,
 performs full EDA, compares UCB, Expected Improvement, and Probability of
 Improvement, and generates one bounded, non-duplicate proposal for each
-function. These Week 13 coordinates remain proposals rather than observations
-until eight aligned platform outputs are returned and validated.
+function. This preserves the evidence boundary clearly: no authoritative Week
+13 returned outputs are available, so the Week 13 proposals are not
+observations and cannot update the 96-return evaluation.
 
 ## Repository structure
 
