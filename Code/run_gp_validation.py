@@ -76,7 +76,7 @@ def rolling_predictions(root: Path) -> pd.DataFrame:
     rows: list[dict] = []
     for function in range(1, 9):
         X, y = load_starter_data(function, repository_root=root)
-        for week, (query, returned) in enumerate(pairs_through_week(11, function), start=1):
+        for week, (query, returned) in enumerate(pairs_through_week(12, function), start=1):
             train_count = len(y)
             train_mean = float(np.mean(y))
             train_scale = float(np.std(y))
@@ -167,7 +167,7 @@ def final_hyperparameters(root: Path) -> pd.DataFrame:
     rows: list[dict] = []
     for function in range(1, 9):
         X, y = load_starter_data(function, repository_root=root)
-        pairs = pairs_through_week(11, function)
+        pairs = pairs_through_week(12, function)
         X, y = append_observations(
             X, y, [query for query, _ in pairs], [value for _, value in pairs]
         )
@@ -235,7 +235,7 @@ def plot_diagnostics(predictions: pd.DataFrame, metrics: pd.DataFrame, output: P
     )
     axes[1].grid(color="#d9e1e5", linewidth=0.6)
     axes[1].legend(frameon=False, ncol=3, fontsize=8, loc="upper left")
-    fig.suptitle("Historical GP validation — 88 rolling one-step-ahead folds", fontsize=14)
+    fig.suptitle("Historical GP validation — 96 rolling one-step-ahead folds", fontsize=14)
     fig.tight_layout(rect=(0, 0, 1, 0.94))
     output.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(output, dpi=180, bbox_inches="tight")

@@ -15,8 +15,8 @@ import pandas
 import scipy
 import sklearn
 
-RELEASE_TAG = "capstone-final-v1.0.5"
-FROZEN_ON = "2026-08-20"
+RELEASE_TAG = "capstone-final-v1.0.6"
+FROZEN_ON = "2026-08-22"
 FILES = (
     "Results/query_output_ledger.csv",
     "Results/bbo_query_ledger.csv",
@@ -24,6 +24,10 @@ FILES = (
     "Results/gp_rolling_validation_predictions.csv",
     "Results/gp_validation_metrics.csv",
     "Results/gp_final_hyperparameters.csv",
+    "Week_13/01_Queries/week_13_query_points.txt",
+    "Week_13/04_Results/week_13_strategy_summary.csv",
+    "Week_13/04_Results/week_13_acquisition_comparison.csv",
+    "Week_13/02_Notebook/Week_13_Optimisation_Strategy.ipynb",
     "Week_12/02_Notebook/Week_12_Capstone.ipynb",
     "Notebooks/GP_Evaluation_and_Calibration.ipynb",
     "Notebooks/Final_Visual_Results.ipynb",
@@ -34,6 +38,8 @@ FILES = (
     "Documentation/MODEL_CARD.md",
     "Code/run_week12_sensitivity.py",
     "Code/run_gp_validation.py",
+    "Code/generate_week13_queries.py",
+    "Code/build_week13_strategy_notebook.py",
     "Code/portal_format.py",
     "Code/audit_dataset_sizes.py",
     "Results/dataset_size_audit.csv",
@@ -67,12 +73,12 @@ def main() -> None:
             "nbclient": nbclient.__version__,
         },
         "seeds": {
-            "week12_gp_and_candidates": "4200 + function (4201–4208)",
+            "week13_gp_and_candidates": "1300 + function for GP/Sobol; 2300 + function for local candidates",
             "rolling_validation_gp": "7300 + function * 100 + held_out_week",
             "sensitivity_candidates": "9100 + function (9101–9108)",
             "sensitivity_gp": "9200 + function (9201–9208)",
         },
-        "canonical_post_week11_counts": [21, 21, 26, 41, 31, 31, 41, 51],
+        "canonical_post_week12_counts": [22, 22, 27, 42, 32, 32, 42, 52],
         "checksums_sha256": {relative: sha256(root / relative) for relative in FILES},
     }
     output = root / "Results" / "submission_manifest.json"

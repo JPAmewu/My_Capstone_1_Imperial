@@ -17,7 +17,8 @@ def build(root: Path) -> Path:
             "## tl;dr\n\n"
             "The supplied cumulative Week 12 files reproduce all 88 published Week 1–11 pairs exactly and add eight aligned Week 12 evaluations. "
             "The corrected cumulative data are used to refit eight anisotropic Matérn-5/2 Gaussian Processes. "
-            "One bounded, finite, six-decimal and previously unevaluated Week 13 query is selected for every function after comparing UCB, EI and PI."
+            "One bounded, finite, six-decimal and previously unevaluated Week 13 query is selected for every function after comparing UCB, EI and PI. "
+            "This is the sole canonical Week 13 methodology; Week 13 outcomes have not been observed."
         ),
         nbf.v4.new_markdown_cell(
             "## Context & Methods\n\n"
@@ -29,7 +30,8 @@ def build(root: Path) -> Path:
             "- Each function is maximised independently on `[0,1]^d`.\n"
             "- The exact 88-pair prefix match establishes continuity with the published ledger.\n"
             "- Source-file dates are provenance metadata, not authoritative platform timestamps.\n"
-            "- GP predictions guide an expensive next evaluation but do not prove global optimality."
+            "- GP predictions guide an expensive next evaluation but do not prove global optimality.\n"
+            "- The function-specific acquisition policy was fixed after observing Week 12 and before any Week 13 outcomes. It is adaptive and heuristic, not a randomised or statistically controlled comparison of UCB, EI and PI."
         ),
         nbf.v4.new_code_cell(
             "from pathlib import Path\n"
@@ -138,6 +140,12 @@ def build(root: Path) -> Path:
             "fig.colorbar(image,ax=ax,label='Spearman correlation'); fig.tight_layout(); plt.show()"
         ),
         nbf.v4.new_markdown_cell("## Results\n\n### UCB, EI and PI comparison"),
+        nbf.v4.new_markdown_cell(
+            "### Pre-outcome acquisition policy\n\n"
+            "The acquisition choice is made separately for each function from its observed history through Week 12. "
+            "UCB is retained where sparse signal or dimensionality makes uncertainty-led exploration valuable; EI is used where Week 12 strengthens a promising region while preserving uncertainty; PI is used for F3 because its new incumbent supports controlled exploitation. "
+            "These choices were recorded before Week 13 outcomes and must not be interpreted as a statistically controlled acquisition comparison."
+        ),
         nbf.v4.new_code_cell(
             "comparison[['function','method','candidate','candidate_source','predicted_mean','predicted_std','acquisition_score','kappa','xi_fraction_of_output_std']]"
         ),
@@ -194,7 +202,7 @@ def build(root: Path) -> Path:
             "    function=int(row.function); query=np.asarray(json.loads(row.query),float)\n"
             "    assert line==f'Function_{function}:'+'-'.join(f'{value:.6f}' for value in query)\n"
             "    assert query.shape==(DIMENSIONS[function],)\n"
-            "    assert np.isfinite(query).all() and np.all((query>=0)&(query<=1))\n"
+            "    assert np.isfinite(query).all() and np.all((query>=0)&(query<=0.999999))\n"
             "    data=ROOT/f'Week_01/Function_{function:02d}/03_Data'\n"
             "    observed=np.load(data/'initial_inputs.npy')\n"
             "    observed=np.vstack([observed]+[np.asarray(q,float)[None,:] for q,_ in pairs_through_week(12,function)])\n"

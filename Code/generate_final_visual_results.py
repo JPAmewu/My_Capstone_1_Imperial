@@ -20,10 +20,10 @@ def main() -> None:
 
 ## tl;dr
 
-1. Five of 88 verified weekly returns set a new within-function incumbent (5.7%).
-2. Seven of eight GPs beat a historical-mean RMSE baseline, but calibration varies and F5–F7 under-cover at 95%.
-3. Week 12 recommendation stability is strong for F4/F5 and materially weaker for several other functions; robustness is not realised performance.
-4. The immutable ledger reconstructs the required post-Week-11 counts and keeps unreturned Week 12 proposals outside the observed dataset.
+1. Ten of 96 verified weekly returns set a new within-function incumbent (10.4%), including five in Week 12.
+2. All eight GPs beat a historical-mean RMSE baseline, but calibration varies and F5–F7 under-cover at 95%.
+3. The Week 13 UCB/EI/PI policy is adaptive and heuristic, not a controlled comparison.
+4. The immutable ledger reconstructs the required post-Week-12 counts and keeps Week 13 proposals outside the observed dataset.
 
 This notebook is the final reader-facing visual synthesis. Detailed methods remain in the weekly and GP-evaluation notebooks.
 """
@@ -31,14 +31,14 @@ This notebook is the final reader-facing visual synthesis. Detailed methods rema
         nbf.v4.new_markdown_cell(
             """## Context & Methods
 
-The notebook reads only frozen repository artifacts: the returned-pair ledger, performance summary, rolling GP metrics, sensitivity analysis and Week 12 proposal ledger. It does not refit models or create new black-box evidence.
+The notebook reads only frozen repository artifacts: the returned-pair ledger, performance summary, rolling GP metrics, sensitivity analysis and Week 13 proposal ledger. It does not refit models or create new black-box evidence.
 
 ### Key assumptions
 
 - Improvements are evaluated within each function because objective scales differ.
 - Rolling folds are chronological but arise from adaptive queries, not an independent test set.
 - Sensitivity rows are diagnostic experiments and were not submitted.
-- Missing Week 12 returns remain missing; recommendations are not scored as realised outcomes.
+- Missing Week 13 returns remain missing; recommendations are not scored as realised outcomes.
 """
         ),
         nbf.v4.new_code_cell(
@@ -60,19 +60,18 @@ ledger = pd.read_csv(ROOT / 'Results' / 'query_output_ledger.csv')
 performance = pd.read_csv(ROOT / 'Results' / 'performance_summary_weeks_01_to_13.csv')
 metrics = pd.read_csv(ROOT / 'Results' / 'gp_validation_metrics.csv')
 sensitivity = pd.read_csv(ROOT / 'Results' / 'week12_sensitivity_analysis.csv')
-proposals = pd.read_csv(ROOT / 'Results' / 'bbo_query_ledger.csv')
+proposals = pd.read_csv(ROOT / 'Week_13' / '04_Results' / 'week_13_strategy_summary.csv')
 print(f'Repository: {ROOT}')"""
         ),
         nbf.v4.new_markdown_cell("## Data\n\n### 1. Validate frozen evidence"),
         nbf.v4.new_code_cell(
-            """EXPECTED_COUNTS = [21, 21, 26, 41, 31, 31, 41, 51]
-assert len(ledger) == 88
-assert ledger.groupby('function').size().eq(11).all()
+            """EXPECTED_COUNTS = [22, 22, 27, 42, 32, 32, 42, 52]
+assert len(ledger) == 96
+assert ledger.groupby('function').size().eq(12).all()
 assert len(metrics) == len(proposals) == 8
 assert len(sensitivity) == 80
-assert proposals['status'].eq('proposal_only_return_unavailable').all()
-assert proposals['observation_count'].tolist() == EXPECTED_COUNTS
-print('Validated: 88 returned pairs, 80 sensitivity rows, 8 unreturned proposals.')"""
+assert proposals['verified_observations'].tolist() == EXPECTED_COUNTS
+print('Validated: 96 returned pairs, 80 sensitivity rows, 8 unreturned Week 13 proposals.')"""
         ),
         nbf.v4.new_markdown_cell("## Results\n\n### 2. Four-panel consolidated evidence"),
         nbf.v4.new_code_cell(
@@ -84,7 +83,7 @@ distinct_recommendations = sensitivity.groupby('function')['submission_query'].n
 fig, axes = plt.subplots(2, 2, figsize=(14, 10))
 colours = ['#4472C4' if value == 0 else '#D97706' for value in improvements]
 axes[0, 0].bar(improvements.index, improvements.values, color=colours)
-axes[0, 0].set(title='A. Verified incumbent improvements', xlabel='Function', ylabel='Improving returns (of 11)', ylim=(0, max(2, improvements.max() + 0.5)))
+axes[0, 0].set(title='A. Verified incumbent improvements', xlabel='Function', ylabel='Improving returns (of 12)', ylim=(0, max(2, improvements.max() + 0.5)))
 
 skill = metrics.set_index('function')['rmse_skill_vs_naive'].reindex(range(1, 9))
 axes[0, 1].bar([f'F{i}' for i in skill.index], skill.values, color=np.where(skill >= 0, '#2E8B57', '#C44536'))
@@ -113,9 +112,9 @@ print(figure_path.relative_to(ROOT))"""
         nbf.v4.new_markdown_cell(
             """### 3. Interpretation
 
-- **Panel A:** only five historical returns improved an incumbent; sparse improvements do not mean the other observations were useless.
-- **Panel B:** F2 is the only GP below the historical-mean RMSE baseline.
-- **Panel C:** F5–F7 materially under-cover at 95%, while F1/F8 are conservative. Eleven folds per function make coverage estimates coarse.
+- **Panel A:** ten historical returns improved an incumbent; five of those improvements occurred in Week 12.
+- **Panel B:** all functions have positive GP skill relative to the historical-mean RMSE baseline.
+- **Panel C:** F5–F7 materially under-cover at 95%. Twelve folds per function make coverage estimates coarse.
 - **Panel D:** one distinct query means stability across acquisition and bound settings (F4/F5/F7 in this appendix); many distinct queries indicate model or acquisition sensitivity, not necessarily poor realised performance.
 """
         ),
@@ -123,19 +122,19 @@ print(figure_path.relative_to(ROOT))"""
         nbf.v4.new_code_cell(
             """summary = pd.DataFrame({
     'function': [f'F{i}' for i in range(1, 9)],
-    'verified_observations': proposals['observation_count'].to_numpy(),
+    'verified_observations': proposals['verified_observations'].to_numpy(),
     'improving_returns': improvements.to_numpy(dtype=int),
     'rmse_skill_vs_mean': skill.to_numpy(),
     'coverage_95': coverage['coverage_95'].to_numpy(),
     'distinct_sensitivity_queries': distinct_recommendations.to_numpy(dtype=int),
-    'week12_return_available': False,
+    'week13_return_available': False,
 })
 display(summary.round({'rmse_skill_vs_mean': 3, 'coverage_95': 3}))"""
         ),
         nbf.v4.new_markdown_cell(
             """## Takeaways
 
-The project’s strongest conclusion is methodological rather than a claim of global optimality: progressively stronger Bayesian optimisation was paired with increasingly strict evidence controls. The final state distinguishes observed improvement, surrogate accuracy and calibration, recommendation robustness, and data lineage. Low-kappa Week 12 proposals are reproducible and portal-valid, but remain proposals until authoritative returns exist. The next scientifically valuable step is to obtain those returns, append them immutably, and evaluate realised improvement against the pre-registered recommendations.
+The project’s strongest conclusion is methodological rather than a claim of global optimality: progressively stronger Bayesian optimisation was paired with increasingly strict evidence controls. The final state distinguishes observed improvement, surrogate accuracy and calibration, recommendation robustness, and data lineage. Week 13 proposals are reproducible and portal-valid, but remain proposals until authoritative returns exist. The next scientifically valuable step is to obtain those returns, append them immutably, and evaluate realised improvement against the recorded pre-outcome recommendations.
 """
         ),
     ]

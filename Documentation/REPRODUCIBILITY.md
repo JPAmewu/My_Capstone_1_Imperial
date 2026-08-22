@@ -3,11 +3,13 @@
 ## Canonical release
 
 The final submission version is identified by the annotated Git tag
-`capstone-final-v1.0.5`. Resolve the exact commit with:
+The next release identifier is `capstone-final-v1.0.6`. Because these corrections
+are intentionally uncommitted, the tag must be created only after a commit that
+contains the regenerated artifacts. Once committed, resolve it with:
 
 ```bash
-git rev-list -n 1 capstone-final-v1.0.5
-git show --stat capstone-final-v1.0.5
+git rev-list -n 1 capstone-final-v1.0.6
+git show --stat capstone-final-v1.0.6
 ```
 
 The tag, rather than a mutable branch name, is the authoritative repository
@@ -33,7 +35,7 @@ small floating-point differences during GP optimisation.
 | Component | Seed rule | Other fixed settings |
 | --- | --- | --- |
 | Submitted Week 12 GP/candidates | `4200 + function` | Matérn-5/2, three restarts, 20,000 candidates, UCB kappa `0.1` |
-| Rolling historical validation GP | `7300 + 100 × function + held-out week` | One restart per fold, 88 chronological folds |
+| Rolling historical validation GP | `7300 + 100 × function + held-out week` | One restart per fold, 96 chronological folds |
 | Sensitivity candidate design | `9100 + function` | 20,000 uniform candidates for F1–F5; 32,768 scrambled Sobol candidates for F6–F8 |
 | Sensitivity GP | `9200 + function` | Three restarts, standard/wider bounds, UCB and EI |
 
