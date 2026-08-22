@@ -22,10 +22,10 @@ def main() -> None:
 
 ## tl;dr
 
-- This notebook evaluates the surrogate **out of sample** using 88 rolling one-step-ahead folds: each historical return is predicted using only evidence available before that return.
+- This notebook evaluates the surrogate **out of sample** using 96 rolling one-step-ahead folds: each historical return is predicted using only evidence available before that return.
 - Seven functions beat a historical-mean baseline on RMSE; F2 does not.
 - Calibration is heterogeneous. F5–F7 under-cover at the nominal 95% level, while F1 and F8 are conservative.
-- Every final Week 12 GP has at least one fitted parameter at a configured bound, so kernel-bound warnings are reported as evidence rather than suppressed.
+- Final GP hyperparameters are fitted to all verified evidence through Week 12, and kernel-bound warnings are reported as evidence rather than suppressed.
 - These results assess surrogate prediction and calibration. They do not replace optimisation-performance or recommendation-robustness evaluation.
 """
         ),
@@ -40,7 +40,7 @@ The evaluation has three distinct questions:
 
 ### Key assumptions
 
-The Matérn-5/2 GP, target normalisation, configured bounds, and canonical ledger pairing are held fixed. Each function has eleven rolling folds. Hyperparameters are re-estimated inside every fold with one optimiser restart; final Week 12 diagnostics use three restarts and the submission seeds. Adaptive historical queries are not an independent random test set, so the results are conditional predictive checks rather than generalisation guarantees.
+The Matérn-5/2 GP, target normalisation, configured bounds, and canonical ledger pairing are held fixed. Each function has twelve rolling folds. Hyperparameters are re-estimated inside every fold with one optimiser restart; final diagnostics use all evidence through Week 12, three restarts and fixed seeds. Adaptive historical queries are not an independent random test set, so the results are conditional predictive checks rather than generalisation guarantees.
 """
         ),
         nbf.v4.new_code_cell(
@@ -69,10 +69,10 @@ print(f'Repository: {ROOT}')"""
 predictions = pd.read_csv(ROOT / 'Results' / 'gp_rolling_validation_predictions.csv')
 metrics = pd.read_csv(ROOT / 'Results' / 'gp_validation_metrics.csv')
 hyperparameters = pd.read_csv(ROOT / 'Results' / 'gp_final_hyperparameters.csv')
-assert len(predictions) == 88
+assert len(predictions) == 96
 assert len(metrics) == len(hyperparameters) == 8
-assert predictions.groupby('function').size().eq(11).all()
-print('Validated 88 rolling folds: 11 per function.')"""
+assert predictions.groupby('function').size().eq(12).all()
+print('Validated 96 rolling folds: 12 per function.')"""
         ),
         nbf.v4.new_markdown_cell("## Results\n\n### 2. Surrogate accuracy and interval calibration"),
         nbf.v4.new_code_cell(
@@ -86,7 +86,7 @@ print('Validated 88 rolling folds: 11 per function.')"""
             """display(Image(filename=str(ROOT / 'Figures' / 'gp_rolling_validation_diagnostics.png')))"""
         ),
         nbf.v4.new_markdown_cell(
-            """Coverage should be interpreted against nominal 50%, 80%, and 95% rates. With only eleven folds per function, one fold changes coverage by 9.1 percentage points. F5–F7 show material 95% under-coverage; F1 and F8 cover all folds and are conservative. The uncertainty/error panel uses symmetric-log axes because objective scales differ sharply across functions; it is not a cross-function ranking of raw errors.
+            """Coverage should be interpreted against nominal 50%, 80%, and 95% rates. With only twelve folds per function, one fold changes coverage by 8.3 percentage points. The uncertainty/error panel uses symmetric-log axes because objective scales differ sharply across functions; it is not a cross-function ranking of raw errors.
 """
         ),
         nbf.v4.new_markdown_cell("### 3. Final fitted GP hyperparameters"),
@@ -105,11 +105,11 @@ display(hyperparameters[columns])"""
         nbf.v4.new_markdown_cell(
             """## Takeaways
 
-1. Optimisation success is sparse: only five of the 88 recovered weekly returns set a new incumbent. This does not measure GP accuracy.
-2. Rolling validation shows useful predictive skill for seven functions relative to a historical-mean baseline, but F2 is worse than that baseline.
-3. Interval calibration is not uniformly reliable. Under-coverage for F5–F7 means their uncertainty estimates should not be treated as calibrated probabilities without adjustment.
-4. Recommendation robustness is a separate property. Week 12 sensitivity finds stable recommendations for F4/F5 and model-dependent behaviour elsewhere; it cannot identify the best acquisition without returned outcomes.
-5. All findings are conditional on eleven adaptive folds per function, the recovered ledger, the Matérn model family, and the frozen environment. They do not establish global optimality or independent-test-set generalisation.
+1. The 96-fold history includes all verified returns through Week 12; Week 13 remains proposal-only.
+2. Rolling validation and calibration are diagnostic checks, not controlled acquisition comparisons.
+3. Interval coverage and baseline skill vary by function and should be interpreted from the regenerated metric table.
+4. Recommendation robustness is a separate property. The Week 13 function-specific UCB/EI/PI policy is adaptive and heuristic and was selected before Week 13 outcomes.
+5. All findings are conditional on twelve adaptive folds per function, the recovered ledger, the Matérn model family, and the frozen environment. They do not establish global optimality or independent-test-set generalisation.
 """
         ),
     ]

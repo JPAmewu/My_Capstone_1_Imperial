@@ -10,7 +10,7 @@
 
 This approach proposes evaluation points for eight unknown numerical objective functions. It is not one persistent fitted model: a separate Gaussian Process is refitted for each function after every round using all confirmed observations available for that function. An acquisition function then ranks unevaluated candidate points and selects the next query.
 
-The validated Week 12 implementation uses scikit-learn's `GaussianProcessRegressor`, a constant kernel multiplied by an anisotropic Matérn-5/2 kernel, a white-noise component, GP target normalisation, and Upper Confidence Bound (UCB) acquisition. It uses `kappa = 0.1`, three optimiser restarts, deterministic per-function random seeds, and 20,000 bounded candidate points per function. The previous `kappa = 2.0` proposals are archived for comparison.
+The canonical Week 13 implementation uses scikit-learn's `GaussianProcessRegressor`, a constant kernel multiplied by an anisotropic Matérn-5/2 kernel, a white-noise component, GP target normalisation, deterministic candidates, and a function-specific UCB/EI/PI policy trained on all 96 Week 1–12 returns. The acquisition choices were recorded before Week 13 outcomes and are adaptive heuristics, not a statistically controlled comparison.
 
 ## Intended use
 
@@ -74,14 +74,14 @@ Because the true objective functions and global optima are unknown, conventional
 At the corrected Week 12 state, verified best values are approximately `7.710875e-16`, `0.6112052`, `-0.02262932`, `0.3699753`, `3546.632`, `-0.5378218`, `2.266802`, and `9.939904` for Functions 1–8 respectively. These are best observed values, not proven global optima.
 
 The Week 13 strategy notebook executed all code cells without error and generated one valid, non-duplicate, correctly dimensioned query for each function after comparing UCB, EI and PI. GP optimisation may place some kernel parameters at configured bounds; fitted kernels are retained as diagnostics and should inform later sensitivity testing.
-The canonical Week 12 notebook executed all code cells without error, verified the ledger checksum and observation counts, and generated one valid, non-duplicate, correctly dimensioned proposal for each function. A separate sensitivity appendix compares UCB at `kappa = 0.1, 0.5, 1.0, 2.0`, Expected Improvement, standard and wider GP bounds, and Sobol candidate sets for Functions 6–8. It does not modify the submitted experiment. F4's submitted recommendation is unchanged between `kappa = 0.1` and `2.0`, indicating local agreement between mean and uncertainty ranking. F7 changes substantially: the low-kappa point has higher predicted mean and lower uncertainty, whereas the high-kappa point accepts a lower mean for substantially greater uncertainty. These proposals are not observations until authoritative returns are received.
+The canonical Week 12 notebook executed all code cells without error and generated the eight queries whose returned outputs are now reconciled in the 96-pair ledger. The Week 12 sensitivity appendix remains a historical robustness analysis and does not replace the observed Week 12 evidence. The active Week 13 proposals are not observations until authoritative returns are received.
 
-Rolling one-step-ahead validation adds 88 chronological held-out predictions
-(eleven per function). Seven functions improve on a historical-mean RMSE
-baseline; F2 does not. Nominal 95% interval coverage is only 72.7%, 72.7%, and
-63.6% for F5, F6, and F7, respectively, so uncertainty is not uniformly
-calibrated. All eight final GP fits place at least one length scale or noise
-estimate at a configured bound. The full separation between optimisation
+Rolling one-step-ahead validation adds 96 chronological held-out predictions
+(twelve per function). All eight functions improve on a historical-mean RMSE
+baseline. Nominal 95% interval coverage is 66.7%, 75.0%, and 66.7% for F5,
+F6, and F7, respectively, so uncertainty is not uniformly calibrated. Six of
+eight final GP fits place at least one length scale or noise estimate at a
+configured bound. The full separation between optimisation
 performance, surrogate calibration, and recommendation robustness is reported
 in the [evaluation chapter](EVALUATION.md).
 
@@ -104,8 +104,9 @@ Another researcher can reproduce the latest recommendations if they use the same
 
 The final computational stack is pinned in `requirements-lock.txt`; seeds,
 canonical counts, release tag, and SHA-256 checksums are recorded in
-`Results/submission_manifest.json`. The annotated tag `capstone-final-v1.0.5`
-identifies the frozen repository version.
+`Results/submission_manifest.json`. The planned release identifier is
+`capstone-final-v1.0.6`; it must be attached to a commit containing these
+artifacts before it can identify a frozen version.
 
 ## Assumptions
 
@@ -118,7 +119,7 @@ The approach assumes that:
 - the accumulated arrays preserve correct query-output pairing;
 - a uniformly generated candidate set provides adequate coverage;
 - six-decimal rounding is compatible with the evaluation platform;
-- maximising UCB with `kappa = 0.1` intentionally favours exploitation; the archived `kappa = 2.0` run provides the more exploratory comparison.
+- the Week 13 acquisition policy is function-specific, adaptive, and heuristic; it does not estimate a controlled causal difference among UCB, EI, and PI.
 
 Violations can produce overconfident or misleading recommendations. Discontinuities, narrow peaks, heteroscedastic noise or incorrect pairing may be smoothed over by the surrogate.
 

@@ -18,6 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from Code.acquisition_function import expected_improvement, probability_improvement, upper_confidence_bound  # noqa: E402
 from Code.data_validation import duplicate_mask, validate_observations  # noqa: E402
 from Code.gaussian_process import fit_gaussian_process, predict_with_uncertainty  # noqa: E402
+from Code.portal_format import SUBMISSION_UPPER_BOUND, format_portal_query, validate_portal_query  # noqa: E402
 from Code.weekly_evidence import DIMENSIONS, pairs_through_week  # noqa: E402
 
 
@@ -57,7 +58,7 @@ def candidate_pool(inputs: np.ndarray, outputs: np.ndarray, function: int, local
     top = np.argsort(outputs)[-min(3, len(outputs)):]
     rng = np.random.default_rng(2300 + function)
     local_points = np.vstack([
-        np.clip(inputs[index] + rng.normal(0, local_scale, (4096, dimensions)), 0, 1)
+        np.clip(inputs[index] + rng.normal(0, local_scale, (4096, dimensions)), 0, SUBMISSION_UPPER_BOUND)
         for index in top
     ])
     points = np.vstack((global_points, local_points))
@@ -98,7 +99,7 @@ def generate(root: Path) -> tuple[list[dict], list[dict]]:
             })
         chosen_method = policy["method"].upper()
         index = indices[chosen_method]
-        query = np.round(points[index], 6)
+        query = np.clip(np.round(points[index], 6), 0.0, SUBMISSION_UPPER_BOUND)
         if duplicate_mask(query[None, :], inputs, decimals=6)[0]:
             raise RuntimeError(f"F{function}: selected an observed duplicate")
         selected_rows.append({
@@ -130,10 +131,13 @@ def write_outputs(root: Path, selected: list[dict], comparison: list[dict]) -> N
     query_dir, result_dir = root / "Week_13" / "01_Queries", root / "Week_13" / "04_Results"
     query_dir.mkdir(parents=True, exist_ok=True); result_dir.mkdir(parents=True, exist_ok=True)
     query_file = query_dir / "week_13_query_points.txt"
-    query_file.write_text("".join(
-        f"Function_{row['function']}:" + "-".join(f"{value:.6f}" for value in json.loads(row["query"])) + "\n"
-        for row in selected
-    ), encoding="utf-8")
+    lines = []
+    for row in selected:
+        values = json.loads(row["query"])
+        portal = format_portal_query(values, dimensions=int(row["dimensions"]))
+        validate_portal_query(portal, dimensions=int(row["dimensions"]))
+        lines.append(f"Function_{row['function']}:{portal}\n")
+    query_file.write_text("".join(lines), encoding="utf-8")
     write_csv(result_dir / "week_13_strategy_summary.csv", selected)
     write_csv(result_dir / "week_13_acquisition_comparison.csv", comparison)
     print(query_file.read_text(), end="")

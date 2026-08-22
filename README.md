@@ -6,7 +6,7 @@ functions with Gaussian Process surrogate models and acquisition functions.
 
 ## Nontechnical summary
 
-This project asks how Bayesian optimisation can search eight expensive, unknown functions efficiently. It begins with exploratory and manual query choices, then develops reproducible Gaussian Process models that balance promising predictions against uncertainty. A recovered, checksum-backed ledger preserves the verified history through Week 11 and prevents unreturned proposals from being treated as observations. Rolling validation tests prediction accuracy and uncertainty calibration, while sensitivity analysis shows how acquisition settings alter recommendations. The final Week 12 queries deliberately favour exploitation using UCB with kappa 0.1, but no global optimum or Week 12 improvement is claimed. The repository includes executed notebooks, figures, reflections, frozen dependencies and reproducibility checks.
+This project asks how Bayesian optimisation can search eight expensive, unknown functions efficiently. It begins with exploratory and manual query choices, then develops reproducible Gaussian Process models that balance promising predictions against uncertainty. A checksum-backed 96-pair ledger preserves the verified history through Week 12 and prevents Week 13 proposals from being treated as observations. Rolling validation tests prediction accuracy and uncertainty calibration. Week 13 uses a pre-outcome, function-specific UCB/EI/PI policy that is adaptive and heuristic rather than statistically controlled.
 
 ## Project status
 
@@ -59,8 +59,8 @@ until eight aligned platform outputs are returned and validated.
 | 9 | [Week 9](Week_09/02_Notebook/Week_9_Capstone.ipynb) | Corrected and executed |
 | 10 | [Week 10](Week_10/02_Notebook/Week_10_Capstone.ipynb) | Corrected and executed |
 | 11 | [Week 11](Week_11/02_Notebook/Week_11_Capstone.ipynb) | Executed corruption-aware review; returned pairs recovered and verified in the canonical ledger |
-| 12 | [Week 12](Week_12/02_Notebook/Week_12_Capstone.ipynb) | Executed canonical-ledger validation; [new GP-UCB proposals](Week_12/01_Queries/week_12_query_points.txt); returned outputs unavailable |
-| 13 | [Week 13](Week_13/02_Notebook/Week_13_Capstone.ipynb) | Validated and executed; full EDA and [GP-UCB values](Results/week_13_gp_ucb_proposals.csv); [query points](Week_13/01_Queries/week_13_query_points.txt); returned outputs unavailable |
+| 12 | [Week 12](Week_12/02_Notebook/Week_12_Capstone.ipynb) | Observed and reconciled; eight returned outputs are in the canonical ledger |
+| 13 | [Week 13](Week_13/02_Notebook/Week_13_Optimisation_Strategy.ipynb) | Sole canonical methodology; validated UCB/EI/PI [query points](Week_13/01_Queries/week_13_query_points.txt); outcomes unavailable |
 
 ## Optimisation workflow
 
@@ -106,12 +106,9 @@ assertions.
   cumulative snapshots in the local capstone archive and recorded with hashes.
 - Snapshot file modification dates are retained as provenance metadata, but are
   not represented as authoritative platform submission timestamps.
-- Week 12 has validated GP-UCB proposals generated from the post-Week-11
-  canonical state, but no returned outputs. Week 12 therefore carries
-  the verified Week 11 evidence forward without inventing evaluations.
-- Week 13 contains validated EDA and deterministic GP-UCB proposals generated
-  from the canonical verified evidence through Week 11. No authoritative Week
-  12 or Week 13 returned outputs are available.
+- Weeks 1–12 are observed and contain 96 verified returned pairs in total.
+- Week 13 contains validated proposals generated from that 96-pair state. No
+  Week 13 returned outputs are available.
 - Objective values from different functions are not directly comparable because
   the black-box functions use different scales.
 

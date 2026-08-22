@@ -21,13 +21,17 @@ def main() -> None:
     env.setdefault("VECLIB_MAXIMUM_THREADS", "1")
     commands = [
         [python, "Code/audit_dataset_sizes.py"],
-        [python, "-m", "Code.portal_format", "--file", "Week_12/01_Queries/week_12_query_points.txt"],
+        [python, "Code/generate_week13_queries.py"],
+        [python, "-m", "Code.portal_format", "--file", "Week_13/01_Queries/week_13_query_points.txt"],
         [python, "Code/run_gp_validation.py"],
+        [python, "Code/export_performance_summary.py"],
         [python, "Code/run_week12_sensitivity.py"],
         [python, "Code/generate_week12_notebook.py"],
+        [python, "Code/build_week13_strategy_notebook.py"],
         [python, "Code/generate_evaluation_notebook.py"],
         [python, "Code/generate_final_visual_results.py"],
         [python, "-m", "jupyter", "nbconvert", "--execute", "--to", "notebook", "--inplace", "Week_12/02_Notebook/Week_12_Capstone.ipynb"],
+        [python, "-m", "jupyter", "nbconvert", "--execute", "--to", "notebook", "--inplace", "Week_13/02_Notebook/Week_13_Optimisation_Strategy.ipynb"],
         [python, "-m", "jupyter", "nbconvert", "--execute", "--to", "notebook", "--inplace", "Notebooks/GP_Evaluation_and_Calibration.ipynb"],
         [python, "-m", "jupyter", "nbconvert", "--execute", "--to", "notebook", "--inplace", "Notebooks/Final_Visual_Results.ipynb"],
         [python, "Code/audit_dataset_sizes.py"],

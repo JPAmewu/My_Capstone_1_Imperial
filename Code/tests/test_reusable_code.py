@@ -82,6 +82,13 @@ class ReusableCodeTests(unittest.TestCase):
         )
         self.assertEqual(count, 8)
 
+    def test_week13_query_file_is_portal_valid(self):
+        count = validate_query_file(
+            Path("Week_13/01_Queries/week_13_query_points.txt"),
+            {1: 2, 2: 2, 3: 3, 4: 4, 5: 4, 6: 5, 7: 6, 8: 8},
+        )
+        self.assertEqual(count, 8)
+
     def test_gp_prediction_and_query_selection(self):
         model = fit_gaussian_process(self.X, self.y, optimizer_restarts=0)
         candidates = np.array([[0.5, 0.5], [0.45, 0.55], [0.2, 0.8]])
