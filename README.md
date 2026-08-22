@@ -13,11 +13,10 @@ This project asks how Bayesian optimisation can search eight expensive, unknown 
 Weeks 1–11 contain a recovered and validated experiment history. The canonical
 Week 12 notebook reconstructs the post-Week-11 arrays from the immutable ledger,
 verifies counts of `21, 21, 26, 41, 31, 31, 41, 51`, and generates eight
-deterministic GP-UCB proposals. The proposals are recorded separately from the
-returned-pair ledger because no corresponding Week 12 outputs are available.
-The canonical Week 13 notebook now provides validated full EDA and deterministic
-GP-UCB proposals while preserving the evidence boundary: no authoritative Week
-12 or Week 13 returned outputs are available, so proposals are not observations.
+deterministic GP-UCB proposals. The canonical Week 13 notebook now provides 
+validated full EDA and deterministic
+GP-UCB proposals while preserving the evidence boundary: no authoritative 
+Week 13 returned outputs are available, so proposals are not observations.
 
 ## Repository structure
 
