@@ -4,16 +4,19 @@
 ### Technique Used
 Bayesian Optimisation
 
-### Output Obtained
-9.8157087929671
+### Starter-baseline incumbent
+`9.598482002566342` at query 15.
 
 ### Observations
-This was the second strongest result obtained among all functions during Week 1. 
-The manually selected query appears to have identified a highly promising region of the search space.
+The 40 starter rows identify query 15 as the within-function incumbent. The
+later cumulative ledger return improves it, but that return is not part of the
+starter baseline and output scales are not comparable across functions.
 
 ### Lessons Learned
-Domain intuition and careful examination of previous outputs can be highly effective when data is limited.
+The Bayesian Optimisation label is insufficient for reproducibility without
+the fitted model, preprocessing choices, acquisition rule, and candidate search.
 
 ### Week 2 Strategy
-Continue exploiting the region around the current best point while 
-exploring nearby alternatives by using Bayesian Optimisation Technique
+For a later round, preserve the surrogate and acquisition configuration,
+balance local exploitation with exploration, and wait for the returned value
+before treating a proposal as evidence.

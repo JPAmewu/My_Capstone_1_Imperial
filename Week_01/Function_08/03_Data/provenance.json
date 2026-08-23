@@ -3,5 +3,7 @@
   "recorded_pairs_registry": "Results/query_output_ledger.csv",
   "review_context": "Week_01/02_Notebook",
   "data_policy": "Derived arrays are reconstructed from starter data plus the ledger; source arrays are never rewritten.",
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 1."
+  "baseline_scope": "The Week 1 main and Function 08 notebooks analyse the 40 immutable starter observations only.",
+  "cumulative_scope": "The verified_cumulative arrays add the improving returned Week 1 ledger pair for later checkpoints.",
+  "evidence_gap": "The Bayesian Optimisation label is recorded, but no reproducible Week 1 GP fit or acquisition values are preserved."
 }
