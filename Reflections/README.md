@@ -1,4 +1,4 @@
-# Consolidated academic reflections: Weeks 1–13
+# Consolidated academic reflections: Weeks 1–12
 
 This document consolidates the function-level reflections by week. Each table
 uses cumulative evidence available at that checkpoint and compares results only
