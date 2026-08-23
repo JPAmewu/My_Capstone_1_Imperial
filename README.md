@@ -39,6 +39,7 @@ observations and cannot update the 96-return evaluation.
 - [Evaluation chapter](Documentation/EVALUATION.md)
 - [Week 12 sensitivity appendix](Documentation/WEEK_12_SENSITIVITY_APPENDIX.md)
 - [Final reproducibility and version freeze](Documentation/REPRODUCIBILITY.md)
+- [AI use disclosure](Documentation/AI_USE_DISCLOSURE.md)
 - [Four final findings](FINAL_FINDINGS.md)
 - [Dataset-size audit](Documentation/DATA_SIZE_AUDIT.md)
 - [Final consolidated visual results](Notebooks/Final_Visual_Results.ipynb)
@@ -112,6 +113,14 @@ assertions.
   Week 13 returned outputs are available.
 - Objective values from different functions are not directly comparable because
   the black-box functions use different scales.
+
+## Use of Generative AI and AI-Assisted Tools
+
+Generative AI and AI-assisted coding tools, including ChatGPT and Codex, were used as supporting tools for conceptual clarification, code development and debugging, repository organisation, documentation review, and critical evaluation of the Bayesian optimisation methodology.
+
+AI-generated suggestions were not treated as experimental evidence or authoritative black-box results. Code and methodological recommendations adopted in the project were reviewed, executed, tested, and, where appropriate, modified before inclusion. Responsibility for the experimental design, methodological choices, interpretation, validation, and conclusions remains with the student.
+
+A detailed account of the tools, human oversight, verification boundaries, limitations, and academic responsibility is provided in the [AI Use Disclosure](Documentation/AI_USE_DISCLOSURE.md).
 
 ## Author
 
