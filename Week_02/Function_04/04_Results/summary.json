@@ -3,8 +3,8 @@
   "function": 4,
   "dimensions": 4,
   "starter_observations": 30,
-  "recorded_pairs": 2,
-  "total_verified_observations": 32,
+  "recorded_pairs": 1,
+  "total_verified_observations": 31,
   "best_query": 28,
   "best_input": [
     0.5777656143780968,
@@ -13,18 +13,33 @@
     0.24900741466191134
   ],
   "best_output": -4.025542281908162,
-  "latest_verified_query": 32,
+  "latest_verified_query": 31,
   "latest_verified_input": [
-    0.00628,
-    0.28184,
-    0.932013,
-    0.960202
+    0.555555,
+    0.444444,
+    0.222222,
+    0.111111
   ],
-  "latest_verified_output": -31.73535839431216,
+  "latest_verified_output": -8.727516493155957,
   "latest_improves_previous_best": false,
   "minimum_output": -32.625660215962455,
-  "mean_output": -17.425640482064633,
-  "standard_deviation": 7.414172548956977,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 2.",
-  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
+  "mean_output": -16.964036678443744,
+  "standard_deviation": 7.065739921524775,
+  "evidence_gap": "Confirmed observed evidence is available through Week 1; Week 2 is proposed only at this checkpoint.",
+  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
+  "evidence_boundary": "Week 1 starter data and Week 1 return observed; Week 2 query proposed only.",
+  "proposal": {
+    "method": "Bayesian Optimisation",
+    "kappa": 5.0,
+    "query": [
+      0.017563185403437376,
+      0.163310976630486,
+      0.9691522124646128,
+      0.9632733940362014
+    ],
+    "kernel": "2.03**2 * RBF(length_scale=[0.753, 0.696, 0.739, 0.727]) + WhiteKernel(noise_level=1e-10)",
+    "predictive_std": 5.5544094664002275,
+    "ucb_score": 2.336826890359969,
+    "status": "proposed_only"
+  }
 }

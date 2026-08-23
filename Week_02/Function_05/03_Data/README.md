@@ -10,4 +10,4 @@
 | Optimisation goal | Maximise |
 | Description of sample application | A four-variable process-optimisation problem. It can represent the selection of chemical inputs that produces the greatest manufacturing yield. The response is expected to have one main peak, making the central task the efficient identification of that best operating point. |
 
-`provenance.json` points to canonical source evidence. Arrays are not duplicated here; Week 01 starter data and exact recorded pairs are loaded read-only.
+The verified cumulative arrays contain starter data plus the Week 1 return only. `provenance.json` records that the Week 2 query remains proposed.

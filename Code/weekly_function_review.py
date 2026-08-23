@@ -22,7 +22,13 @@ def repository_root(start: str | Path | None = None) -> Path:
     raise FileNotFoundError("Capstone repository root not found")
 
 
-def load_weekly_evidence(week: int, function: int, root: str | Path | None = None):
+def load_weekly_evidence(
+    week: int,
+    function: int,
+    root: str | Path | None = None,
+    *,
+    evidence_through_week: int | None = None,
+):
     """Load starter arrays and append only exact recoverable query/return pairs."""
     base = repository_root(root)
     data = base / "Week_01" / f"Function_{function:02d}" / "03_Data"
@@ -30,16 +36,25 @@ def load_weekly_evidence(week: int, function: int, root: str | Path | None = Non
     y = np.asarray(np.load(data / "initial_outputs.npy", allow_pickle=False), dtype=float).reshape(-1)
     X, y = validate_observations(X, y, dimensions=DIMENSIONS[function])
     starter_count = len(y)
-    for query, output in pairs_through_week(min(week, 12), function):
+    cutoff = week if evidence_through_week is None else evidence_through_week
+    for query, output in pairs_through_week(min(cutoff, 12), function):
         X = np.vstack((X, np.asarray(query, dtype=float)))
         y = np.append(y, float(output))
     X, y = validate_observations(X, y, dimensions=DIMENSIONS[function])
     return X, y, starter_count
 
 
-def analyse_weekly_function(week: int, function: int, root: str | Path | None = None):
+def analyse_weekly_function(
+    week: int,
+    function: int,
+    root: str | Path | None = None,
+    *,
+    evidence_through_week: int | None = None,
+):
     """Return an observation table and within-function evidence summary."""
-    X, y, starter_count = load_weekly_evidence(week, function, root)
+    X, y, starter_count = load_weekly_evidence(
+        week, function, root, evidence_through_week=evidence_through_week
+    )
     frame = pd.DataFrame(X, columns=[f"x{i + 1}" for i in range(X.shape[1])])
     frame.insert(0, "query", np.arange(1, len(y) + 1))
     frame.insert(1, "evidence", ["starter"] * starter_count + ["recorded"] * (len(y) - starter_count))
