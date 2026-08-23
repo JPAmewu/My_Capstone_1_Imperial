@@ -4,14 +4,18 @@
 ### Technique Used
 Manual Reasoning
 
-### Output Obtained
-1088.8535114737463
+### Starter-baseline incumbent
+`1088.8596181962705` at query 16.
 
 ### Observations
-This was the strongest result obtained among all functions during Week 1. The manually selected query appears to have identified a highly promising region of the search space.
+The 20 starter rows contain one value far above most other Function 5 outputs.
+That makes the query 16 neighbourhood worth later investigation, but it does
+not establish a global optimum or support comparisons with other functions.
 
 ### Lessons Learned
-Domain intuition and careful examination of previous outputs can be highly effective when data is limited.
+Manual Reasoning can identify a promising region, but this observational
+baseline cannot isolate the effect of the strategy from the sampled points.
 
 ### Week 2 Strategy
-Continue exploiting the region around the current best point while exploring nearby alternatives for better optimisation
+Consider a reproducible surrogate and acquisition function in a later round,
+while retaining exploration and recording a proposal only after its return is known.
