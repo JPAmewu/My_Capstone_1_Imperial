@@ -1,32 +1,15 @@
-# Week 13 Function 06 methodology
-
-## Purpose
-
-Provide a notebook-independent audit of the cumulative evidence recoverable at the Week 13 review point.
-
-## Corrections applied
-
-- Removed notebook-cell-order and environment-specific path dependencies.
-- Replaced implicit display calls with explicit tables and Matplotlib figures.
-- Consolidated fragmented plots into one response trace and coordinate heatmap.
-- Replaced cross-function or correlation-based performance claims with within-function evidence comparisons.
-- Added finite-value, shape, unit-domain, provenance, and evidence-gap checks.
-- Kept missing returns missing instead of imputing or presenting proposals as observations.
-
-## Provenance
-
-Starter arrays remain in `Week_01/Function_06/03_Data`. Exact recorded query/return pairs are transcribed in the shared evidence registry from the corrected canonical notebooks. The local `03_Data/provenance.json` records references instead of duplicating source arrays.
-
-## Validation and analysis
-
-The workflow requires finite aligned arrays, 5 input dimensions, and coordinates in the unit hypercube. It identifies the incumbent maximum, reports the latest verified observation, and creates a response trace plus coordinate heatmap.
+# Methodology
 
 ## Evidence boundary
 
-At this review point, No verified Week 13 return is present; confirmed cumulative evidence is available through Week 12. The original Week 11 arrays remain quarantined and are not used. No value is imputed. Results are descriptive within Function 06; they do not imply causality, global optimality, or cross-function ranking.
+Weeks 1-12 observed; Week 13 proposed only. The analysis reconstructs 32 observations from immutable starter arrays and the canonical ledger. The Week 13 query is held separately as a proposal. No outcome is imputed. Legacy Week 11 arrays remain quarantined.
 
-## Reproduction
+## Function-specific acquisition
 
-```bash
-MPLBACKEND=Agg .venv/bin/python Week_13/Function_06/02_Code/analyse_week_13_function_06.py --write-artifacts
-```
+Function 06 uses **EI**, as documented in `Week_13/02_Notebook/Week_13_Optimisation_Strategy.ipynb`. Decision record: The Week 12 best supports exploitation with uncertainty protection.
+
+This policy is adaptive and heuristic. It was selected using evidence available through Week 12; it is not a randomized or statistically controlled acquisition comparison. For Week 13, the reason was recorded before Week 13 outcomes existed.
+
+## Validation
+
+Inputs are finite and bounded; the proposal is distinct, capped at `0.999999`, and formatted as `0.395407-0.091768-0.662260-0.806631-0.000000` with six decimals per coordinate. Results are descriptive within Function 06 and imply neither causality nor global optimality.

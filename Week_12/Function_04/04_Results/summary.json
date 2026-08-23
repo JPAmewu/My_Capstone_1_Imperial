@@ -3,29 +3,45 @@
   "function": 4,
   "dimensions": 4,
   "starter_observations": 30,
-  "recorded_pairs": 12,
-  "total_verified_observations": 42,
-  "best_query": 42,
+  "recorded_pairs": 11,
+  "total_verified_observations": 41,
+  "best_query": 33,
   "best_input": [
-    0.370439,
-    0.382409,
-    0.425133,
-    0.390888
+    0.394519,
+    0.361122,
+    0.256803,
+    0.461856
   ],
-  "best_output": 0.36997528143061276,
-  "latest_verified_query": 42,
+  "best_output": -1.9810750402526334,
+  "latest_verified_query": 41,
   "latest_verified_input": [
-    0.370439,
-    0.382409,
-    0.425133,
-    0.390888
+    0.80766,
+    0.348421,
+    0.277162,
+    0.044827
   ],
-  "latest_verified_output": 0.36997528143061276,
-  "latest_improves_previous_best": true,
+  "latest_verified_output": -14.992666345077428,
+  "latest_improves_previous_best": false,
   "minimum_output": -32.625660215962455,
-  "mean_output": -16.900558424791658,
-  "standard_deviation": 7.812466535985706,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 12.",
+  "mean_output": -17.32179095421171,
+  "standard_deviation": 7.420979418451624,
+  "evidence_gap": "Confirmed observed evidence is available through Week 11; Week 12 is proposed only at this checkpoint.",
   "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
-  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger."
+  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger.",
+  "evidence_boundary": "Weeks 1-11 observed; Week 12 proposed only.",
+  "proposal": {
+    "query": [
+      0.370439,
+      0.382409,
+      0.425133,
+      0.390888
+    ],
+    "method": "GP-UCB",
+    "kappa": 0.1,
+    "source": "Week_12/02_Notebook/Week_12_Capstone.ipynb",
+    "decision_timing": "Chosen using evidence through Week 11, before the Week 12 return.",
+    "policy_scope": "Adaptive heuristic; not a statistically controlled acquisition comparison.",
+    "status": "proposed_only",
+    "duplicates_observed_evidence": false
+  }
 }

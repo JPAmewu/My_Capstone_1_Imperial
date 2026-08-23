@@ -1,7 +1,9 @@
 {
   "canonical_starter": "Week_01/Function_01/03_Data",
   "recorded_pairs_registry": "Results/query_output_ledger.csv",
-  "review_context": "Week_09/02_Notebook",
+  "review_context": "Week_09/02_Notebook/Week_9_Capstone.ipynb",
+  "observed_scope": "Starter observations plus returned Weeks 1-8 pairs.",
+  "proposal_scope": "The Week 9 query is proposed only and excluded from observed arrays and plots.",
   "data_policy": "Derived arrays are reconstructed from starter data plus the ledger; source arrays are never rewritten.",
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 9."
+  "evidence_gap": "Confirmed observed evidence is available through Week 8; Week 9 is proposed only at this checkpoint."
 }

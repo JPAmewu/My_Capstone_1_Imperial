@@ -3,24 +3,38 @@
   "function": 1,
   "dimensions": 2,
   "starter_observations": 10,
-  "recorded_pairs": 10,
-  "total_verified_observations": 20,
+  "recorded_pairs": 9,
+  "total_verified_observations": 19,
   "best_query": 3,
   "best_input": [
     0.7310236309563586,
     0.7329998764152272
   ],
   "best_output": 7.710875114502849e-16,
-  "latest_verified_query": 20,
+  "latest_verified_query": 19,
   "latest_verified_input": [
-    0.379403,
-    0.071186
+    0.42141,
+    0.935804
   ],
-  "latest_verified_output": -4.5921413403053304e-89,
+  "latest_verified_output": -3.089423814911752e-96,
   "latest_improves_previous_best": false,
   "minimum_output": -0.0036060626443634764,
-  "mean_output": -0.00018030313221813527,
-  "standard_deviation": 0.000785923132542881,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 10.",
-  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
+  "mean_output": -0.00018979277075593186,
+  "standard_deviation": 0.0008052225313304014,
+  "evidence_gap": "Confirmed observed evidence is available through Week 9; Week 10 is proposed only at this checkpoint.",
+  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
+  "evidence_boundary": "Weeks 1-9 observed; Week 10 proposed only.",
+  "proposal": {
+    "query": [
+      0.379403,
+      0.071186
+    ],
+    "method": "GP-UCB",
+    "kappa": 2.0,
+    "source": "Week_10/02_Notebook/Week_10_Capstone.ipynb",
+    "decision_timing": "Chosen using evidence through Week 9, before the Week 10 return.",
+    "policy_scope": "Adaptive heuristic; not a statistically controlled acquisition comparison.",
+    "status": "proposed_only",
+    "duplicates_observed_evidence": false
+  }
 }

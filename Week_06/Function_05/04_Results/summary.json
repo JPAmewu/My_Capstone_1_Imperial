@@ -3,8 +3,8 @@
   "function": 5,
   "dimensions": 4,
   "starter_observations": 20,
-  "recorded_pairs": 6,
-  "total_verified_observations": 26,
+  "recorded_pairs": 5,
+  "total_verified_observations": 25,
   "best_query": 16,
   "best_input": [
     0.22418902330288348,
@@ -13,18 +13,34 @@
     0.8785156842249731
   ],
   "best_output": 1088.8596181962705,
-  "latest_verified_query": 26,
+  "latest_verified_query": 25,
   "latest_verified_input": [
-    0.654981,
-    0.602894,
-    0.898891,
-    0.589622
+    0.754614,
+    0.504566,
+    0.432986,
+    0.307039
   ],
-  "latest_verified_output": 281.9115728306016,
+  "latest_verified_output": 0.9401160531598542,
   "latest_improves_previous_best": false,
   "minimum_output": 0.1129397953712203,
-  "mean_output": 255.06015798622317,
-  "standard_deviation": 362.1088104956962,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 6.",
-  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
+  "mean_output": 253.98610139244803,
+  "standard_deviation": 369.23936508370815,
+  "evidence_gap": "Confirmed observed evidence is available through Week 5; Week 6 is proposed only at this checkpoint.",
+  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
+  "evidence_boundary": "Weeks 1-5 observed; Week 6 proposed only.",
+  "proposal": {
+    "query": [
+      0.654981,
+      0.602894,
+      0.898891,
+      0.589622
+    ],
+    "method": "Expected Improvement",
+    "kappa": null,
+    "source": "Week_06/02_Notebook/Week_6_Capstone.ipynb",
+    "decision_timing": "Chosen using evidence through Week 5, before the Week 6 return.",
+    "policy_scope": "Adaptive heuristic; not a statistically controlled acquisition comparison.",
+    "status": "proposed_only",
+    "duplicates_observed_evidence": false
+  }
 }

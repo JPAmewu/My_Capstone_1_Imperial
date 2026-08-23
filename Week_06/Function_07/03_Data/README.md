@@ -1,13 +1,3 @@
 # Data
 
-## Data description
-
-| Attribute | Value |
-| --- | --- |
-| Function | Function 7 |
-| Input | 6D array |
-| Output | 1D array |
-| Optimisation goal | Maximise |
-| Description of sample application | A six-variable hyperparameter-tuning problem for a machine-learning model. Each input controls one aspect of model training or structure, while the output measures predictive performance. The aim is to identify a configuration that gives the highest reliable performance without knowing the mathematical form of the response. |
-
-`provenance.json` points to canonical source evidence. Arrays are not duplicated here; Week 01 starter data and exact recorded pairs are loaded read-only.
+Derived verified arrays contain starter observations plus returned Weeks 1–5 pairs: 35 rows by 6 dimensions. `provenance.json` records canonical sources. The Week 6 proposal is excluded.

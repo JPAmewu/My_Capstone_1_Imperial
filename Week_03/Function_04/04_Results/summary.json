@@ -3,28 +3,44 @@
   "function": 4,
   "dimensions": 4,
   "starter_observations": 30,
-  "recorded_pairs": 3,
-  "total_verified_observations": 33,
-  "best_query": 33,
+  "recorded_pairs": 2,
+  "total_verified_observations": 32,
+  "best_query": 28,
   "best_input": [
-    0.394519,
-    0.361122,
-    0.256803,
-    0.461856
+    0.5777656143780968,
+    0.4287717415443063,
+    0.4258258674882194,
+    0.24900741466191134
   ],
-  "best_output": -1.9810750402526334,
-  "latest_verified_query": 33,
+  "best_output": -4.025542281908162,
+  "latest_verified_query": 32,
   "latest_verified_input": [
-    0.394519,
-    0.361122,
-    0.256803,
-    0.461856
+    0.00628,
+    0.28184,
+    0.932013,
+    0.960202
   ],
-  "latest_verified_output": -1.9810750402526334,
-  "latest_improves_previous_best": true,
+  "latest_verified_output": -31.73535839431216,
+  "latest_improves_previous_best": false,
   "minimum_output": -32.625660215962455,
-  "mean_output": -16.95762334746427,
-  "standard_deviation": 7.76617535284167,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 3.",
-  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
+  "mean_output": -17.425640482064633,
+  "standard_deviation": 7.414172548956977,
+  "evidence_gap": "Confirmed observed evidence is available through Week 2; Week 3 is proposed only at this checkpoint.",
+  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
+  "evidence_boundary": "Weeks 1-2 observed; Week 3 proposed only.",
+  "proposal": {
+    "query": [
+      0.394519,
+      0.361122,
+      0.256803,
+      0.461856
+    ],
+    "method": "GP-UCB",
+    "kappa": 5.0,
+    "source": "Week_03/02_Notebook/Week_3_Capstone.ipynb",
+    "decision_timing": "Chosen using evidence through Week 2, before the Week 3 return.",
+    "policy_scope": "Adaptive heuristic; not a statistically controlled acquisition comparison.",
+    "status": "proposed_only",
+    "duplicates_observed_evidence": false
+  }
 }

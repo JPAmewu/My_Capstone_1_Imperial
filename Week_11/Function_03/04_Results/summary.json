@@ -3,8 +3,8 @@
   "function": 3,
   "dimensions": 3,
   "starter_observations": 15,
-  "recorded_pairs": 11,
-  "total_verified_observations": 26,
+  "recorded_pairs": 10,
+  "total_verified_observations": 25,
   "best_query": 4,
   "best_input": [
     0.49258141463713434,
@@ -12,18 +12,33 @@
     0.3401763860035727
   ],
   "best_output": -0.034835313350078584,
-  "latest_verified_query": 26,
+  "latest_verified_query": 25,
   "latest_verified_input": [
-    0.450034,
-    0.667941,
-    0.342989
+    0.447317,
+    0.65893,
+    0.324854
   ],
-  "latest_verified_output": -0.038446126253640946,
+  "latest_verified_output": -0.0463387992394308,
   "latest_improves_previous_best": false,
   "minimum_output": -0.3989255131463011,
-  "mean_output": -0.09498908476002893,
-  "standard_deviation": 0.07063631481502376,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 11.",
+  "mean_output": -0.09725080310028446,
+  "standard_deviation": 0.07110603992176881,
+  "evidence_gap": "Confirmed observed evidence is available through Week 10; Week 11 is proposed only at this checkpoint.",
   "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
-  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger."
+  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger.",
+  "evidence_boundary": "Weeks 1-10 observed; Week 11 proposed only.",
+  "proposal": {
+    "query": [
+      0.450034,
+      0.667941,
+      0.342989
+    ],
+    "method": "GP-UCB",
+    "kappa": 2.0,
+    "source": "Week_11/02_Notebook/Week_11_Capstone.ipynb",
+    "decision_timing": "Chosen using evidence through Week 10, before the Week 11 return.",
+    "policy_scope": "Adaptive heuristic; not a statistically controlled acquisition comparison.",
+    "status": "proposed_only",
+    "duplicates_observed_evidence": false
+  }
 }

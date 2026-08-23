@@ -1,11 +1,3 @@
 # Figures
 
-Validated figures exported from the canonical Week 12 notebook:
-
-- `week_12_function_08_objective_trace.png`
-- `week_12_function_08_best_so_far.png`
-- `week_12_function_08_input_heatmap.png`
-- `week_12_function_08_output_distribution.png`
-- `week_12_function_08_input_distributions.png`
-- `week_12_function_08_correlation_heatmap.png`
-- `week_12_function_08_diagnostics.png` (consolidated reference)
+`function_08_diagnostics.png` is the canonical evidence trace and coordinate heatmap; the week-prefixed compatibility file is identical. Orange points identify returned rounds through Week 11; the Week 12 proposal is excluded. Additional existing Week 13 diagnostics are retained.

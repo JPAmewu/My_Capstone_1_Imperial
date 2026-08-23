@@ -3,8 +3,8 @@
   "function": 6,
   "dimensions": 5,
   "starter_observations": 20,
-  "recorded_pairs": 3,
-  "total_verified_observations": 23,
+  "recorded_pairs": 2,
+  "total_verified_observations": 22,
   "best_query": 1,
   "best_input": [
     0.7281861047460138,
@@ -14,19 +14,36 @@
     0.056401310518258585
   ],
   "best_output": -0.7142649478202404,
-  "latest_verified_query": 23,
+  "latest_verified_query": 22,
   "latest_verified_input": [
-    0.49507,
-    0.097152,
-    0.672921,
-    7e-06,
-    0.351268
+    0.433654,
+    0.486678,
+    0.282753,
+    0.972905,
+    0.323321
   ],
-  "latest_verified_output": -1.339542402620705,
+  "latest_verified_output": -0.8782405650300305,
   "latest_improves_previous_best": false,
   "minimum_output": -2.5711696316081234,
-  "mean_output": -1.4468529075487313,
-  "standard_deviation": 0.44236924309255704,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 3.",
-  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
+  "mean_output": -1.4517306577727327,
+  "standard_deviation": 0.4517060391691362,
+  "evidence_gap": "Confirmed observed evidence is available through Week 2; Week 3 is proposed only at this checkpoint.",
+  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
+  "evidence_boundary": "Weeks 1-2 observed; Week 3 proposed only.",
+  "proposal": {
+    "query": [
+      0.49507,
+      0.097152,
+      0.672921,
+      7e-06,
+      0.351268
+    ],
+    "method": "GP-UCB",
+    "kappa": 5.0,
+    "source": "Week_03/02_Notebook/Week_3_Capstone.ipynb",
+    "decision_timing": "Chosen using evidence through Week 2, before the Week 3 return.",
+    "policy_scope": "Adaptive heuristic; not a statistically controlled acquisition comparison.",
+    "status": "proposed_only",
+    "duplicates_observed_evidence": false
+  }
 }

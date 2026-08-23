@@ -1,3 +1,10 @@
 # Week 13 — Function 02
 
-Focused evidence review: [notebook](01_Notebook/Week_13_Function_02.ipynb), [code](02_Code/analyse_week_13_function_02.py), [data provenance](03_Data/provenance.json), [results](04_Results/README.md), [figure](05_Figures/README.md), [methodology](06_Documentation/methodology.md), and [reflection](07_Reflection/README.md).
+Function-specific review aligned to the canonical Week 13 methodology.
+
+- Evidence boundary: **Weeks 1-12 observed; Week 13 proposed only.**
+- Verified observations: **22** in **2 dimensions**
+- Acquisition: **EI**
+- Portal-formatted proposal: `0.686305-0.999999`
+
+The seven numbered folders contain the executable notebook, reusable code, verified derived data, results, figures, methodology, and reflection. The current-week proposal is never included in observed arrays, summaries, or plots.

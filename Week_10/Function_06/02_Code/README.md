@@ -1,3 +1,3 @@
 # Code
 
-[analyse_week_10_function_06.py](analyse_week_10_function_06.py) is an independently runnable wrapper around the shared verified-evidence interface.
+The analysis and notebook-builder entry points delegate to shared canonical modules. They enforce the Week 9 evidence cutoff, proposal bounds, duplicate checks, and deterministic outputs.

@@ -1,39 +1,15 @@
-# Week 12 Function 03 methodology
-
-## Purpose
-
-Provide a notebook-independent audit of the cumulative evidence recoverable at the Week 12 review point.
-
-## Corrections applied
-
-- Removed notebook-cell-order and environment-specific path dependencies.
-- Replaced implicit display calls with explicit tables and Matplotlib figures.
-- Consolidated fragmented plots into one response trace and coordinate heatmap.
-- Replaced cross-function or correlation-based performance claims with within-function evidence comparisons.
-- Added finite-value, shape, unit-domain, provenance, and evidence-gap checks.
-- Kept missing returns missing instead of imputing or presenting proposals as observations.
-
-## Provenance
-
-Starter arrays remain in `Week_01/Function_03/03_Data`. Exact recorded query/return pairs are transcribed in the shared evidence registry from the corrected canonical notebooks. The local `03_Data/provenance.json` records references instead of duplicating source arrays.
-
-## Validation and analysis
-
-The workflow requires finite aligned arrays, 3 input dimensions, and coordinates in the unit hypercube. It identifies the incumbent maximum, reports the latest verified observation, and creates a response trace plus coordinate heatmap.
+# Methodology
 
 ## Evidence boundary
 
-The submitted Week 12 proposal uses GP-UCB with `kappa = 0.1`, an explicit
-exploitation-led decision because the uncertainty bonus is small relative to the
-predictive mean. The archived `kappa = 2.0` proposal gives uncertainty twenty
-times as much weight. A separate, non-submission appendix compares intermediate
-kappa values, Expected Improvement, and wider GP bounds; it does not alter the
-canonical proposal or returned-pair ledger.
+Weeks 1-11 observed; Week 12 proposed only. The analysis reconstructs 26 observations from immutable starter arrays and the canonical ledger. The Week 12 query is held separately as a proposal. No outcome is imputed. Legacy Week 11 arrays remain quarantined.
 
-At this review point, no verified Week 12 return is present; confirmed cumulative evidence is available through Week 11. The original Week 11 arrays remain quarantined and are not used. No value is imputed. Results are descriptive within Function 03; they do not imply causality, global optimality, or cross-function ranking.
+## Function-specific acquisition
 
-## Reproduction
+Function 03 uses **GP-UCB**, as documented in `Week_12/02_Notebook/Week_12_Capstone.ipynb`. Decision record: Chosen using evidence through Week 11, before the Week 12 return.
 
-```bash
-MPLBACKEND=Agg .venv/bin/python Week_12/Function_03/02_Code/analyse_week_12_function_03.py --write-artifacts
-```
+This policy is adaptive and heuristic. It was selected using evidence available through Week 11; it is not a randomized or statistically controlled acquisition comparison. For Week 13, the reason was recorded before Week 13 outcomes existed.
+
+## Validation
+
+Inputs are finite and bounded; the proposal is distinct, capped at `0.999999`, and formatted as `0.737864-0.713916-0.373523` with six decimals per coordinate. Results are descriptive within Function 03 and imply neither causality nor global optimality.

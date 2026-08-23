@@ -3,27 +3,42 @@
   "function": 3,
   "dimensions": 3,
   "starter_observations": 15,
-  "recorded_pairs": 12,
-  "total_verified_observations": 27,
-  "best_query": 27,
+  "recorded_pairs": 11,
+  "total_verified_observations": 26,
+  "best_query": 4,
   "best_input": [
-    0.737864,
-    0.713916,
-    0.373523
+    0.49258141463713434,
+    0.6115931882759961,
+    0.3401763860035727
   ],
-  "best_output": -0.022629319369005918,
-  "latest_verified_query": 27,
+  "best_output": -0.034835313350078584,
+  "latest_verified_query": 26,
   "latest_verified_input": [
-    0.737864,
-    0.713916,
-    0.373523
+    0.450034,
+    0.667941,
+    0.342989
   ],
-  "latest_verified_output": -0.022629319369005918,
-  "latest_improves_previous_best": true,
+  "latest_verified_output": -0.038446126253640946,
+  "latest_improves_previous_best": false,
   "minimum_output": -0.3989255131463011,
-  "mean_output": -0.09230909344925031,
-  "standard_deviation": 0.07065008331146874,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 12.",
+  "mean_output": -0.09498908476002893,
+  "standard_deviation": 0.07063631481502376,
+  "evidence_gap": "Confirmed observed evidence is available through Week 11; Week 12 is proposed only at this checkpoint.",
   "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
-  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger."
+  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger.",
+  "evidence_boundary": "Weeks 1-11 observed; Week 12 proposed only.",
+  "proposal": {
+    "query": [
+      0.737864,
+      0.713916,
+      0.373523
+    ],
+    "method": "GP-UCB",
+    "kappa": 0.1,
+    "source": "Week_12/02_Notebook/Week_12_Capstone.ipynb",
+    "decision_timing": "Chosen using evidence through Week 11, before the Week 12 return.",
+    "policy_scope": "Adaptive heuristic; not a statistically controlled acquisition comparison.",
+    "status": "proposed_only",
+    "duplicates_observed_evidence": false
+  }
 }

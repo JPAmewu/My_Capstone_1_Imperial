@@ -1,13 +1,3 @@
 # Data
 
-## Data description
-
-| Attribute | Value |
-| --- | --- |
-| Function | Function 5 |
-| Input | 4D array |
-| Output | 1D array |
-| Optimisation goal | Maximise |
-| Description of sample application | A four-variable process-optimisation problem. It can represent the selection of chemical inputs that produces the greatest manufacturing yield. The response is expected to have one main peak, making the central task the efficient identification of that best operating point. |
-
-`provenance.json` points to canonical source evidence. Arrays are not duplicated here; Week 01 starter data and exact recorded pairs are loaded read-only.
+Derived verified arrays contain starter observations plus returned Weeks 1–2 pairs: 22 rows by 4 dimensions. `provenance.json` records canonical sources. The Week 3 proposal is excluded.

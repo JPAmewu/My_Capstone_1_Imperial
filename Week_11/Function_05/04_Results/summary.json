@@ -3,8 +3,8 @@
   "function": 5,
   "dimensions": 4,
   "starter_observations": 20,
-  "recorded_pairs": 11,
-  "total_verified_observations": 31,
+  "recorded_pairs": 10,
+  "total_verified_observations": 30,
   "best_query": 28,
   "best_input": [
     0.08123,
@@ -13,19 +13,35 @@
     0.988421
   ],
   "best_output": 1465.5121917504077,
-  "latest_verified_query": 31,
+  "latest_verified_query": 30,
   "latest_verified_input": [
-    0.016444,
-    0.027486,
-    0.656999,
-    0.955172
+    0.005552,
+    0.918769,
+    0.692571,
+    0.988052
   ],
-  "latest_verified_output": 210.03831315192616,
+  "latest_verified_output": 1424.6366011060773,
   "latest_improves_previous_best": false,
   "minimum_output": 0.1129397953712203,
-  "mean_output": 333.08634963315325,
-  "standard_deviation": 443.40799477685977,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 11.",
+  "mean_output": 337.1879508491941,
+  "standard_deviation": 450.1586620861271,
+  "evidence_gap": "Confirmed observed evidence is available through Week 10; Week 11 is proposed only at this checkpoint.",
   "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
-  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger."
+  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger.",
+  "evidence_boundary": "Weeks 1-10 observed; Week 11 proposed only.",
+  "proposal": {
+    "query": [
+      0.016444,
+      0.027486,
+      0.656999,
+      0.955172
+    ],
+    "method": "GP-UCB",
+    "kappa": 2.0,
+    "source": "Week_11/02_Notebook/Week_11_Capstone.ipynb",
+    "decision_timing": "Chosen using evidence through Week 10, before the Week 11 return.",
+    "policy_scope": "Adaptive heuristic; not a statistically controlled acquisition comparison.",
+    "status": "proposed_only",
+    "duplicates_observed_evidence": false
+  }
 }

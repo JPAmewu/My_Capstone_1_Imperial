@@ -3,8 +3,8 @@
   "function": 3,
   "dimensions": 3,
   "starter_observations": 15,
-  "recorded_pairs": 9,
-  "total_verified_observations": 24,
+  "recorded_pairs": 8,
+  "total_verified_observations": 23,
   "best_query": 4,
   "best_input": [
     0.49258141463713434,
@@ -12,17 +12,32 @@
     0.3401763860035727
   ],
   "best_output": -0.034835313350078584,
-  "latest_verified_query": 24,
+  "latest_verified_query": 23,
   "latest_verified_input": [
-    0.449035,
-    0.664262,
-    0.290384
+    0.457347,
+    0.664022,
+    0.295993
   ],
-  "latest_verified_output": -0.08189344986506433,
+  "latest_verified_output": -0.07741316335640898,
   "latest_improves_previous_best": false,
   "minimum_output": -0.3989255131463011,
-  "mean_output": -0.0993721365944867,
-  "standard_deviation": 0.0717930153745619,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 9.",
-  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
+  "mean_output": -0.10013207949576594,
+  "standard_deviation": 0.07324256960801134,
+  "evidence_gap": "Confirmed observed evidence is available through Week 8; Week 9 is proposed only at this checkpoint.",
+  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
+  "evidence_boundary": "Weeks 1-8 observed; Week 9 proposed only.",
+  "proposal": {
+    "query": [
+      0.449035,
+      0.664262,
+      0.290384
+    ],
+    "method": "Expected Improvement",
+    "kappa": null,
+    "source": "Week_09/02_Notebook/Week_9_Capstone.ipynb",
+    "decision_timing": "Chosen using evidence through Week 8, before the Week 9 return.",
+    "policy_scope": "Adaptive heuristic; not a statistically controlled acquisition comparison.",
+    "status": "proposed_only",
+    "duplicates_observed_evidence": false
+  }
 }

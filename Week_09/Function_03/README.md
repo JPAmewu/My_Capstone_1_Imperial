@@ -1,3 +1,10 @@
 # Week 09 — Function 03
 
-Focused evidence review: [notebook](01_Notebook/Week_09_Function_03.ipynb), [code](02_Code/analyse_week_09_function_03.py), [data provenance](03_Data/provenance.json), [results](04_Results/README.md), [figure](05_Figures/README.md), [methodology](06_Documentation/methodology.md), and [reflection](07_Reflection/README.md).
+Function-specific review aligned to the canonical Week 9 methodology.
+
+- Evidence boundary: **Weeks 1-8 observed; Week 9 proposed only.**
+- Verified observations: **23** in **3 dimensions**
+- Acquisition: **Expected Improvement**
+- Portal-formatted proposal: `0.449035-0.664262-0.290384`
+
+The seven numbered folders contain the executable notebook, reusable code, verified derived data, results, figures, methodology, and reflection. The current-week proposal is never included in observed arrays, summaries, or plots.
