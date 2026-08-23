@@ -1,11 +1,8 @@
 {
-  "week": 1,
-  "function": 4,
+  "observations": 30,
   "dimensions": 4,
-  "starter_observations": 30,
-  "recorded_pairs": 1,
-  "total_verified_observations": 31,
-  "best_query": 28,
+  "best_index": 27,
+  "best_query_number": 28,
   "best_input": [
     0.5777656143780968,
     0.4287717415443063,
@@ -13,18 +10,21 @@
     0.24900741466191134
   ],
   "best_output": -4.025542281908162,
-  "latest_verified_query": 31,
-  "latest_verified_input": [
-    0.555555,
-    0.444444,
-    0.222222,
-    0.111111
+  "latest_output": -23.139428397634813,
+  "latest_percentile": 23.333333333333332,
+  "input_min": [
+    0.03782482853334601,
+    0.006250400244917853,
+    0.04218634513719777,
+    0.08151656419033015
   ],
-  "latest_verified_output": -8.727516493155957,
-  "latest_improves_previous_best": false,
-  "minimum_output": -32.625660215962455,
-  "mean_output": -16.964036678443744,
-  "standard_deviation": 7.065739921524775,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 1.",
-  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
+  "input_max": [
+    0.9856218929694016,
+    0.9195923219593923,
+    0.9391779073552307,
+    0.9994825612275692
+  ],
+  "function": "F4",
+  "week": 1,
+  "strategy": "Grid Search"
 }
