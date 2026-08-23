@@ -1,13 +1,3 @@
 # Data
 
-## Data description
-
-| Attribute | Value |
-| --- | --- |
-| Function | Function 4 |
-| Input | 4D array |
-| Output | 1D array |
-| Optimisation goal | Maximise |
-| Description of sample application | A four-variable model-tuning problem. It can represent a fast predictive model used to support costly decisions, such as allocating products across warehouses. The objective is complex and may contain several local optima, so candidate solutions require careful search and validation. |
-
-`provenance.json` points to canonical source evidence. Arrays are not duplicated here; Week 01 starter data and exact recorded pairs are loaded read-only.
+Derived verified arrays contain starter observations plus returned Weeks 1–11 pairs: 41 rows by 4 dimensions. `provenance.json` records canonical sources. The Week 12 proposal is excluded. Legacy Week 11 arrays remain quarantined.

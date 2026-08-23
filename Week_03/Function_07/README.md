@@ -1,3 +1,10 @@
 # Week 03 — Function 07
 
-Focused evidence review: [notebook](01_Notebook/Week_03_Function_07.ipynb), [code](02_Code/analyse_week_03_function_07.py), [data provenance](03_Data/provenance.json), [results](04_Results/README.md), [figure](05_Figures/README.md), [methodology](06_Documentation/methodology.md), and [reflection](07_Reflection/README.md).
+Function-specific review aligned to the canonical Week 3 methodology.
+
+- Evidence boundary: **Weeks 1-2 observed; Week 3 proposed only.**
+- Verified observations: **32** in **6 dimensions**
+- Acquisition: **GP-UCB**
+- Portal-formatted proposal: `0.143585-0.302559-0.571101-0.194533-0.395561-0.815792`
+
+The seven numbered folders contain the executable notebook, reusable code, verified derived data, results, figures, methodology, and reflection. The current-week proposal is never included in observed arrays, summaries, or plots.

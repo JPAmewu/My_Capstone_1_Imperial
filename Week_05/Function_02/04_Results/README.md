@@ -1,3 +1,3 @@
 # Results
 
-Generated `observations.csv` and `summary.json` contain the validated cumulative evidence and explicit evidence-gap report.
+`observations.csv` contains 14 verified observations through Week 4. `summary.json` holds within-function statistics and the distinct proposed-only Week 5 record `0.555332-0.360931`.

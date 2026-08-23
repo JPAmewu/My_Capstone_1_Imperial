@@ -21,7 +21,28 @@
   "minimum_output": -0.06562362443733738,
   "mean_output": 0.16530457286312442,
   "standard_deviation": 0.20256877768072107,
-  "evidence_gap": "No verified Week 13 return is present; confirmed cumulative evidence is available through Week 12.",
+  "evidence_gap": "Confirmed observed evidence is available through Week 12; Week 13 is proposed only at this checkpoint.",
   "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
-  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger."
+  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger.",
+  "evidence_boundary": "Weeks 1-12 observed; Week 13 proposed only.",
+  "proposal": {
+    "query": [
+      0.686305,
+      0.999999
+    ],
+    "method": "EI",
+    "kappa": 2.0,
+    "xi": 0.004051375553614421,
+    "candidate_source": "local",
+    "candidate_count": 45056,
+    "predicted_mean": 0.5951559116563981,
+    "predictive_std": 0.05572037760842852,
+    "selected_acquisition": 0.013609787880141996,
+    "reason": "The strong Week 12 return supports balanced improvement around a promising region.",
+    "decision_timing": "Chosen after Week 12 evidence and before any Week 13 outcome.",
+    "policy_scope": "Adaptive heuristic; not a statistically controlled acquisition comparison.",
+    "source": "Week_13/02_Notebook/Week_13_Optimisation_Strategy.ipynb",
+    "status": "proposed_only",
+    "duplicates_observed_evidence": false
+  }
 }

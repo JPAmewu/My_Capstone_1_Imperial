@@ -1,32 +1,15 @@
-# Week 08 Function 05 methodology
-
-## Purpose
-
-Provide a notebook-independent audit of the cumulative evidence recoverable at the Week 08 review point.
-
-## Corrections applied
-
-- Removed notebook-cell-order and environment-specific path dependencies.
-- Replaced implicit display calls with explicit tables and Matplotlib figures.
-- Consolidated fragmented plots into one response trace and coordinate heatmap.
-- Replaced cross-function or correlation-based performance claims with within-function evidence comparisons.
-- Added finite-value, shape, unit-domain, provenance, and evidence-gap checks.
-- Kept missing returns missing instead of imputing or presenting proposals as observations.
-
-## Provenance
-
-Starter arrays remain in `Week_01/Function_05/03_Data`. Exact recorded query/return pairs are transcribed in the shared evidence registry from the corrected canonical notebooks. The local `03_Data/provenance.json` records references instead of duplicating source arrays.
-
-## Validation and analysis
-
-The workflow requires finite aligned arrays, 4 input dimensions, and coordinates in the unit hypercube. It identifies the incumbent maximum, reports the latest verified observation, and creates a response trace plus coordinate heatmap.
+# Methodology
 
 ## Evidence boundary
 
-At this review point, Confirmed cumulative evidence is available through Week 8. No value is imputed. Results are descriptive within Function 05; they do not imply causality, global optimality, or cross-function ranking.
+Weeks 1-7 observed; Week 8 proposed only. The analysis reconstructs 27 observations from immutable starter arrays and the canonical ledger. The Week 8 query is held separately as a proposal. No outcome is imputed.
 
-## Reproduction
+## Function-specific acquisition
 
-```bash
-MPLBACKEND=Agg .venv/bin/python Week_08/Function_05/02_Code/analyse_week_08_function_05.py --write-artifacts
-```
+Function 05 uses **GP-UCB**, as documented in `Week_08/02_Notebook/Week_8_Capstone.ipynb`. Decision record: Chosen using evidence through Week 7, before the Week 8 return.
+
+This policy is adaptive and heuristic. It was selected using evidence available through Week 7; it is not a randomized or statistically controlled acquisition comparison. For Week 13, the reason was recorded before Week 13 outcomes existed.
+
+## Validation
+
+Inputs are finite and bounded; the proposal is distinct, capped at `0.999999`, and formatted as `0.081230-0.992582-0.156202-0.988421` with six decimals per coordinate. Results are descriptive within Function 05 and imply neither causality nor global optimality.

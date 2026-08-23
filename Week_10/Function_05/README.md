@@ -1,3 +1,10 @@
 # Week 10 — Function 05
 
-Focused evidence review: [notebook](01_Notebook/Week_10_Function_05.ipynb), [code](02_Code/analyse_week_10_function_05.py), [data provenance](03_Data/provenance.json), [results](04_Results/README.md), [figure](05_Figures/README.md), [methodology](06_Documentation/methodology.md), and [reflection](07_Reflection/README.md).
+Function-specific review aligned to the canonical Week 10 methodology.
+
+- Evidence boundary: **Weeks 1-9 observed; Week 10 proposed only.**
+- Verified observations: **29** in **4 dimensions**
+- Acquisition: **GP-UCB**
+- Portal-formatted proposal: `0.005552-0.918769-0.692571-0.988052`
+
+The seven numbered folders contain the executable notebook, reusable code, verified derived data, results, figures, methodology, and reflection. The current-week proposal is never included in observed arrays, summaries, or plots.

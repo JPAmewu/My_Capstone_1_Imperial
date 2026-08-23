@@ -1,3 +1,10 @@
 # Week 11 — Function 02
 
-Focused evidence review: [notebook](01_Notebook/Week_11_Function_02.ipynb), [code](02_Code/analyse_week_11_function_02.py), [data provenance](03_Data/provenance.json), [results](04_Results/README.md), [figure](05_Figures/README.md), [methodology](06_Documentation/methodology.md), and [reflection](07_Reflection/README.md).
+Function-specific review aligned to the canonical Week 11 methodology.
+
+- Evidence boundary: **Weeks 1-10 observed; Week 11 proposed only.**
+- Verified observations: **20** in **2 dimensions**
+- Acquisition: **GP-UCB**
+- Portal-formatted proposal: `0.384537-0.996119`
+
+The seven numbered folders contain the executable notebook, reusable code, verified derived data, results, figures, methodology, and reflection. The current-week proposal is never included in observed arrays, summaries, or plots.

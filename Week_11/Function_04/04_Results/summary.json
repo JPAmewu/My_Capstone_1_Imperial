@@ -3,8 +3,8 @@
   "function": 4,
   "dimensions": 4,
   "starter_observations": 30,
-  "recorded_pairs": 11,
-  "total_verified_observations": 41,
+  "recorded_pairs": 10,
+  "total_verified_observations": 40,
   "best_query": 33,
   "best_input": [
     0.394519,
@@ -13,19 +13,35 @@
     0.461856
   ],
   "best_output": -1.9810750402526334,
-  "latest_verified_query": 41,
+  "latest_verified_query": 40,
   "latest_verified_input": [
-    0.80766,
-    0.348421,
-    0.277162,
-    0.044827
+    0.587928,
+    0.514452,
+    0.045793,
+    0.032616
   ],
-  "latest_verified_output": -14.992666345077428,
+  "latest_verified_output": -15.125730966112929,
   "latest_improves_previous_best": false,
   "minimum_output": -32.625660215962455,
-  "mean_output": -17.32179095421171,
-  "standard_deviation": 7.420979418451624,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 11.",
+  "mean_output": -17.38001906944007,
+  "standard_deviation": 7.503912170846934,
+  "evidence_gap": "Confirmed observed evidence is available through Week 10; Week 11 is proposed only at this checkpoint.",
   "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
-  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger."
+  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger.",
+  "evidence_boundary": "Weeks 1-10 observed; Week 11 proposed only.",
+  "proposal": {
+    "query": [
+      0.80766,
+      0.348421,
+      0.277162,
+      0.044827
+    ],
+    "method": "GP-UCB",
+    "kappa": 2.0,
+    "source": "Week_11/02_Notebook/Week_11_Capstone.ipynb",
+    "decision_timing": "Chosen using evidence through Week 10, before the Week 11 return.",
+    "policy_scope": "Adaptive heuristic; not a statistically controlled acquisition comparison.",
+    "status": "proposed_only",
+    "duplicates_observed_evidence": false
+  }
 }

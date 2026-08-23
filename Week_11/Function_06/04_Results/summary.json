@@ -3,8 +3,8 @@
   "function": 6,
   "dimensions": 5,
   "starter_observations": 20,
-  "recorded_pairs": 11,
-  "total_verified_observations": 31,
+  "recorded_pairs": 10,
+  "total_verified_observations": 30,
   "best_query": 1,
   "best_input": [
     0.7281861047460138,
@@ -14,20 +14,37 @@
     0.056401310518258585
   ],
   "best_output": -0.7142649478202404,
-  "latest_verified_query": 31,
+  "latest_verified_query": 30,
   "latest_verified_input": [
-    0.67859,
-    0.144728,
-    0.730278,
-    0.715653,
-    0.604728
+    0.853051,
+    0.152023,
+    0.700695,
+    0.554516,
+    0.611033
   ],
-  "latest_verified_output": -1.154424131709899,
+  "latest_verified_output": -1.4490886989479597,
   "latest_improves_previous_best": false,
   "minimum_output": -2.5711696316081234,
-  "mean_output": -1.4870581165549805,
-  "standard_deviation": 0.46869277637573803,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 11.",
+  "mean_output": -1.4981459160498163,
+  "standard_deviation": 0.4724237832930541,
+  "evidence_gap": "Confirmed observed evidence is available through Week 10; Week 11 is proposed only at this checkpoint.",
   "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
-  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger."
+  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger.",
+  "evidence_boundary": "Weeks 1-10 observed; Week 11 proposed only.",
+  "proposal": {
+    "query": [
+      0.67859,
+      0.144728,
+      0.730278,
+      0.715653,
+      0.604728
+    ],
+    "method": "GP-UCB",
+    "kappa": 2.0,
+    "source": "Week_11/02_Notebook/Week_11_Capstone.ipynb",
+    "decision_timing": "Chosen using evidence through Week 10, before the Week 11 return.",
+    "policy_scope": "Adaptive heuristic; not a statistically controlled acquisition comparison.",
+    "status": "proposed_only",
+    "duplicates_observed_evidence": false
+  }
 }

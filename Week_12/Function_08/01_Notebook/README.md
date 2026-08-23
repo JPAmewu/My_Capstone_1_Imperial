@@ -1,4 +1,3 @@
 # Notebook
 
-- [Focused Function 08 notebook](Week_12_Function_08.ipynb)
-- [Canonical all-function Week 12 notebook](../../02_Notebook/Week_12_Capstone.ipynb)
+`Week_12_Function_08.ipynb` mirrors `Week_12/02_Notebook/Week_12_Capstone.ipynb`, validates 51 observations, records the GP-UCB proposal separately, and checks six-decimal portal formatting.

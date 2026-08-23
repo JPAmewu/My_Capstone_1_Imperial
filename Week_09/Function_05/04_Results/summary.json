@@ -3,8 +3,8 @@
   "function": 5,
   "dimensions": 4,
   "starter_observations": 20,
-  "recorded_pairs": 9,
-  "total_verified_observations": 29,
+  "recorded_pairs": 8,
+  "total_verified_observations": 28,
   "best_query": 28,
   "best_input": [
     0.08123,
@@ -13,18 +13,41 @@
     0.988421
   ],
   "best_output": 1465.5121917504077,
-  "latest_verified_query": 29,
+  "latest_verified_query": 28,
   "latest_verified_input": [
-    0.319924,
-    0.675406,
-    0.431628,
-    1.0
+    0.08123,
+    0.992582,
+    0.156202,
+    0.988421
   ],
-  "latest_verified_output": 430.8031249775375,
-  "latest_improves_previous_best": false,
+  "latest_verified_output": 1465.5121917504077,
+  "latest_improves_previous_best": true,
   "minimum_output": 0.1129397953712203,
-  "mean_output": 299.6897215299913,
-  "standard_deviation": 409.2028695811277,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 9.",
-  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
+  "mean_output": 295.00709997829324,
+  "standard_deviation": 415.6817973744698,
+  "evidence_gap": "Confirmed observed evidence is available through Week 8; Week 9 is proposed only at this checkpoint.",
+  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
+  "evidence_boundary": "Weeks 1-8 observed; Week 9 proposed only.",
+  "proposal": {
+    "query": [
+      0.319924,
+      0.675406,
+      0.431628,
+      0.999999
+    ],
+    "method": "Expected Improvement",
+    "kappa": null,
+    "source": "Week_09/02_Notebook/Week_9_Capstone.ipynb",
+    "decision_timing": "Chosen using evidence through Week 8, before the Week 9 return.",
+    "policy_scope": "Adaptive heuristic; not a statistically controlled acquisition comparison.",
+    "source_query": [
+      0.319924,
+      0.675406,
+      0.431628,
+      1.0
+    ],
+    "portal_normalization": "Coordinates at 1.0 were capped at 0.999999 for valid six-decimal submission.",
+    "status": "proposed_only",
+    "duplicates_observed_evidence": false
+  }
 }

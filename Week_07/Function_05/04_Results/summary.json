@@ -3,8 +3,8 @@
   "function": 5,
   "dimensions": 4,
   "starter_observations": 20,
-  "recorded_pairs": 7,
-  "total_verified_observations": 27,
+  "recorded_pairs": 6,
+  "total_verified_observations": 26,
   "best_query": 16,
   "best_input": [
     0.22418902330288348,
@@ -13,18 +13,35 @@
     0.8785156842249731
   ],
   "best_output": 1088.8596181962705,
-  "latest_verified_query": 27,
+  "latest_verified_query": 26,
   "latest_verified_input": [
-    0.0,
-    0.0,
-    0.0,
-    0.0
+    0.654981,
+    0.602894,
+    0.898891,
+    0.589622
   ],
-  "latest_verified_output": 163.1225,
+  "latest_verified_output": 281.9115728306016,
   "latest_improves_previous_best": false,
   "minimum_output": 0.1129397953712203,
-  "mean_output": 251.655059542289,
-  "standard_deviation": 355.76376019215513,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 7.",
-  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
+  "mean_output": 255.06015798622317,
+  "standard_deviation": 362.1088104956962,
+  "evidence_gap": "Confirmed observed evidence is available through Week 6; Week 7 is proposed only at this checkpoint.",
+  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
+  "evidence_boundary": "Weeks 1-6 observed; Week 7 proposed only.",
+  "proposal": {
+    "query": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "method": "Local exploitation",
+    "kappa": null,
+    "source": "Week_07/02_Notebook/Week_7_Capstone.ipynb",
+    "decision_timing": "Chosen using evidence through Week 6, before the Week 7 return.",
+    "policy_scope": "Adaptive heuristic; not a statistically controlled acquisition comparison.",
+    "status": "proposed_only",
+    "duplicates_observed_evidence": true,
+    "duplicate_note": "Historical proposal duplicated evidence available at the decision boundary; retained for fidelity, not endorsed."
+  }
 }

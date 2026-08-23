@@ -3,25 +3,39 @@
   "function": 1,
   "dimensions": 2,
   "starter_observations": 10,
-  "recorded_pairs": 11,
-  "total_verified_observations": 21,
+  "recorded_pairs": 10,
+  "total_verified_observations": 20,
   "best_query": 3,
   "best_input": [
     0.7310236309563586,
     0.7329998764152272
   ],
   "best_output": 7.710875114502849e-16,
-  "latest_verified_query": 21,
+  "latest_verified_query": 20,
   "latest_verified_input": [
-    0.353293,
-    0.956697
+    0.379403,
+    0.071186
   ],
-  "latest_verified_output": 8.159220183163013e-130,
+  "latest_verified_output": -4.5921413403053304e-89,
   "latest_improves_previous_best": false,
   "minimum_output": -0.0036060626443634764,
-  "mean_output": -0.00017171726877917643,
-  "standard_deviation": 0.0007679429718018541,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 11.",
+  "mean_output": -0.00018030313221813527,
+  "standard_deviation": 0.000785923132542881,
+  "evidence_gap": "Confirmed observed evidence is available through Week 10; Week 11 is proposed only at this checkpoint.",
   "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
-  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger."
+  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger.",
+  "evidence_boundary": "Weeks 1-10 observed; Week 11 proposed only.",
+  "proposal": {
+    "query": [
+      0.353293,
+      0.956697
+    ],
+    "method": "GP-UCB",
+    "kappa": 2.0,
+    "source": "Week_11/02_Notebook/Week_11_Capstone.ipynb",
+    "decision_timing": "Chosen using evidence through Week 10, before the Week 11 return.",
+    "policy_scope": "Adaptive heuristic; not a statistically controlled acquisition comparison.",
+    "status": "proposed_only",
+    "duplicates_observed_evidence": false
+  }
 }

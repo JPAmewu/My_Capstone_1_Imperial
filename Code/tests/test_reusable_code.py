@@ -6,6 +6,7 @@ import matplotlib
 import numpy as np
 
 matplotlib.use("Agg")
+import matplotlib.pyplot as plt
 
 from Code.acquisition_function import expected_improvement, probability_improvement, upper_confidence_bound
 from Code.candidate_generation import hybrid_candidates, make_rng, uniform_candidates
@@ -18,6 +19,7 @@ from Code.query_selection import select_query
 from Code.portal_format import format_portal_query, validate_portal_query, validate_query_file
 from Code.weekly_evidence import EVIDENCE_GAPS, recorded_pairs
 from Code.weekly_function_review import analyse_weekly_function, load_weekly_evidence, plot_weekly_function
+from Code.historical_function_review import analyse_historical_function, proposal_for_week
 
 
 class ReusableCodeTests(unittest.TestCase):
@@ -131,6 +133,28 @@ class ReusableCodeTests(unittest.TestCase):
         self.assertIn("archive_integrity", summary)
         figure = plot_weekly_function(frame, summary)
         self.assertGreaterEqual(len(figure.axes), 3)
+
+    def test_historical_reviews_enforce_prior_week_boundary(self):
+        for week in range(3, 14):
+            for function in range(1, 9):
+                frame, summary, proposal, figure = analyse_historical_function(week, function)
+                plt.close(figure)
+                self.assertEqual(summary["recorded_pairs"], week - 1)
+                self.assertEqual(proposal["status"], "proposed_only")
+                candidate = np.asarray(proposal["query"], dtype=float)
+                self.assertTrue(np.all(candidate <= 0.999999))
+                observed = frame[[c for c in frame if c.startswith("x")]].to_numpy(float)
+                duplicate = bool(np.any(np.all(np.isclose(observed, candidate, rtol=0, atol=5e-7), axis=1)))
+                self.assertEqual(duplicate, proposal["duplicates_observed_evidence"])
+
+    def test_week_13_uses_canonical_function_specific_strategy(self):
+        expected = {1: "UCB", 2: "EI", 3: "PI", 4: "UCB", 5: "EI", 6: "EI", 7: "UCB", 8: "UCB"}
+        for function, method in expected.items():
+            proposal = proposal_for_week(13, function)
+            self.assertEqual(proposal["method"], method)
+            self.assertIn("adaptive heuristic", proposal["policy_scope"].lower())
+            self.assertIn("before any Week 13 outcome", proposal["decision_timing"])
+            self.assertFalse(proposal.get("duplicates_observed_evidence", False))
 
 
 if __name__ == "__main__":

@@ -1,32 +1,15 @@
-# Week 11 Function 03 methodology
-
-## Purpose
-
-Provide a notebook-independent audit of the cumulative evidence recoverable at the Week 11 review point.
-
-## Corrections applied
-
-- Removed notebook-cell-order and environment-specific path dependencies.
-- Replaced implicit display calls with explicit tables and Matplotlib figures.
-- Consolidated fragmented plots into one response trace and coordinate heatmap.
-- Replaced cross-function or correlation-based performance claims with within-function evidence comparisons.
-- Added finite-value, shape, unit-domain, provenance, and evidence-gap checks.
-- Kept missing returns missing instead of imputing or presenting proposals as observations.
-
-## Provenance
-
-Starter arrays remain in `Week_01/Function_03/03_Data`. Exact recorded query/return pairs are transcribed in the shared evidence registry from the corrected canonical notebooks. The local `03_Data/provenance.json` records references instead of duplicating source arrays.
-
-## Validation and analysis
-
-The workflow requires finite aligned arrays, 3 input dimensions, and coordinates in the unit hypercube. It identifies the incumbent maximum, reports the latest verified observation, and creates a response trace plus coordinate heatmap.
+# Methodology
 
 ## Evidence boundary
 
-At this review point, Confirmed cumulative evidence is available through Week 11. The original Week 11 arrays remain quarantined and are not used. No value is imputed. Results are descriptive within Function 03; they do not imply causality, global optimality, or cross-function ranking.
+Weeks 1-10 observed; Week 11 proposed only. The analysis reconstructs 25 observations from immutable starter arrays and the canonical ledger. The Week 11 query is held separately as a proposal. No outcome is imputed. Legacy Week 11 arrays remain quarantined.
 
-## Reproduction
+## Function-specific acquisition
 
-```bash
-MPLBACKEND=Agg .venv/bin/python Week_11/Function_03/02_Code/analyse_week_11_function_03.py --write-artifacts
-```
+Function 03 uses **GP-UCB**, as documented in `Week_11/02_Notebook/Week_11_Capstone.ipynb`. Decision record: Chosen using evidence through Week 10, before the Week 11 return.
+
+This policy is adaptive and heuristic. It was selected using evidence available through Week 10; it is not a randomized or statistically controlled acquisition comparison. For Week 13, the reason was recorded before Week 13 outcomes existed.
+
+## Validation
+
+Inputs are finite and bounded; the proposal is distinct, capped at `0.999999`, and formatted as `0.450034-0.667941-0.342989` with six decimals per coordinate. Results are descriptive within Function 03 and imply neither causality nor global optimality.

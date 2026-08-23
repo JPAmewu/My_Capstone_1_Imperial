@@ -1,3 +1,10 @@
 # Week 12 — Function 04
 
-Focused evidence review: [notebook](01_Notebook/Week_12_Function_04.ipynb), [code](02_Code/analyse_week_12_function_04.py), [data provenance](03_Data/provenance.json), [results](04_Results/README.md), [figure](05_Figures/README.md), [methodology](06_Documentation/methodology.md), and [reflection](07_Reflection/README.md).
+Function-specific review aligned to the canonical Week 12 methodology.
+
+- Evidence boundary: **Weeks 1-11 observed; Week 12 proposed only.**
+- Verified observations: **41** in **4 dimensions**
+- Acquisition: **GP-UCB**
+- Portal-formatted proposal: `0.370439-0.382409-0.425133-0.390888`
+
+The seven numbered folders contain the executable notebook, reusable code, verified derived data, results, figures, methodology, and reflection. The current-week proposal is never included in observed arrays, summaries, or plots.

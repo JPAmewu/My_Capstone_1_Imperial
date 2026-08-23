@@ -1,3 +1,3 @@
 # Documentation
 
-[methodology.md](methodology.md) explains provenance, validation, evidence boundaries, and reproduction.
+`methodology.md` defines the evidence boundary, acquisition provenance, interpretation limits, and reproducibility policy.

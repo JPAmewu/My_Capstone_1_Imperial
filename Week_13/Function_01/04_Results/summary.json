@@ -21,7 +21,28 @@
   "minimum_output": -0.0036060626443634764,
   "mean_output": -0.00016391193838012296,
   "standard_deviation": 0.0007511388649340191,
-  "evidence_gap": "No verified Week 13 return is present; confirmed cumulative evidence is available through Week 12.",
+  "evidence_gap": "Confirmed observed evidence is available through Week 12; Week 13 is proposed only at this checkpoint.",
   "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
-  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger."
+  "archive_integrity": "Original repository Week 11 arrays remain quarantined; analysis uses independently recovered pairs from the canonical ledger.",
+  "evidence_boundary": "Weeks 1-12 observed; Week 13 proposed only.",
+  "proposal": {
+    "query": [
+      0.98745,
+      0.502905
+    ],
+    "method": "UCB",
+    "kappa": 3.0,
+    "xi": 7.511388649340191e-06,
+    "candidate_source": "sobol",
+    "candidate_count": 45056,
+    "predicted_mean": -4.921407845640723e-05,
+    "predictive_std": 0.0008694339036189059,
+    "selected_acquisition": 0.0025590876324003103,
+    "reason": "Sparse near-zero responses still justify uncertainty-led exploration.",
+    "decision_timing": "Chosen after Week 12 evidence and before any Week 13 outcome.",
+    "policy_scope": "Adaptive heuristic; not a statistically controlled acquisition comparison.",
+    "source": "Week_13/02_Notebook/Week_13_Optimisation_Strategy.ipynb",
+    "status": "proposed_only",
+    "duplicates_observed_evidence": false
+  }
 }

@@ -1,9 +1,11 @@
 {
   "canonical_starter": "Week_01/Function_01/03_Data",
   "recorded_pairs_registry": "Results/query_output_ledger.csv",
-  "review_context": "Week_12/02_Notebook",
+  "review_context": "Week_12/02_Notebook/Week_12_Capstone.ipynb",
+  "observed_scope": "Starter observations plus returned Weeks 1-11 pairs.",
+  "proposal_scope": "The Week 12 query is proposed only and excluded from observed arrays and plots.",
   "data_policy": "Derived arrays are reconstructed from starter data plus the ledger; source arrays are never rewritten.",
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 12.",
+  "evidence_gap": "Confirmed observed evidence is available through Week 11; Week 12 is proposed only at this checkpoint.",
   "excluded_archive": "Week_11/Function_01/03_Data/function_1_*.npy",
-  "exclusion_reason": "Duplicate sentinel values, cross-function outputs, altered coordinates, and unprovenanced rows."
+  "exclusion_reason": "Unverified legacy arrays remain quarantined; the canonical ledger is used instead."
 }

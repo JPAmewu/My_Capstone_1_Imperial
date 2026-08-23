@@ -3,8 +3,8 @@
   "function": 4,
   "dimensions": 4,
   "starter_observations": 30,
-  "recorded_pairs": 8,
-  "total_verified_observations": 38,
+  "recorded_pairs": 7,
+  "total_verified_observations": 37,
   "best_query": 33,
   "best_input": [
     0.394519,
@@ -13,18 +13,34 @@
     0.461856
   ],
   "best_output": -1.9810750402526334,
-  "latest_verified_query": 38,
+  "latest_verified_query": 37,
   "latest_verified_input": [
-    0.046009,
-    0.778273,
-    0.979511,
-    0.088488
+    0.096005,
+    0.028299,
+    0.033322,
+    0.077327
   ],
-  "latest_verified_output": -28.736322947747187,
+  "latest_verified_output": -20.19585364168859,
   "latest_improves_previous_best": false,
   "minimum_output": -32.625660215962455,
-  "mean_output": -17.28032180718074,
-  "standard_deviation": 7.6267761656512585,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 8.",
-  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
+  "mean_output": -16.970700154732995,
+  "standard_deviation": 7.489787948031544,
+  "evidence_gap": "Confirmed observed evidence is available through Week 7; Week 8 is proposed only at this checkpoint.",
+  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
+  "evidence_boundary": "Weeks 1-7 observed; Week 8 proposed only.",
+  "proposal": {
+    "query": [
+      0.046009,
+      0.778273,
+      0.979511,
+      0.088488
+    ],
+    "method": "GP-UCB",
+    "kappa": 2.0,
+    "source": "Week_08/02_Notebook/Week_8_Capstone.ipynb",
+    "decision_timing": "Chosen using evidence through Week 7, before the Week 8 return.",
+    "policy_scope": "Adaptive heuristic; not a statistically controlled acquisition comparison.",
+    "status": "proposed_only",
+    "duplicates_observed_evidence": false
+  }
 }

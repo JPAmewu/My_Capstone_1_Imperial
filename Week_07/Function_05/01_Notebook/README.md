@@ -1,4 +1,3 @@
 # Notebook
 
-- [Focused Function 05 notebook](Week_07_Function_05.ipynb)
-- [Canonical all-function Week 7 notebook](../../02_Notebook/Week_7_Capstone.ipynb)
+`Week_07_Function_05.ipynb` mirrors `Week_07/02_Notebook/Week_7_Capstone.ipynb`, validates 26 observations, records the Local exploitation proposal separately, and checks six-decimal portal formatting.
