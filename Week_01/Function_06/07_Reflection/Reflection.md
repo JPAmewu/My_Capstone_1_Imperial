@@ -4,17 +4,18 @@
 ### Technique Used
 Manual Reasoning
 
-### Output Obtained
--1.1520351120911565
+### Starter-baseline incumbent
+`-0.7142649478202404` at query 1.
 
 ### Observations
-This was not strong like the one produce by the same technique for function 5 
-during Week 1. The manually selected query appears to have identified 
-a lesser promising region of the search space.
+The first of the 20 starter rows remains the best observed value. Later starter
+rows did not improve it, but the evidence is too sparse to establish the
+surface shape or a global optimum.
 
 ### Lessons Learned
-Though the same technique did very well for function 5 
-it rether perform very poorly for function 6.
+Manual Reasoning has not produced a starter-sample improvement here, but
+cross-function output scales and datasets are not comparable evidence of method quality.
 
 ### Week 2 Strategy
-Explore a better alternative technique like Bayesian Optimisation.
+Consider a reproducible surrogate and acquisition function in a later round,
+without treating its proposal as evidence before a return is recorded.
