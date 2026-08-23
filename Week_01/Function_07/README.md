@@ -1,23 +1,23 @@
-# Function 7
+# Week 01 Function 07
 
 ## Objective
 
-Maximise the unknown Function 7.
+Function 7 is a six-dimensional black-box maximisation problem. In line with
+the Week 1 main notebook, this checkpoint describes 30 starter observations
+under the recorded Bayesian Optimisation strategy label. It does not invent an
+undocumented GP fit or acquisition proposal.
 
-## Week 1 Strategy
+## Week 1 strategy
 
 Bayesian Optimisation
 
-## Files
+## Week 1 result
 
-- initial_inputs.npy
+The starter-sample incumbent is query 7 at
+`[0.057895541971385245, 0.49167221863901367, 0.24742222374867484, 0.21811843639837636, 0.42042832954601583, 0.7309698428701273]`,
+with output `1.3649683044991994`.
 
-- initial_outputs.npy
+## Later-round plan
 
-## Week 1 Result
-
-Output: 1.0510148516295004
-
-## Week 2 Plan
-
-Continue Bayesian Optimisation and focus on exploitation near the best observed values.
+Record a reproducible surrogate and acquisition configuration in a later
+checkpoint, and append proposals only after authoritative returns exist.

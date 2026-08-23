@@ -1,2 +1,4 @@
-# Week 01 – Function 07 Documentation
-This folder contains methodology notes and supporting documentation for Function 07 during Week 01.
+# Week 01 Function 07 documentation
+
+- `methodology.md` documents the starter-data contract, recorded Bayesian
+  Optimisation label, interpretation boundary, figure layout, and reproduction commands.

@@ -1,11 +1,8 @@
 {
-  "week": 1,
-  "function": 7,
+  "observations": 30,
   "dimensions": 6,
-  "starter_observations": 30,
-  "recorded_pairs": 1,
-  "total_verified_observations": 31,
-  "best_query": 7,
+  "best_index": 6,
+  "best_query_number": 7,
   "best_input": [
     0.057895541971385245,
     0.49167221863901367,
@@ -15,20 +12,25 @@
     0.7309698428701273
   ],
   "best_output": 1.3649683044991994,
-  "latest_verified_query": 31,
-  "latest_verified_input": [
-    0.045091,
-    0.528666,
-    0.329265,
-    0.10535,
-    0.434667,
-    0.641164
+  "latest_output": 0.0954111589101041,
+  "latest_percentile": 60.0,
+  "input_min": [
+    0.057895541971385245,
+    0.011812836708676278,
+    0.0036345648296357558,
+    0.07365918727355969,
+    0.014944176429292355,
+    0.05109986421364299
   ],
-  "latest_verified_output": 1.0510148516295004,
-  "latest_improves_previous_best": false,
-  "minimum_output": 0.0027014650245082332,
-  "mean_output": 0.24642619781717037,
-  "standard_deviation": 0.3315363660859242,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 1.",
-  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
+  "input_max": [
+    0.9424508393797228,
+    0.9246939036961066,
+    0.9245705141349381,
+    0.9610171372277223,
+    0.9986546964586872,
+    0.9510139152470551
+  ],
+  "function": "F7",
+  "week": 1,
+  "strategy": "Bayesian Optimisation"
 }
