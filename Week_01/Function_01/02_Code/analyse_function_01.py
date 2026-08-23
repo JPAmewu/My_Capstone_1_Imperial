@@ -55,8 +55,11 @@ def write_artifacts(
     written = {"observations": observations_path, "summary": summary_path}
     if write_figure:
         figure_path = figures_dir / "function_01_diagnostics.png"
+        compatibility_path = figures_dir / "week_01_function_01_diagnostics.png"
         figure.savefig(figure_path, dpi=160, bbox_inches="tight")
+        figure.savefig(compatibility_path, dpi=160, bbox_inches="tight")
         written["figure"] = figure_path
+        written["compatibility_figure"] = compatibility_path
     plt.close(figure)
     return written
 

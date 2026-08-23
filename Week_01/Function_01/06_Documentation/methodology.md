@@ -31,3 +31,7 @@ notebook cell order. Run it from the repository root with:
 The command deterministically recreates `observations.csv` and `summary.json`
 from the immutable starter arrays. Add `--write-figure` only when the optional
 diagnostic PNG should also be refreshed.
+
+The figure uses four panels: ordered output history, running best, and one
+scatter plot for each of the two inputs. All panels use
+the same ten starter rows as the main Week 1 notebook.
