@@ -2,8 +2,8 @@
 
 ## Objective
 
-Maximise the unknown two-dimensional Function 1 using the ten starter
-observations and propose a defensible direction for the following round.
+Describe the unknown two-dimensional Function 1 using the ten starter
+observations and preserve the random-search baseline for later rounds.
 
 ## Data
 
@@ -13,10 +13,10 @@ inputs must lie inside `[0, 1]^2`.
 
 ## Week 1 method
 
-The recorded strategy was random search. The focused analysis validates the
+The recorded strategy was random search. As in the Week 1 main notebook, the focused analysis validates the
 data, identifies the best observed query, calculates a running-best sequence,
 and plots both input dimensions against the objective. It does not claim that
-the best observed point is a global optimum.
+the best observed point is a global optimum, fit a GP, or claim a GP-UCB proposal.
 
 ## Reproducibility
 
@@ -28,5 +28,6 @@ notebook cell order. Run it from the repository root with:
 .venv/bin/python Week_01/Function_01/02_Code/analyse_function_01.py --write-artifacts
 ```
 
-The command deterministically recreates `observations.csv`, `summary.json`, and
-`function_01_diagnostics.png` from the immutable starter arrays.
+The command deterministically recreates `observations.csv` and `summary.json`
+from the immutable starter arrays. Add `--write-figure` only when the optional
+diagnostic PNG should also be refreshed.

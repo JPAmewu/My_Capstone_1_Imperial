@@ -7,4 +7,6 @@
 
 The focused notebook loads the canonical starter arrays, reports the best
 observation, renders consolidated Matplotlib diagnostics, and runs explicit
-reproducibility assertions.
+reproducibility assertions. It mirrors the main notebook's model-free Week 1
+scope: ten starter observations, random-search description, and no GP-UCB
+proposal.

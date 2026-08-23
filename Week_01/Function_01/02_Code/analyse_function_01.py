@@ -34,8 +34,10 @@ def analyse_function_01(repository_root: str | Path | None = None):
     return observations_frame(inputs, outputs), summary, figure
 
 
-def write_artifacts(repository_root: str | Path | None = None) -> dict[str, Path]:
-    """Write the documented result tables and figure to Function 1 folders."""
+def write_artifacts(
+    repository_root: str | Path | None = None, *, write_figure: bool = False
+) -> dict[str, Path]:
+    """Write the Week 1 baseline tables and optionally refresh the figure."""
     root = find_repository_root(repository_root)
     function_root = root / "Week_01" / "Function_01"
     results, summary, figure = analyse_function_01(root)
@@ -44,25 +46,29 @@ def write_artifacts(repository_root: str | Path | None = None) -> dict[str, Path
     figures_dir.mkdir(parents=True, exist_ok=True)
     observations_path = results_dir / "observations.csv"
     summary_path = results_dir / "summary.json"
-    figure_path = figures_dir / "function_01_diagnostics.png"
     results.to_csv(observations_path, index=False)
     serializable = {
         key: value.tolist() if hasattr(value, "tolist") else value
         for key, value in summary.items()
     }
     summary_path.write_text(json.dumps(serializable, indent=2) + "\n", encoding="utf-8")
-    figure.savefig(figure_path, dpi=160, bbox_inches="tight")
+    written = {"observations": observations_path, "summary": summary_path}
+    if write_figure:
+        figure_path = figures_dir / "function_01_diagnostics.png"
+        figure.savefig(figure_path, dpi=160, bbox_inches="tight")
+        written["figure"] = figure_path
     plt.close(figure)
-    return {"observations": observations_path, "summary": summary_path, "figure": figure_path}
+    return written
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--write-artifacts", action="store_true", help="write CSV, JSON, and PNG outputs")
+    parser.add_argument("--write-artifacts", action="store_true", help="write CSV and JSON outputs")
+    parser.add_argument("--write-figure", action="store_true", help="also refresh the optional diagnostic PNG")
     args = parser.parse_args()
     frame, summary, figure = analyse_function_01()
     if args.write_artifacts:
-        for name, path in write_artifacts().items():
+        for name, path in write_artifacts(write_figure=args.write_figure).items():
             print(f"{name}: {path}")
     else:
         print(pd.Series(summary).to_string())
