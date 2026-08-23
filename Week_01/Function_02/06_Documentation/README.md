@@ -1,3 +1,4 @@
-# Week 01 – Function 02 Documentation
+# Week 01 Function 02 documentation
 
-This folder contains methodology notes and supporting documentation for Function 02 during Week 01.
+- `methodology.md` documents the starter-data contract, random-search baseline,
+  interpretation boundary, figure layout, and reproduction commands.

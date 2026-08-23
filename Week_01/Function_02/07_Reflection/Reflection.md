@@ -5,14 +5,16 @@
 ### Technique Used
 Random Search
 
-### Output Obtained
--0.03182956281754251
+### Starter-baseline incumbent
+`0.6112052157614438` at query 10.
 
 ### Observations.
-This behaves just like function 1
+The ten starter rows provide a useful baseline but are too sparse to establish
+the surface shape or a global optimum.
 
 ### Lessons Learned
-This techniques cannot be effective optimisation technique going forward
+Random search gives coverage but does not use observed structure efficiently.
 
 ### Week 2 Strategy
-Apllied a more stable and better technique like Bayesian Optimisation.
+Consider a reproducible surrogate and acquisition function in a later round,
+without treating its proposal as evidence before a return is recorded.

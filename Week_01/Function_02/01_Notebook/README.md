@@ -1,3 +1,9 @@
-# Week 01 – Function 02 Notebook
+# Week 01 Function 02 notebook
 
-This folder contains the notebook used for Function 02 during Week 01.
+- [`Week_01_Function_02.ipynb`](Week_01_Function_02.ipynb) is the focused,
+  executable Function 2 baseline.
+- [`../../02_Notebook/Week_1_Capstone.ipynb`](../../02_Notebook/Week_1_Capstone.ipynb)
+  remains the canonical notebook covering all eight functions.
+
+The focused notebook mirrors the main notebook's model-free Week 1 scope: ten
+starter observations, random-search description, and no GP-UCB proposal.
