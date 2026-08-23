@@ -1,4 +1,4 @@
-# Consolidated academic reflections: Weeks 1–12
+# Consolidated academic reflections: Weeks 1–13
 
 This document consolidates the function-level reflections by week. Each table
 uses cumulative evidence available at that checkpoint and compares results only
@@ -6,7 +6,8 @@ within the same black-box function. A proposal is never counted as an observed
 result until its authoritative objective value is recorded.
 The learning sequence is: manual/random baselines, Gaussian Process surrogates,
 acquisition functions, exploration/exploitation control, data-lineage failure
-and recovery, an immutable ledger, and a low-kappa sensitivity experiment.
+and recovery, an immutable ledger, a low-kappa sensitivity experiment, and an
+explicitly adaptive function-specific acquisition policy.
 
 **Evolving nature of my Optimisation since my first few rounds of queries**
 
@@ -293,25 +294,76 @@ kept separate from observations until authoritative returns arrive.
 
 ### Strategy and evidence position
 
-The week used validated GP-UCB with kappa 0.1 and a separate sensitivity appendix. The latest verified observations produced new
-within-function incumbents for: **none**. The immutable ledger separated observations from proposals, while low-kappa sensitivity made the exploration/exploitation choice explicit.
+The week used validated GP-UCB with kappa 0.1 and a separate sensitivity appendix. Once the authoritative Week 12 returns were reconciled, the latest observations produced new within-function incumbents for: **F3, F4, F5, F6 and F7**. This was the strongest single round of incumbent improvement in the verified sequence. The immutable ledger separated observations from proposals, while low-kappa sensitivity made the exploration/exploitation choice explicit.
 
 The submitted proposals use `kappa = 0.1`, deliberately favouring predicted mean over uncertainty. The non-submission appendix compares kappa values `0.1`, `0.5`, `1.0`, and `2.0`, Expected Improvement, wider GP bounds, and Sobol candidates for F6–F8. F4 remains stable; F7's original common-candidate comparison clearly separates low-kappa exploitation from high-kappa uncertainty seeking.
 
 | Function | Verified observations | Latest return | Incumbent | New best? |
 | --- | ---: | ---: | ---: | :---: |
-| F1 | 21 | `8.15922e-130` | `7.710875e-16` | No |
-| F2 | 21 | `0.06529973` | `0.6112052` | No |
-| F3 | 26 | `-0.03844613` | `-0.03483531` | No |
-| F4 | 41 | `-14.99267` | `-1.981075` | No |
-| F5 | 31 | `210.0383` | `1465.512` | No |
-| F6 | 31 | `-1.154424` | `-0.7142649` | No |
-| F7 | 41 | `1.478174` | `2.149905` | No |
-| F8 | 51 | `9.276069` | `9.939904` | No |
+| F1 | 22 | `-1.623962e-106` | `7.710875e-16` | No |
+| F2 | 22 | `0.6073819` | `0.6112052` | No |
+| F3 | 27 | `-0.02262932` | `-0.02262932` | Yes |
+| F4 | 42 | `0.3699753` | `0.3699753` | Yes |
+| F5 | 32 | `3546.632` | `3546.632` | Yes |
+| F6 | 32 | `-0.5378218` | `-0.5378218` | Yes |
+| F7 | 42 | `2.266802` | `2.266802` | Yes |
+| F8 | 52 | `9.926835` | `9.939904` | No |
 
 ### Reflection and next step
 
-The main lesson is to judge each strategy through verified within-function
-improvement, not raw cross-function values or model predictions alone. The next
-step was to wait for authoritative returns, then evaluate realised improvement without retrospectively changing the submission. Evidence gaps remain explicit, and proposals are
-kept separate from observations until authoritative returns arrive.
+The main lesson is that exploitation can be productive when it is grounded in a
+reconciled modelling state, but the five improvements do not establish that low
+kappa is generally superior. There was no randomised acquisition assignment or
+counterfactual evaluation. The correct next step was therefore to use the new
+incumbents as evidence, reconsider the acquisition rule function by function,
+and record those choices before observing Week 13 outcomes.
+
+## Week 13
+
+### Strategy and evidence position
+
+The canonical Week 13 notebook begins from **96 verified returned pairs across
+Weeks 1–12** and proposes one new point for each function. Week 13 outcomes have
+not been observed. The proposal set is therefore excluded from incumbent
+counts, empirical performance claims, and the immutable return ledger.
+
+Rather than applying one acquisition rule uniformly, the notebook compares UCB,
+Expected Improvement (EI), and Probability of Improvement (PI) within each
+function's fitted anisotropic Matérn-5/2 Gaussian Process. The policy was fixed
+after the Week 12 returns and before any Week 13 outcomes. It is an adaptive
+heuristic, not a randomised or statistically controlled comparison of
+acquisition functions.
+
+| Function | Verified observations | Week 12 position | Week 13 acquisition | Proposed query | Pre-outcome rationale |
+| --- | ---: | --- | --- | --- | --- |
+| F1 | 22 | Sparse near-zero signal | UCB | `0.987450-0.502905` | Preserve uncertainty-led exploration where useful signal remains sparse. |
+| F2 | 22 | Return close to incumbent | EI | `0.686305-0.999999` | Balance local improvement with uncertainty around a promising region. |
+| F3 | 27 | New incumbent | PI | `0.685419-0.626770-0.366737` | Use controlled exploitation after a stable new best. |
+| F4 | 42 | Large new incumbent improvement | UCB | `0.332326-0.427941-0.445087-0.470215` | Test uncertainty around the improved region rather than collapse to pure exploitation. |
+| F5 | 32 | Much stronger new incumbent | EI | `0.035438-0.999999-0.999999-0.999999` | Seek further improvement near the strengthened incumbent. |
+| F6 | 32 | New incumbent | EI | `0.395407-0.091768-0.662260-0.806631-0.000000` | Exploit the improved region while retaining uncertainty protection. |
+| F7 | 42 | New incumbent | UCB | `0.186669-0.174973-0.820528-0.287970-0.334213-0.844074` | Combine local focus with moderate exploration. |
+| F8 | 52 | Near-best return in eight dimensions | UCB | `0.032909-0.091943-0.072309-0.221801-0.904654-0.989379-0.024400-0.951853` | Retain strong exploration because dimensional sparsity remains substantial. |
+
+All proposals are finite, bounded by `0.999999`, formatted to six decimal
+places, and distinct from the 96 evaluated points. Candidate selection uses
+45,056 points per function and records the fitted kernel, predictive mean,
+predictive standard deviation, acquisition score, and distance from the
+incumbent. These diagnostics make the decision reproducible, but they do not
+convert model expectations into observed outcomes.
+
+### Reflection and next step
+
+Week 13 marks a shift from using one broadly preferred acquisition rule to
+making the exploration–exploitation decision conditional on each function's
+evidence. This is methodologically more defensible than treating heterogeneous
+response surfaces as interchangeable. It also creates a new responsibility:
+because the policy is adaptive, later outcomes cannot be used as if they were an
+unbiased head-to-head test of UCB, EI, and PI.
+
+The principal academic lesson is epistemic discipline. A well-calibrated model,
+a high acquisition score, and a carefully formatted portal query remain
+proposals until the black box returns aligned objective values. The next step is
+to freeze the eight decisions, collect the Week 13 returns, append them only
+after integrity checks, and evaluate realised within-function improvement
+without retrospectively changing the stated rationale.
