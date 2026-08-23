@@ -12,4 +12,12 @@
 
 ## Files
 
-This folder contains input, output and processed data for Function 03 during Week 01.
+This folder contains the canonical immutable starter observations:
+
+- `initial_inputs.npy`: 15 observations with three bounded input dimensions.
+- `initial_outputs.npy`: 15 aligned scalar outputs.
+
+`verified_cumulative_inputs.npy` and `verified_cumulative_outputs.npy` preserve
+the starter rows plus the subsequently returned Week 1 ledger pair. They are
+lineage artifacts for later checkpoints and are not inputs to the Week 1
+starter-baseline notebook.

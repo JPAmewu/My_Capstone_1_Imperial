@@ -3,18 +3,18 @@
 ## Objective
 
 Review Function 03 at the Week 1 checkpoint and decide what the
-verified evidence implies for the next optimisation step.
+starter evidence establishes as the optimisation baseline.
 
 ## Strategy and work completed
 
 I used grid search within the Week 1 workflow. I validated
-all 16 cumulative observations, kept the
+all 15 starter observations, kept the
 analysis within this function's 3-dimensional space, and
 checked the response trace, running incumbent, bounds, and provenance.
 
 ## Evidence and result
 
-The latest verified return `-0.04090762` did not exceed the incumbent `-0.03483531`. The verified incumbent occurs at query 4 with
+The starter-sample incumbent occurs at query 4 with
 input `[0.49258141463713434,0.6115931882759961,0.3401763860035727]`. Progress is
 defined only against earlier Function 03 values; objective magnitudes
 are not ranked across functions.
@@ -23,12 +23,12 @@ are not ranked across functions.
 
 Initial methods established coverage, but sparse samples made manual and random choices difficult to justify. For Function 03, the result shows that a
 model-guided or plausible query is not evidence of improvement until its exact
-return is recorded. The absence of improvement argues against overconfidence in the selected region, not against the acquisition method on the basis of one trial.
+return is recorded. The baseline alone does not justify choosing or judging an acquisition method.
 
 
 ## Data quality, limitations, and ethics
 
-Confirmed cumulative evidence is available through Week 1. The response surface and global optimum remain unknown, the
+The authoritative Week 1 baseline contains the 15 starter observations. The response surface and global optimum remain unknown, the
 sample is adaptive rather than representative, and sparse coverage becomes more
 serious as dimension increases. I therefore avoid causal claims, imputation,
 cross-function score comparisons, and retrospective selection of a method after
@@ -36,6 +36,6 @@ seeing its result.
 
 ## Next step
 
-For the next checkpoint I would replace uninformed search with a reproducible surrogate and acquisition function. I would append a point only
+For a later checkpoint I would introduce a reproducible surrogate and acquisition function. I would append a point only
 after its authoritative return is available and preserve the prior rows as an
 immutable audit trail.
