@@ -3,8 +3,8 @@
   "function": 5,
   "dimensions": 4,
   "starter_observations": 20,
-  "recorded_pairs": 2,
-  "total_verified_observations": 22,
+  "recorded_pairs": 1,
+  "total_verified_observations": 21,
   "best_query": 16,
   "best_input": [
     0.22418902330288348,
@@ -13,18 +13,33 @@
     0.8785156842249731
   ],
   "best_output": 1088.8596181962705,
-  "latest_verified_query": 22,
+  "latest_verified_query": 21,
   "latest_verified_input": [
-    0.255841,
-    0.841692,
-    0.888984,
-    0.86026
+    0.224189,
+    0.84648,
+    0.879484,
+    0.878515
   ],
-  "latest_verified_output": 1035.6341457754475,
+  "latest_verified_output": 1088.8535114737463,
   "latest_improves_previous_best": false,
   "minimum_output": 0.1129397953712203,
-  "mean_output": 234.08750776497502,
-  "standard_deviation": 351.3882699933907,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 2.",
-  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
+  "mean_output": 195.9186202406668,
+  "standard_deviation": 311.9333416261554,
+  "evidence_gap": "Confirmed observed evidence is available through Week 1; Week 2 is proposed only at this checkpoint.",
+  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim.",
+  "evidence_boundary": "Week 1 starter data and Week 1 return observed; Week 2 query proposed only.",
+  "proposal": {
+    "method": "Manual Reasoning",
+    "kappa": null,
+    "query": [
+      0.19086717629732958,
+      0.8513530387746062,
+      0.7845018382696513,
+      0.7815121962847421
+    ],
+    "kernel": "Manual reasoning",
+    "predictive_std": null,
+    "ucb_score": null,
+    "status": "proposed_only"
+  }
 }

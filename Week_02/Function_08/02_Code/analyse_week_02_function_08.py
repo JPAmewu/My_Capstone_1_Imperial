@@ -1,20 +1,9 @@
-"""Run the focused Week 02 Function 08 evidence review."""
-from __future__ import annotations
-import argparse, json, sys
+"""Run the canonical Week 02 Function 08 evidence and proposal review."""
 from pathlib import Path
-REPO_ROOT=Path(__file__).resolve().parents[3]
-if str(REPO_ROOT) not in sys.path: sys.path.insert(0,str(REPO_ROOT))
-from Code.weekly_function_review import analyse_weekly_function, plot_weekly_function, write_review_artifacts
-WEEK=2; FUNCTION=8
-
-def analyse():
-    """Return the validated table, summary, and consolidated figure."""
-    frame,summary=analyse_weekly_function(WEEK,FUNCTION,REPO_ROOT)
-    return frame,summary,plot_weekly_function(frame,summary)
-
-def main():
-    parser=argparse.ArgumentParser(description=__doc__); parser.add_argument("--write-artifacts",action="store_true"); args=parser.parse_args()
-    frame,summary,figure=analyse()
-    if args.write_artifacts: summary=write_review_artifacts(WEEK,FUNCTION,REPO_ROOT)
-    print(frame.to_string(index=False)); print(json.dumps(summary,indent=2)); figure.clear()
-if __name__=="__main__": main()
+import sys
+ROOT=Path(__file__).resolve().parents[3]
+if str(ROOT) not in sys.path: sys.path.insert(0,str(ROOT))
+from Code.week_02_function_review import analyse_week_02_function, write_week_02_artifacts
+def analyse(): return analyse_week_02_function(8,ROOT)
+if __name__=="__main__":
+    for name,path in write_week_02_artifacts(8,ROOT).items(): print(f"{name}: {path}")

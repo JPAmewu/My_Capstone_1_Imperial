@@ -118,6 +118,13 @@ class ReusableCodeTests(unittest.TestCase):
         X, y, starter_count = load_weekly_evidence(11, 2)
         self.assertEqual((X.shape, y.shape), ((21, 2), (21,)))
         self.assertEqual(starter_count, 10)
+        X, y, starter_count = load_weekly_evidence(2, 2, evidence_through_week=1)
+        self.assertEqual((X.shape, y.shape), ((11, 2), (11,)))
+        frame, cutoff_summary = analyse_weekly_function(
+            2, 2, evidence_through_week=1
+        )
+        self.assertEqual(len(frame), 11)
+        self.assertEqual(cutoff_summary["recorded_pairs"], 1)
         frame, summary = analyse_weekly_function(13, 8)
         self.assertEqual(summary["recorded_pairs"], 12)
         self.assertEqual(summary["total_verified_observations"], len(frame))

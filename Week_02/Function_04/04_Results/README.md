@@ -1,3 +1,3 @@
 # Results
 
-Generated `observations.csv` and `summary.json` contain the validated cumulative evidence and explicit evidence-gap report.
+`observations.csv` contains verified evidence through Week 1. `summary.json` keeps the deterministic Week 2 proposal in a separate `proposal` object.

@@ -10,4 +10,4 @@
 | Optimisation goal | Maximise |
 | Description of sample application | A four-variable model-tuning problem. It can represent a fast predictive model used to support costly decisions, such as allocating products across warehouses. The objective is complex and may contain several local optima, so candidate solutions require careful search and validation. |
 
-`provenance.json` points to canonical source evidence. Arrays are not duplicated here; Week 01 starter data and exact recorded pairs are loaded read-only.
+The verified cumulative arrays contain starter data plus the Week 1 return only. `provenance.json` records that the Week 2 query remains proposed.
