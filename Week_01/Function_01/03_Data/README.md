@@ -20,3 +20,8 @@ This folder contains the canonical immutable starter observations:
 
 Derived tables belong in `../04_Results`; this folder should not be overwritten
 by analysis code.
+
+`verified_cumulative_inputs.npy` and `verified_cumulative_outputs.npy` preserve
+the starter rows plus the subsequently returned Week 1 ledger pair. They are
+lineage artifacts for later checkpoints and are not inputs to the Week 1
+starter-baseline notebook.

@@ -1,7 +1,8 @@
 # Week 01 Function 01
 
-Function 1 is a two-dimensional black-box maximisation problem. Week 1 used
-random search over ten starter observations.
+Function 1 is a two-dimensional black-box maximisation problem. In line with
+the Week 1 main notebook, this checkpoint is a model-free random-search baseline
+over ten starter observations; it does not claim a GP-UCB proposal.
 
 | Folder | Contents |
 | --- | --- |
