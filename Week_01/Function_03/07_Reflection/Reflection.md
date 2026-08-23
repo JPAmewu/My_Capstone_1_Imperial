@@ -4,14 +4,17 @@
 ### Technique Used
 Grid Search
 
-### Output Obtained
--0.04090761844901528
+### Starter-baseline incumbent
+`-0.034835313350078584` at query 4.
 
 ### Observations
-This perfomrm very poorly during Week 1.
+The 15 starter rows provide a reproducible baseline but are too sparse to
+establish the surface shape or a global optimum.
 
 ### Lessons Learned
-Grid Search is less effective when, the function is highly nonlinear with large search space with only fewand limited queries
+Grid Search provides structured coverage, but a limited grid can miss narrow
+high-value regions in a nonlinear three-dimensional space.
 
 ### Week 2 Strategy
-Explore a more stabel and better alternative like the Bayesian optimisation
+Consider a reproducible surrogate and acquisition function in a later round,
+without treating its proposal as evidence before a return is recorded.
