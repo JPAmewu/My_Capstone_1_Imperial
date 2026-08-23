@@ -1,22 +1,15 @@
-Bayesian Optimisation (BO), Grid search, Random search and Manual reasoning were the techniques used during week 1 for the optimisation process. Based on all the perfomance results of the various optimisation techniques that were applied during the first week, the strategy for the second week will be as follows: 
+# Week 01 — Baseline exploration
 
-THE PRIMARY CHOICE : BO will be the first choice for all the functions except for function 5 which produced the max. by the application of manual technique. The reasons for the Bayesian technique for week 2 is due to the following:                               a)Strong performance
-b)Signal for good output in future
-c)Specifically designed for expensive black-box optimisation
-d)It provides the platform to learn from previous observations.
+Week 01 establishes the black-box optimisation baseline across Functions 01–08. At the decision-time boundary, only the starter arrays are observed; the Week 01 query is proposed separately. Its subsequently returned output is preserved in [`01_Queries/week_01_query_results.txt`](01_Queries/week_01_query_results.txt) for historical evaluation.
 
-THE STRATEGY FOR WEEK 2 
-Function                    Optimisation Technique
-Function 1                  Bayesian Optimisation
-Function 2                  Bayesion Optimisation
-Function 3                  Bayesion Optimisation
-Function 4                  Bayesion Optimisation
-Function 5                  Bayesion Optimisation/Manual reasoning
-Function 6                  Bayesion Optimisation
-Function 7                  Bayesion Optimisation
-Function 8                  Bayesion Optimisation
+## Methodology
 
+The main notebook compares Bayesian optimisation, grid search, random search, and manual reasoning. This exploratory comparison is adaptive and descriptive, not a statistically controlled acquisition experiment. It motivates Bayesian optimisation for most functions and additional manual reasoning for Function 05 in Week 02.
 
+## Repository map
 
+- [`02_Notebook/Week_1_Capstone.ipynb`](02_Notebook/Week_1_Capstone.ipynb): canonical weekly methodology.
+- [`01_Queries`](01_Queries): verified Week 01 query/output record and provenance.
+- `Function_01` through `Function_08`: focused notebooks, code, data, results, figures, documentation, and reflections.
 
-
+All focused reviews keep proposed points separate from evidence available when each decision was made.
