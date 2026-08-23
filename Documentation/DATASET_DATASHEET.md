@@ -94,7 +94,8 @@ The analytical forms and real-world origins of the eight functions are unknown. 
 | Identity and shape | `week`, `function`, `dimensions`, `observation_count` | Proposal round and cumulative training-data shape |
 | Query | `query`, `submission_query` | Numeric vector and strict six-decimal, hyphen-separated submission form |
 | GP prediction | `predicted_mean`, `predictive_std`, `kernel` | Surrogate diagnostics at the candidate |
-| Acquisition | `ucb_score`, `kappa`, `candidate_count` | UCB setting and finite candidate-search details |
+| Acquisition policy | `method`, `selected_acquisition`, `kappa`, `xi`, `xi_fraction_of_output_std` | Function-specific UCB, EI, or PI choice and its method-appropriate score and parameters |
+| Candidate search | `candidate_source`, `candidate_count`, `local_scale` | Finite global or local candidate-search design |
 | Reproducibility | `random_seed`, `duplicate_at_6dp` | Seed and submission-precision collision check |
 | Evidence boundary | `status` | Marks the row as a proposal rather than an observation |
 

@@ -15,8 +15,8 @@ import pandas
 import scipy
 import sklearn
 
-RELEASE_TAG = "capstone-final-v1.0.6"
-FROZEN_ON = "2026-08-22"
+RELEASE_TAG = "capstone-final-v1.0.7"
+FROZEN_ON = "2026-08-23"
 FILES = (
     "Results/query_output_ledger.csv",
     "Results/bbo_query_ledger.csv",

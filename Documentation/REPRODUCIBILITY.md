@@ -2,14 +2,15 @@
 
 ## Canonical release
 
-The final submission version is identified by the annotated Git tag
-The next release identifier is `capstone-final-v1.0.6`. Because these corrections
-are intentionally uncommitted, the tag must be created only after a commit that
-contains the regenerated artifacts. Once committed, resolve it with:
+Release `capstone-final-v1.0.6` exists and preserves the preceding 96-return
+freeze. The exact corrected submission is identified by the fresh immutable
+annotated Git tag `capstone-final-v1.0.7`. Resolve both commits with:
 
 ```bash
 git rev-list -n 1 capstone-final-v1.0.6
 git show --stat capstone-final-v1.0.6
+git rev-list -n 1 capstone-final-v1.0.7
+git show --stat capstone-final-v1.0.7
 ```
 
 The tag, rather than a mutable branch name, is the authoritative repository

@@ -1,96 +1,96 @@
 {
   "status": "pass",
-  "python": "3.12.14 (main, Aug 12 2026, 13:57:54) [Clang 21.0.0 (clang-2100.1.1.101)]",
-  "total_seconds": 25.322,
+  "python": "3.14.3 (v3.14.3:323c59a5e34, Feb  3 2026, 11:41:37) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "total_seconds": 31.428,
   "steps_completed": 17,
   "steps_expected": 17,
   "steps": [
     {
       "command": [
-        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "/Users/john-peteramewu/Documents/GitHub/My_Capstone_1_Imperial/.venv/bin/python",
         "Code/audit_dataset_sizes.py"
       ],
       "returncode": 0,
-      "seconds": 1.017
+      "seconds": 0.078
     },
     {
       "command": [
-        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "/Users/john-peteramewu/Documents/GitHub/My_Capstone_1_Imperial/.venv/bin/python",
         "Code/generate_week13_queries.py"
       ],
       "returncode": 0,
-      "seconds": 1.397
+      "seconds": 1.409
     },
     {
       "command": [
-        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "/Users/john-peteramewu/Documents/GitHub/My_Capstone_1_Imperial/.venv/bin/python",
         "-m",
         "Code.portal_format",
         "--file",
         "Week_13/01_Queries/week_13_query_points.txt"
       ],
       "returncode": 0,
-      "seconds": 0.42
+      "seconds": 0.376
     },
     {
       "command": [
-        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "/Users/john-peteramewu/Documents/GitHub/My_Capstone_1_Imperial/.venv/bin/python",
         "Code/run_gp_validation.py"
       ],
       "returncode": 0,
-      "seconds": 2.73
+      "seconds": 2.775
     },
     {
       "command": [
-        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "/Users/john-peteramewu/Documents/GitHub/My_Capstone_1_Imperial/.venv/bin/python",
         "Code/export_performance_summary.py"
       ],
       "returncode": 0,
-      "seconds": 0.182
+      "seconds": 0.216
     },
     {
       "command": [
-        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "/Users/john-peteramewu/Documents/GitHub/My_Capstone_1_Imperial/.venv/bin/python",
         "Code/run_week12_sensitivity.py"
       ],
       "returncode": 0,
-      "seconds": 2.114
+      "seconds": 2.141
     },
     {
       "command": [
-        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "/Users/john-peteramewu/Documents/GitHub/My_Capstone_1_Imperial/.venv/bin/python",
         "Code/generate_week12_notebook.py"
       ],
       "returncode": 0,
-      "seconds": 0.096
+      "seconds": 0.472
     },
     {
       "command": [
-        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "/Users/john-peteramewu/Documents/GitHub/My_Capstone_1_Imperial/.venv/bin/python",
         "Code/build_week13_strategy_notebook.py"
       ],
       "returncode": 0,
-      "seconds": 0.083
+      "seconds": 0.441
     },
     {
       "command": [
-        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "/Users/john-peteramewu/Documents/GitHub/My_Capstone_1_Imperial/.venv/bin/python",
         "Code/generate_evaluation_notebook.py"
       ],
       "returncode": 0,
-      "seconds": 0.08
+      "seconds": 0.44
     },
     {
       "command": [
-        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "/Users/john-peteramewu/Documents/GitHub/My_Capstone_1_Imperial/.venv/bin/python",
         "Code/generate_final_visual_results.py"
       ],
       "returncode": 0,
-      "seconds": 0.085
+      "seconds": 0.447
     },
     {
       "command": [
-        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "/Users/john-peteramewu/Documents/GitHub/My_Capstone_1_Imperial/.venv/bin/python",
         "-m",
         "jupyter",
         "nbconvert",
@@ -101,11 +101,11 @@
         "Week_12/02_Notebook/Week_12_Capstone.ipynb"
       ],
       "returncode": 0,
-      "seconds": 5.486
+      "seconds": 6.443
     },
     {
       "command": [
-        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "/Users/john-peteramewu/Documents/GitHub/My_Capstone_1_Imperial/.venv/bin/python",
         "-m",
         "jupyter",
         "nbconvert",
@@ -116,11 +116,11 @@
         "Week_13/02_Notebook/Week_13_Optimisation_Strategy.ipynb"
       ],
       "returncode": 0,
-      "seconds": 3.241
+      "seconds": 4.069
     },
     {
       "command": [
-        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "/Users/john-peteramewu/Documents/GitHub/My_Capstone_1_Imperial/.venv/bin/python",
         "-m",
         "jupyter",
         "nbconvert",
@@ -131,11 +131,11 @@
         "Notebooks/GP_Evaluation_and_Calibration.ipynb"
       ],
       "returncode": 0,
-      "seconds": 4.089
+      "seconds": 4.289
     },
     {
       "command": [
-        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "/Users/john-peteramewu/Documents/GitHub/My_Capstone_1_Imperial/.venv/bin/python",
         "-m",
         "jupyter",
         "nbconvert",
@@ -146,27 +146,27 @@
         "Notebooks/Final_Visual_Results.ipynb"
       ],
       "returncode": 0,
-      "seconds": 1.507
+      "seconds": 2.066
     },
     {
       "command": [
-        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "/Users/john-peteramewu/Documents/GitHub/My_Capstone_1_Imperial/.venv/bin/python",
         "Code/audit_dataset_sizes.py"
       ],
       "returncode": 0,
-      "seconds": 0.978
+      "seconds": 0.082
     },
     {
       "command": [
-        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "/Users/john-peteramewu/Documents/GitHub/My_Capstone_1_Imperial/.venv/bin/python",
         "Code/freeze_submission.py"
       ],
       "returncode": 0,
-      "seconds": 0.818
+      "seconds": 1.321
     },
     {
       "command": [
-        "/Users/john-peteramewu/Documents/Codex/2026-08-07/understand-the-project-explain-the-structure/work/publish-week11.wwIJ2I/.venv/bin/python",
+        "/Users/john-peteramewu/Documents/GitHub/My_Capstone_1_Imperial/.venv/bin/python",
         "-m",
         "unittest",
         "discover",
@@ -175,7 +175,7 @@
         "-v"
       ],
       "returncode": 0,
-      "seconds": 0.999
+      "seconds": 4.361
     }
   ]
 }

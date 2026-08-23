@@ -1,8 +1,8 @@
-# Model Card: GP-UCB Bayesian Optimisation for the BBO Capstone
+# Model Card: Adaptive Bayesian Optimisation for the BBO Capstone
 
-**Model name:** BBO Capstone GP-UCB Optimiser
+**Model name:** BBO Capstone Adaptive Acquisition Optimiser
 **Type:** Sequential Bayesian optimisation with per-function Gaussian Process surrogates
-**Version:** 1.8 (strict submission validation and frozen release)
+**Version:** 1.9 (Week 13 UCB/EI/PI policy and frozen release)
 **Developer:** JP Amewu
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
 
@@ -24,7 +24,7 @@ The approach is suitable for:
 
 It should not be used as the sole decision mechanism in medical, financial, safety-critical or high-impact applications. It is not appropriate for unconstrained, categorical, strongly time-varying or adversarial objectives without substantial redesign. It should not be assumed to find a global optimum, particularly in high-dimensional or discontinuous spaces.
 
-## Strategy and evolution across ten rounds
+## Strategy and evolution across the full weekly history
 
 The optimisation strategy became progressively more systematic:
 
@@ -104,9 +104,9 @@ Another researcher can reproduce the latest recommendations if they use the same
 
 The final computational stack is pinned in `requirements-lock.txt`; seeds,
 canonical counts, release tag, and SHA-256 checksums are recorded in
-`Results/submission_manifest.json`. The planned release identifier is
-`capstone-final-v1.0.6`; it must be attached to a commit containing these
-artifacts before it can identify a frozen version.
+`Results/submission_manifest.json`. Release `capstone-final-v1.0.6` preserves
+the preceding 96-return freeze. The exact corrected submission is identified
+by the immutable annotated tag `capstone-final-v1.0.7`.
 
 ## Assumptions
 
