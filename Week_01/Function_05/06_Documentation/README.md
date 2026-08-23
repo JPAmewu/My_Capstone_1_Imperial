@@ -1,3 +1,4 @@
-# Week 01 – Function 05 Documentation
+# Week 01 Function 05 documentation
 
-This folder contains methodology notes and supporting documentation for Function 05 during Week 01.
+- `methodology.md` documents the starter-data contract, Manual Reasoning
+  baseline, interpretation boundary, figure layout, and reproduction commands.

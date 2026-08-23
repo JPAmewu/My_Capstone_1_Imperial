@@ -1,11 +1,8 @@
 {
-  "week": 1,
-  "function": 5,
+  "observations": 20,
   "dimensions": 4,
-  "starter_observations": 20,
-  "recorded_pairs": 1,
-  "total_verified_observations": 21,
-  "best_query": 16,
+  "best_index": 15,
+  "best_query_number": 16,
   "best_input": [
     0.22418902330288348,
     0.8464804904862864,
@@ -13,18 +10,21 @@
     0.8785156842249731
   ],
   "best_output": 1088.8596181962705,
-  "latest_verified_query": 21,
-  "latest_verified_input": [
-    0.224189,
-    0.84648,
-    0.879484,
-    0.878515
+  "latest_output": 9.972331894593824,
+  "latest_percentile": 20.0,
+  "input_min": [
+    0.11987922582428101,
+    0.03819337135150802,
+    0.08894684260658514,
+    0.07288048110014078
   ],
-  "latest_verified_output": 1088.8535114737463,
-  "latest_improves_previous_best": false,
-  "minimum_output": 0.1129397953712203,
-  "mean_output": 195.9186202406668,
-  "standard_deviation": 311.9333416261554,
-  "evidence_gap": "Confirmed cumulative evidence is available through Week 1.",
-  "interpretation": "Within-function descriptive evidence; no causal or cross-function ranking claim."
+  "input_max": [
+    0.8364779930351233,
+    0.8625403059525095,
+    0.8794841797090803,
+    0.957643898670113
+  ],
+  "function": "F5",
+  "week": 1,
+  "strategy": "Manual Reasoning"
 }
