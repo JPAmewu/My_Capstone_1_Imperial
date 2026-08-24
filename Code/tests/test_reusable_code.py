@@ -1,3 +1,5 @@
+import csv
+import hashlib
 import tempfile
 import unittest
 from pathlib import Path
@@ -9,7 +11,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 from Code.acquisition_function import expected_improvement, probability_improvement, upper_confidence_bound
-from Code.candidate_generation import hybrid_candidates, make_rng, uniform_candidates
+from Code.candidate_generation import hybrid_candidates, make_rng, reflected_local_candidates, uniform_candidates
 from Code.data_loading import load_numpy_pair, load_starter_data
 from Code.data_validation import duplicate_mask, validate_observations
 from Code.eda import observation_summary, observations_frame, running_best
@@ -57,6 +59,11 @@ class ReusableCodeTests(unittest.TestCase):
         self.assertEqual(points.shape, (7, 2)); self.assertEqual(sources.tolist().count("local"), 3)
         self.assertGreaterEqual(float(points.min()), 0.0)
         self.assertLessEqual(float(points.max()), 0.999999)
+        reflected = reflected_local_candidates([0.0, 0.999999], 100, scale=0.2, rng=make_rng(19))
+        repeated = reflected_local_candidates([0.0, 0.999999], 100, scale=0.2, rng=make_rng(19))
+        np.testing.assert_allclose(reflected, repeated)
+        self.assertTrue(np.all((reflected >= 0.0) & (reflected <= 0.999999)))
+        self.assertFalse(np.any((reflected == 0.0) | (reflected == 0.999999)))
 
     def test_strict_portal_format(self):
         text = format_portal_query([0, 0.1234564, 0.999999], dimensions=3)
@@ -90,6 +97,18 @@ class ReusableCodeTests(unittest.TestCase):
             {1: 2, 2: 2, 3: 3, 4: 4, 5: 4, 6: 5, 7: 6, 8: 8},
         )
         self.assertEqual(count, 8)
+        payload = Path("Week_13/01_Queries/week_13_query_points.txt").read_bytes()
+        self.assertEqual(hashlib.sha256(payload).hexdigest(), "55e012ff2df6bd04fa8d78c527c3c5fe32634cdf9da0744ecfcf22cbd4537686")
+
+    def test_week13_diagnostics_and_boundary_sensitivity_are_auditable(self):
+        with Path("Week_13/04_Results/week_13_strategy_summary.csv").open(newline="") as handle:
+            strategy = list(csv.DictReader(handle))
+        self.assertEqual(len(strategy), 8)
+        self.assertTrue(all(row["diagnostic_coordinate"] == "rounded_submission_6dp" for row in strategy))
+        with Path("Week_13/04_Results/week_13_boundary_generation_sensitivity.csv").open(newline="") as handle:
+            sensitivity = list(csv.DictReader(handle))
+        self.assertEqual({int(row["function"]) for row in sensitivity}, {2, 5, 6})
+        self.assertTrue(all(row["status"] == "diagnostic_only_frozen_query_unchanged" for row in sensitivity))
 
     def test_gp_prediction_and_query_selection(self):
         model = fit_gaussian_process(self.X, self.y, optimizer_restarts=0)

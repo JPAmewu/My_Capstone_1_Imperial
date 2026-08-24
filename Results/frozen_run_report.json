@@ -1,7 +1,7 @@
 {
   "status": "pass",
   "python": "3.14.3 (v3.14.3:323c59a5e34, Feb  3 2026, 11:41:37) [Clang 16.0.0 (clang-1600.0.26.6)]",
-  "total_seconds": 31.428,
+  "total_seconds": 29.895,
   "steps_completed": 17,
   "steps_expected": 17,
   "steps": [
@@ -11,7 +11,7 @@
         "Code/audit_dataset_sizes.py"
       ],
       "returncode": 0,
-      "seconds": 0.078
+      "seconds": 0.079
     },
     {
       "command": [
@@ -19,7 +19,7 @@
         "Code/generate_week13_queries.py"
       ],
       "returncode": 0,
-      "seconds": 1.409
+      "seconds": 1.51
     },
     {
       "command": [
@@ -30,7 +30,7 @@
         "Week_13/01_Queries/week_13_query_points.txt"
       ],
       "returncode": 0,
-      "seconds": 0.376
+      "seconds": 0.361
     },
     {
       "command": [
@@ -38,7 +38,7 @@
         "Code/run_gp_validation.py"
       ],
       "returncode": 0,
-      "seconds": 2.775
+      "seconds": 2.7
     },
     {
       "command": [
@@ -46,7 +46,7 @@
         "Code/export_performance_summary.py"
       ],
       "returncode": 0,
-      "seconds": 0.216
+      "seconds": 0.218
     },
     {
       "command": [
@@ -54,7 +54,7 @@
         "Code/run_week12_sensitivity.py"
       ],
       "returncode": 0,
-      "seconds": 2.141
+      "seconds": 2.149
     },
     {
       "command": [
@@ -62,7 +62,7 @@
         "Code/generate_week12_notebook.py"
       ],
       "returncode": 0,
-      "seconds": 0.472
+      "seconds": 0.49
     },
     {
       "command": [
@@ -70,7 +70,7 @@
         "Code/build_week13_strategy_notebook.py"
       ],
       "returncode": 0,
-      "seconds": 0.441
+      "seconds": 0.445
     },
     {
       "command": [
@@ -78,7 +78,7 @@
         "Code/generate_evaluation_notebook.py"
       ],
       "returncode": 0,
-      "seconds": 0.44
+      "seconds": 0.447
     },
     {
       "command": [
@@ -101,7 +101,7 @@
         "Week_12/02_Notebook/Week_12_Capstone.ipynb"
       ],
       "returncode": 0,
-      "seconds": 6.443
+      "seconds": 6.019
     },
     {
       "command": [
@@ -116,7 +116,7 @@
         "Week_13/02_Notebook/Week_13_Optimisation_Strategy.ipynb"
       ],
       "returncode": 0,
-      "seconds": 4.069
+      "seconds": 3.669
     },
     {
       "command": [
@@ -131,7 +131,7 @@
         "Notebooks/GP_Evaluation_and_Calibration.ipynb"
       ],
       "returncode": 0,
-      "seconds": 4.289
+      "seconds": 4.12
     },
     {
       "command": [
@@ -146,7 +146,7 @@
         "Notebooks/Final_Visual_Results.ipynb"
       ],
       "returncode": 0,
-      "seconds": 2.066
+      "seconds": 1.993
     },
     {
       "command": [
@@ -154,7 +154,7 @@
         "Code/audit_dataset_sizes.py"
       ],
       "returncode": 0,
-      "seconds": 0.082
+      "seconds": 0.077
     },
     {
       "command": [
@@ -162,7 +162,7 @@
         "Code/freeze_submission.py"
       ],
       "returncode": 0,
-      "seconds": 1.321
+      "seconds": 1.155
     },
     {
       "command": [
@@ -175,7 +175,7 @@
         "-v"
       ],
       "returncode": 0,
-      "seconds": 4.361
+      "seconds": 4.013
     }
   ]
 }

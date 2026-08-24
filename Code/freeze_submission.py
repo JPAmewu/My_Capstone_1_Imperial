@@ -15,8 +15,8 @@ import pandas
 import scipy
 import sklearn
 
-RELEASE_TAG = "capstone-final-v1.0.7"
-FROZEN_ON = "2026-08-23"
+RELEASE_TAG = "capstone-final-v1.0.8"
+FROZEN_ON = "2026-08-24"
 FILES = (
     "Results/query_output_ledger.csv",
     "Results/bbo_query_ledger.csv",
@@ -27,6 +27,7 @@ FILES = (
     "Week_13/01_Queries/week_13_query_points.txt",
     "Week_13/04_Results/week_13_strategy_summary.csv",
     "Week_13/04_Results/week_13_acquisition_comparison.csv",
+    "Week_13/04_Results/week_13_boundary_generation_sensitivity.csv",
     "Week_13/02_Notebook/Week_13_Optimisation_Strategy.ipynb",
     "Week_12/02_Notebook/Week_12_Capstone.ipynb",
     "Notebooks/GP_Evaluation_and_Calibration.ipynb",
@@ -36,15 +37,19 @@ FILES = (
     "Documentation/EVALUATION.md",
     "Documentation/DATASET_DATASHEET.md",
     "Documentation/MODEL_CARD.md",
+    "Documentation/REPRODUCIBILITY.md",
+    "Documentation/WEEK_13_BOUNDARY_SENSITIVITY.md",
     "Code/run_week12_sensitivity.py",
     "Code/run_gp_validation.py",
     "Code/generate_week13_queries.py",
+    "Code/candidate_generation.py",
     "Code/build_week13_strategy_notebook.py",
     "Code/portal_format.py",
     "Code/audit_dataset_sizes.py",
     "Results/dataset_size_audit.csv",
     "Documentation/DATA_SIZE_AUDIT.md",
     "requirements-lock.txt",
+    ".python-version",
 )
 
 
@@ -73,8 +78,10 @@ def main() -> None:
             "nbclient": nbclient.__version__,
         },
         "seeds": {
-            "week13_gp_and_candidates": "1300 + function for GP/Sobol; 2300 + function for local candidates",
-            "rolling_validation_gp": "7300 + function * 100 + held_out_week",
+            "week13_proposal_gp_and_sobol": "1300 + function; five optimiser restarts",
+            "week13_local_candidates": "2300 + function; 4,096 points around each of three incumbent centres",
+            "rolling_validation_gp": "7300 + function * 100 + held_out_week; one optimiser restart",
+            "final_diagnostic_gp": "4200 + function; three optimiser restarts",
             "sensitivity_candidates": "9100 + function (9101–9108)",
             "sensitivity_gp": "9200 + function (9201–9208)",
         },

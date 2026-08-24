@@ -44,6 +44,35 @@ def local_candidates(
     return validate_candidates(points, dimensions=origin.size, lower_bound=lower_bound, upper_bound=upper_bound)
 
 
+def reflected_local_candidates(
+    centre: object,
+    count: int,
+    *,
+    rng: np.random.Generator,
+    scale: float = 0.08,
+    lower_bound: float = SUBMISSION_LOWER_BOUND,
+    upper_bound: float = SUBMISSION_UPPER_BOUND,
+) -> np.ndarray:
+    """Generate Gaussian perturbations reflected into the bounded domain.
+
+    Reflection avoids the artificial point masses at exact boundaries created
+    by clipping while retaining the same centre, scale, count, and random seed.
+    """
+    origin = np.asarray(centre, dtype=float).reshape(-1)
+    if not origin.size or count < 1 or scale <= 0 or lower_bound >= upper_bound:
+        raise ValueError("centre/count/scale must be valid and bounds ordered")
+    width = upper_bound - lower_bound
+    raw = origin + rng.normal(0.0, scale, (count, origin.size))
+    shifted = np.mod(raw - lower_bound, 2 * width)
+    points = lower_bound + np.where(shifted <= width, shifted, 2 * width - shifted)
+    return validate_candidates(
+        points,
+        dimensions=origin.size,
+        lower_bound=lower_bound,
+        upper_bound=upper_bound,
+    )
+
+
 def hybrid_candidates(
     centre: object,
     *,

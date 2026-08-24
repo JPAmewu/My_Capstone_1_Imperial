@@ -13,7 +13,7 @@ def main() -> None:
     notebook["metadata"]["kernelspec"] = {
         "display_name": "Python 3", "language": "python", "name": "python3"
     }
-    notebook["metadata"]["language_info"] = {"name": "python", "version": "3.12.14"}
+    notebook["metadata"]["language_info"] = {"name": "python", "version": "3.14.3"}
     notebook["cells"] = [
         nbf.v4.new_markdown_cell(
             """# Final consolidated visual results

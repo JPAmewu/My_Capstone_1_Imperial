@@ -36,16 +36,16 @@ creates twelve chronological folds per function and 96 folds in total without
 look-ahead leakage. Every fold refits a Matérn-5/2 GP with target normalisation,
 the canonical kernel bounds, one optimiser restart, and a deterministic seed.
 
-| Function | RMSE | Mean-baseline RMSE | RMSE skill | 50% coverage | 80% coverage | 95% coverage |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| F1 | 0.000176 | 0.000252 | 0.302 | 1.000 | 1.000 | 1.000 |
-| F2 | 0.143416 | 0.187096 | 0.233 | 0.500 | 0.833 | 1.000 |
-| F3 | 0.032853 | 0.049847 | 0.341 | 0.417 | 0.750 | 0.917 |
-| F4 | 2.406150 | 9.648559 | 0.751 | 0.333 | 0.750 | 0.833 |
-| F5 | 615.634318 | 1133.470118 | 0.457 | 0.417 | 0.667 | 0.667 |
-| F6 | 0.240410 | 0.562546 | 0.573 | 0.500 | 0.583 | 0.750 |
-| F7 | 0.439857 | 1.013354 | 0.566 | 0.250 | 0.500 | 0.667 |
-| F8 | 0.132685 | 1.391781 | 0.905 | 0.833 | 1.000 | 1.000 |
+| Function | RMSE | Mean-baseline RMSE | RMSE skill | Mean NLPD | 50% coverage | 80% coverage | 95% coverage |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| F1 | 0.000176 | 0.000252 | 0.302 | -6.502 | 1.000 | 1.000 | 1.000 |
+| F2 | 0.143416 | 0.187096 | 0.233 | -0.652 | 0.500 | 0.833 | 1.000 |
+| F3 | 0.032853 | 0.049847 | 0.341 | 6.977 | 0.417 | 0.750 | 0.917 |
+| F4 | 2.406150 | 9.648559 | 0.751 | 2.247 | 0.333 | 0.750 | 0.833 |
+| F5 | 615.634318 | 1133.470118 | 0.457 | 13.574 | 0.417 | 0.667 | 0.667 |
+| F6 | 0.240410 | 0.562546 | 0.573 | -0.289 | 0.500 | 0.583 | 0.750 |
+| F7 | 0.439857 | 1.013354 | 0.566 | 2.062 | 0.250 | 0.500 | 0.667 |
+| F8 | 0.132685 | 1.391781 | 0.905 | -0.467 | 0.833 | 1.000 | 1.000 |
 
 All eight functions have positive RMSE skill relative to predicting the historical
 training mean. Raw RMSE is reported within each function only because objective
@@ -53,6 +53,12 @@ scales differ. With twelve folds, one miss moves coverage by 8.3 percentage poin
 F5–F7 materially under-cover at 95%. F1, F2, and F8 over-cover, indicating
 conservative intervals. These are calibration diagnostics, not claims that one
 function is easier or more important.
+
+Mean negative log predictive density (NLPD) evaluates the full predictive
+distribution: lower values reward concentrated probability around realised
+returns, while large positive values penalise overconfident misses. NLPD is
+scale-sensitive and is interpreted within each function, alongside RMSE and
+coverage rather than as a cross-function ranking.
 
 ![Rolling GP coverage and uncertainty diagnostics](../Figures/gp_rolling_validation_diagnostics.png)
 
@@ -88,6 +94,20 @@ uncertainty-led exploration, EI for F2/F5/F6 to balance improvement around
 promising Week 12 regions, and PI for F3 for controlled exploitation after its
 new incumbent. The policy is adaptive and heuristic. It is not randomised and
 does not provide a statistically controlled comparison among acquisition rules.
+The diagnostics in the Week 13 strategy and acquisition-comparison files are
+evaluated at the exact six-decimal coordinates submitted to the portal.
+
+## Week 13 boundary-generation sensitivity
+
+The frozen proposals remain unchanged. A diagnostic rerun replaced clipped
+Gaussian local perturbations with reflected perturbations while holding the GP,
+seeds, Sobol candidates, counts, scales, evidence, and acquisition rules fixed.
+F2, F5, and F6 no longer selected an exact boundary coordinate under reflection.
+F5 remained very close to its three upper boundaries (`0.999459`, `0.996407`,
+`0.988539`) and only `0.0204` Euclidean distance from the frozen query, so its
+boundary-region recommendation is substantively robust even though the exact
+boundary values are partly induced by clipping. F2 and F6 moved materially.
+Full results are in [`week_13_boundary_generation_sensitivity.csv`](../Week_13/04_Results/week_13_boundary_generation_sensitivity.csv).
 
 ## Limitations and judgement
 

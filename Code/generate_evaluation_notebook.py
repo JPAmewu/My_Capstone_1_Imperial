@@ -15,7 +15,7 @@ def main() -> None:
         "language": "python",
         "name": "python3",
     }
-    notebook["metadata"]["language_info"] = {"name": "python", "version": "3.12.14"}
+    notebook["metadata"]["language_info"] = {"name": "python", "version": "3.14.3"}
     notebook["cells"] = [
         nbf.v4.new_markdown_cell(
             """# Historical GP validation and uncertainty calibration
@@ -23,7 +23,8 @@ def main() -> None:
 ## tl;dr
 
 - This notebook evaluates the surrogate **out of sample** using 96 rolling one-step-ahead folds: each historical return is predicted using only evidence available before that return.
-- Seven functions beat a historical-mean baseline on RMSE; F2 does not.
+- All eight functions beat a historical-mean baseline on RMSE.
+- Mean negative log predictive density (NLPD) complements RMSE by scoring both predictive location and uncertainty.
 - Calibration is heterogeneous. F5–F7 under-cover at the nominal 95% level, while F1 and F8 are conservative.
 - Final GP hyperparameters are fitted to all verified evidence through Week 12, and kernel-bound warnings are reported as evidence rather than suppressed.
 - These results assess surrogate prediction and calibration. They do not replace optimisation-performance or recommendation-robustness evaluation.
@@ -79,14 +80,15 @@ print('Validated 96 rolling folds: 12 per function.')"""
             """display(metrics.round({
     'mae': 6, 'rmse': 6, 'naive_mean_rmse': 6, 'rmse_skill_vs_naive': 3,
     'coverage_50': 3, 'coverage_80': 3, 'coverage_95': 3,
-    'mean_abs_z': 3, 'hyperparameter_bound_hit_rate': 3,
+    'mean_abs_z': 3, 'mean_negative_log_predictive_density': 3,
+    'hyperparameter_bound_hit_rate': 3,
 }))"""
         ),
         nbf.v4.new_code_cell(
             """display(Image(filename=str(ROOT / 'Figures' / 'gp_rolling_validation_diagnostics.png')))"""
         ),
         nbf.v4.new_markdown_cell(
-            """Coverage should be interpreted against nominal 50%, 80%, and 95% rates. With only twelve folds per function, one fold changes coverage by 8.3 percentage points. The uncertainty/error panel uses symmetric-log axes because objective scales differ sharply across functions; it is not a cross-function ranking of raw errors.
+            """Coverage should be interpreted against nominal 50%, 80%, and 95% rates. With only twelve folds per function, one fold changes coverage by 8.3 percentage points. NLPD rewards probability distributions that place high density on the realised value and penalises confident misses. The uncertainty/error panel uses symmetric-log axes because objective scales differ sharply across functions; it is not a cross-function ranking of raw errors.
 """
         ),
         nbf.v4.new_markdown_cell("### 3. Final fitted GP hyperparameters"),

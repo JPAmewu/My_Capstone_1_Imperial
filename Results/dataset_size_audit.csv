@@ -31,8 +31,9 @@ Week_01/Function_07/04_Results/observations.csv,.csv,4766,0.004545,pass
 Week_04/Function_07/04_Results/observations.csv,.csv,4684,0.004467,pass
 Week_03/Function_07/04_Results/observations.csv,.csv,4600,0.004387,pass
 Week_02/Function_07/04_Results/observations.csv,.csv,4519,0.00431,pass
-Week_13/04_Results/week_13_strategy_summary.csv,.csv,4142,0.00395,pass
+Week_13/04_Results/week_13_strategy_summary.csv,.csv,4352,0.00415,pass
 Results/quarantined_week11_arrays.csv,.csv,4110,0.00392,pass
+Week_13/04_Results/week_13_acquisition_comparison.csv,.csv,4091,0.003901,pass
 Week_13/Function_04/04_Results/observations.csv,.csv,4080,0.003891,pass
 Week_12/Function_04/04_Results/observations.csv,.csv,4012,0.003826,pass
 Week_11/Function_04/04_Results/observations.csv,.csv,3945,0.003762,pass
@@ -43,7 +44,6 @@ Week_07/Function_04/04_Results/observations.csv,.csv,3675,0.003505,pass
 Week_01/Function_04/04_Results/observations.csv,.csv,3628,0.00346,pass
 Week_06/Function_04/04_Results/observations.csv,.csv,3607,0.00344,pass
 Week_05/Function_04/04_Results/observations.csv,.csv,3540,0.003376,pass
-Week_13/04_Results/week_13_acquisition_comparison.csv,.csv,3509,0.003346,pass
 Week_13/Function_06/04_Results/observations.csv,.csv,3489,0.003327,pass
 Week_04/Function_04/04_Results/observations.csv,.csv,3473,0.003312,pass
 Week_13/Function_08/03_Data/verified_cumulative_inputs.npy,.npy,3456,0.003296,pass
@@ -125,6 +125,7 @@ Week_03/Function_03/04_Results/observations.csv,.csv,1488,0.001419,pass
 Week_13/Function_04/03_Data/verified_cumulative_inputs.npy,.npy,1472,0.001404,pass
 Week_12/Function_04/03_Data/verified_cumulative_inputs.npy,.npy,1440,0.001373,pass
 Week_02/Function_03/04_Results/observations.csv,.csv,1428,0.001362,pass
+Week_13/04_Results/week_13_boundary_generation_sensitivity.csv,.csv,1415,0.001349,pass
 Week_13/Function_06/03_Data/verified_cumulative_inputs.npy,.npy,1408,0.001343,pass
 Week_11/Function_04/03_Data/verified_cumulative_inputs.npy,.npy,1408,0.001343,pass
 Week_11/Function_04/03_Data/function_4_inputs.npy,.npy,1408,0.001343,pass

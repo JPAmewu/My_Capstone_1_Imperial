@@ -1,0 +1,7 @@
+function,method,boundary_generation,query,candidate_source,is_boundary_recommendation,matches_frozen_week13_query,distance_from_frozen_query,predicted_mean,predicted_std,selected_acquisition,candidate_count,local_scale,sobol_seed,local_seed,status
+2,EI,clip,"[0.686305,0.999999]",local,True,True,0.0,0.5951555942546296,0.05572067455300578,0.013609784887703667,45056,0.1,1302,2302,diagnostic_only_frozen_query_unchanged
+2,EI,reflect,"[0.703542,0.090883]",local,False,False,0.9092793935996789,0.5691749035022623,0.07868983034264564,0.013586062899583218,45056,0.1,1302,2302,diagnostic_only_frozen_query_unchanged
+5,EI,clip,"[0.035438,0.999999,0.999999,0.999999]",local,True,True,0.0,4083.3240467034584,172.90873334052188,529.6519714033004,45056,0.07,1305,2305,diagnostic_only_frozen_query_unchanged
+5,EI,reflect,"[0.018955,0.999459,0.996407,0.988539]",local,False,False,0.02040134684279447,4060.8964890138554,173.8869211864553,507.26051122598926,45056,0.07,1305,2305,diagnostic_only_frozen_query_unchanged
+6,EI,clip,"[0.395407,0.091768,0.66226,0.806631,0.0]",local,True,True,0.0,-0.5657907382150347,0.1394573561136161,0.04073920900353176,45056,0.08,1306,2306,diagnostic_only_frozen_query_unchanged
+6,EI,reflect,"[0.140862,0.019269,0.893176,0.953696,0.013258]",sobol,False,False,0.38101883138632403,-0.8184884059044045,0.34941180399864663,0.04073789388983539,45056,0.08,1306,2306,diagnostic_only_frozen_query_unchanged

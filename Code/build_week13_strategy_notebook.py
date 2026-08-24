@@ -13,12 +13,12 @@ def build(root: Path) -> Path:
     notebook.metadata.kernelspec = {"display_name": "Python 3", "language": "python", "name": "python3"}
     notebook.cells = [
         nbf.v4.new_markdown_cell(
-            "# Week 13 optimisation strategy — 12th query submission\n\n"
+            "# Week 13 optimisation strategy — proposals after 12 completed rounds\n\n"
             "## tl;dr\n\n"
             "The supplied cumulative Week 12 files reproduce all 88 published Week 1–11 pairs exactly and add eight aligned Week 12 evaluations. "
             "The corrected cumulative data are used to refit eight anisotropic Matérn-5/2 Gaussian Processes. "
             "One bounded, finite, six-decimal and previously unevaluated Week 13 query is selected for every function after comparing UCB, EI and PI. "
-            "This is the sole canonical Week 13 methodology; Week 13 outcomes have not been observed."
+            "This is the sole canonical Week 13 methodology; Week 13 outcomes have not been observed. Diagnostics are recomputed at the exact six-decimal coordinates submitted."
         ),
         nbf.v4.new_markdown_cell(
             "## Context & Methods\n\n"
@@ -48,6 +48,7 @@ def build(root: Path) -> Path:
             "ledger=pd.read_csv(ROOT/'Results/query_output_ledger.csv')\n"
             "strategy=pd.read_csv(ROOT/'Week_13/04_Results/week_13_strategy_summary.csv')\n"
             "comparison=pd.read_csv(ROOT/'Week_13/04_Results/week_13_acquisition_comparison.csv')\n"
+            "boundary_sensitivity=pd.read_csv(ROOT/'Week_13/04_Results/week_13_boundary_generation_sensitivity.csv')\n"
             "validation=json.loads((ROOT/'Results/week_12_evidence_validation.json').read_text())\n"
             "print(f'Repository: {ROOT}')"
         ),
@@ -144,7 +145,7 @@ def build(root: Path) -> Path:
             "### Pre-outcome acquisition policy\n\n"
             "The acquisition choice is made separately for each function from its observed history through Week 12. "
             "UCB is retained where sparse signal or dimensionality makes uncertainty-led exploration valuable; EI is used where Week 12 strengthens a promising region while preserving uncertainty; PI is used for F3 because its new incumbent supports controlled exploitation. "
-            "These choices were recorded before Week 13 outcomes and must not be interpreted as a statistically controlled acquisition comparison."
+            "These choices were recorded before Week 13 outcomes and must not be interpreted as a statistically controlled acquisition comparison. Returned values must never be used to select retrospectively among these alternatives."
         ),
         nbf.v4.new_code_cell(
             "comparison[['function','method','candidate','candidate_source','predicted_mean','predicted_std','acquisition_score','kappa','xi_fraction_of_output_std']]"
@@ -168,6 +169,13 @@ def build(root: Path) -> Path:
         nbf.v4.new_code_cell(
             "selected=strategy[['function','method','query','kappa','xi_fraction_of_output_std','local_scale','fitted_length_scales','predicted_mean','predicted_std','distance_from_incumbent','reason']]\n"
             "selected"
+        ),
+        nbf.v4.new_markdown_cell(
+            "### Boundary-generation sensitivity (diagnostic only)\n\n"
+            "For F2, F5 and F6, reflected local perturbations remove artificial boundary mass without changing the frozen Week 13 proposals. F5 remains near the same boundary corner; F2 and F6 move materially."
+        ),
+        nbf.v4.new_code_cell(
+            "boundary_sensitivity[['function','boundary_generation','query','is_boundary_recommendation','distance_from_frozen_query','status']]"
         ),
         nbf.v4.new_markdown_cell(
             "### Fitted anisotropic length scales\n\n"

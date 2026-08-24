@@ -2,7 +2,7 @@
 
 **Model name:** BBO Capstone Adaptive Acquisition Optimiser
 **Type:** Sequential Bayesian optimisation with per-function Gaussian Process surrogates
-**Version:** 1.9 (Week 13 UCB/EI/PI policy and frozen release)
+**Version:** 2.0 (Week 13 UCB/EI/PI policy and v1.0.8 frozen release)
 **Developer:** JP Amewu
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
 
@@ -37,7 +37,8 @@ The optimisation strategy became progressively more systematic:
 7. **Greater exploitation:** queries increasingly focused on strong observed regions, while malformed or misaligned arrays were investigated.
 8. **Reusable per-function modelling:** repeated EDA and GP/UCB pipelines were applied consistently across all eight functions.
 9. **Lineage repair:** query/output parsing and length mismatches were examined before producing later recommendations.
-10. **Validated GP-UCB workflow:** the latest evidence-backed observation was appended to each function, unavailable returns were reported explicitly, and UCB selected the next point from 20,000 bounded candidates while excluding rounded duplicates.
+10. **Validated Week 12 GP-UCB workflow (historical):** the latest evidence-backed observation was appended to each function, unavailable returns were reported explicitly, and UCB selected the next point from 20,000 bounded candidates while excluding rounded duplicates.
+11. **Week 13 adaptive acquisition workflow:** after all 12 completed rounds were reconciled, function-specific UCB, EI or PI ranked a deterministic 45,056-point Sobol/local candidate pool. The resulting proposals were frozen before outcomes.
 
 Patterns from prior rounds influenced the balance between exploration and exploitation. Functions with weak or unstable recent outputs retained uncertainty-led exploration. Function 5's large positive values encouraged more exploitation. Higher-dimensional Functions 6–8 required broader uncertainty awareness because their observed points cover only a small fraction of their spaces.
 
@@ -104,9 +105,9 @@ Another researcher can reproduce the latest recommendations if they use the same
 
 The final computational stack is pinned in `requirements-lock.txt`; seeds,
 canonical counts, release tag, and SHA-256 checksums are recorded in
-`Results/submission_manifest.json`. Release `capstone-final-v1.0.6` preserves
-the preceding 96-return freeze. The exact corrected submission is identified
-by the immutable annotated tag `capstone-final-v1.0.7`.
+`Results/submission_manifest.json`. Releases `capstone-final-v1.0.6` and
+`capstone-final-v1.0.7` preserve earlier 96-return freezes. The exact current
+submission is identified by the immutable annotated tag `capstone-final-v1.0.8`.
 
 ## Assumptions
 
@@ -125,7 +126,7 @@ Violations can produce overconfident or misleading recommendations. Discontinuit
 
 ## Limitations and failure modes
 
-- **Curse of dimensionality:** 20,000 candidates are sparse in five to eight dimensions.
+- **Curse of dimensionality:** the historical Week 12 search used 20,000 candidates; even the Week 13 pool of 45,056 candidates remains sparse in five to eight dimensions.
 - **Sampling bias:** adaptive queries cluster near previously promising areas, leaving other regions underexplored.
 - **Model misspecification:** one Matérn-family design may not represent every function.
 - **Hyperparameter boundary warnings:** fitted values sometimes reach configured limits.
@@ -145,7 +146,7 @@ Transparency supports responsible adaptation by allowing reviewers to inspect as
 
 ## Recommended improvements
 
-1. Append future confirmed pairs to the immutable ledger with authoritative timestamps and provenance; never alter an existing published row.
+1. Append future confirmed pairs to the immutable ledger with authoritative timestamps and provenance; never alter an existing published row or retrospectively choose among UCB/EI/PI alternatives using returned values.
 2. Recover missing returned pairs only from authoritative platform records.
 3. Extend the sensitivity appendix to multiple kernels and repeated seeds.
 4. Retain Sobol or Latin-hypercube designs for high-dimensional candidate coverage and compare them with multi-start continuous acquisition optimisation.
