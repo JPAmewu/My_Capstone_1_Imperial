@@ -15,9 +15,16 @@
   },
   {
     "dataset_version": "verified-query-output-ledger-v1.2",
-    "status": "canonical",
-    "path": "Results/query_output_ledger.csv",
+    "status": "superseded_preserved_immutable",
+    "path": "Results/archive/query_output_ledger_v1.2.csv",
     "sha256": "303ff186313ea6885c0cf706f2c6c642ae0876cb489cbd950f0faa7e19154c7d",
     "reason": "Appended eight Week 12 pairs after cumulative-prefix and query-record reconciliation."
+  },
+  {
+    "dataset_version": "verified-query-output-ledger-v1.3",
+    "status": "canonical",
+    "path": "Results/query_output_ledger.csv",
+    "sha256": "cd219fa48ac3708eb352ad03091e05efd57ce38d20a53d3e18e77a3a400b70dd",
+    "reason": "Prospectively appended eight authoritative Week 13 pairs matching the frozen pre-outcome query set."
   }
 ]

@@ -19,7 +19,7 @@ from Code.gaussian_process import fit_gaussian_process, predict_with_uncertainty
 from Code.plotting import plot_function_diagnostics, plot_proposal_overview
 from Code.query_selection import select_query
 from Code.portal_format import format_portal_query, validate_portal_query, validate_query_file
-from Code.weekly_evidence import EVIDENCE_GAPS, recorded_pairs
+from Code.weekly_evidence import EVIDENCE_GAPS, pairs_through_week, recorded_pairs
 from Code.weekly_function_review import analyse_weekly_function, load_weekly_evidence, plot_weekly_function
 from Code.historical_function_review import analyse_historical_function, proposal_for_week
 
@@ -109,6 +109,11 @@ class ReusableCodeTests(unittest.TestCase):
             sensitivity = list(csv.DictReader(handle))
         self.assertEqual({int(row["function"]) for row in sensitivity}, {2, 5, 6})
         self.assertTrue(all(row["status"] == "diagnostic_only_frozen_query_unchanged" for row in sensitivity))
+        with Path("Week_13/04_Results/week_13_confirmed_outcomes.csv").open(newline="") as handle:
+            outcomes = list(csv.DictReader(handle))
+        self.assertEqual(len(outcomes), 8)
+        self.assertEqual({int(row["function"]) for row in outcomes if row["improved"] == "True"}, {5, 6})
+        self.assertEqual(len(pairs_through_week(13, 1)), 13)
 
     def test_gp_prediction_and_query_selection(self):
         model = fit_gaussian_process(self.X, self.y, optimizer_restarts=0)

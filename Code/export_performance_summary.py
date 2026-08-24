@@ -21,9 +21,7 @@ except ModuleNotFoundError:  # Support direct execution from the repository root
     from weekly_evidence import DIMENSIONS, ledger_rows
 
 
-MISSING_EVIDENCE = {
-    13: "No verified Week 13 return is present.",
-}
+MISSING_EVIDENCE = {13: "Week 13 return is unavailable."}
 
 COLUMNS = [
     "Week",

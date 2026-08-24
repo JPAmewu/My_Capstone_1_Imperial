@@ -2,13 +2,13 @@
 
 ## Canonical release
 
-Releases through `capstone-final-v1.0.7` preserve the earlier 96-return freezes.
-The canonical environment-aligned submission is identified by the immutable
-annotated Git tag `capstone-final-v1.0.8`. Resolve it with:
+Releases through `capstone-final-v1.0.8` preserve the pre-outcome Week 13 freeze.
+The canonical prospective outcome update is identified by the immutable
+annotated Git tag `capstone-final-v1.0.9`. Resolve it with:
 
 ```bash
-git rev-list -n 1 capstone-final-v1.0.8
-git show --stat capstone-final-v1.0.8
+git rev-list -n 1 capstone-final-v1.0.9
+git show --stat capstone-final-v1.0.9
 ```
 
 The tag, rather than a mutable branch name, is the authoritative repository
@@ -34,8 +34,8 @@ small floating-point differences during GP optimisation.
 | Component | Seed rule | Other fixed settings |
 | --- | --- | --- |
 | Submitted Week 12 GP/candidates | `4200 + function` | Matérn-5/2, three restarts, 20,000 candidates, UCB kappa `0.1` |
-| Rolling historical validation GP | `7300 + 100 × function + held-out week` | One restart per fold, 96 chronological folds |
-| Final diagnostic GP | `4200 + function` | Three restarts on all verified evidence through Week 12 |
+| Rolling historical validation GP | `7300 + 100 × function + held-out week` | One restart per fold, 104 chronological folds |
+| Final diagnostic GP | `4200 + function` | Three restarts on all verified evidence through Week 13 |
 | Week 13 proposal GP and Sobol design | `1300 + function` | Five GP optimiser restarts; 32,768 scrambled Sobol candidates |
 | Week 13 local design | `2300 + function` | 4,096 Gaussian candidates around each of the three strongest observations (12,288 local; 45,056 total) |
 | Sensitivity candidate design | `9100 + function` | 20,000 uniform candidates for F1–F5; 32,768 scrambled Sobol candidates for F6–F8 |
@@ -44,7 +44,7 @@ small floating-point differences during GP optimisation.
 The proposal-generating and diagnostic GP protocols are intentionally distinct.
 Week 13 proposals use five optimiser restarts and seed `1300 + function` because
 they drive the frozen decision. Rolling validation uses one restart and a unique
-fold seed to keep 96 refits tractable and leakage-free. Final diagnostic fits use
+fold seed to keep 104 refits tractable and leakage-free. Final diagnostic fits use
 three restarts and seed `4200 + function` for compatibility with the historical
 Week 12 diagnostic protocol. These fits answer different questions and must not
 be treated as numerically interchangeable.
@@ -71,6 +71,13 @@ Candidate points are restricted to `[0.000000, 0.999999]`, rounded to exactly
 six decimal places, separated by hyphens, and strictly validated before portal
 submission. Historical observations retain their source-domain validation over
 `[0, 1]`. Returned-pair rows remain immutable.
+
+The raw Week 13 cumulative files are preserved under
+`Results/source_evidence/week_13/`. Their first 12 rounds match the published
+ledger and their final inputs match the v1.0.8 frozen query set. The source
+renderer displays submitted `0.999999` values as `1.0` in two functions; the
+ledger retains the exact submitted coordinates and the validation report records
+the one-micro-unit rendering tolerance.
 
 ## Reproduction sequence
 

@@ -2,7 +2,7 @@
 
 **Model name:** BBO Capstone Adaptive Acquisition Optimiser
 **Type:** Sequential Bayesian optimisation with per-function Gaussian Process surrogates
-**Version:** 2.0 (Week 13 UCB/EI/PI policy and v1.0.8 frozen release)
+**Version:** 2.1 (prospective Week 13 outcome update and v1.0.9 release)
 **Developer:** JP Amewu
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
 
@@ -72,14 +72,14 @@ Because the true objective functions and global optima are unknown, conventional
 - predictive mean, predictive standard deviation and acquisition value at a proposed point;
 - validity checks for submission bounds `[0.000000, 0.999999]`, dimensionality, finite values, exact portal syntax and duplicate submissions.
 
-At the corrected Week 12 state, verified best values are approximately `7.710875e-16`, `0.6112052`, `-0.02262932`, `0.3699753`, `3546.632`, `-0.5378218`, `2.266802`, and `9.939904` for Functions 1–8 respectively. These are best observed values, not proven global optima.
+At the corrected Week 13 state, verified best values are approximately `7.710875e-16`, `0.6112052`, `-0.02262932`, `0.3699753`, `4440.562`, `-0.4059929`, `2.266802`, and `9.939904` for Functions 1–8 respectively. These are best observed values, not proven global optima.
 
-The Week 13 strategy notebook executed all code cells without error and generated one valid, non-duplicate, correctly dimensioned query for each function after comparing UCB, EI and PI. GP optimisation may place some kernel parameters at configured bounds; fitted kernels are retained as diagnostics and should inform later sensitivity testing.
-The canonical Week 12 notebook executed all code cells without error and generated the eight queries whose returned outputs are now reconciled in the 96-pair ledger. The Week 12 sensitivity appendix remains a historical robustness analysis and does not replace the observed Week 12 evidence. The active Week 13 proposals are not observations until authoritative returns are received.
+The Week 13 strategy notebook executed all code cells without error and generated one valid, non-duplicate, correctly dimensioned query for each function after comparing UCB, EI and PI. Authoritative outcomes were subsequently appended prospectively: F5 and F6 improved their incumbents. GP optimisation may place some kernel parameters at configured bounds; fitted kernels are retained as diagnostics.
+The canonical Week 12 notebook executed all code cells without error. The Week 12 sensitivity appendix remains a historical robustness analysis. The Week 13 proposals remained separate from observations until the authoritative returns were received and appended prospectively.
 
-Rolling one-step-ahead validation adds 96 chronological held-out predictions
-(twelve per function). All eight functions improve on a historical-mean RMSE
-baseline. Nominal 95% interval coverage is 66.7%, 75.0%, and 66.7% for F5,
+Rolling one-step-ahead validation adds 104 chronological held-out predictions
+(thirteen per function). All eight functions improve on a historical-mean RMSE
+baseline. Nominal 95% interval coverage is 61.5%, 76.9%, and 69.2% for F5,
 F6, and F7, respectively, so uncertainty is not uniformly calibrated. Six of
 eight final GP fits place at least one length scale or noise estimate at a
 configured bound. The full separation between optimisation
@@ -99,15 +99,15 @@ The process is transparent at the procedural level. The repository records:
 - duplicate exclusion and validation checks;
 - notebook outputs, warnings and selected query strings.
 
-The canonical [`Results/query_output_ledger.csv`](../Results/query_output_ledger.csv) records 96 exact returned pairs recovered for Weeks 1–12, with source paths, hashes, date basis, and validation status. Its SHA-256 checksum detects unintended changes. Superseded ledger versions and the suspicious Week 11 arrays remain preserved as immutable historical evidence.
+The canonical [`Results/query_output_ledger.csv`](../Results/query_output_ledger.csv) records 104 exact returned pairs through Week 13, with source paths, hashes, date basis, and validation status. Its SHA-256 checksum detects unintended changes. Superseded ledger versions and the suspicious Week 11 arrays remain preserved as immutable historical evidence.
 
-Another researcher can reproduce the latest recommendations if they use the same dataset, notebook, Python dependencies and random seeds. The ledger supports deterministic reconstruction through Week 12, but unavailable Week 13 returns, authoritative platform submission timestamps, historical software versions and explanations of some manual interventions still prevent bit-for-bit reproduction of every original round.
+Another researcher can reproduce the recommendations and prospective Week 13 outcome append if they use the same dataset, notebook, Python dependencies and random seeds. Missing authoritative platform timestamps, historical software versions and explanations of some manual interventions still prevent bit-for-bit reproduction of every original round.
 
 The final computational stack is pinned in `requirements-lock.txt`; seeds,
 canonical counts, release tag, and SHA-256 checksums are recorded in
 `Results/submission_manifest.json`. Releases `capstone-final-v1.0.6` and
 `capstone-final-v1.0.7` preserve earlier 96-return freezes. The exact current
-submission is identified by the immutable annotated tag `capstone-final-v1.0.8`.
+pre-outcome submission is identified by `capstone-final-v1.0.8`; the prospective outcome update is identified by `capstone-final-v1.0.9`.
 
 ## Assumptions
 

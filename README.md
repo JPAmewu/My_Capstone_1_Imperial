@@ -6,20 +6,20 @@ functions with Gaussian Process surrogate models and acquisition functions.
 
 ## Nontechnical summary
 
-This project asks how Bayesian optimisation can search eight expensive, unknown functions efficiently. It begins with exploratory and manual query choices, then develops reproducible Gaussian Process models that balance promising predictions against uncertainty. A checksum-backed 96-pair ledger preserves the verified history through Week 12 and prevents Week 13 proposals from being treated as observations. Rolling validation tests prediction accuracy and uncertainty calibration. Week 13 uses a pre-outcome, function-specific UCB/EI/PI policy that is adaptive and heuristic rather than statistically controlled.
+This project asks how Bayesian optimisation can search eight expensive, unknown functions efficiently. It begins with exploratory and manual query choices, then develops reproducible Gaussian Process models that balance promising predictions against uncertainty. A checksum-backed 104-pair ledger preserves the verified history through Week 13. Tag v1.0.8 preserves the Week 13 proposals before outcomes; ledger v1.3 appends the authoritative returns prospectively. Rolling validation tests prediction accuracy and uncertainty calibration.
 
 ## Project status
 
 Weeks 1–12 now contain a recovered, reconciled, and validated experiment
 history. Canonical ledger v1.2 appends eight verified Week 12 query/output pairs
 after cumulative-prefix and query-record reconciliation, extending the
-per-function observation counts to `22, 22, 27, 42, 32, 32, 42, 52`. The
+per-function post-Week-13 observation counts are `23, 23, 28, 43, 33, 33, 43, 53`. The
 executed Week 13 optimisation-strategy notebook uses this updated evidence,
 performs full EDA, compares UCB, Expected Improvement, and Probability of
 Improvement, and generates one bounded, non-duplicate proposal for each
 function. This preserves the evidence boundary clearly: no authoritative Week
 13 returned outputs are available, so the Week 13 proposals are not
-observations and cannot update the 96-return evaluation.
+observations and cannot retrospectively alter the frozen Week 13 decision.
 
 ## Repository structure
 
@@ -108,9 +108,9 @@ assertions.
   cumulative snapshots in the local capstone archive and recorded with hashes.
 - Snapshot file modification dates are retained as provenance metadata, but are
   not represented as authoritative platform submission timestamps.
-- Weeks 1–12 are observed and contain 96 verified returned pairs in total.
-- Week 13 contains validated proposals generated from that 96-pair state. No
-  Week 13 returned outputs are available.
+- Weeks 1–13 are observed and contain 104 verified returned pairs in total.
+- Week 13 contains validated proposals generated from the 96-pair pre-outcome
+  state and eight prospectively appended returned outputs.
 - Objective values from different functions are not directly comparable because
   the black-box functions use different scales.
 

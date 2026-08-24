@@ -15,7 +15,7 @@ import pandas
 import scipy
 import sklearn
 
-RELEASE_TAG = "capstone-final-v1.0.8"
+RELEASE_TAG = "capstone-final-v1.0.9"
 FROZEN_ON = "2026-08-24"
 FILES = (
     "Results/query_output_ledger.csv",
@@ -28,6 +28,10 @@ FILES = (
     "Week_13/04_Results/week_13_strategy_summary.csv",
     "Week_13/04_Results/week_13_acquisition_comparison.csv",
     "Week_13/04_Results/week_13_boundary_generation_sensitivity.csv",
+    "Week_13/04_Results/week_13_confirmed_outcomes.csv",
+    "Results/source_evidence/week_13/week_13_inputs.txt",
+    "Results/source_evidence/week_13/week_13_outputs.txt",
+    "Results/week_13_evidence_validation.json",
     "Week_13/02_Notebook/Week_13_Optimisation_Strategy.ipynb",
     "Week_12/02_Notebook/Week_12_Capstone.ipynb",
     "Notebooks/GP_Evaluation_and_Calibration.ipynb",
@@ -43,6 +47,7 @@ FILES = (
     "Code/run_gp_validation.py",
     "Code/generate_week13_queries.py",
     "Code/candidate_generation.py",
+    "Code/append_week13_evidence.py",
     "Code/build_week13_strategy_notebook.py",
     "Code/portal_format.py",
     "Code/audit_dataset_sizes.py",
@@ -85,7 +90,7 @@ def main() -> None:
             "sensitivity_candidates": "9100 + function (9101–9108)",
             "sensitivity_gp": "9200 + function (9201–9208)",
         },
-        "canonical_post_week12_counts": [22, 22, 27, 42, 32, 32, 42, 52],
+        "canonical_post_week13_counts": [23, 23, 28, 43, 33, 33, 43, 53],
         "checksums_sha256": {relative: sha256(root / relative) for relative in FILES},
     }
     output = root / "Results" / "submission_manifest.json"

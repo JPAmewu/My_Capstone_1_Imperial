@@ -20,10 +20,10 @@ def main() -> None:
 
 ## tl;dr
 
-1. Ten of 96 verified weekly returns set a new within-function incumbent (10.4%), including five in Week 12.
+1. Twelve of 104 verified weekly returns set a new within-function incumbent (11.5%); Week 13 improved F5 and F6.
 2. All eight GPs beat a historical-mean RMSE baseline, but calibration varies and F5–F7 under-cover at 95%.
 3. The Week 13 UCB/EI/PI policy is adaptive and heuristic, not a controlled comparison.
-4. The immutable ledger reconstructs the required post-Week-12 counts and keeps Week 13 proposals outside the observed dataset.
+4. Ledger v1.3 contains the prospective Week 13 outcomes; tag v1.0.8 preserves the pre-outcome proposals.
 
 This notebook is the final reader-facing visual synthesis. Detailed methods remain in the weekly and GP-evaluation notebooks.
 """
@@ -38,7 +38,7 @@ The notebook reads only frozen repository artifacts: the returned-pair ledger, p
 - Improvements are evaluated within each function because objective scales differ.
 - Rolling folds are chronological but arise from adaptive queries, not an independent test set.
 - Sensitivity rows are diagnostic experiments and were not submitted.
-- Missing Week 13 returns remain missing; recommendations are not scored as realised outcomes.
+- Week 13 returns were appended only after the acquisition choices and query set were frozen.
 """
         ),
         nbf.v4.new_code_cell(
@@ -66,12 +66,12 @@ print(f'Repository: {ROOT}')"""
         nbf.v4.new_markdown_cell("## Data\n\n### 1. Validate frozen evidence"),
         nbf.v4.new_code_cell(
             """EXPECTED_COUNTS = [22, 22, 27, 42, 32, 32, 42, 52]
-assert len(ledger) == 96
-assert ledger.groupby('function').size().eq(12).all()
+assert len(ledger) == 104
+assert ledger.groupby('function').size().eq(13).all()
 assert len(metrics) == len(proposals) == 8
 assert len(sensitivity) == 80
 assert proposals['verified_observations'].tolist() == EXPECTED_COUNTS
-print('Validated: 96 returned pairs, 80 sensitivity rows, 8 unreturned Week 13 proposals.')"""
+print('Validated: 104 returned pairs, 80 sensitivity rows, and 8 frozen Week 13 proposals with prospective outcomes.')"""
         ),
         nbf.v4.new_markdown_cell("## Results\n\n### 2. Four-panel consolidated evidence"),
         nbf.v4.new_code_cell(
@@ -83,7 +83,7 @@ distinct_recommendations = sensitivity.groupby('function')['submission_query'].n
 fig, axes = plt.subplots(2, 2, figsize=(14, 10))
 colours = ['#4472C4' if value == 0 else '#D97706' for value in improvements]
 axes[0, 0].bar(improvements.index, improvements.values, color=colours)
-axes[0, 0].set(title='A. Verified incumbent improvements', xlabel='Function', ylabel='Improving returns (of 12)', ylim=(0, max(2, improvements.max() + 0.5)))
+axes[0, 0].set(title='A. Verified incumbent improvements', xlabel='Function', ylabel='Improving returns (of 13)', ylim=(0, max(2, improvements.max() + 0.5)))
 
 skill = metrics.set_index('function')['rmse_skill_vs_naive'].reindex(range(1, 9))
 axes[0, 1].bar([f'F{i}' for i in skill.index], skill.values, color=np.where(skill >= 0, '#2E8B57', '#C44536'))
@@ -112,9 +112,9 @@ print(figure_path.relative_to(ROOT))"""
         nbf.v4.new_markdown_cell(
             """### 3. Interpretation
 
-- **Panel A:** ten historical returns improved an incumbent; five of those improvements occurred in Week 12.
+- **Panel A:** twelve historical returns improved an incumbent; Week 13 added improvements for F5 and F6.
 - **Panel B:** all functions have positive GP skill relative to the historical-mean RMSE baseline.
-- **Panel C:** F5–F7 materially under-cover at 95%. Twelve folds per function make coverage estimates coarse.
+- **Panel C:** F5–F7 materially under-cover at 95%. Thirteen folds per function make coverage estimates coarse.
 - **Panel D:** one distinct query means stability across acquisition and bound settings (F4/F5/F7 in this appendix); many distinct queries indicate model or acquisition sensitivity, not necessarily poor realised performance.
 """
         ),
@@ -127,14 +127,14 @@ print(figure_path.relative_to(ROOT))"""
     'rmse_skill_vs_mean': skill.to_numpy(),
     'coverage_95': coverage['coverage_95'].to_numpy(),
     'distinct_sensitivity_queries': distinct_recommendations.to_numpy(dtype=int),
-    'week13_return_available': False,
+    'week13_return_available': True,
 })
 display(summary.round({'rmse_skill_vs_mean': 3, 'coverage_95': 3}))"""
         ),
         nbf.v4.new_markdown_cell(
             """## Takeaways
 
-The project’s strongest conclusion is methodological rather than a claim of global optimality: progressively stronger Bayesian optimisation was paired with increasingly strict evidence controls. The final state distinguishes observed improvement, surrogate accuracy and calibration, recommendation robustness, and data lineage. Week 13 proposals are reproducible and portal-valid, but remain proposals until authoritative returns exist. The next scientifically valuable step is to obtain those returns, append them immutably, and evaluate realised improvement against the recorded pre-outcome recommendations.
+The project’s strongest conclusion is methodological rather than a claim of global optimality: progressively stronger Bayesian optimisation was paired with increasingly strict evidence controls. The final state distinguishes observed improvement, surrogate accuracy and calibration, recommendation robustness, and data lineage. Week 13 outcomes were appended prospectively against the immutable pre-outcome proposals; F5 and F6 improved their incumbents. Sparse sampling and unknown true optima still prevent global-optimality claims.
 """
         ),
     ]

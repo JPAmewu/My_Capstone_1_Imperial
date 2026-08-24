@@ -22,11 +22,11 @@ def main() -> None:
 
 ## tl;dr
 
-- This notebook evaluates the surrogate **out of sample** using 96 rolling one-step-ahead folds: each historical return is predicted using only evidence available before that return.
+- This notebook evaluates the surrogate **out of sample** using 104 rolling one-step-ahead folds: each historical return is predicted using only evidence available before that return.
 - All eight functions beat a historical-mean baseline on RMSE.
 - Mean negative log predictive density (NLPD) complements RMSE by scoring both predictive location and uncertainty.
 - Calibration is heterogeneous. F5–F7 under-cover at the nominal 95% level, while F1 and F8 are conservative.
-- Final GP hyperparameters are fitted to all verified evidence through Week 12, and kernel-bound warnings are reported as evidence rather than suppressed.
+- Final GP hyperparameters are fitted to all verified evidence through Week 13, and kernel-bound warnings are reported as evidence rather than suppressed.
 - These results assess surrogate prediction and calibration. They do not replace optimisation-performance or recommendation-robustness evaluation.
 """
         ),
@@ -41,7 +41,7 @@ The evaluation has three distinct questions:
 
 ### Key assumptions
 
-The Matérn-5/2 GP, target normalisation, configured bounds, and canonical ledger pairing are held fixed. Each function has twelve rolling folds. Hyperparameters are re-estimated inside every fold with one optimiser restart; final diagnostics use all evidence through Week 12, three restarts and fixed seeds. Adaptive historical queries are not an independent random test set, so the results are conditional predictive checks rather than generalisation guarantees.
+The Matérn-5/2 GP, target normalisation, configured bounds, and canonical ledger pairing are held fixed. Each function has thirteen rolling folds. Hyperparameters are re-estimated inside every fold with one optimiser restart; final diagnostics use all evidence through Week 13, three restarts and fixed seeds. Adaptive historical queries are not an independent random test set, so the results are conditional predictive checks rather than generalisation guarantees.
 """
         ),
         nbf.v4.new_code_cell(
@@ -70,10 +70,10 @@ print(f'Repository: {ROOT}')"""
 predictions = pd.read_csv(ROOT / 'Results' / 'gp_rolling_validation_predictions.csv')
 metrics = pd.read_csv(ROOT / 'Results' / 'gp_validation_metrics.csv')
 hyperparameters = pd.read_csv(ROOT / 'Results' / 'gp_final_hyperparameters.csv')
-assert len(predictions) == 96
+assert len(predictions) == 104
 assert len(metrics) == len(hyperparameters) == 8
-assert predictions.groupby('function').size().eq(12).all()
-print('Validated 96 rolling folds: 12 per function.')"""
+assert predictions.groupby('function').size().eq(13).all()
+print('Validated 104 rolling folds: 13 per function.')"""
         ),
         nbf.v4.new_markdown_cell("## Results\n\n### 2. Surrogate accuracy and interval calibration"),
         nbf.v4.new_code_cell(
@@ -88,7 +88,7 @@ print('Validated 96 rolling folds: 12 per function.')"""
             """display(Image(filename=str(ROOT / 'Figures' / 'gp_rolling_validation_diagnostics.png')))"""
         ),
         nbf.v4.new_markdown_cell(
-            """Coverage should be interpreted against nominal 50%, 80%, and 95% rates. With only twelve folds per function, one fold changes coverage by 8.3 percentage points. NLPD rewards probability distributions that place high density on the realised value and penalises confident misses. The uncertainty/error panel uses symmetric-log axes because objective scales differ sharply across functions; it is not a cross-function ranking of raw errors.
+            """Coverage should be interpreted against nominal 50%, 80%, and 95% rates. With only thirteen folds per function, one fold changes coverage by 7.7 percentage points. NLPD rewards probability distributions that place high density on the realised value and penalises confident misses. The uncertainty/error panel uses symmetric-log axes because objective scales differ sharply across functions; it is not a cross-function ranking of raw errors.
 """
         ),
         nbf.v4.new_markdown_cell("### 3. Final fitted GP hyperparameters"),
@@ -107,11 +107,11 @@ display(hyperparameters[columns])"""
         nbf.v4.new_markdown_cell(
             """## Takeaways
 
-1. The 96-fold history includes all verified returns through Week 12; Week 13 remains proposal-only.
+1. The 104-fold history includes all verified returns through Week 13; tag v1.0.8 preserves the Week 13 proposals before outcomes.
 2. Rolling validation and calibration are diagnostic checks, not controlled acquisition comparisons.
 3. Interval coverage and baseline skill vary by function and should be interpreted from the regenerated metric table.
 4. Recommendation robustness is a separate property. The Week 13 function-specific UCB/EI/PI policy is adaptive and heuristic and was selected before Week 13 outcomes.
-5. All findings are conditional on twelve adaptive folds per function, the recovered ledger, the Matérn model family, and the frozen environment. They do not establish global optimality or independent-test-set generalisation.
+5. All findings are conditional on thirteen adaptive folds per function, the recovered ledger, the Matérn model family, and the frozen environment. They do not establish global optimality or independent-test-set generalisation.
 """
         ),
     ]

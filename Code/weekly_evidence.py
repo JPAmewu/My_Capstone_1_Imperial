@@ -14,10 +14,7 @@ EVIDENCE_GAPS = {
     week: f"Confirmed cumulative evidence is available through Week {week}."
     for week in range(1, 13)
 }
-EVIDENCE_GAPS[13] = (
-    "No verified Week 13 return is present; confirmed cumulative evidence "
-    "is available through Week 12."
-)
+EVIDENCE_GAPS[13] = "Confirmed cumulative evidence is available through Week 13."
 
 
 def _repository_root() -> Path:
