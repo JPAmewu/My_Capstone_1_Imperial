@@ -76,7 +76,7 @@ The analytical forms and real-world origins of the eight functions are unknown. 
 
 | Field | Type | Meaning |
 | --- | --- | --- |
-| `week` | integer | Sequential return round, 1–12 |
+| `week` | integer | Sequential return round, 1–13 |
 | `function` | integer | Function identifier, 1–8 |
 | `query` | encoded numeric vector | Exact submitted coordinates in dimension order |
 | `returned_output` | float | Scalar objective paired with the query |
@@ -230,7 +230,7 @@ JP Amewu maintains the dataset. Maintenance should include:
 - validating shape, bounds, finiteness and duplicates before publication;
 - preserving explicit evidence-gap reporting for unavailable returned pairs;
 - appending Week 13 outputs only after exact reconciliation with its submitted queries;
-- retaining Weeks 1–12 as observed evidence and Week 13 as proposal-only until genuine returned outputs become available;
+- preserving the frozen Week 13 proposals and acquisition rationales as pre-outcome evidence, separately from the prospectively appended returns;
 - documenting corrections in Git history and this datasheet;
 - archiving a final version when the capstone concludes.
 

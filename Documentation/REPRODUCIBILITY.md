@@ -3,12 +3,12 @@
 ## Canonical release
 
 Releases through `capstone-final-v1.0.8` preserve the pre-outcome Week 13 freeze.
-The canonical prospective outcome update is identified by the immutable
-annotated Git tag `capstone-final-v1.0.9`. Resolve it with:
+The corrected canonical prospective outcome update is identified by the immutable
+annotated Git tag `capstone-final-v1.0.10`. Resolve it with:
 
 ```bash
-git rev-list -n 1 capstone-final-v1.0.9
-git show --stat capstone-final-v1.0.9
+git rev-list -n 1 capstone-final-v1.0.10
+git show --stat capstone-final-v1.0.10
 ```
 
 The tag, rather than a mutable branch name, is the authoritative repository

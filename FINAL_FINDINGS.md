@@ -8,11 +8,11 @@ Twelve of the 104 verified weekly returns established a new within-function incu
 
 ## Finding 2 — Surrogate accuracy and uncertainty calibration
 
-Rolling one-step-ahead validation produced 104 chronological folds, thirteen per function. All eight Gaussian Processes achieved positive RMSE skill relative to a historical-mean baseline. Calibration remains imperfect: nominal 95% coverage is 61.5% for F5, 69.2% for F7, and 76.9% for F4 and F6. Predictive means and intervals are useful diagnostic evidence but should not be treated as equally reliable across functions.
+Rolling one-step-ahead validation produced 104 chronological folds, thirteen per function. All eight Gaussian Processes achieved positive RMSE skill relative to a historical-mean baseline. Calibration remains imperfect: nominal 95% coverage is 61.5% for F5, 69.2% for F7, and 76.9% for F4 and F6. In the prospective Week 13 folds, F4 and F5 produced relatively large standardised predictive errors of about `-2.88` and `+2.07` predictive standard deviations. The GP was useful, but its uncertainty was imperfectly calibrated and should not be treated as equally reliable across functions.
 
 ## Finding 3 — Recommendation robustness and exploration–exploitation
 
-The sole canonical Week 13 methodology compares UCB, EI, and PI and then applies a function-specific policy: UCB for F1/F4/F7/F8, EI for F2/F5/F6, and PI for F3. The reasons were recorded after observing Week 12 and before any Week 13 outcomes. This adaptive policy is heuristic, not a randomised or statistically controlled acquisition comparison, so no acquisition rule is declared a winner.
+The sole canonical Week 13 methodology compares UCB, EI, and PI and then applies a function-specific policy: UCB for F1/F4/F7/F8, EI for F2/F5/F6, and PI for F3. EI happened to produce two of the three Week 13 proposals assigned to it that improved an incumbent. This cannot establish EI superiority: method assignment was adaptive, heterogeneous, and non-randomised, and the reasons were recorded after Week 12 and before any Week 13 outcomes.
 
 ## Finding 4 — Data lineage, reproducibility, and limitation
 

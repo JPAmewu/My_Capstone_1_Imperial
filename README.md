@@ -10,16 +10,13 @@ This project asks how Bayesian optimisation can search eight expensive, unknown 
 
 ## Project status
 
-Weeks 1–12 now contain a recovered, reconciled, and validated experiment
-history. Canonical ledger v1.2 appends eight verified Week 12 query/output pairs
-after cumulative-prefix and query-record reconciliation, extending the
-per-function post-Week-13 observation counts are `23, 23, 28, 43, 33, 33, 43, 53`. The
-executed Week 13 optimisation-strategy notebook uses this updated evidence,
-performs full EDA, compares UCB, Expected Improvement, and Probability of
-Improvement, and generates one bounded, non-duplicate proposal for each
-function. This preserves the evidence boundary clearly: no authoritative Week
-13 returned outputs are available, so the Week 13 proposals are not
-observations and cannot retrospectively alter the frozen Week 13 decision.
+Weeks 1–13 now contain a recovered, reconciled, and validated experiment
+history. Canonical ledger v1.3 contains 104 verified weekly query/output pairs,
+and the per-function post-Week-13 observation counts are
+`23, 23, 28, 43, 33, 33, 43, 53`. The executed Week 13
+optimisation-strategy notebook records the UCB/EI/PI comparison and the eight
+queries frozen after Week 12. Authoritative Week 13 returns were appended only
+after that freeze, preserving the pre-outcome decision evidence exactly.
 
 ## Repository structure
 
@@ -62,7 +59,7 @@ observations and cannot retrospectively alter the frozen Week 13 decision.
 | 10 | [Week 10](Week_10/02_Notebook/Week_10_Capstone.ipynb) | Corrected and executed |
 | 11 | [Week 11](Week_11/02_Notebook/Week_11_Capstone.ipynb) | Executed corruption-aware review; returned pairs recovered and verified in the canonical ledger |
 | 12 | [Week 12](Week_12/02_Notebook/Week_12_Capstone.ipynb) | Observed and reconciled; eight returned outputs are in the canonical ledger |
-| 13 | [Week 13](Week_13/02_Notebook/Week_13_Optimisation_Strategy.ipynb) | Sole canonical methodology; validated UCB/EI/PI [query points](Week_13/01_Queries/week_13_query_points.txt); outcomes unavailable |
+| 13 | [Week 13](Week_13/02_Notebook/Week_13_Optimisation_Strategy.ipynb) | Complete; frozen UCB/EI/PI [query points](Week_13/01_Queries/week_13_query_points.txt) and eight prospectively appended outcomes |
 
 ## Optimisation workflow
 

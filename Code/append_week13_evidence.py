@@ -136,7 +136,18 @@ def append(root: Path, input_path: Path, output_path: Path) -> None:
         versions.append({"dataset_version": NEW_VERSION, "status": "canonical", "path": "Results/query_output_ledger.csv", "sha256": ledger_digest, "reason": "Prospectively appended eight authoritative Week 13 pairs matching the frozen pre-outcome query set."})
     versions_path.write_text(json.dumps(versions, indent=2) + "\n")
 
-    prior_best = {function: max(float(row["returned_output"]) for row in existing if int(row["function"]) == function and int(row["week"]) <= 12) for function in range(1, 9)}
+    prior_best = {}
+    for function in range(1, 9):
+        starter_outputs = np.asarray(
+            np.load(root / f"Week_01/Function_{function:02d}/03_Data/initial_outputs.npy"),
+            dtype=float,
+        ).reshape(-1)
+        weekly_outputs = [
+            float(row["returned_output"])
+            for row in existing
+            if int(row["function"]) == function and int(row["week"]) <= 12
+        ]
+        prior_best[function] = max(float(starter_outputs.max()), *weekly_outputs)
     outcome_path = root / "Week_13/04_Results/week_13_confirmed_outcomes.csv"
     with outcome_path.open("w", newline="", encoding="utf-8") as target:
         fields = ["function", "submitted_query", "returned_output", "week_12_incumbent", "improvement", "new_incumbent", "improved"]

@@ -21,6 +21,9 @@ within-function incumbent. Week 13 contributed two: F5 (`+893.930245`) and F6
 (`+0.131829`). The resulting raw improvement rate is `12/104 = 11.5%`.
 This descriptive rate is conditional on different functions, strategies, and
 adaptive histories; it is not a controlled comparison of acquisition methods.
+EI happened to produce two improvements among its three Week 13 assignments,
+but this cannot establish EI superiority because method assignment was adaptive,
+heterogeneous, and non-randomised.
 
 Best observed values after Week 13 are approximately `7.710875e-16`,
 `0.6112052`, `-0.02262932`, `0.3699753`, `4440.562`, `-0.4059929`, `2.266802`,
@@ -52,6 +55,11 @@ scales differ. With thirteen folds, one miss moves coverage by 7.7 percentage po
 F5–F7 materially under-cover at 95%. F1, F2, and F8 over-cover, indicating
 conservative intervals. These are calibration diagnostics, not claims that one
 function is easier or more important.
+
+The prospective Week 13 returns provide a particularly clear calibration check:
+F4 and F5 had relatively large standardised predictive errors of about `-2.88`
+and `+2.07` predictive standard deviations. The GP therefore provided useful
+predictive structure without being uniformly well calibrated.
 
 Mean negative log predictive density (NLPD) evaluates the full predictive
 distribution: lower values reward concentrated probability around realised

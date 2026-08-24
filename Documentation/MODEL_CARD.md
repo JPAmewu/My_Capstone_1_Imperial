@@ -2,7 +2,7 @@
 
 **Model name:** BBO Capstone Adaptive Acquisition Optimiser
 **Type:** Sequential Bayesian optimisation with per-function Gaussian Process surrogates
-**Version:** 2.1 (prospective Week 13 outcome update and v1.0.9 release)
+**Version:** 2.2 (corrected prospective Week 13 outcome update and v1.0.10 release)
 **Developer:** JP Amewu
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
 
@@ -52,14 +52,14 @@ Function dimensions are:
 
 | Function | Dimensions | Verified observations |
 | --- | ---: | ---: |
-| 1 | 2 | 22 |
-| 2 | 2 | 22 |
-| 3 | 3 | 27 |
-| 4 | 4 | 42 |
-| 5 | 4 | 32 |
-| 6 | 5 | 32 |
-| 7 | 6 | 42 |
-| 8 | 8 | 52 |
+| 1 | 2 | 23 |
+| 2 | 2 | 23 |
+| 3 | 3 | 28 |
+| 4 | 4 | 43 |
+| 5 | 4 | 33 |
+| 6 | 5 | 33 |
+| 7 | 6 | 43 |
+| 8 | 8 | 53 |
 
 ## Performance
 
@@ -74,7 +74,7 @@ Because the true objective functions and global optima are unknown, conventional
 
 At the corrected Week 13 state, verified best values are approximately `7.710875e-16`, `0.6112052`, `-0.02262932`, `0.3699753`, `4440.562`, `-0.4059929`, `2.266802`, and `9.939904` for Functions 1–8 respectively. These are best observed values, not proven global optima.
 
-The Week 13 strategy notebook executed all code cells without error and generated one valid, non-duplicate, correctly dimensioned query for each function after comparing UCB, EI and PI. Authoritative outcomes were subsequently appended prospectively: F5 and F6 improved their incumbents. GP optimisation may place some kernel parameters at configured bounds; fitted kernels are retained as diagnostics.
+The Week 13 strategy notebook executed all code cells without error and generated one valid, non-duplicate, correctly dimensioned query for each function after comparing UCB, EI and PI. Authoritative outcomes were subsequently appended prospectively: F5 and F6 improved their incumbents. The Week 13 returns for F4 and F5 had relatively large standardised predictive errors (about `-2.88` and `+2.07` predictive standard deviations), showing that the GP was useful but imperfectly calibrated. GP optimisation may place some kernel parameters at configured bounds; fitted kernels are retained as diagnostics.
 The canonical Week 12 notebook executed all code cells without error. The Week 12 sensitivity appendix remains a historical robustness analysis. The Week 13 proposals remained separate from observations until the authoritative returns were received and appended prospectively.
 
 Rolling one-step-ahead validation adds 104 chronological held-out predictions
@@ -107,7 +107,7 @@ The final computational stack is pinned in `requirements-lock.txt`; seeds,
 canonical counts, release tag, and SHA-256 checksums are recorded in
 `Results/submission_manifest.json`. Releases `capstone-final-v1.0.6` and
 `capstone-final-v1.0.7` preserve earlier 96-return freezes. The exact current
-pre-outcome submission is identified by `capstone-final-v1.0.8`; the prospective outcome update is identified by `capstone-final-v1.0.9`.
+pre-outcome submission is identified by `capstone-final-v1.0.8`; the corrected prospective outcome update is identified by `capstone-final-v1.0.10`.
 
 ## Assumptions
 
@@ -134,7 +134,7 @@ Violations can produce overconfident or misleading recommendations. Discontinuit
 - **Random candidate dependence:** recommendations depend on candidate generation and the chosen seed.
 - **No known optimum:** absolute regret and optimality cannot be calculated.
 - **Data-lineage risk:** recovered dates are source-file metadata rather than authoritative platform timestamps, and the original Week 11 arrays remain quarantined.
-- **Sensitivity is diagnostic, not outcome evidence:** alternative acquisition settings and GP bounds have now been compared under one deterministic protocol, but none can be ranked by realised performance until authoritative returns exist.
+- **Sensitivity is diagnostic, not outcome evidence:** alternative acquisition settings and GP bounds were compared under one deterministic protocol, but the realised Week 13 outcomes do not make that adaptive, heterogeneous, non-randomised assignment a controlled acquisition comparison.
 
 Potential failures include repeated focus on a local optimum, missing narrow boundary peaks, overexploration of uncertain but unproductive areas or propagating an incorrectly paired observation into later rounds.
 
