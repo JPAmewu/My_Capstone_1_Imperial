@@ -4,6 +4,17 @@ An Imperial College London Machine Learning and Artificial Intelligence
 capstone project exploring sequential optimisation of eight unknown objective
 functions with Gaussian Process surrogate models and acquisition functions.
 
+## Start here
+
+Open the **[final report notebook](Final_Report/START_HERE_Final_Report.ipynb)**
+for the complete reader-first account: an eight-function scoreboard, campaign
+timeline, function-specific strategy table, evaluation caveats, and the workflow
+diagram connecting evidence to the Week 13 proposal generator.
+
+For navigation, see the [canonical-versus-historical artefact
+guide](Documentation/ARTEFACT_GUIDE.md). For replication, use the [short public
+reproducibility guide](REPRODUCIBILITY.md).
+
 ## Nontechnical summary
 
 This project asks how Bayesian optimisation can search eight expensive, unknown functions efficiently. It begins with exploratory and manual query choices, then develops reproducible Gaussian Process models that balance promising predictions against uncertainty. A checksum-backed 104-pair ledger preserves the verified history through Week 13. Tag v1.0.8 preserves the Week 13 proposals before outcomes; ledger v1.3 appends the authoritative returns prospectively. Rolling validation tests prediction accuracy and uncertainty calibration.
@@ -25,6 +36,7 @@ after that freeze, preserving the pre-outcome decision evidence exactly.
 | [`Code/`](Code/) | Reusable Python scripts and functions shared across weeks |
 | [`Documentation/`](Documentation/) | Datasheet, model card, methodology, project guide, and technical documentation |
 | [`Notebooks/`](Notebooks/) | Final consolidated notebooks, not duplicate weekly notebooks |
+| [`Final_Report/`](Final_Report/) | Single start-here report and its generated scoreboard, timeline, and strategy tables |
 | [`Reflections/`](Reflections/) | Consolidated academic reflections and learning summaries |
 | [`Resources/`](Resources/) | References, links, reading lists, and supporting materials |
 | `Week_01/`–`Week_13/` | Detailed weekly notebooks, queries, data, results, and reflection scaffolding |
@@ -36,10 +48,13 @@ after that freeze, preserving the pre-outcome decision evidence exactly.
 - [Evaluation chapter](Documentation/EVALUATION.md)
 - [Week 12 sensitivity appendix](Documentation/WEEK_12_SENSITIVITY_APPENDIX.md)
 - [Final reproducibility and version freeze](Documentation/REPRODUCIBILITY.md)
+- [Short public reproducibility guide](REPRODUCIBILITY.md)
+- [Canonical versus historical artefact guide](Documentation/ARTEFACT_GUIDE.md)
 - [AI use disclosure](Documentation/AI_USE_DISCLOSURE.md)
 - [Four final findings](FINAL_FINDINGS.md)
 - [Dataset-size audit](Documentation/DATA_SIZE_AUDIT.md)
 - [Final consolidated visual results](Notebooks/Final_Visual_Results.ipynb)
+- [Start-here final report](Final_Report/START_HERE_Final_Report.ipynb)
 - [Canonical notebook index](Notebooks/README.md)
 - [Reflection index](Reflections/README.md)
 

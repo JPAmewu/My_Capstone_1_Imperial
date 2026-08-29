@@ -1,0 +1,9 @@
+function,dimensions,acquisition,kappa,xi_output_sd_fraction,candidate_focus,pre_outcome_rationale
+F1,2,UCB,3.0,0.01,sobol,Sparse near-zero responses still justify uncertainty-led exploration.
+F2,2,EI,2.0,0.02,local,The strong Week 12 return supports balanced improvement around a promising region.
+F3,3,PI,1.5,0.005,sobol,The new best reinforces a stable structure and supports controlled exploitation.
+F4,4,UCB,2.75,0.02,local,"The large Week 12 improvement is promising, while high kappa tests its surrounding uncertainty."
+F5,4,EI,1.5,0.01,local,The much stronger Week 12 incumbent warrants focused expected improvement.
+F6,5,EI,1.75,0.01,local,The Week 12 best supports exploitation with uncertainty protection.
+F7,6,UCB,2.0,0.01,local,The new best supports local focus while moderate UCB preserves exploration.
+F8,8,UCB,3.0,0.02,sobol,"A near-best Week 12 result does not remove eight-dimensional sparsity, so exploration remains strong."

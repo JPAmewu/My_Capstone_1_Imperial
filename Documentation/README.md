@@ -1,5 +1,10 @@
 # Project documentation
 
+New readers should use the [canonical-versus-historical artefact
+guide](ARTEFACT_GUIDE.md) before navigating the detailed chapters. A shorter
+[public reproducibility guide](../REPRODUCIBILITY.md) complements the full
+release protocol.
+
 This folder contains project-wide documentation that applies across the weekly
 Bayesian optimisation experiments.
 

@@ -5,7 +5,7 @@ multiple weeks without duplicating the authoritative weekly notebooks.
 
 ## Cross-week evaluation
 
-- [Historical GP validation and uncertainty calibration](GP_Evaluation_and_Calibration.ipynb) — 96 rolling one-step-ahead folds, interval calibration, and final fitted-hyperparameter diagnostics.
+- [Historical GP validation and uncertainty calibration](GP_Evaluation_and_Calibration.ipynb) — 104 rolling one-step-ahead folds (13 per function), interval calibration, and final fitted-hyperparameter diagnostics.
 - [Final consolidated visual results](Final_Visual_Results.ipynb) — reader-facing four-panel synthesis of optimisation performance, surrogate skill/calibration, recommendation robustness, and evidence status.
 
 The authoritative weekly analyses remain in each week's `02_Notebook` folder:
@@ -24,4 +24,4 @@ The authoritative weekly analyses remain in each week's `02_Notebook` folder:
 | 10 | [Week 10](../Week_10/02_Notebook/Week_10_Capstone.ipynb) | Corrected and executed |
 | 11 | [Week 11](../Week_11/02_Notebook/Week_11_Capstone.ipynb) | Corrected and executed |
 | 12 | [Week 12](../Week_12/02_Notebook/Week_12_Capstone.ipynb) | Observed and reconciled; returns included in the 96-pair ledger |
-| 13 | [Week 13](../Week_13/02_Notebook/Week_13_Optimisation_Strategy.ipynb) | Sole canonical methodology; proposed only |
+| 13 | [Week 13](../Week_13/02_Notebook/Week_13_Optimisation_Strategy.ipynb) | Prospectively frozen methodology; eight outcomes subsequently appended to the canonical ledger |

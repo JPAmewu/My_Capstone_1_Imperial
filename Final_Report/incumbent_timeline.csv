@@ -1,0 +1,21 @@
+function,week,incumbent,source
+F1,0,7.710875114502849e-16,starter data
+F2,0,0.6112052157614438,starter data
+F3,0,-0.0348353133500785,starter data
+F3,12,-0.0226293193690059,verified return
+F4,0,-4.025542281908162,starter data
+F4,3,-1.9810750402526336,verified return
+F4,12,0.3699752814306127,verified return
+F5,0,1088.8596181962705,starter data
+F5,8,1465.5121917504075,verified return
+F5,12,3546.6319692489096,verified return
+F5,13,4440.56221417962,verified return
+F6,0,-0.7142649478202404,starter data
+F6,12,-0.5378218203873342,verified return
+F6,13,-0.4059928596042703,verified return
+F7,0,1.3649683044991994,starter data
+F7,3,2.149905456773691,verified return
+F7,12,2.26680177151999,verified return
+F8,0,9.598482002566342,starter data
+F8,1,9.8157087929671,verified return
+F8,2,9.9399041910574,verified return
