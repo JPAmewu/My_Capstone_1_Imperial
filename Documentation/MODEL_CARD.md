@@ -2,7 +2,7 @@
 
 **Model name:** BBO Capstone Adaptive Acquisition Optimiser
 **Type:** Sequential Bayesian optimisation with per-function Gaussian Process surrogates
-**Version:** 2.2 (corrected prospective Week 13 outcome update and v1.0.10 release)
+**Version:** 2.3 (final tested submission state and v1.0.11 release)
 **Developer:** JP Amewu
 **Repository:** <https://github.com/JPAmewu/My_Capstone_1_Imperial>
 
@@ -107,7 +107,7 @@ The final computational stack is pinned in `requirements-lock.txt`; seeds,
 canonical counts, release tag, and SHA-256 checksums are recorded in
 `Results/submission_manifest.json`. Releases `capstone-final-v1.0.6` and
 `capstone-final-v1.0.7` preserve earlier 96-return freezes. The exact current
-pre-outcome submission is identified by `capstone-final-v1.0.8`; the corrected prospective outcome update is identified by `capstone-final-v1.0.10`.
+pre-outcome submission is identified by `capstone-final-v1.0.8`; the final tested submission state, including the prospective outcome update and reader-first report, is identified by `capstone-final-v1.0.11`.
 
 ## Assumptions
 

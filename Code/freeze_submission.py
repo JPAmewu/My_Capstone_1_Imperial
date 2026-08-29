@@ -15,8 +15,8 @@ import pandas
 import scipy
 import sklearn
 
-RELEASE_TAG = "capstone-final-v1.0.10"
-FROZEN_ON = "2026-08-24"
+RELEASE_TAG = "capstone-final-v1.0.11"
+FROZEN_ON = "2026-08-29"
 FILES = (
     "Results/query_output_ledger.csv",
     "Results/bbo_query_ledger.csv",
@@ -36,12 +36,20 @@ FILES = (
     "Week_12/02_Notebook/Week_12_Capstone.ipynb",
     "Notebooks/GP_Evaluation_and_Calibration.ipynb",
     "Notebooks/Final_Visual_Results.ipynb",
+    "Final_Report/START_HERE_Final_Report.ipynb",
+    "Final_Report/final_scoreboard.csv",
+    "Final_Report/final_scoreboard.png",
+    "Final_Report/incumbent_timeline.csv",
+    "Final_Report/incumbent_timeline.png",
+    "Final_Report/function_strategy_table.csv",
+    "Final_Report/README.md",
     "Figures/final_consolidated_results.png",
     "FINAL_FINDINGS.md",
     "Documentation/EVALUATION.md",
     "Documentation/DATASET_DATASHEET.md",
     "Documentation/MODEL_CARD.md",
     "Documentation/REPRODUCIBILITY.md",
+    "Documentation/ARTEFACT_GUIDE.md",
     "Documentation/WEEK_13_BOUNDARY_SENSITIVITY.md",
     "Code/run_week12_sensitivity.py",
     "Code/run_gp_validation.py",
@@ -51,6 +59,9 @@ FILES = (
     "Code/build_week13_strategy_notebook.py",
     "Code/portal_format.py",
     "Code/audit_dataset_sizes.py",
+    "Code/build_final_report.py",
+    "Code/tests/test_final_report.py",
+    "Code/run_frozen_repository.py",
     "Results/dataset_size_audit.csv",
     "Documentation/DATA_SIZE_AUDIT.md",
     "requirements-lock.txt",
@@ -74,6 +85,7 @@ def main() -> None:
     manifest = {
         "release_tag": RELEASE_TAG,
         "version_resolution": f"git rev-list -n 1 {RELEASE_TAG}",
+        "evidence_state": "Final submitted evidence; subsequent work must be identified as post-submission or future work.",
         "frozen_on": FROZEN_ON,
         "python": platform.python_version(),
         "libraries": {

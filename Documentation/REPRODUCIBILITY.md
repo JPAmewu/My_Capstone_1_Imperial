@@ -3,16 +3,24 @@
 ## Canonical release
 
 Releases through `capstone-final-v1.0.8` preserve the pre-outcome Week 13 freeze.
-The corrected canonical prospective outcome update is identified by the immutable
-annotated Git tag `capstone-final-v1.0.10`. Resolve it with:
+The final tested submission state is identified by the immutable annotated Git
+tag `capstone-final-v1.0.11`. It includes the prospective Week 13 outcomes, the
+104-fold evaluation, and the reader-first final report. Resolve it with:
 
 ```bash
-git rev-list -n 1 capstone-final-v1.0.10
-git show --stat capstone-final-v1.0.10
+git rev-list -n 1 capstone-final-v1.0.11
+git show --stat capstone-final-v1.0.11
 ```
 
 The tag, rather than a mutable branch name, is the authoritative repository
 version.
+
+## Post-submission boundary
+
+`capstone-final-v1.0.11` freezes the submitted evidence state. After that tag,
+the Week 13 queries, outputs, acquisition assignments, and verified ledger rows
+must remain unchanged. Any later additions must be labelled explicitly as
+post-submission analysis or future work and must not rewrite the frozen evidence.
 
 ## Environment
 

@@ -30,6 +30,10 @@ and are not contradictory.
   particular, the pre-Week-12-evidence GP-UCB proposal set is historical only.
 - Earlier release tags preserve immutable stages of the evidence sequence.
 
+The final submitted evidence state is frozen by `capstone-final-v1.0.11`.
+Anything developed after that release must be labelled post-submission or future
+work and must not replace the canonical Week 13 evidence.
+
 Historical files should be cited when explaining how the work evolved. They
 should not be used to recompute the final scoreboard unless the purpose is an
 explicit historical comparison.

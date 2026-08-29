@@ -38,3 +38,7 @@ exactly six decimals and no coordinate above `0.999999`.
 The full environment, seed rules, individual commands, platform caveats, and
 release-tag policy are documented in
 [`Documentation/REPRODUCIBILITY.md`](Documentation/REPRODUCIBILITY.md).
+
+The immutable final submitted state is identified by
+`capstone-final-v1.0.11`. Later work must be labelled post-submission or future
+work and must not alter the frozen Week 13 evidence.

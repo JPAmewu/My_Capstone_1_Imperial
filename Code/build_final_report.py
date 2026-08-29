@@ -89,6 +89,8 @@ Eight unknown functions were maximised sequentially. Each round added one portal
 - The chronological folds respect time order but arise from an adaptive campaign, not an independent test set.
 - Incumbent change means a strictly larger verified output; it is not proof of a global optimum.
 - Week 13 acquisition choices were recorded before Week 13 outcomes. Their realised results do not make the policy a controlled experiment.
+- High-dimensional functions remain sparsely covered, and several GP hyperparameters reach configured bounds.
+- Predictive calibration is imperfect, especially for F5–F7, so uncertainty estimates should not be treated as exact probabilities.
 - Source-file modification dates are provenance metadata, not authoritative portal submission times."""
         ),
         nbf.v4.new_code_cell(
@@ -163,7 +165,7 @@ The dashed edge is important: Week 13 outcomes entered the ledger only after the
         nbf.v4.new_markdown_cell(
             """## Takeaways
 
-1. **Optimisation:** F5 achieved the largest absolute gain on its own scale; F4, F6, F7, and F8 also finished above their starter incumbents. F1 and F2 never exceeded strong starter values.
+1. **Optimisation:** F5 achieved the largest absolute gain on its own scale; F3, F4, F6, F7, and F8 also finished above their starter incumbents. F1 and F2 never exceeded strong starter values.
 2. **Learning:** model-guided search improved the campaign, but function-specific behaviour justified different acquisition choices rather than one universal setting.
 3. **Evaluation:** positive RMSE skill across all functions supports using the GPs as predictive aids, while uneven interval coverage argues against overconfident interpretation.
 4. **Evidence discipline:** the proposal freeze, canonical ledger, derived evaluation, checksums, and historical archive separate decisions from later outcomes.
