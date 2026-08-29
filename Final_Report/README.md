@@ -1,4 +1,4 @@
-# Final report artefacts
+# Final report.
 
 Start with [`START_HERE_Final_Report.ipynb`](START_HERE_Final_Report.ipynb). It
 combines the final scoreboard, incumbent-change timeline, function-level Week 13
