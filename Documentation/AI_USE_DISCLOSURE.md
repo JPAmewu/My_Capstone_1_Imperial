@@ -8,10 +8,13 @@ Generative AI and AI-assisted software-development tools were used as supporting
 
 **Codex (OpenAI)** was used as an AI-assisted software-development tool for repository-level coding, refactoring, file organisation, validation, testing, documentation updates, and review of implementation issues.
 
+**Claude Code (Anthropic)** was used after the `capstone-final-v1.0.11` freeze for post-submission repository review and documentation maintenance: cross-checking evidence-boundary claims, ledger row counts, and headline figures across the documentation against the underlying ledger, results CSVs, and notebooks; running the existing test suite; and correcting two files (`Week_13/README.md` and `Week_13/02_Notebook/README.md`) that had not been updated to reflect the Week 13 outcomes appended prospectively after the freeze. It read every `Function_0N/README.md` and `07_Reflection/README.md` across Weeks 1–13 to confirm no further inconsistency remained, and committed and pushed the resulting fix under the student's direction and review.
+
 This assistance includes the reader-facing final-report structure, generated
-scoreboard and timeline code, reproducibility documentation, and repository
-navigation improvements. Those artefacts summarise existing evidence; they do
-not add or alter black-box observations.
+scoreboard and timeline code, reproducibility documentation, repository
+navigation improvements, and the post-freeze documentation correction described
+above. Those artefacts summarise existing evidence; they do not add or alter
+black-box observations.
 
 ## Human oversight
 

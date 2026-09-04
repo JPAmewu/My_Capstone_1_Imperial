@@ -128,7 +128,7 @@ assertions.
 
 ## Use of Generative AI and AI-Assisted Tools
 
-Generative AI and AI-assisted coding tools, including ChatGPT and Codex, were used as supporting tools for conceptual clarification, code development and debugging, repository organisation, documentation review, and critical evaluation of the Bayesian optimisation methodology.
+Generative AI and AI-assisted coding tools, including ChatGPT, Codex, and Claude Code, were used as supporting tools for conceptual clarification, code development and debugging, repository organisation, documentation review, and critical evaluation of the Bayesian optimisation methodology.
 
 AI-generated suggestions were not treated as experimental evidence or authoritative black-box results. Code and methodological recommendations adopted in the project were reviewed, executed, tested, and, where appropriate, modified before inclusion. Responsibility for the experimental design, methodological choices, interpretation, validation, and conclusions remains with the student.
 
